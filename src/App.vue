@@ -2,9 +2,18 @@
   <div class="navbar d-flex justify-content-between">
     <div id="nav">
       <router-link to="/">Home</router-link> | 
-      <router-link to="/users">Users</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/contacto">Contacto</router-link>
+      <router-link to="/users">Users</router-link> | 
+      <router-link to="/About">Quienes Somos</router-link> | 
+      <router-link to="/NotFound">404</router-link> | 
+      <router-link to="/Contacto">Contacto</router-link> | 
+      <router-link to="/ListMessage">List Message</router-link> | 
+      <router-link to="/NewMessage">Nuevo Mensaje</router-link> | 
+      <router-link to="/ForgotPassword">Olvidaste tu password</router-link> | 
+      <router-link to="/SignIn">Iniciar sesión</router-link> | 
+      <router-link to="/SignUp">Crear una cuenta</router-link> | 
+      <router-link to="/UserAdmin">Usuario Admin</router-link> | 
+      <router-link to="/UserProfile">Perfil Usuario</router-link>
+
     </div>
     <div class="nav-brand">
       <LoginBox />
