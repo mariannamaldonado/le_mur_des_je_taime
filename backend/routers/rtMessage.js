@@ -13,7 +13,7 @@ rtMessage.get('/get/:id',(req,res)=>{
 })
 
 rtMessage.get('/list',(req,res)=>{
-    daoMessage.list()
+    daoMessage.listar()
         .then(entries=>res.json(entries))
 })
 

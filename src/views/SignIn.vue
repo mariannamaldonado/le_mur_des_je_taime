@@ -1,13 +1,17 @@
 <template> 
-  <div>
-    <h1>Iniciar sesión</h1>
+  <div> 
+    <LoginBox />
   </div>
 </template>
 
 <script>
+import LoginBox from '@/components/LoginBox'
+
 export default {
   name: "SignIn",
-  components: {},
+  components: {
+    LoginBox
+  },
 
   setup() {
     return {

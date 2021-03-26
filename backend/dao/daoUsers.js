@@ -13,7 +13,7 @@ daoUsers.signup = (user)=>{
 }
 
 //función para listar usurios
-daoUsers.list =()=>{
+daoUsers.listar =()=>{
     return new Promise((resolved,reject)=>{
         User.find()
         .then(users=>resolved(users))
