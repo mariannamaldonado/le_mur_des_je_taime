@@ -20,8 +20,6 @@ app.use(session({
 // rutas prvadas al iniciar sesion
 // let rutasPrivadas=[
 //     '/users/guardar',
-//     '/users/nuevo',
-//     '/users/listado'
 //     ]
 //     app.use((req,res,next)=>{
 //         if(req.session.autenticado){ 
