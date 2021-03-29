@@ -2,13 +2,15 @@
   <div class="navbar d-flex justify-content-between">
     <div id="nav">
       <router-link to="/">Home</router-link> | 
-      <router-link to="/users">Users</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/contacto">Contacto</router-link>
+      <router-link to="/users">Users</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/contacto">Contacto</router-link>|
+      <router-link to="/SignUp">Sign Up</router-link>|
+      <router-link to="/SignIn">Sign In</router-link>|
+      <router-link to="/ForgotPassword"> Forgot Password</router-link>|
+     
     </div>
-    <div class="nav-brand">
-      <LoginBox />
-    </div>
+  
   </div>
   <router-view />
 </template>
@@ -23,8 +25,8 @@
 }
 .navbar{
   display:inline-flex;
-  .nav-brand {
-  }
+  /* .nav-brand {
+  } */
 }
 #nav {
   padding-left: 10px;
