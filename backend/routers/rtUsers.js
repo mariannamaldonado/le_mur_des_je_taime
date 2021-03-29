@@ -10,7 +10,7 @@ rtUsers.post('/signup',(req,res)=>{
 rtUsers.post('/guardar',(req,res)=>{
     daoUsers.signup(req.body)
         .then(user=>res.json(user))
-        res.send('menasaje enviado')
+        res.send('usuario guardado')
 
 })
 
@@ -19,9 +19,11 @@ rtUsers.get('/listar',(req,res)=>{
         .then(users=>res.json(users))
 })
 
-rtUsers.get('/get',(req,res)=>{ 
+rtUsers.get('/search/:email',(req,res)=>{ 
     daoUsers.findByEmail(req.query.email)
         .then(user=>res.json(user))
+        res.json({res: 'ok'})
+
 })
 
 rtUsers.post('/delete/:id',(req,res)=>{
@@ -33,6 +35,8 @@ rtUsers.post('/login',(req,res)=>{
     console.log(req.body.email,req.body.password)
     daoUsers.signin(req.body.email,req.body.password)
         .then(data=>res.json(data))
+        res.send('usuario loguedo')
+
 })
 
 rtUsers.post("/send-email", (req, res) => {

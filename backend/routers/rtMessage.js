@@ -4,17 +4,19 @@ const daoMessage = require('../dao/daoMessage')
 
 rtMessage.post('/save',(req,res)=>{
     daoMessage.save(req.body)
-        .then(entry=>res.json(entry))
-})
+        .then(message=>res.json(message))
+        res.send('usuario guardado')
+    })
 
-rtMessage.get('/get/:id',(req,res)=>{
+rtMessage.get('/search/:id',(req,res)=>{
     daoMessage.findById(req.params.id)
         .then(entry=>res.json(entry))
 })
 
 rtMessage.get('/list',(req,res)=>{
-    daoMessage.listar()
+    daoMessage.list()
         .then(entries=>res.json(entries))
+
 })
 
 rtMessage.post('/delete/:id',(req,res)=>{

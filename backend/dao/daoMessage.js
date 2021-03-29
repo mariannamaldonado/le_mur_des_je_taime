@@ -3,13 +3,20 @@ const Message = require('../models/Message')
 const daoMessage={}
 
 //funcion para guardar una entrada
-daoMessage.save = (Message)=>{
+daoMessage.save = (message)=>{
     return new Promise((resolved)=>{
-        let newMessage = new Message(Message)
+        let newMessage = new Message(message)
         newMessage.save()
-            .then(Message=>resolved(Message))
+            .then(message=>resolved(message))
     })
 
+}
+
+
+daoMessage.delete = (id)=>{
+    Message.findOneAndRemove({_id:id},(data)=>{
+        console.log("registro eliminado")
+    })
 }
 
 //listar todas las entradas
