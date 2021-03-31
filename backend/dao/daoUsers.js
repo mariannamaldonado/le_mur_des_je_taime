@@ -21,7 +21,7 @@ daoUsers.listar =()=>{
     })    
 }
 
-//buscar usuario por e-mail
+//buscar usuario por email
 daoUsers.findByEmail=(email)=>{
     return new Promise((resolved) =>{
         User.findOne({ email: email })

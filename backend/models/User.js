@@ -11,7 +11,11 @@ const schemaUser = new Schema({
     active: { type: Boolean, default: false },
     provider: { type: String, default: 'local' },
     role: { type: Boolean, default: true },
-    avatar:{type:String,default: "/images/avatar.jpg"}
+    avatar:{type:String,default: "/images/avatar.jpg"},
+    messages:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Message'
+    }]
 })
 schemaUser.index({ email: 1 }, { unique: true })
 

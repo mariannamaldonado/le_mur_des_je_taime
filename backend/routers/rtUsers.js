@@ -7,7 +7,7 @@ rtUsers.post('/signup',(req,res)=>{
         .then(user=>res.json(user))
 })
 
-rtUsers.post('/guardar',(req,res)=>{
+rtUsers.post('/save',(req,res)=>{
     daoUsers.signup(req.body)
         .then(user=>res.json(user))
         res.send('usuario guardado')
@@ -22,7 +22,8 @@ rtUsers.get('/listar',(req,res)=>{
 rtUsers.get('/search/:email',(req,res)=>{ 
     daoUsers.findByEmail(req.query.email)
         .then(user=>res.json(user))
-        res.json({res: 'ok'})
+       // res.json({res: 'ok'})
+
 
 })
 
