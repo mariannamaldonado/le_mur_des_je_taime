@@ -2,15 +2,15 @@ const mongoose = require("mongoose")
 const { Schema } = mongoose
 
 const schemaMessage = new Schema({
-    message: { type: String},
-    author: { type: String, required: true },
-    encryption: { type: Boolean, default: false },
-    encryption_key: { type: Boolean, default: true },
+    message: { type: String, required: false },
+    author: { type: String, required: false},
+    encryption: { type: Boolean, default: true },
+    encryption_key: { type: Boolean, default: false },
     properties: { type: String, default: "Times New Roman" },
     coordinates: { type: Array},
     size: { type: String },
-    receiver: { type: String, required: true },
-    user: { type: Schema.Types.ObjectId, ref: 'user' }
+    receiver: { type: String, required: false },
+    user: { type: Schema.Types.ObjectId, ref: 'User' }
 })
 
 class Message {

@@ -13,7 +13,7 @@ const schemaUser = new Schema({
     role: { type: Boolean, default: true },
     avatar:{type:String,default: "/images/avatar.jpg"},
     messages:[{
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.Array,
         ref: 'Message'
     }]
 })

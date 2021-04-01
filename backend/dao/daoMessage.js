@@ -19,7 +19,7 @@ daoMessage.delete = (id)=>{
     })
 }
 
-//listaado de mensajes
+//listado de mensajes
 daoMessage.list =()=>{
     return new Promise((resolved)=>{
         Message.find()
