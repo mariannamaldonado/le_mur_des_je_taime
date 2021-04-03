@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="justify-content" center>
+    <div class="justify-content-center">
       <div class="col col-4 offset-4">
         <h2>Sign In</h2>
 
@@ -22,7 +22,7 @@
           <label for="floatingInput">Contraseña</label>
         </div>
 
-        <div class="form-floating">
+        <!-- <div class="form-floating">
           <select
             type="text"
             class="form-control floatingInput"
@@ -33,15 +33,15 @@
             <option value="admin">Administrador</option>
           </select>
           <label for="rol"></label>
-        </div>
+        </div> -->
         <br>
-        <div class="form-floating">
-          <div class="col col-6 offset-6">
+        <div class="form-floating ">
+          <div class="d-flex justify-content-center">
             <a href="ForgotPassword"><h6>¿Has olvidado tu contraseña?</h6></a>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
           <button type="button" id="loginbutton" class="btn btn-danger btn-lg">
             SIGN IN
           </button>
@@ -52,6 +52,11 @@
             class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"
           >
             or Sign In with:
+          </p>
+          <p class="social d-flex justify-content-center">
+            <img src="../../public/google.png" alt="Google">
+            <img src="../../public/facebook.png"  alt="Facebook">
+            <img src="../../public/instagram.png" alt="Instagram">
           </p>
           <div class="row my-3 d-flex justify-content-center">
             <mdb-btn
@@ -81,7 +86,7 @@
     <mdb-modal-footer class="mx-5 pt-3 mb-1">
       
       <p class="font-small grey-text d-flex justify-content-center">
-        ¿Not a member?<a href=" SignUp" class="blue-text ml-1"> Sign Up</a>
+        ¿Not a member?&nbsp;<a href=" SignUp" class="blue-text ml-1"> Sign Up</a>
       </p>
     </mdb-modal-footer>
   </div>
@@ -99,7 +104,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.social img{
+width: 40px;
+height: 30px;
+padding: 0 5px;
+}
 a {
   text-decoration: none;
 }
@@ -127,8 +136,8 @@ a {
 }
 
 #loginbutton {
-  font-size: 1.5em;
-  margin-top: 50px;
+  white-space: nowrap;
+  margin: 50px auto;
   border-radius: 50px;
   padding: 10px 40px;
   border: none;

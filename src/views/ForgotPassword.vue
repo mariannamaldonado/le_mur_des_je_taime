@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div class="justify-content" center>
+    <Header/>
+    <div class="justify-content-center">
       <div class="col col-4 offset-4">
         <h2>Forgot Password</h2>
 
@@ -11,7 +12,7 @@
             placeholder="name@ejemplo.com"
           />
           <label for="floatingInput">Email</label>
-        </div>
+        </div> 
 
         <!-- <div class="form-floating">
           <select

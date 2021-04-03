@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="justify-content" center>
-      <div class="col col-4 offset-4">
+  <div class="container-fluid">
+    <div class="  justify-content-center ">
+      <div class="col col-6 offset-3 p-5 bg-white  rounded my-5 shadow-sm">
         <h2>Sign Up</h2>
         <div class="form-floating mb-3">
           <input
@@ -61,20 +61,20 @@
           <label for="rol"></label>
         </div>
 
-        <div class="form-group">
-          <button type="button" id="loginbutton" class="btn btn-danger btn-lg">
+        <div class="form-group d-flex justify-content-center" >
+          <button type="button" id="loginbutton" class="btn btn-danger btn-lg ">
             SIGN UP
           </button>
         </div>
       </div>
     </div>
   </div>
-  <hr/>
   <div>
+      <hr/>
     <mdb-modal-footer class="mx-5 pt-3 mb-1">
       
       <p class="font-small grey-text d-flex justify-content-center">
-        ¿Already member?<a href="SignIn" class="blue-text ml-1"> Sign In</a>
+        ¿Already member?&nbsp;<a href="SignIn" class="blue-text ml-1"> Sign In</a>
       </p>
     </mdb-modal-footer>
   </div>
@@ -92,6 +92,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container-fluid{
+
+  background-image: url("../../public/muroblur.png");
+  background-size: cover;
+}
+
 a{
    text-decoration: none;
 }
@@ -122,13 +128,14 @@ a{
 }
 
 #loginbutton {
-  font-size: 1.5em;
-  margin-top: 50px;
+  white-space: nowrap;
+  margin: 50px auto;
   border-radius: 50px;
   padding: 10px 40px;
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
+
 
 .btn-danger {
     color: #fff;
