@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
-    <Header/>
-    <div class="justify-content-center">
-      <div class="col col-4 offset-4">
+  <div class="container-fluid justify-content-center">
+      <div class="col col-6 offset-3 p-5 bg-white rounded my-5 shadow-sm">
         <h2>Forgot Password</h2>
+        <br>
 
         <div class="form-floating mb-3">
           <input
@@ -11,7 +10,7 @@
             class="form-control floatingInput"
             placeholder="name@ejemplo.com"
           />
-          <label for="floatingInput">Email</label>
+          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label>
         </div> 
 
         <!-- <div class="form-floating">
@@ -27,19 +26,18 @@
           <label for="rol"></label>
         </div> -->
 
-        <div class="form-group">
-          <button type="button" id="loginbutton" class="btn btn-danger btn-lg">
+        <div class="form-group d-flex justify-content-center">
+          <button type="button" id="loginbutton" class="btn btn-danger btn-lg">  
             SEND EMAIL
           </button>
         </div>
       </div>
     </div>   
-  </div>
 </template>
 
 <script>
 export default {
-  name: "SignIn",
+  name: "ForgotPassword",
   components: {},
 
   setup() {
@@ -49,6 +47,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/* .container-fluid {
+  background-image: url("../../public/muroblur.png");
+  background-size: cover;
+}
+ */
 a{
   text-decoration: none;
 }
@@ -63,7 +66,7 @@ a{
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
-  border-bottom: 2px solid #23528b;
+  border-bottom: 2px solid #070A2B;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
@@ -71,13 +74,14 @@ a{
   border-radius: none !important;
 }
 .form-control:focus {
-  border-bottom: 2px solid #23528b;
+  border-bottom: 2px solid #070A2B;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
+
 #loginbutton {
-  font-size: 1.5em;
-  margin-top: 50px;
+  white-space: nowrap;
+  margin: 50px auto;
   border-radius: 50px;
   padding: 10px 40px;
   border: none;

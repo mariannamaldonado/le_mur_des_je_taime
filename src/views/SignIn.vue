@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
-    <div class="justify-content-center">
-      <div class="col col-4 offset-4">
+  <div class="container-fluid justify-content-center">
+      <div class="col col-6 offset-3 p-5 bg-white rounded shadow-sm">
         <h2>Sign In</h2>
 
         <div class="form-floating mb-3">
@@ -10,7 +9,7 @@
             class="form-control floatingInput"
             placeholder="name@ejemplo.com"
           />
-          <label for="floatingInput">Email</label>
+          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label>
         </div>
 
         <div class="form-floating">
@@ -19,7 +18,7 @@
             class="form-control floatingInput"
             placeholder="Contraseña"
           />
-          <label for="floatingInput">Contraseña</label>
+          <label for="floatingInput"><i class="fas fa-unlock-alt"></i>&nbsp;Contraseña</label>
         </div>
 
         <!-- <div class="form-floating">
@@ -34,8 +33,8 @@
           </select>
           <label for="rol"></label>
         </div> -->
-        <br>
-        <div class="form-floating ">
+        <br />
+        <div class="form-floating">
           <div class="d-flex justify-content-center">
             <a href="ForgotPassword"><h6>¿Has olvidado tu contraseña?</h6></a>
           </div>
@@ -54,9 +53,9 @@
             or Sign In with:
           </p>
           <p class="social d-flex justify-content-center">
-            <img src="../../public/google.png" alt="Google">
-            <img src="../../public/facebook.png"  alt="Facebook">
-            <img src="../../public/instagram.png" alt="Instagram">
+            <img src="../../public/google.png" alt="Google" />
+            <img src="../../public/facebook.png" alt="Facebook" />
+            <img src="../../public/instagram.png" alt="Instagram" />
           </p>
           <div class="row my-3 d-flex justify-content-center">
             <mdb-btn
@@ -78,18 +77,18 @@
             /></mdb-btn>
           </div>
         </div>
+        <hr />
+        <div>
+          <mdb-modal-footer class="mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-center">
+              ¿Not a member?&nbsp;<a href=" SignUp" class="blue-text ml-1">
+                Sign Up</a
+              >
+            </p>
+          </mdb-modal-footer>
+        </div>
       </div>
     </div>
-  </div>
-<hr/>
-  <div>
-    <mdb-modal-footer class="mx-5 pt-3 mb-1">
-      
-      <p class="font-small grey-text d-flex justify-content-center">
-        ¿Not a member?&nbsp;<a href=" SignUp" class="blue-text ml-1"> Sign Up</a>
-      </p>
-    </mdb-modal-footer>
-  </div>
 </template>
 
 <script>
@@ -104,10 +103,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.social img{
-width: 40px;
-height: 30px;
-padding: 0 5px;
+/* .container-fluid {
+  background-image: url("../../public/muroblur.png");
+  background-size: cover;
+} */
+
+.social img {
+  width: 40px;
+  height: 30px;
+  padding: 0 5px;
 }
 a {
   text-decoration: none;
@@ -123,7 +127,7 @@ a {
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
-  border-bottom: 2px solid #23528b;
+  border-bottom: 2px solid #070A2B;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
@@ -131,7 +135,7 @@ a {
   border-radius: none !important;
 }
 .form-control:focus {
-  border-bottom: 2px solid #23528b;
+  border-bottom: 2px solid #070A2B;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 

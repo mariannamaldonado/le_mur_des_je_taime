@@ -3,7 +3,6 @@
     
     <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
-
       <button
         id="sidebarCollapse"
         type="button"
@@ -63,8 +62,10 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-            Gallery
+           <i class="fas fa-envelope-open-text"></i>
+           &nbsp;<router-link to="/Contacto"
+              >Contact</router-link
+            >
           </a>
         </li>
       </ul>
@@ -106,19 +107,19 @@
       
       <router-view />
       <!-- Demo content -->
-      <h2 class="display-4 text-white">Bootstrap vertical nav</h2>
-      <p class="lead text-white mb-0">
-        Build a fixed sidebar using Bootstrap 4 vertical navigation and media
+      <!-- <h2 class="display-4 text-white">Bootstrap vertical nav </h2>
+      <p class="lead text-white mb-0">-->
+       <!--  Build a fixed sidebar using Bootstrap 4 vertical navigation and media
         objects.
       </p>
-      <p class="lead text-white">
-        Snippet by
+      <p class="lead text-white"> -->
+       <!--  Snippet by
         <a href="https://bootstrapious.com/snippets" class="text-white">
           <u>Bootstrapious</u></a
-        >
-      </p>
-      <div class="separator"></div>
-      <div class="row text-white">
+        > 
+      </p>-->
+      
+      <!-- <div class="row text-white">
         <div class="col-lg-7">
           <p class="lead">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -200,7 +201,7 @@
             aliquip ex ea commodo consequat. Duis aute irure dolor.
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- End demo content -->
   </div>
@@ -224,6 +225,12 @@ export default {
 
 
 <style lang="scss" scoped>
+.container-fluid {
+  background: url("../public/muroblur.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  background-size: 100% 100%;
+}
 a {
   text-decoration: none;
   color: #0f1433;
@@ -233,6 +240,7 @@ a {
   background-image: url("../public/muro.jpg");
   background-size: cover;
   height: 80px;
+  
 }
 
 .vertical-nav {
