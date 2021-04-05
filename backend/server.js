@@ -17,23 +17,6 @@ app.use(session({
     saveUninitialized: true
 }))
 
-// rutas prvadas al iniciar sesion
-// let rutasPrivadas=[
-//     '/users/guardar',
-//     ]
-//     app.use((req,res,next)=>{
-//         if(req.session.autenticado){ 
-//          res.locals.session=req.session
-//           next()
-//         }else{
-//             if(rutasPrivadas.indexOf(req.url)!=-1){
-//                 res.render('acceso-denegado')
-//             }else next()
-//         }
-//       })
- 
-
-
 //middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))

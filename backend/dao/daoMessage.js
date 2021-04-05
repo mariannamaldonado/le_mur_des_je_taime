@@ -15,7 +15,7 @@ daoMessage.save = (message)=>{
 //funcion para eliminar
 daoMessage.delete = (id)=>{
     Message.findOneAndRemove({_id:id},(data)=>{
-        console.log("registro eliminado")
+        console.log("mensaje eliminado")
     })
 }
 

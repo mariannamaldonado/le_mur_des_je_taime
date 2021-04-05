@@ -28,18 +28,12 @@ rtMessage.post('/delete/:id',(req,res)=>{
 })
 
 rtMessage.post('/messages/:_id', async function(req,res){
-    //crear mensaje para usuario
-    const MessageNew = new Message(req.body)
-    //buscar usuario para asignar mensaje
-    const user = await User.findById(req.params)
-    //asignar al usuario como autor 
-    MessageNew.user = user
-    //guardar el mensaje para el usuario
-    await MessageNew.save()
-    //asignar el mensaje dentro del array 
-    user.messages.push(MessageNew)
-    //guardar al usuario con su mensaje nuevo
-    await user.save()
+    const MessageNew = new Message(req.body)     //crear mensaje para usuario
+    const user = await User.findById(req.params)     //buscar usuario para asignar mensaje
+    MessageNew.user = user      //asignar al usuario como autor 
+    await MessageNew.save()      //guardar el mensaje para el usuario
+    user.messages.push(MessageNew)       //asignar el mensaje dentro del array 
+    await user.save()       //guardar al usuario con su mensaje nuevo
     res.json({res: 'ok'})
  
 })

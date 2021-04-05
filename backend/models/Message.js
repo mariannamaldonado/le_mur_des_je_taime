@@ -4,7 +4,7 @@ const { Schema } = mongoose
 const schemaMessage = new Schema({
     message: { type: String, required: false },
     author: { type: String, required: false},
-    encryption: { type: Boolean, default: true },
+    encryption: { type: Boolean, default: false },
     encryption_key: { type: Boolean, default: false },
     properties: { type: String, default: "Times New Roman" },
     coordinates: { type: Array},
