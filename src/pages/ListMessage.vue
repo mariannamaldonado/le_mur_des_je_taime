@@ -76,16 +76,12 @@
     </li>
   </ul>
 </div>
- <!-- <ContentFooter/> -->
 </template>
 
 <script>
-// import ContentFooter from '@/components/ContentFooter'
 export default {
   name: "ForgotPassword",
-  components: {
-    // ContentFooter
-  },
+  components: {},
 
   setup() {
     return {

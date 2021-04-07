@@ -1,4 +1,5 @@
 <template>
+<LoginBox/>
   <div class="prueba">
       <div class="formulario">
         <h1>UsersManager</h1>
@@ -26,12 +27,14 @@
 </template>
 <script>
 import PasswordHide from '@/components/PasswordHide'
+import LoginBox from '@/components/LoginBox'
 import { ref, reactive, computed, onMounted } from 'vue'
         
 export default {
     name:'UsersView',
     components:{
-        PasswordHide
+        PasswordHide,
+        LoginBox
     },
     props:{
 

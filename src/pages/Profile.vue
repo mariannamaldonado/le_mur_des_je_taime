@@ -138,7 +138,7 @@
   </section>
        </div>
       </div>
- 
+ <ContentFooter/>
 </template>
 <script>
 

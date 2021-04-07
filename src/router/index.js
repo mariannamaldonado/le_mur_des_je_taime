@@ -2,7 +2,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contacto from '../views/Contacto.vue'
-import UserProfile from '../views/UserProfile.vue'
+import ForgotPassword from '../views/ForgotPassword.vue'
+import UsersView from '../views/UsersView.vue'
+
+
+
+import NewMessage from '../views/NewMessage.vue'
+import UserAdmin from '../views/UserAdmin.vue'
+import ListMessage from '../views/ListMessage.vue'
+
+import Profile from "@/pages/Profile.vue";
 
 const routes = [ 
   {
@@ -21,9 +30,36 @@ const routes = [
     component: Contacto
   },
   {
-    path: '/UserProfile',
-    name: 'UserProfile',
-    component: UserProfile
+    path: '/ForgotPassword',
+    name: 'ForgotPassword',
+    component: ForgotPassword
+  },
+  {
+    path: '/UsersView',
+    name: 'UsersView',
+    component: UsersView
+  },
+  
+  {
+    path: '/Profile',
+    name: 'Profile',
+    component: Profile
+  },
+  {
+    path: '/ListMessage',
+    name: 'ListMessage',
+    component: ListMessage
+  },
+  {
+    path: '/NewMessage',
+    name: 'NewMessage',
+    component: NewMessage
+  },
+
+  {
+    path: '/UserAdmin',
+    name: 'UserAdmin',
+    component: UserAdmin
   },
   {
     path: '/users',
@@ -38,6 +74,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
 export default router
