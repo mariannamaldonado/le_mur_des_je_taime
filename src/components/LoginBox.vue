@@ -7,6 +7,8 @@
         <button @click="login" class="btn btn-info">Login</button>
       </div>
     </div>
+           
+
     <div v-else>
       Bienvenid@ {{ user.nombre }} {{user.apellidos}} 
         <button class="btn btn-warning" @click="logout">Salir</button>

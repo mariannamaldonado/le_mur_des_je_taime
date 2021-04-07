@@ -1,6 +1,7 @@
 const express = require('express')
 const rtUsers = express.Router()
 const daoUsers = require('../dao/daoUsers')
+var passport = require('passport'); 
 
 rtUsers.post('/signup',(req,res)=>{
     daoUsers.signup(req.body)
@@ -44,5 +45,26 @@ rtUsers.post("/send-email", (req, res) => {
     console.log("Email enviado")
     res.send('menasaje enviado')
 })
+
+rtUsers.get('/auth/facebook', (req, res) => {
+    passport.authenticate('facebook')
+    res.send('login Facebook') 
+
+})
+
+rtUsers.get('/auth/facebook/callback', passport.authenticate('facebook',
+  { successRedirect: '/', failureRedirect: '/login' }
+))
+
+rtUsers.get('/auth/google', (req, res) => {
+  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' })
+  res.send('login Google') 
+})
+
+rtUsers.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 module.exports= rtUsers

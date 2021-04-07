@@ -9,14 +9,11 @@ const schemaUser = new Schema({
     email: { type: String, required: true, index: true, unique: true },
     password: { type: String, required: true },
     active: { type: Boolean, default: false },
-    provider: { type: String, default: 'local' },
+    provider_id: { type: String, unique: true},
     role: { type: Boolean, default: true },
-    avatar:{type:String,default: "/images/avatar.jpg"},
-    messages:[{
-        type: Schema.Types.Array,
-        ref: 'Message'
-    }]
-})
+    avatar: {type:String, default: "/images/avatar.jpg"},
+    createdAt: {type: Date, default: Date.now}})
+
 schemaUser.index({ email: 1 }, { unique: true })
 
 schemaUser.pre('save', function (next) {

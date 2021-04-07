@@ -32,10 +32,11 @@ rtMessage.post('/messages/:_id', async function(req,res){
     const user = await User.findById(req.params)     //buscar usuario para asignar mensaje
     MessageNew.user = user      //asignar al usuario como autor 
     await MessageNew.save()      //guardar el mensaje para el usuario
-    user.messages.push(MessageNew)       //asignar el mensaje dentro del array 
-    await user.save()       //guardar al usuario con su mensaje nuevo
     res.json({res: 'ok'})
  
 })
+
+
+
 
 module.exports= rtMessage
