@@ -4,6 +4,7 @@
  <div class="topnav">
   <div class="topnav-right">
     <a href="#search">
+      <p class="text-monospace">Profile</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
         </svg>
@@ -11,6 +12,7 @@
       <!-- Perfil -->
       </a>
     <a href="#about">
+      <p class="text-monospace">Enviar mensaje</p>
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
   <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
   <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -18,6 +20,7 @@
       <!-- Enviar mensaje -->
       </a>
     <a href="#about"> 
+      <p class="text-monospace">Lista de mensajes</p>
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list-stars" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
   <path d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"/>
@@ -38,40 +41,56 @@
     <hr class="border" />
 
  <div class="container">
+
+   <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-danger" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+          
+        </div>
+      </div>
+    </form>
+    <hr class="border" />
   <h2>Lista de mensajes enviados <small></small></h2>
   <ul class="responsive-table">
     <li class="table-header">
-      <div class="col col-1">Username</div>
+      <div class="col col-1">Nombre</div>
       <div class="col col-2">Email</div>
-      <div class="col col-3">Nombre</div>
-      <div class="col col-4">Mensaje</div>
+      <div class="col col-3">Mensaje</div>
+      <div class="col col-4"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg></div>
     </li>
     <li class="table-row">
-      <div class="col col-1" data-label="Age">pep2</div>
-      <div class="col col-2" data-label="Occupation">pepe@gmail.com</div>
-      <div class="col col-3" data-label="Name">Peter</div>
-      <div class="col col-4" data-label="Location">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      <div class="col col-1" data-label="name">Guido leonardo</div>
+      <div class="col col-2" data-label="email">Guido@gmail.com</div>
+      <div class="col col-3" data-label="message">Ciao Bella, Siete l”amore della mia vita.  </div>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
       </div>
     </li>
        <li class="table-row">
-      <div class="col col-1" data-label="Age">pep2</div>
-      <div class="col col-2" data-label="Occupation">pepe@gmail.com</div>
-      <div class="col col-3" data-label="Name">Peter</div>
-      <div class="col col-4" data-label="Location">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      <div class="col col-1" data-label="name">Celine</div>
+      <div class="col col-2" data-label="email">celine@gmail.com</div>
+      <div class="col col-3" data-label="message">Tu es mon soleil.</div>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button> 
       </div>
     </li>
        <li class="table-row">
-      <div class="col col-1" data-label="Age">pep2</div>
-      <div class="col col-2" data-label="Occupation">pepe@gmail.com</div>
-      <div class="col col-3" data-label="Name">Peter</div>
-      <div class="col col-4" data-label="Location">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      <div class="col col-1" data-label="name">peter</div>
+      <div class="col col-2" data-label="email">peter@gmail.com</div>
+      <div class="col col-3" data-label="message">Ilove you so so so so so so so much.</div>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
       </div>
     </li>
        <li class="table-row">
-      <div class="col col-1" data-label="Age">pep2</div>
-      <div class="col col-2" data-label="Occupation">pepe@gmail.com</div>
-      <div class="col col-3" data-label="Name">Peter</div>
-      <div class="col col-4" data-label="Location">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      <div class="col col-1" data-label="name">Fatima</div>
+      <div class="col col-2" data-label="email">Fatima@gmail.com</div>
+      <div class="col col-3" data-label="message"> Eu te amo.</div>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
       </div>
     </li>
   </ul>
@@ -111,7 +130,7 @@ export default {
 }
 
 .topnav a:hover {
-  background-color: #3f4f66;
+  background-color: #b7c8e0;
   color: black;
 }
 
@@ -174,7 +193,7 @@ h2 small {
 }
 
 .responsive-table .table-header {
-  background-color: #3f4f66;
+  background-color: #b7c8e0;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -184,16 +203,16 @@ h2 small {
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 .responsive-table .col-1 {
-  flex-basis: 10%;
+  flex-basis: 14%;
 }
 .responsive-table .col-2 {
-  flex-basis: 40%;
+  flex-basis: 25%;
 }
 .responsive-table .col-3 {
-  flex-basis: 25%;
+  flex-basis: 50%;
 }
 .responsive-table .col-4 {
-  flex-basis: 25%;
+  flex-basis: 10%;
 }
 @media all and (max-width: 767px) {
   .responsive-table .table-header {
@@ -210,7 +229,7 @@ h2 small {
     padding: 10px 0;
   }
   .responsive-table .col:before {
-    color: #6c7a89;
+    color: #b7c8e0;
     padding-right: 10px;
     content: attr(data-label);
     flex-basis: 50%;
