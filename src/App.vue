@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
-         <button
+      <button
         id="sidebarCollapse"
         type="button"
         class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
@@ -15,7 +15,6 @@
       &nbsp;-->
         </div>
       </div>
-
       <!--   <p
         class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
       ></p> -->
@@ -25,7 +24,6 @@
       </div>
       <br />
       <ul class="nav flex-column bg-white mb-0">
-      
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-home"></i>
@@ -64,7 +62,6 @@
             &nbsp;<router-link to="/Contact">Contacto</router-link>
           </a>
         </li>
-       
       </ul>
       <!-- 
   <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
@@ -223,7 +220,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-fluid {
-  //background: url("../public/muroblur.png") no-repeat center center fixed;
+  background: url("../public/muroblur.png") no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   background-size: 100% 100%;
