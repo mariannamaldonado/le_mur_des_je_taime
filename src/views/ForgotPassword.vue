@@ -28,7 +28,7 @@
 
         <div class="form-group d-flex justify-content-center">
           <button type="button" id="loginbutton" class="btn btn-danger btn-lg">  
-            SEND EMAIL
+            ENVIAR EMAIL
           </button>
         </div>
       </div>
@@ -79,7 +79,16 @@ a{
 }
 
 
-#loginbutton {
+#loginbutton{
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+
+#loginbutton:hover {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;
@@ -87,6 +96,7 @@ a{
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
+
 
 .btn-danger {
   color: #fff;

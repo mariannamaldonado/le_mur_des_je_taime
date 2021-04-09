@@ -1,10 +1,11 @@
 <template>
   <div class="container-fluid justify-content-center">
       <div class="col col-6 offset-3 p-5 bg-white rounded shadow-sm">
-        <h2>Sign In</h2>
+        <h2>INICIO DE SESIÓN</h2>
 
-        <div class="form-floating mb-3">
+        <div class="form-floating mb-3" v-if="!user.email">
           <input
+            v-model="email"
             type="text"
             class="form-control floatingInput"
             placeholder="name@ejemplo.com"
@@ -14,6 +15,7 @@
 
         <div class="form-floating">
           <input
+            v-model="password"
             type="text"
             class="form-control floatingInput"
             placeholder="Contraseña"
@@ -41,8 +43,8 @@
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <button type="button" id="loginbutton" class="btn btn-danger btn-lg">
-            SIGN IN
+          <button @click="login" type="button" id="loginbutton" class="btn btn-danger btn-lg">
+            INICIAR SESIÓN
           </button>
         </div>
         <br />
@@ -50,7 +52,7 @@
           <p
             class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"
           >
-            or Sign In with:
+            o Iniciar sesión con:
           </p>
           <p class="social d-flex justify-content-center">
             <img src="../../public/google.png" alt="Google" />
@@ -92,16 +94,50 @@
 </template>
 
 <script>
+import { ref, reactive, computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  name: "SignIn",
-  components: {},
+  name: "SingIn",
+ components: {},
 
   setup() {
-    return {};
+    const store = useStore();
+    let email = ref("");
+    let password = ref("");
+    let user = computed(() => {
+      return store.getters.getUser;
+    });
+
+    function login() {
+      fetch("http://localhost:8081/api/user/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value,
+        }),
+        headers: { "Content-Type": "Application/json" },
+      })
+        .then((resp) => resp.json())
+        .then((user) => {
+          if (user) store.commit("setUser", user)
+          else alert("Usuario o password incorrectos")
+        })
+    }
+
+    function logout() {
+        store.commit("setUser", {})
+    }
+
+    return {
+      email,
+      password,
+      login, 
+      logout,
+      user,
+    };
   },
 };
 </script>
-
 <style lang="scss" scoped>
 /* .container-fluid {
   background-image: url("../../public/muroblur.png");
@@ -139,7 +175,16 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-#loginbutton {
+#loginbutton{
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+
+#loginbutton:hover {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;
