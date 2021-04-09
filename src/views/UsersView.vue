@@ -1,5 +1,4 @@
 <template>
-<LoginBox/>
   <div class="prueba">
       <div class="formulario">
         <h1>UsersManager</h1>
@@ -27,17 +26,14 @@
 </template>
 <script>
 import PasswordHide from '@/components/PasswordHide'
-import LoginBox from '@/components/LoginBox'
 import { ref, reactive, computed, onMounted } from 'vue'
         
 export default {
     name:'UsersView',
     components:{
-        PasswordHide,
-        LoginBox
+        PasswordHide
     },
     props:{
-
     },
     setup(){
         let firstname=ref("")
@@ -45,11 +41,9 @@ export default {
         let email=ref("")
         let password=ref("")
         let usuarios=reactive([])
-
         onMounted(()=> {
             listar()
         })
-
         function eliminar(idSeleccionado){
             fetch('http://localhost:8081/api/eliminar',{
                 method:'POST',
@@ -60,7 +54,6 @@ export default {
             }).then(resp=>resp.json())
                 .then(datos=>listar())
         }
-
         function listar(){
             fetch('http://localhost:8081/api/listar')
                 .then(resp=>resp.json())
@@ -71,7 +64,6 @@ export default {
                     })
                 })            
         }
-
         function enviar(){
             fetch('http://localhost:8081/api/guardar',{
                 method: 'POST',
@@ -85,7 +77,6 @@ export default {
             }).then(resp=>resp.json())
                 .then(datos=>listar())
         }
-
         return {
             firstname,lastname,email,password,
             enviar,

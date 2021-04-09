@@ -2,16 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contacto from '../views/Contacto.vue'
+import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
-import UsersView from '../views/UsersView.vue'
 
 
-
-import NewMessage from '../views/NewMessage.vue'
-import UserAdmin from '../views/UserAdmin.vue'
-import ListMessage from '../views/ListMessage.vue'
-
+import NewMessage from '@/pages/NewMessage.vue'
+import UserAdmin from '@/pages/UserAdmin.vue'
 import Profile from "@/pages/Profile.vue";
+import ListMessage from '@/pages/ListMessage.vue'
 
 const routes = [ 
   {
@@ -30,15 +29,28 @@ const routes = [
     component: Contacto
   },
   {
+    path: '/users',
+    name: 'Users',
+    component: function () {
+      return import('../views/UsersView.vue')
+    },
+  },
+  {
+    path: '/SignIn',
+    name: 'SignIn',
+    component: SignIn
+  },
+  {
+    path: '/SignUp',
+    name: 'SignUp',
+    component: SignUp
+  },
+  {
     path: '/ForgotPassword',
     name: 'ForgotPassword',
     component: ForgotPassword
   },
-  {
-    path: '/UsersView',
-    name: 'UsersView',
-    component: UsersView
-  },
+ 
   
   {
     path: '/Profile',
@@ -61,13 +73,7 @@ const routes = [
     name: 'UserAdmin',
     component: UserAdmin
   },
-  {
-    path: '/users',
-    name: 'Users',
-    component: function () {
-      return import('../views/UsersView.vue')
-    },
-  }
+ 
 
 ]
 

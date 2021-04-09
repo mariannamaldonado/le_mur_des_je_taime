@@ -14,7 +14,7 @@
           </p>
           <a href="#" class="btn">Read More</a>
         </div>
-        <img src="@/assets/img/banner10.jpg" alt="" />
+        <img src="@/assets/img/banner5.jpg" alt="" />
       </div>
     </section>
 
@@ -24,11 +24,11 @@
         <div class="section-b-inner py-5">
           <h3 class="text-2">Le Mur</h3>
           <h2 class="text-5 mt-1">¿En cuántos idiomas puedes decir 'te amo'?</h2>
-          <p class="mt-1">
+          <!-- <p class="mt-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
             repudiandae laboriosam quia, error tempore porro ducimus voluptate
             laborum nostrum iure.
-          </p>
+          </p> -->
         </div>
       </div>
     </section>
@@ -39,20 +39,20 @@
         <a href="#" class="big">
           <img src="@/assets/img/banner12.jpg" alt="" />
         </a>
-        <a href="https://i.ibb.co/4pBbhfY/gal39834.jpg" class="big">
+        <a href="#" class="big">
           <img src="@/assets/img/banner21.jpg" alt="" />
         </a>
-        <a href="https://i.ibb.co/xSnHP7g/gal43884.jpg" class="big"
-          ><img src="@/assets/img/banner10.jpg" alt="" /></a>
+        <a href="#" class="big"
+          ><img src="@/assets/img/5.png" alt="" /></a>
 
-        <a href="https://i.ibb.co/QN6Bnrb/gal4958.jpg" class="big"
+        <a href="#" class="big"
           ><img src="@/assets/img/4.png" alt="" /></a>
 
-        <a href="https://i.ibb.co/dGZvj75/gal4545.jpg" class="big">
+        <a href="#" class="big">
           <img src="@/assets/img/5.png" alt=""
         /></a>
-        <a href="https://i.ibb.co/S6FVFNt/gal74744.jpg" class="big"
-          ><img src="@/assets/img/banner21.jpg" alt=""
+        <a href="#" class="big"
+          ><img src="@/assets/img/banner10.jpg" alt=""
         /></a>
       </div>
     </section>
@@ -76,9 +76,9 @@
           <h3></h3>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="http://localhost:8082/about">Nosotros</a></li>
+            <li><a href="http://localhost:8082/contacto">Contacto</a></li>
             <li><a href="#">Políticas de privacidad</a></li>
-            <li><a href="#">Terms of Service</a></li>
           </ul>
         </div>
         <div>
