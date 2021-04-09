@@ -175,16 +175,7 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-#loginbutton{
-  background: transparent;
-  white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-}
-
-
-#loginbutton:hover {
+#loginbutton {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;

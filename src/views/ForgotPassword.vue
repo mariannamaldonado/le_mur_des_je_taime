@@ -79,16 +79,7 @@ a{
 }
 
 
-#loginbutton{
-  background: transparent;
-  white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-}
-
-
-#loginbutton:hover {
+#loginbutton {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;
@@ -96,7 +87,6 @@ a{
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
-
 
 .btn-danger {
   color: #fff;
