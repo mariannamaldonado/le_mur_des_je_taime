@@ -4,11 +4,12 @@ const daoMessage = require('../dao/daoMessage')
 const Message = require('../models/Message')
 const User = require('../models/User')
 
-rtMessage.post('/save',(req,res)=>{
-    daoMessage.save(req.body)
+rtMessage.post('/save/:id',(req,res)=>{
+    daoMessage.save(req.body, req.params.id)
         .then(message=>res.json(message))
         res.send('mensaje guardado')
-    })
+
+})
 
 rtMessage.get('/search/:id',(req,res)=>{
     daoMessage.findById(req.params.id)
@@ -27,14 +28,16 @@ rtMessage.post('/delete/:id',(req,res)=>{
     daoMessage.delete(req.params.id)
 })
 
-rtMessage.post('/messages/:_id', async function(req,res){
+/*anny has pruebas*/
+/*rtMessage.post('/messages/:_id', async function(req,res){
     const MessageNew = new Message(req.body)     //crear mensaje para usuario
     const user = await User.findById(req.params)     //buscar usuario para asignar mensaje
     MessageNew.user = user      //asignar al usuario como autor 
     await MessageNew.save()      //guardar el mensaje para el usuario
     res.json({res: 'ok'})
  
-})
+})*/
+
 
 
 

@@ -5,14 +5,8 @@ var passport = require('passport');
 
 rtUsers.post('/signup',(req,res)=>{
     daoUsers.signup(req.body)
-        .then(user=>res.json(user))
-})
-
-rtUsers.post('/save',(req,res)=>{
-    daoUsers.signup(req.body)
-        .then(user=>res.json(user))
+        .then(user=>res.json(user)) 
         res.send('usuario guardado')
-
 })
 
 rtUsers.get('/listar',(req,res)=>{

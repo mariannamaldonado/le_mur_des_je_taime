@@ -1,4 +1,6 @@
 const User = require('../models/User')
+const mailer = require('../modules/mailer')
+
 
 const daoUsers={}
 
@@ -7,6 +9,7 @@ daoUsers.signup = (user)=>{
     return new Promise((resolved)=>{
         let newUser = new User(user)
         newUser.save().then(user=>{
+            mailer.send(user.email)
             resolved(user)
         })    
     })
