@@ -55,45 +55,80 @@
     </form>
     <hr class="border" />
   <h2>Lista de mensajes enviados <small></small></h2>
+  Seleccionar
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-check2"></i></button>
+    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Todas</a>
+      <a class="dropdown-item" href="#">Encriptado</a>
+      <a class="dropdown-item" href="#">Publico</a>
+    </div>
+  </div>
+  <div>
+    &nbsp; 
+ <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+ &nbsp; 
+<button class="btn btn-info btn-xs"><i class="bi bi-arrow-repeat"></i> </button>
+  </div>
+</div>
+  <table class="table table-advance table-hover">
+    <thead>
+      <tr>
   <ul class="responsive-table">
     <li class="table-header">
+      <div class="col col-0"><i class="bi bi-ui-checks"></i></div>
       <div class="col col-1">Nombre</div>
       <div class="col col-2">Email</div>
       <div class="col col-3">Mensaje</div>
-      <div class="col col-4"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-</svg></div>
+      <div class="col col-4"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg></div>
     </li>
+    
+
     <li class="table-row">
-      <div class="col col-1" data-label="name">Guido leonardo</div>
+      <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
+   
+      <div class="col col-1" data-label="name">Leonardo</div>
       <div class="col col-2" data-label="email">Guido@gmail.com</div>
       <div class="col col-3" data-label="message">Ciao Bella, Siete l”amore della mia vita.  </div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
       </div>
     </li>
        <li class="table-row">
+          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
       <div class="col col-1" data-label="name">Celine</div>
       <div class="col col-2" data-label="email">celine@gmail.com</div>
       <div class="col col-3" data-label="message">Tu es mon soleil.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button> 
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
       </div>
     </li>
        <li class="table-row">
+          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
       <div class="col col-1" data-label="name">peter</div>
       <div class="col col-2" data-label="email">peter@gmail.com</div>
       <div class="col col-3" data-label="message">Ilove you so so so so so so so much.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
       </div>
     </li>
        <li class="table-row">
+          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
       <div class="col col-1" data-label="name">Fatima</div>
       <div class="col col-2" data-label="email">Fatima@gmail.com</div>
       <div class="col col-3" data-label="message"> Eu te amo.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-sm active"> Eliminar</button>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
       </div>
     </li>
+    
   </ul>
+  </tr>
+  </thead>
+  </table>
 </div>
 </template>
 
@@ -202,11 +237,14 @@ h2 small {
   background-color: #f1f2f5;
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
+.responsive-table .col-0 {
+  flex-basis: 5%;
+}
 .responsive-table .col-1 {
-  flex-basis: 14%;
+  flex-basis: 15%;
 }
 .responsive-table .col-2 {
-  flex-basis: 25%;
+  flex-basis: 20%;
 }
 .responsive-table .col-3 {
   flex-basis: 50%;
