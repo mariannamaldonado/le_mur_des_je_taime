@@ -16,7 +16,7 @@ export default createStore({
   },
   actions: {
     fetchUsers(mutations){
-      fetch('http://localhost:8081/api/listar')
+      fetch('http://localhost:8081/api/users/listar')
         .then(resp=>resp.json())
         .then(datos=>{
           mutations.commit('setUser',datos[0])

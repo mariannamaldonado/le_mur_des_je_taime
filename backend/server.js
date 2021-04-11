@@ -5,7 +5,6 @@ var session = require('express-session')
 const rtMain = require('./routers/rtMain')
 const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
-
 //base de datos
 const conexion = require('./mongodb')
 conexion.on('error',console.error.bind(console,"Error de conexion mongo"))
@@ -17,6 +16,25 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }))
+
+// rutas prvadas al iniciar sesion
+// let rutasPrivadas=[
+//     '/users/guardar',
+//     '/users/nuevo',
+//     '/users/listado'
+//     ]
+//     app.use((req,res,next)=>{
+//         if(req.session.autenticado){ 
+//          res.locals.session=req.session
+//           next()
+//         }else{
+//             if(rutasPrivadas.indexOf(req.url)!=-1){
+//                 res.render('acceso-denegado')
+//             }else next()
+//         }
+//       })
+ 
+
 
 //middlewares
 app.use(express.json())

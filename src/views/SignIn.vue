@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="container-fluid justify-content-center">
       <div class="col col-6 offset-3 p-5 bg-white rounded shadow-sm">
@@ -90,12 +91,22 @@
         </div>
       </div>
     </div>
+=======
+<template> 
+  <div> 
+    <LoginBox />
+  </div>
+>>>>>>> origin/backend-crud
 </template>
 
 <script>
+import LoginBox from '@/components/LoginBox'
+
 export default {
   name: "SignIn",
-  components: {},
+  components: {
+    LoginBox
+  },
 
   setup() {
     return {};
