@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "Contacto",
+  name: "Contact",
   components: {},
   setup() {
     return {

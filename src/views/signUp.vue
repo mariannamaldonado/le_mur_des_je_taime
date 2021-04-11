@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
 <<<<<<< HEAD
   <div class="container-fluid justify-content-center">
@@ -84,6 +85,11 @@
     <div class="form-submit">
       <button @click="enviar" class="btnLogin">Registrate</button>
     </div>
+=======
+<template> 
+  <div>
+    <h1>Crear nueva cuenta</h1>
+>>>>>>> backend-crud
   </div>
 >>>>>>> origin/backend-crud
 </template>
@@ -152,6 +158,7 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <style lang="scss" scoped>
 /* .container-fluid {
@@ -264,6 +271,9 @@ border: 1px solid #8E97FD;
 box-sizing: border-box;
 border-radius: 40px;
 }
+=======
+<style lang="scss" scoped>
+>>>>>>> backend-crud
 
 >>>>>>> origin/backend-crud
 </style>

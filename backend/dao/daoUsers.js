@@ -1,4 +1,6 @@
 const User = require('../models/User')
+const mailer = require('../modules/mailer')
+
 
 const daoUsers={}
 
@@ -7,6 +9,7 @@ daoUsers.signup = (user)=>{
     return new Promise((resolved)=>{
         let newUser = new User(user)
         newUser.save().then(user=>{
+            mailer.send(user.email)
             resolved(user)
         })    
     })
@@ -21,7 +24,7 @@ daoUsers.listar =()=>{
     })    
 }
 
-//buscar usuario por e-mail
+//buscar usuario por email
 daoUsers.findByEmail=(email)=>{
     return new Promise((resolved) =>{
         User.findOne({ email: email })
@@ -31,7 +34,9 @@ daoUsers.findByEmail=(email)=>{
 
 //función para eliminar usuario
 daoUsers.delete = (id)=>{
+    
     User.findOneAndRemove({_id:id},(data)=>{
+        messages.findOneAndRemove({_id:id})
         console.log("registro eliminado")
     })
 }

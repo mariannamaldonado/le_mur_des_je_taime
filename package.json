@@ -16,8 +16,12 @@
     "jquery": "^3.6.0",
     "jsonld": "^4.0.1",
     "leaflet": "^1.7.1",
+<<<<<<< HEAD
     "material-icons": "^0.5.4",
     "node": "^15.12.0",
+=======
+    "nodemailer": "^6.5.0",
+>>>>>>> backend-crud
     "vue": "^3.0.0",
     "vue-clickaway": "^2.1.0",
     "vue-notifyjs": "^0.3.0",
