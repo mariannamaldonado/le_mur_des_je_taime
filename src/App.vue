@@ -212,6 +212,9 @@ export default {
     $("#sidebarCollapse").on("click", function () {
       $("#sidebar, #content").toggleClass("active");
     });
+     $(".nav-item .nav-link").on("click", function () {
+      $("#sidebar, #content").toggleClass("active");
+    });
   },
 };
 </script>
@@ -271,14 +274,16 @@ a {
 }
 
 @media (max-width: 768px) {
+  
   #sidebar {
-    position: relative;
+    position: absolute;
+    left: 0;
     margin-left: -17rem;
   }
 
   #sidebarCollapse {
     position: absolute;
-    right: 0;
+    right: -70px;
     top: 10px;
   }
   #sidebar.active {
