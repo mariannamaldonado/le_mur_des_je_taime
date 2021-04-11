@@ -90,21 +90,21 @@
                               </svg></div>
     </li>
 
-    <li class="table-row">
-      <div class="col col-0" data-label="select" v-for="(usuario,ind) in usuarios" :key="ind">
+    <li class="table-row" v-for="(usuario,ind) in usuarios" :key="ind">
+      
+      <div class="col col-0" data-label="select">
        <input type="checkbox" aria-label="Checkbox for following text input">
-
+      </div>
        
-      <div class="col col-1" data-label="name">{{usuario.firstname}} 
-      </div>
+      <div class="col col-1" data-label="name">{{usuario.firstname}} </div>
       <div class="col col-2" data-label="email">{{usuario.email}}</div>
-      <div class="col col-3" data-label="message">{{usuario.message}} </div>
-      <div class="col col-3" data-label="message">{{usuario._id}} </div>
+      <div class="col col-3" data-label="message">{{usuario.message}} {{usuario._id}} </div>
+     
 
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs" @click="eliminar(usuario._id)" 
-><i class="fa fa-trash-o "></i></button>
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs" @click="eliminar(usuario._id)"> 
+      <i class="fa fa-trash-o "></i></button>
       </div>
-      </div>
+
    
     </li>
     
