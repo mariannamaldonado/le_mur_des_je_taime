@@ -14,8 +14,9 @@
   </div>
 </template>
 
+
 <script>
-import { ref, reactive, computed } from "vue";
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "LoginBox",
@@ -29,7 +30,7 @@ export default {
     });
 
     function login() {
-      fetch("http://localhost:8081/api/login", {
+      fetch("http://localhost:8081/api/users/login", {
         method: "POST",
         body: JSON.stringify({
           email: email.value,
@@ -51,7 +52,8 @@ export default {
     return {
       email,
       password,
-      login, logout,
+      login, 
+      logout,
       user,
     };
   },
