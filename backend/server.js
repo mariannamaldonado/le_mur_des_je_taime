@@ -5,8 +5,9 @@ var session = require('express-session')
 const rtMain = require('./routers/rtMain')
 const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
+var passport = require('passport')
 
-//base de datos
+// conexion bade de datos
 const conexion = require('./mongodb')
 conexion.on('error',console.error.bind(console,"Error de conexion mongo"))
 conexion.once('open',()=>console.log("Conexión mongo OK!!"))
@@ -17,6 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }))
+
 
 //middlewares
 app.use(express.json())
@@ -29,10 +31,16 @@ app.use((req, res, next) => {
     next()
 })
 
+// Configuración de Passport. Lo inicializamos
+// y le indicamos que Passport maneje la Sesión
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 //enrutadores
 app.use('/api',rtMain)
 app.use('/api/users',rtUsers)
-app.use('/api/Message',rtMessage)
+app.use('/api/message',rtMessage)
 
 app.listen(8081,(err)=>{
     if(err) console.log("Errores: ", err)

@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
     <h5 class="text-white h4">Le Mur Des Je T'aime</h5>
@@ -57,6 +58,14 @@
       <LoginBox />
     </div>
 
+=======
+  <div class="navbar d-flex justify-content-between">
+    <div id="nav">
+      
+    </div>
+   
+  </div>
+>>>>>>> backend-crud
   <router-view />
 </template>
 
@@ -68,11 +77,19 @@
   text-align: center;
   color: #2c3e50;
 }
+<<<<<<< HEAD
 // .navbar{
 //   display:inline-flex;
 //   .nav-brand {
 //   }
 // }
+=======
+.navbar{
+  display:inline-flex;
+  // .nav-brand {
+  // }
+}
+>>>>>>> backend-crud
 #nav {
   padding-left: 10px;
 
@@ -88,10 +105,7 @@
 </style>
 
 <script>
-import LoginBox from "@/components/LoginBox";
 export default {
-  components: {
-    LoginBox,
-  },
+ 
 };
 </script>

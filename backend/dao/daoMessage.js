@@ -1,25 +1,40 @@
 const Message = require('../models/Message')
+const User = require('../models/User')
+const daoMessage = {}
 
-const daoMessage={}
-
-//funcion para guardar una entrada
-daoMessage.save = (Message)=>{
-    return new Promise((resolved)=>{
-        let newMessage = new Message(Message)
-        newMessage.save()
-            .then(Message=>resolved(Message))
+//funcion para guardar mensaje
+daoMessage.save = (message, id) => {
+    return new Promise((resolved) => {
+        let MessageNew = new Message(message)
+        MessageNew.user = id
+        MessageNew.save()  
+        
     })
 
 }
 
-//listar todas las entradas
-daoMessage.list =()=>{
-    return new Promise((resolved)=>{
+//funcion para eliminar
+daoMessage.delete = (id) => {
+    Message.findOneAndRemove({ _id: id }, (data) => {
+        console.log("mensaje eliminado")
+        console.log(id);
+    })
+}
+
+//listado de mensajes
+daoMessage.list = () => {
+    return new Promise((resolved) => {
         Message.find()
-            .then(entries=>resolved(entries))
+            .then(entries => resolved(entries))
     })
 }
 
-//falta crear: buscar entrada por ID findById(id)
+// buscar mensaje por ID findById(id)
+daoMessage.findByid = (id) => {
+    return new Promise((resolved) => {
+        Message.findOne({ _id: id })
+            .then(message => resolved(message))
+    })
+}
 
-module.exports=daoMessage
+module.exports = daoMessage
