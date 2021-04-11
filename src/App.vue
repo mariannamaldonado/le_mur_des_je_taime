@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="container-fluid">
     
     <!-- Vertical navbar -->
@@ -45,7 +44,7 @@
          <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
            <i class="fas fa-envelope-open-text"></i>
-           &nbsp;<router-link to="/Contacto"
+           &nbsp;<router-link to="/Contact"
               >Contacto</router-link
             >
           </a>
@@ -85,17 +84,9 @@
      
     </div>
     <!-- End demo content -->
-=======
-  <div class="navbar d-flex justify-content-between">
-    <div id="nav">
-      
-    </div>
-   
->>>>>>> origin/backend-crud
   </div>
 </template>
 
-<<<<<<< HEAD
 <script>
 import $ from "jquery";
 
@@ -158,20 +149,6 @@ a {
 #content.active {
   width: 100%;
   margin: 0;
-=======
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.navbar{
-  display:inline-flex;
-  // .nav-brand {
-  // }
->>>>>>> origin/backend-crud
 }
 
 
@@ -205,7 +182,6 @@ a {
   }
 }
 
-<<<<<<< HEAD
 /*
 * =========================================
 * FOR DEMO PURPOSE
@@ -233,10 +209,3 @@ body {
   color: #aaa;
 }
 </style>
-=======
-<script>
-export default {
- 
-};
-</script>
->>>>>>> origin/backend-crud

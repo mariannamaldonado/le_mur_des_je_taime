@@ -89,42 +89,26 @@
                               <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                               </svg></div>
     </li>
-    
 
     <li class="table-row">
-      <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
+      <div class="col col-0" data-label="select" v-for="(usuario,ind) in usuarios" :key="ind">
+       <input type="checkbox" aria-label="Checkbox for following text input">
+
+       
+      <div class="col col-1" data-label="name">{{usuario.firstname}} 
+      </div>
+      <div class="col col-2" data-label="email">{{usuario.email}}</div>
+      <div class="col col-3" data-label="message">{{usuario.message}} </div>
+      <div class="col col-3" data-label="message">{{usuario._id}} </div>
+
+      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs" @click="eliminar(usuario._id)" 
+><i class="fa fa-trash-o "></i></button>
+      </div>
+      </div>
    
-      <div class="col col-1" data-label="name">Leonardo</div>
-      <div class="col col-2" data-label="email">Guido@gmail.com</div>
-      <div class="col col-3" data-label="message">Ciao Bella, Siete l”amore della mia vita.  </div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-      </div>
-    </li>
-       <li class="table-row">
-          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
-      <div class="col col-1" data-label="name">Celine</div>
-      <div class="col col-2" data-label="email">celine@gmail.com</div>
-      <div class="col col-3" data-label="message">Tu es mon soleil.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-      </div>
-    </li>
-       <li class="table-row">
-          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
-      <div class="col col-1" data-label="name">peter</div>
-      <div class="col col-2" data-label="email">peter@gmail.com</div>
-      <div class="col col-3" data-label="message">Ilove you so so so so so so so much.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-      </div>
-    </li>
-       <li class="table-row">
-          <div class="col col-0" data-label="select"> <input type="checkbox" aria-label="Checkbox for following text input"></div>
-      <div class="col col-1" data-label="name">Fatima</div>
-      <div class="col col-2" data-label="email">Fatima@gmail.com</div>
-      <div class="col col-3" data-label="message"> Eu te amo.</div>
-      <div class="col col-4" data-label="eliminar"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-      </div>
     </li>
     
+
   </ul>
   </tr>
   </thead>
@@ -133,18 +117,79 @@
 </template>
 
 <script>
+import { ref, reactive, onMounted } from "vue";
 export default {
-  name: "ForgotPassword",
+  name: "SignUp",
   components: {},
-
   setup() {
-    return {
-        
+    let firstname = ref("");
+    let lastname = ref("");
+    let username = ref("");
+    let email = ref("");
+    let password = ref("");
+    let message = ref("");
+    let usuarios = reactive([]);
+    onMounted(() => {
+       listar()
+    });
+    function listar() {
+      fetch("http://localhost:8081/api/users/listar")
+        .then((resp) => resp.json())
+        .then((datos) => {
+          usuarios.splice(0);
+          datos.forEach((usuario) => {
+            usuarios.push(usuario);
+          });
+        });
     }
-  },
-}
-</script>
+    function enviar() {
+      fetch("http://localhost:8081/api/users/guardar", {
+        method: "POST",
+        body: JSON.stringify({
+          firstname: firstname.value,
+          lastname: lastname.value,
+          username: username.value,
+          email: email.value,
+          password: password.value,
+          message: message.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((resp) => resp.json())
+        .then((datos) => listar())
+        .catch((error) => console.log(error));
+      //alert("Usuario ya esta registrado");
+    }
 
+     function eliminar(idSeleccionado){
+       console.log(idseleccionado)
+            fetch('http://localhost:8081/api/users/delete',{
+                method:'POST',
+                body: JSON.stringify({
+                    id: idSeleccionado
+                }),
+                headers: {'Content-Type':'application/json'} 
+            })
+            .then(resp=>resp.json())
+                .then(datos=>listar())
+                
+        }
+
+
+    return {
+      firstname,
+      lastname,
+      email,
+      username,
+      password,
+      enviar,
+      usuarios,
+      message, eliminar
+    }
+  
+  },
+};
+</script>
 <style lang="scss" scoped>
 
 
