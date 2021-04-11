@@ -8,9 +8,7 @@ daoMessage.save = (message, id) => {
         let MessageNew = new Message(message)
         MessageNew.user = id
         MessageNew.save()  
-        
     })
-
 }
 
 //funcion para eliminar
