@@ -1,5 +1,4 @@
 const Message = require('../models/Message')
-const User = require('../models/User')
 const daoMessage = {}
 
 //funcion para guardar mensaje
@@ -7,7 +6,7 @@ daoMessage.save = (message, id) => {
     return new Promise((resolved) => {
         let MessageNew = new Message(message)
         MessageNew.user = id
-        MessageNew.save()  
+        MessageNew.save()
     })
 }
 
@@ -28,7 +27,7 @@ daoMessage.list = () => {
 }
 
 // buscar mensaje por ID findById(id)
-daoMessage.findByid = (id) => {
+daoMessage.findById = (id) => {
     return new Promise((resolved) => {
         Message.findOne({ _id: id })
             .then(message => resolved(message))

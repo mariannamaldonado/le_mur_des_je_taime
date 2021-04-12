@@ -9,10 +9,11 @@ const schemaUser = new Schema({
     email: { type: String, required: true, index: true, unique: true },
     password: { type: String, required: true },
     active: { type: Boolean, default: false },
-    provider_id: { type: String, unique: true},
+    provider_id: { type: String },
     role: { type: Boolean, default: true },
-    avatar: {type:String, default: "/images/avatar.jpg"},
-    createdAt: {type: Date, default: Date.now}})
+    avatar: { type: String, default: "/images/avatar.jpg" },
+    createdAt: { type: Date, default: Date.now }
+})
 
 schemaUser.index({ email: 1 }, { unique: true })
 
@@ -25,7 +26,19 @@ schemaUser.pre('save', function (next) {
 })
 
 class User {
-    //set y get
+
+    validar() {
+        let errores = []
+        if (this.firstname == "") errores.push({ error: "El nombre no puede estar vacio." })
+        if (this.lastname == "") errores.push({ error: "El apellido no puede estar vacío." })
+        if (this.username == "") errores.push({ error: "El seudonimo no puede estar vacío." })
+        if (this.email == "") errores.push({ error: "El email no puede estar vacío." })
+        if (this.password == "") errores.push({ error: "El password no puede estar vacío." })
+
+        //validacion el e-mail:
+        let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+        if (!regEmail.test(this.email)) errores.push({ error: "El formato del e-mail no es válido" })
+    }
 
     //privados
     checkPassword(password) {

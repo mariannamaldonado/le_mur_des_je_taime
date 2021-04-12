@@ -21,13 +21,13 @@ module.exports = function(passport) {
 
 	// Configuración del autenticado con Facebook
 	passport.use(new FacebookStrategy({
-		clientID			: config.facebook.id,
-		clientSecret	: config.facebook.secret,
-		callbackURL	 : '/auth/facebook/callback',
-		profileFields : ['id', 'displayName', /*'provider',*/ 'avatar']
+		clientID	  : config.facebook.id,
+		clientSecret  : config.facebook.secret,
+		callbackURL	  : '/auth/facebook/callback',
+		profileFields : ['id', 'displayName', 'provider', 'avatar']
 	}, function(accessToken, refreshToken, profile, done) {
 		// El campo 'profileFields' nos permite que los campos que almacenamos
-		// se llamen igual tanto para si el usuario se autentica por Twitter o
+		// se llamen igual tanto para si el usuario se autentica por Google o
 		// por Facebook, ya que cada proveedor entrega los datos en el JSON con
 		// un nombre diferente.
 		// Passport esto lo sabe y nos lo pone más sencillo con ese campo
@@ -57,7 +57,7 @@ module.exports = function(passport) {
 		callbackURL: "http://www.example.com/auth/google/callback"
 	  },
 	  function(token, tokenSecret, profile, done) {
-		  User.findOrCreate({ provider_id: profile.id }, function (err, user) {
+	  User.findOrCreate({provider_id: profile.id}, function (err, user) {
 			if(err) throw(err);
 			if(!err && user!= null) return done(null, user);
 			
