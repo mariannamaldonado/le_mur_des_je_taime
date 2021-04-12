@@ -22,12 +22,12 @@ daoMessage.delete = (id) => {
 }
 
 //listado de mensajes
-daoMessage.list = () => {
+/*daoMessage.list = () => {
     return new Promise((resolved) => {
         Message.find()
             .then(entries => resolved(entries))
     })
-}
+}*/
 
 // buscar mensaje por ID findById(id)
 daoMessage.findByid = (id) => {

@@ -75,6 +75,7 @@
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
         <input
+          v-model="search"
           type="text"
           class="form-control"
           placeholder="Search"
@@ -150,7 +151,11 @@
               </div>
             </li>
 
-            <li class="table-row" v-for="(usuario, ind) in usuarios" :key="ind">
+            <li
+              class="table-row"
+              v-for="(user, ind) in filtredMessages"
+              :key="ind"
+            >
               <div class="col col-0" data-label="select">
                 <input
                   type="checkbox"
@@ -159,19 +164,19 @@
               </div>
 
               <div class="col col-1" data-label="name">
-                {{ usuario.firstname }}
+                {{ user.user }}
               </div>
               <div class="col col-2" data-label="email">
-                {{ usuario.email }}
+                {{ user.email }}
               </div>
               <div class="col col-3" data-label="message">
-                {{ usuario.message }} {{ usuario._id }}
+                {{ user.message }}
               </div>
 
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
-                  @click="eliminar(usuario._id)"
+                  @click="deleteMessage(user._id)"
                 >
                   <i class="fa fa-trash-o"></i>
                 </button>
@@ -185,69 +190,39 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, computed } from "vue";
 export default {
   name: "SignUp",
   components: {},
   setup() {
-    let firstname = ref("");
-    let lastname = ref("");
-    let username = ref("");
-    let email = ref("");
-    let password = ref("");
-    let message = ref("");
-    let usuarios = reactive([]);
-    onMounted(() => {
-      listar();
-    });
-    function listar() {
-      fetch("http://localhost:8081/api/users/listar")
-        .then((resp) => resp.json())
-        .then((datos) => {
-          usuarios.splice(0);
-          datos.forEach((usuario) => {
-            usuarios.push(usuario);
-          });
-        });
-    }
-    function enviar() {
-      fetch("http://localhost:8081/api/users/guardar", {
-        method: "POST",
-        body: JSON.stringify({
-          firstname: firstname.value,
-          lastname: lastname.value,
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          message: message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar())
-        .catch((error) => console.log(error));
-      //alert("Usuario ya esta registrado");
-    }
+    let Menssages = reactive([]);
+    let search = ref("");
 
-    function eliminar(id) {
+    let filtredMessages = computed(() => {
+      return Menssages.filter((m) => m.message.indexOf(search.value) != -1);
+    });
+    console.log(Menssages);
+
+    fetch("http://localhost:8081/api/message/list")
+      .then((resp) => resp.json())
+      .then((datos) => {
+        datos.forEach((element) => {
+          Menssages.push(element);
+        });
+      });
+
+    function deleteMessage(id) {
       fetch("http://localhost:8081/api/users/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar());
+      }).then((resp) => resp.json());
     }
 
     return {
-      firstname,
-      lastname,
-      email,
-      username,
-      password,
-      enviar,
-      usuarios,
-      message,
-      eliminar,
+      Menssages,
+      search,
+      filtredMessages,
+      deleteMessage,
     };
   },
 };
