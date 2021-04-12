@@ -228,6 +228,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
+
 // navbar
 
 .topnav {
@@ -241,7 +243,7 @@ export default {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
 }
 
 .topnav a:hover {
@@ -257,29 +259,29 @@ export default {
 body {
   font-family: "lato", sans-serif;
   background-color: #f1f2f5;
-  font-family: var(--bs-font-sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
-  color: #797979;
-  background: #f2f2f2;
-  font-family: "Ruda", sans-serif;
-  padding: 0px !important;
-  margin: 0px !important;
-  font-size: 13px;
-  background-color: #fff;
+    color: #797979;
+    background: #f2f2f2;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    // margin: 0px !important;
+    font-size: 13px;
+        background-color: #fff;
 }
 
 .container {
@@ -353,5 +355,15 @@ h2 small {
     flex-basis: 50%;
     text-align: right;
   }
+}
+
+.btn-info {
+    color: #f8f9fa;
+    background-color: #b7c8e0;
+    border-color: #b7c8e0;
+}
+
+.btn {
+ padding: .100rem .75rem; 
 }
 </style>
