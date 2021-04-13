@@ -153,7 +153,7 @@
 
             <li
               class="table-row"
-              v-for="(user, ind) in filtredMessages"
+              v-for="(Message, ind) in filtredMessages"
               :key="ind"
             >
               <div class="col col-0" data-label="select">
@@ -164,19 +164,19 @@
               </div>
 
               <div class="col col-1" data-label="name">
-                {{ user.user }}
+                {{ Message.user }}
               </div>
               <div class="col col-2" data-label="email">
-                {{ user.email }}
+                {{ Message.email }}
               </div>
               <div class="col col-3" data-label="message">
-                {{ user.message }}
+                {{ Message.message }}
               </div>
 
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
-                  @click="deleteMessage(user._id)"
+                  @click="deleteMessage(Message._id)"
                 >
                   <i class="fa fa-trash-o"></i>
                 </button>
@@ -212,10 +212,11 @@ export default {
       });
 
     function deleteMessage(id) {
-      fetch("http://localhost:8081/api/users/delete/" + id, {
+      fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-      }).then((resp) => resp.json());
+      })
+      .then((resp) => resp.json());
     }
 
     return {
