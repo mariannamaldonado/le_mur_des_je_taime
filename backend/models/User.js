@@ -3,14 +3,14 @@ const { Schema } = mongoose
 const bcrypt = require('bcrypt')
 
 const schemaUser = new Schema({
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
-    username: { type: String, default: "new-user" },
+    firstname: { type: String, required: true},
+    lastname: { type: String, required: true},
+    username: { type: String},
     email: { type: String, required: true, index: true, unique: true },
     password: { type: String, required: true },
     active: { type: Boolean, default: false },
-    provider_id: { type: String },
-    role: { type: Boolean, default: true },
+    provider_id: {type: String, unique: false},
+    role: { type: Boolean, default: false },
     avatar: { type: String, default: "/images/avatar.jpg" },
     createdAt: { type: Date, default: Date.now }
 })
@@ -39,7 +39,6 @@ class User {
         let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         if (!regEmail.test(this.email)) errores.push({ error: "El formato del e-mail no es válido" })
     }
-
     //privados
     checkPassword(password) {
         return bcrypt.compareSync(password, this.password)

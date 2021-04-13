@@ -21,7 +21,7 @@ module.exports = function(passport) {
 
 	// Configuración del autenticado con Facebook
 	passport.use(new FacebookStrategy({
-		clientID	  : config.facebook.id,
+		clientID	  : config.facebook.key,
 		clientSecret  : config.facebook.secret,
 		callbackURL	  : '/auth/facebook/callback',
 		profileFields : ['id', 'displayName', 'provider', 'avatar']
@@ -39,7 +39,7 @@ module.exports = function(passport) {
 			// y si no, lo crea y salva en la base de datos
 			var user = new User({
 				provider_id	: profile.id,
-				provider	: profile.provider,
+				email	    : profile.provider,
 				firstname	: profile.displayName,
 				avatar		: profile.avatar[0].value
 			});
@@ -52,9 +52,9 @@ module.exports = function(passport) {
 
 	// Configuración del autenticado con Google
 	passport.use(new GoogleStrategy({
-		clientID		: config.google.id,
+		clientID		: config.google.key,
 		clientSecret	: config.google.secret,
-		callbackURL: "http://www.example.com/auth/google/callback"
+		callbackURL: "/auth/google/callback"
 	  },
 	  function(token, tokenSecret, profile, done) {
 	  User.findOrCreate({provider_id: profile.id}, function (err, user) {
@@ -63,7 +63,7 @@ module.exports = function(passport) {
 			
 			var user = new User({
 				provider_id	: profile.id,
-				provider	: profile.provider,
+				email	    : profile.provider,
 				firstname	: profile.displayName,
 				avatar		: profile.avatar[0].value
 			});
