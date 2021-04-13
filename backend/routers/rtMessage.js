@@ -24,18 +24,4 @@ rtMessage.post('/delete/:id', (req, res) => {
     daoMessage.delete(req.params.id)
 })
 
-/*anny has pruebas*/
-// rtMessage.post('/messages/:_id', async function(req,res){
-//     const MessageNew = new Message(req.body.id)     //crear mensaje para usuario
-//     const user = await User.findById(req.params.id)     //buscar usuario para asignar mensaje
-//     MessageNew.user = user      //asignar al usuario como autor 
-//     await MessageNew.save()      //guardar el mensaje para el usuario
-//     res.json({res: 'ok'})
-
-// })
-
-
-
-
-
 module.exports = rtMessage

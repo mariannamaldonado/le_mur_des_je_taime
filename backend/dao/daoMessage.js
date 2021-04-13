@@ -26,6 +26,16 @@ daoMessage.list = () => {
     })
 }
 
+///cambiar jean
+// rtMessage.get('/list',function(req,res){
+//     message.find({},function(err,message){
+//         User.populate(message,{path:"user"},function(err,message){
+//             res.status(200).send(message)
+//         })
+//     })
+// })
+
+
 // buscar mensaje por ID findById(id)
 daoMessage.findById = (id) => {
     return new Promise((resolved) => {
