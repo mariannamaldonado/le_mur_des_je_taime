@@ -11,7 +11,7 @@ const schemaUser = new Schema({
     active: { type: Boolean, default: false },
     provider_id: {type: String, unique: false},
     role: { type: Boolean, default: false },
-    avatar: { type: String, default: "/images/avatar.jpg" },
+    avatar: { type: String},
     createdAt: { type: Date, default: Date.now }
 })
 

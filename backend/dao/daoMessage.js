@@ -21,20 +21,11 @@ daoMessage.delete = (id) => {
 //listado de mensajes
 daoMessage.list = () => {
     return new Promise((resolved) => {
-        Message.find()
-            .then(entries => resolved(entries))
+        message.find({}, User.populate(message, { path: "user" })
+            .then(message => resolved(message))
+        )
     })
 }
-
-///cambiar jean
-// rtMessage.get('/list',function(req,res){
-//     message.find({},function(err,message){
-//         User.populate(message,{path:"user"},function(err,message){
-//             res.status(200).send(message)
-//         })
-//     })
-// })
-
 
 // buscar mensaje por ID findById(id)
 daoMessage.findById = (id) => {
