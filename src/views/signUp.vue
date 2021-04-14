@@ -95,7 +95,7 @@ export default {
     let password = ref("");
     let users = reactive([]);
     onMounted(() => {
-      console.log("¨la pagina esta descargado")
+      console.log("¨la pagina esta descargada")
     });
 
     function enviar() {
