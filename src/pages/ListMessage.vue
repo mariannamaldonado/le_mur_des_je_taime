@@ -198,25 +198,30 @@ export default {
     let Menssages = reactive([]);
     let search = ref("");
 
-    let filtredMessages = computed(() => {
-      return Menssages.filter((m) => m.message.indexOf(search.value) != -1);
-    });
-    console.log(Menssages);
+  let filtredMessages = computed(() => {
+      return Menssages.filter(item =>{
+        return item.message.toLowerCase().includes(search.value.toLowerCase()) 
+      })
+    })
+
 
     fetch("http://localhost:8081/api/message/list")
       .then((resp) => resp.json())
       .then((datos) => {
         datos.forEach((element) => {
           Menssages.push(element);
-        });
-      });
+        })
+      })
 
     function deleteMessage(id) {
       fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
-      .then((resp) => resp.json());
+      .then((resp) => resp.json())
+      .then(data =>{
+        this.Menssages
+      })
     }
 
     return {
