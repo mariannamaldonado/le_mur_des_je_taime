@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid justify-content-center">
-      <div class="col col-6 offset-3 p-5 bg-white rounded my-5 shadow-sm">
-        <h2>Forgot Password</h2>
+  <div class="container-fluid justify-content-center" id="frame">
+      <div class="col col-12 col-lg-6 offset-lg-3 p-5 bg-white rounded shadow-sm">
+        <h2>Recupera tú contraseña</h2>
         <br>
 
         <div class="form-floating mb-3">
@@ -47,6 +47,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+//background 
 /* .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
@@ -66,7 +68,7 @@ a{
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
-  border-bottom: 2px solid #070A2B;
+  border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
@@ -74,7 +76,7 @@ a{
   border-radius: none !important;
 }
 .form-control:focus {
-  border-bottom: 2px solid #070A2B;
+  border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
@@ -99,5 +101,9 @@ a{
   background-color: #4b51ad;
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
+#frame{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 </style>

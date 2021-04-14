@@ -5,7 +5,7 @@
 
         <div class="form-floating mb-3" v-if="!user.email">
           <input
-            v-model="email"
+            v-model="email" required
             type="text"
             class="form-control floatingInput"
             placeholder="name@ejemplo.com"
@@ -15,7 +15,7 @@
 
         <div class="form-floating">
           <input
-            v-model="password"
+            v-model="password" required
             type="text"
             class="form-control floatingInput"
             placeholder="Contraseña"
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <button @click="login" type="button" id="loginbutton" class="btn btn-danger btn-lg">
+          <button @click="login" type="login" id="loginbutton" class="btn btn-danger btn-lg">
             INICIAR SESIÓN
           </button>
         </div>
@@ -93,17 +93,12 @@
 </div>
 
 
-
-
-
-
-        
         <hr />
         <div>
           <mdb-modal-footer class="mx-5 pt-3 mb-1">
             <p class="font-small grey-text d-flex justify-content-center">
-              ¿Not a member?&nbsp;<a href=" SignUp" class="blue-text ml-1">
-                Sign Up</a>
+              ¿No tienes una cuenta?&nbsp;<a href=" SignUp" class="blue-text ml-1">
+                Registrate</a>
             </p>
           </mdb-modal-footer>
         </div>
@@ -116,7 +111,7 @@ import { ref, reactive, computed } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "SingIn",
- components: {},
+  components: {},
 
   setup() {
     const store = useStore();
@@ -127,7 +122,7 @@ export default {
     });
 
     function login() {
-      fetch("http://localhost:8081/api/user/login", {
+      fetch("http://localhost:8081/api/users/login", {
         method: "POST",
         body: JSON.stringify({
           email: email.value,
@@ -137,7 +132,10 @@ export default {
       })
         .then((resp) => resp.json())
         .then((user) => {
-          if (user) store.commit("setUser", user)
+          if (user){
+            store.commit("setUser", user)
+           alert("Login succes")
+          }
           else alert("Usuario o password incorrectos")
         })
     }
@@ -156,17 +154,14 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 /* .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
 } */
 
-.social img {
-  width: 40px;
-  height: 30px;
-  padding: 0 5px;
-}
+
 a {
   text-decoration: none;
 }
@@ -181,7 +176,7 @@ a {
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
-  border-bottom: 2px solid #070A2B;
+  border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
@@ -189,9 +184,10 @@ a {
   border-radius: none !important;
 }
 .form-control:focus {
-  border-bottom: 2px solid #070A2B;
+  border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
+
 
 #loginbutton {
   white-space: nowrap;
@@ -300,6 +296,7 @@ html, body {
 
 #frame{
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 </style>
