@@ -1,5 +1,4 @@
 const Message = require('../models/Message')
-const User = require('../models/User')
 const daoMessage = {}
 
 //funcion para guardar mensaje
@@ -7,10 +6,8 @@ daoMessage.save = (message, id) => {
     return new Promise((resolved) => {
         let MessageNew = new Message(message)
         MessageNew.user = id
-        MessageNew.save()  
-        
+        MessageNew.save()
     })
-
 }
 
 //funcion para eliminar
@@ -24,13 +21,14 @@ daoMessage.delete = (id) => {
 //listado de mensajes
 daoMessage.list = () => {
     return new Promise((resolved) => {
-        Message.find()
-            .then(entries => resolved(entries))
+        message.find({}, User.populate(message, { path: "user" })
+            .then(message => resolved(message))
+        )
     })
 }
 
 // buscar mensaje por ID findById(id)
-daoMessage.findByid = (id) => {
+daoMessage.findById = (id) => {
     return new Promise((resolved) => {
         Message.findOne({ _id: id })
             .then(message => resolved(message))

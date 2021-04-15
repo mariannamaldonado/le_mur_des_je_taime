@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-const fs = require('fs')
 
 const mailer={}
 
@@ -8,7 +7,7 @@ mailer.send = async function send(destinatario) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'le.mur.des.je.taime.fr@gmail.com', // generated ethereal user /* andreeaccandreea@gmail.com */
+      user: 'le.mur.des.je.taime.fr@gmail.com', 
       pass: 'fdhnjtxtdnkgfxep', // generated ethereal password 'cyllujrpkbmbccja'
     },
   })

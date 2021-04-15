@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +16,14 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "mongoose": "^5.11.18",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7"
 =======
+=======
+    "jest": "^26.6.3",
+>>>>>>> backend-crud
     "mongoose": "^5.12.3",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7",

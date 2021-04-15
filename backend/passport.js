@@ -21,13 +21,13 @@ module.exports = function(passport) {
 
 	// Configuración del autenticado con Facebook
 	passport.use(new FacebookStrategy({
-		clientID			: config.facebook.id,
-		clientSecret	: config.facebook.secret,
-		callbackURL	 : '/auth/facebook/callback',
-		profileFields : ['id', 'displayName', /*'provider',*/ 'avatar']
+		clientID	  : config.facebook.key,
+		clientSecret  : config.facebook.secret,
+		callbackURL	  : '/auth/facebook/callback',
+		profileFields : ['id', 'displayName', 'provider', 'avatar']
 	}, function(accessToken, refreshToken, profile, done) {
 		// El campo 'profileFields' nos permite que los campos que almacenamos
-		// se llamen igual tanto para si el usuario se autentica por Twitter o
+		// se llamen igual tanto para si el usuario se autentica por Google o
 		// por Facebook, ya que cada proveedor entrega los datos en el JSON con
 		// un nombre diferente.
 		// Passport esto lo sabe y nos lo pone más sencillo con ese campo
@@ -39,7 +39,7 @@ module.exports = function(passport) {
 			// y si no, lo crea y salva en la base de datos
 			var user = new User({
 				provider_id	: profile.id,
-				provider	: profile.provider,
+				email	    : profile.provider,
 				firstname	: profile.displayName,
 				avatar		: profile.avatar[0].value
 			});
@@ -52,18 +52,18 @@ module.exports = function(passport) {
 
 	// Configuración del autenticado con Google
 	passport.use(new GoogleStrategy({
-		clientID		: config.google.id,
+		clientID		: config.google.key,
 		clientSecret	: config.google.secret,
-		callbackURL: "http://www.example.com/auth/google/callback"
+		callbackURL: "/auth/google/callback"
 	  },
 	  function(token, tokenSecret, profile, done) {
-		  User.findOrCreate({ provider_id: profile.id }, function (err, user) {
+	  User.findOrCreate({provider_id: profile.id}, function (err, user) {
 			if(err) throw(err);
 			if(!err && user!= null) return done(null, user);
 			
 			var user = new User({
 				provider_id	: profile.id,
-				provider	: profile.provider,
+				email	    : profile.provider,
 				firstname	: profile.displayName,
 				avatar		: profile.avatar[0].value
 			});
