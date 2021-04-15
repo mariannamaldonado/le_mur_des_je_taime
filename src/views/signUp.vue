@@ -130,6 +130,9 @@ export default {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
 } */
+.container-fluid{
+  min-width: 400px;
+}
 
 a {
   text-decoration: none;

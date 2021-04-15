@@ -221,7 +221,7 @@ export default {
 
 
 
-<style lang="scss" scoped>
+<style lang="scss"  scoped>
 .container-fluid {
   background: url("../public/muroblur.png") no-repeat center center fixed;
   background-size: cover;

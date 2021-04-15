@@ -54,6 +54,10 @@ export default {
   background-size: cover;
 }
  */
+.container-fluid{
+  min-width: 400px;
+}
+
 a{
   text-decoration: none;
 }
