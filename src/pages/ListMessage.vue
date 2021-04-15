@@ -167,7 +167,7 @@
                 {{ Message.user }}
               </div>
               <div class="col col-2" data-label="email">
-                {{ Message.email }}
+                {{ Message.receiver }}
               </div>
               <div class="col col-3" data-label="message">
                 {{ Message.message }}
@@ -190,7 +190,7 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "SignUp",
   components: {},
@@ -198,30 +198,34 @@ export default {
     let Menssages = reactive([]);
     let search = ref("");
 
-  let filtredMessages = computed(() => {
-      return Menssages.filter(item =>{
-        return item.message.toLowerCase().includes(search.value.toLowerCase()) 
-      })
-    })
+    onMounted(() => {
+      getMessageList();
+    });
 
+    let filtredMessages = computed(() => {
+      return Menssages.filter((item) => {
+        return item.message.toLowerCase().includes(search.value.toLowerCase());
+      });
+    });
 
-    fetch("http://localhost:8081/api/message/list")
-      .then((resp) => resp.json())
-      .then((datos) => {
-        datos.forEach((element) => {
-          Menssages.push(element);
-        })
-      })
-
+    function getMessageList() {
+      fetch("http://localhost:8081/api/message/list")
+        .then((resp) => resp.json())
+        .then((datos) => {
+          datos.forEach((element) => {
+            Menssages.push(element);
+          });
+        });
+    }
     function deleteMessage(id) {
       fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
-      .then((resp) => resp.json())
-      .then(data =>{
-        this.Menssages
-      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          filtredMessages()
+        });
     }
 
     return {
@@ -234,8 +238,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
-
 // navbar
 
 .topnav {
@@ -265,29 +267,29 @@ export default {
 body {
   font-family: "lato", sans-serif;
   background-color: #f1f2f5;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    color: #797979;
-    background: #f2f2f2;
-    font-family: 'Ruda', sans-serif;
-    padding: 0px !important;
-    // margin: 0px !important;
-    font-size: 13px;
-        background-color: #fff;
+  color: #797979;
+  background: #f2f2f2;
+  font-family: "Ruda", sans-serif;
+  padding: 0px !important;
+  // margin: 0px !important;
+  font-size: 13px;
+  background-color: #fff;
 }
 
 .container {
@@ -364,12 +366,12 @@ h2 small {
 }
 
 .btn-info {
-    color: #f8f9fa;
-    background-color: #b7c8e0;
-    border-color: #b7c8e0;
+  color: #f8f9fa;
+  background-color: #b7c8e0;
+  border-color: #b7c8e0;
 }
 
 .btn {
- padding: .100rem .75rem; 
+  padding: 0.1rem 0.75rem;
 }
 </style>
