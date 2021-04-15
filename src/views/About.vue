@@ -10,14 +10,15 @@
           >
             <img v-bind:src="image" class="photo" />
             <h3>NOSOTROS</h3>
-             <transition name="slide-fade">
-              
-            <p  v-if="show" class=" nosotros lead font-italic mb-0 text-muted">
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-            </p>
-             </transition>   -->
+            <transition name="slide-fade">
+              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris."
+              </p>
+            </transition>
+            -->
           </div>
           <div
             @click="show = !show"
@@ -25,14 +26,14 @@
           >
             <img v-bind:src="image" class="photo" />
             <h3>NOSOTROS</h3>
-             <transition name="slide-fade">
-              
-            <p  v-if="show" class=" nosotros lead font-italic mb-0 text-muted">
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-            </p>
-             </transition>  
+            <transition name="slide-fade">
+              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris."
+              </p>
+            </transition>
           </div>
           <div
             @click="show = !show"
@@ -40,14 +41,14 @@
           >
             <img v-bind:src="image" class="photo" />
             <h3>NOSOTROS</h3>
-             <transition name="bounce">
-              
-            <p  v-if="show" class=" nosotros lead font-italic mb-0 text-muted">
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-            </p>
-             </transition>  
+            <transition name="bounce">
+              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris."
+              </p>
+            </transition>
           </div>
           <div
             @click="show = !show"
@@ -55,14 +56,14 @@
           >
             <img v-bind:src="image" class="photo" />
             <h3>NOSOTROS</h3>
-           <transition name="bounce">
-              
-            <p  v-if="show" class=" nosotros lead font-italic mb-0 text-muted">
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-            </p>
-             </transition>  
+            <transition name="bounce">
+              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris."
+              </p>
+            </transition>
           </div>
         </div>
       </div>
@@ -81,23 +82,17 @@ export default {
 
   setup() {
     let show = ref("");
-    show: true;
 
     return {
       show,
       image: "/avatar1.jpg",
-    };
-  },
-  mounted() {
-    var $elem = $(".thing");
-    MotionUI.animateIn($elem, "slide-in-right", function () {
-      console.log("Transition finished!");
-    });
-  }, 
-};
+    }
+  } 
+}
+
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 h3 {
   color: blue;
 }
