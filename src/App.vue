@@ -1,55 +1,4 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Le Mur Des Je T'aime</h5>
- <ul class="nav flex-column">
-  <li class="nav-item">
-    <router-link class="nav-link active" to="/">Home</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/about">about</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/UsersView">UsersView</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link disabled" to="/ForgotPassword">ForgotPassword</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/ListMessage">ListMessage</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/NewMessage">NewMessage</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link disabled" to="/NotFound">NotFound</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/SignIn">SignIn</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/SignUp">SignUp</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link disabled" to="/UserAdmin">UserAdmin</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/UserProfile">UserProfile</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link" to="/Muro">Muro</router-link>
-  </li>
-  <li class="nav-item">
-    <router-link class="nav-link disabled" to="/Contact">Contact</router-link>
-  </li>
-</ul>
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-=======
->>>>>>> vistas-accesos
   <div class="container-fluid">
     <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
@@ -116,7 +65,6 @@
       </ul>
       <!-- 
   <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
-
   <ul class="nav flex-column bg-white mb-0">
     <li class="nav-item">
       <a href="#" class="nav-link text-dark font-italic">
@@ -150,12 +98,6 @@
     <div class="page-content" id="content">
       <!-- Toggle button -->
 
-<<<<<<< HEAD
-=======
-  <div class="navbar d-flex justify-content-between">
-    <div id="nav">
-      
-=======
       <router-view />
       <!-- Demo content -->
       <!-- <h2 class="display-4 text-white">Bootstrap vertical nav </h2>
@@ -253,20 +195,13 @@
           </p>
         </div>
       </div> -->
->>>>>>> vistas-accesos
     </div>
     <!-- End demo content -->
   </div>
-<<<<<<< HEAD
->>>>>>> backend-crud
-  <router-view />
-=======
->>>>>>> vistas-accesos
 </template>
 
 <script>
 import $ from "jquery";
-
 export default {
   name: "Home",
   props: {},
@@ -291,35 +226,15 @@ export default {
   height: 100%;
   background-size: 100% 100%;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-// .navbar{
-//   display:inline-flex;
-//   .nav-brand {
-//   }
-// }
-=======
-.navbar{
-  display:inline-flex;
-  // .nav-brand {
-  // }
-}
->>>>>>> backend-crud
-#nav {
-  padding-left: 10px;
-=======
 a {
   text-decoration: none;
   color: #0f1433;
 }
->>>>>>> vistas-accesos
-
 .background {
   background-image: url("../public/muro.jpg");
   background-size: cover;
   height: 80px;
 }
-
 .vertical-nav {
   min-width: 17rem;
   width: 17rem;
@@ -330,30 +245,24 @@ a {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
 }
-
 .page-content {
   width: calc(100% - 17rem);
   margin-left: 17rem;
   transition: all 0.4s;
 }
-
 /* for toggle behavior */
-
 #sidebar.active {
   margin-left: -17rem;
 }
-
 #content.active {
   width: 100%;
   margin: 0;
 }
-
 #sidebarCollapse {
   position: absolute;
   right: -70px;
   top: 10px;
 }
-
 @media (max-width: 768px) {
   
   #sidebar {
@@ -361,7 +270,6 @@ a {
     left: 0;
     margin-left: -17rem;
   }
-
   #sidebarCollapse {
     position: absolute;
     right: -70px;
@@ -379,13 +287,11 @@ a {
     width: calc(100% - 17rem);
   }
 }
-
 /*
 * =========================================
 * FOR DEMO PURPOSE
 * =========================================
 */
-
 body {
   background: #599fd9;
   background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
@@ -393,16 +299,13 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
 .separator {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;
 }
-
 .text-uppercase {
   letter-spacing: 0.1em;
 }
-
 .text-gray {
   color: #aaa;
 }
