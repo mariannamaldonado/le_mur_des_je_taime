@@ -1,93 +1,203 @@
-<template> 
-   <section class="section-a">
-      <div class="container">
-        <div>
-    <div class="section" data-anchor="contact">
-      <div class="content wow fadeInDown" data-wow-delay="0.2s">
-        <h1>CONTACTANOS</h1>
-        <p>Whether you're interested in working with me or just want to say hello, I'd love to hear from you!</p>
-        <br>
-        <div class="contact-form">
-
-          <div id="form-messages"></div>
-          <form id="ajax-contact" method="post" role="form" action="contact.php" data-toggle="validator">
-            <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
-              <input type="text" class="form-control" id="name" name="name" placeholder="NOMBRE" data-error="Field can't be blank!" required>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
-              <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" data-error="Field can't be blank!" required>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
-              <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="MENSAJE" data-error="Minimum of 10 characters" required></textarea>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="hidden">
-              <input type="text" class="form-control" id="human" name="human" placeholder="">
-            </div>
-            <div class="wow fadeInUp" data-wow-delay="1s">
-              <button type="submit" id="submit" name="submit" class="btn btn-lg">ENVIAR</button>
-            </div>
-          </form>
-          <br>
+<template>
+  <!-- Contact Us Section -->
+  <section class="Material-contact-section section-padding section-dark">
+    <div class="container">
+      <!-- Section Titile -->
+      <div class="row">
+        <div class="col-md-8 wow animated fadeInLeft" data-wow-delay=".2s">
+          <h1 class="section-title">¡Me encanta saber de ti!</h1>
+        </div>
+        <div class="col-md-4 wow animated fadeInLeft" data-wow-delay=".2s">
+          <img v-bind:src="image" class="mailbox" />
+        </div>
+      </div>
+      <div class="row">
+        <!-- Section Titile -->
+        <div
+          class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft"
+          data-wow-delay=".2s"
+        >
+          <p>
+            En un mundo marcado por la violencia, y dominado por el
+            individualismo, los muros al igual que las fonteras, sirven
+            generalmente para dividir, separar a los pueblos y protegerse de los
+            otros. El muro de los te quiero es sin embargo, un nexo de unión, un
+            lugar de reconciliación, un espejo cuya imagen es el amor y la paz.
+          </p>
+          <div class="find-widget">
+            <p>
+              Direción: Square Jehan Rictus, Place des Abbesses, 75018 Paris,
+              France
+            </p>
+          </div>
+          <div class="find-widget">
+            <p>Teléfono: +34 123-456-789</p>
+          </div>
+          <div class="find-widget">
+            <p>Sitio Web: www.lemur.com</p>
+          </div>
+          <div class="find-widget">
+            <p>Horario: L a S: 09:30 AM - 10.30 PM</p>
+          </div>
+        </div>
+        <!-- contact -->
+        <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control floatingInput"
+              data-error="Por favor ingrese su nombre"
+              placeholder="Nombre"
+            />
+            <label for="floatingInput"
+              ><i class="fas fa-grin"></i>&nbsp;Nombre</label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control floatingInput"
+              data-error="Por favor ingrese su email"
+              placeholder="nombre@ejemplo.com"
+            />
+            <label for="floatingInput"
+              ><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <textarea
+              type="text"
+              class="form-control floatingInput"
+              data-error="Por favor ingrese su mensaje"
+              placeholder="Mensaje"
+              rows="5"
+            />
+            <label for="floatingInput"
+              ><i class="fas fa-sticky-note"></i>&nbsp;Mensaje</label
+            >
+          </div>
+          <!-- Form Submit -->
+          <div class="form-group d-flex">
+            <button
+              type="button"
+              id="loginbutton"
+              class="btn btn-danger btn-lg"
+            >
+              ENVIAR MENSAJE
+              <!-- <b> ENVIAR MENSAJE</b> -->
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <!-- end section -->
+    <div class="container">
+      <div class="col-md-12">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41969.37207816585!2d2.2903112258911866!3d48.89470283996895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e44e2a227af%3A0x641930356f5c6782!2sWall%20of%20Love!5e0!3m2!1sen!2ses!4v1618173380115!5m2!1sen!2ses"
+          width="100%"
+          height="300px"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
     </div>
-     <img src="@/assets/img/banner5.jpg" alt="" />
-    
-    </div>
-    </section>
+  </section>
 </template>
 
 <script>
 export default {
   name: "Contact",
   components: {},
+
   setup() {
     return {
-        
-    }
+      image: "/buzon.gif",
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
-
+.mailbox {
+  width: 158px;
+  height: 158px;
+  left: 1793px;
+  top: 109px;
+}
+// fondo blanco, para el contacto que si queda la imagen detras no pasa nada, porque el
+// fondo transparente chiva el gif...
+// tamaño del div a 350px, en las otras vistas es container-fluid a 400px...
+// hay un pequeño margen de diferencia de un lado a otro no queda centrado completamente...
+// solo esta vista tiene el estilo del boton en el div del (ENVIAR MENSAJE) esta la opcion
+// normal y en negrita, que una me parece muy fina y la otra muy gruesa, mira las dos a ver que tal.
+// textarea no he podido agrandarlo y aunque quite el scrol sube el texto hacia arriba 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
+  padding: 60px;
+  background: #fff;
+  min-width: 350px;
 }
 
-.section-a {
-  margin: 2rem 0;
+textarea{
+  overflow:hidden;
+  
 }
 
-.section-a .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem;
-  align-items: center;
-  justify-content: center;
+.floatingInput,
+.floatingPassword {
+  border: 0;
+  border-bottom: 2px solid #e4e6e9;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+  border-radius: 0;
 }
 
-.section-a h1 {
-  font-size: 4rem;
-  color: var(--primary-color);
+.floatingInput:active,
+.floatingInput:focus {
+  border: 0;
+  border-bottom: 2px solid #070a2b;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-.section-a p {
-  margin: 1rem 0;
+.form-floating {
+  border-radius: none !important;
+}
+
+.form-control:focus {
+  background: transparent;
+  border-bottom: 2px solid #070a2b;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+}
+
+#loginbutton {
+  color: #9c0505;
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+#loginbutton:hover {
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+  border: none;
+  background-image: linear-gradient(to right, #a19dcf, #03002d);
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #121ca8;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
+}
+.btn-danger:active {
+  color: #fff;
+  background-color: #4b51ad;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 </style>

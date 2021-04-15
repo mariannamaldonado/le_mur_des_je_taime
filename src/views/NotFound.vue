@@ -8,6 +8,7 @@
 export default {
   name: "NotFound",
   components: {},
+
   setup() {
     return {
         

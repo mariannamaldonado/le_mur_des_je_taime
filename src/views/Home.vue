@@ -122,7 +122,6 @@
     </footer>
 </template>
 <script>
-
 export default {
   name: 'Home',
   components: {
@@ -131,86 +130,69 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 :root {
   --primary-color: #333;
   --secondary-color: #444;
   --overlay-color: rgba(0, 0, 0, 0.7);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: 'Catamaran', sans-serif;
   line-height: 1.6;
   color: #333;
   font-size: 1.1rem;
 }
-
 h1,
 h2,
 h3,
 h4 {
   line-height: 1.3;
 }
-
 a {
   color: #444;
   text-decoration: none;
 }
-
 ul {
   list-style: none;
 }
-
-
-
 .container {
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
 }
-
 .navbar {
   font-size: 1.2rem;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
 }
-
 .navbar .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
 }
-
 .navbar .logo {
   font-size: 2rem;
 }
-
 .navbar ul {
   justify-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .navbar a {
   padding: 0 1rem;
 }
-
 .navbar a:hover {
   color: #555;
 }
-
 .section-a {
   margin: 2rem 0;
 }
-
 .section-a .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -218,22 +200,18 @@ ul {
   align-items: center;
   justify-content: center;
 }
-
 .section-a h1 {
   font-size: 4rem;
   color: var(--primary-color);
 }
-
 .section-a p {
   margin: 1rem 0;
 }
-
 .section-b {
   position: relative;
   background: url('../assets/img/banner9.jpg') no-repeat bottom center/cover;
   height: 600px;
 }
-
 .section-b-inner {
   color: #fff;
   height: 100%;
@@ -246,21 +224,17 @@ ul {
   max-width: 860px;
   padding: 5rem 0;
 }
-
 .section-b-inner h3 {
   font-size: 2rem;
 }
-
 .section-b-inner h2 {
   font-size: 5rem;
   margin-top: 1rem;
 }
-
 .section-b-inner p {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
-
 .section-c .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -271,49 +245,40 @@ ul {
   grid-row: 1/3;
   grid-column: 1/3;
 }
-
 .section-c .gallery a:nth-child(2) {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-
 .section-c .gallery img,
 .section-c .gallery a {
   width: 100%;
   height: 100%;
 }
-
 .section-footer {
   background: var(--primary-color);
   color: #fff;
   padding: 4rem 0;
 }
-
 .section-footer .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
-
 .section-footer h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-
 .section-footer h3 {
   margin-bottom: 0.7rem;
 }
-
 .section-footer a {
   line-height: 1.9;
   color: #ccc;
 }
-
 .section-footer a > i {
   color: #1f4b8d;
   margin-right: 0.5rem;
 }
-
 .email-form {
   width: 100%;
   display: inline-block;
@@ -323,13 +288,11 @@ ul {
   line-height: 0;
   margin-top: 1rem;
 }
-
 /* // .form-control-wrap {
 // 	position: relative;
 // 	display: inline-block;
 // 	width: 100%;
 // } */
-
 .email-form .form-control {
   display: inline-block;
   border: 0;
@@ -344,7 +307,6 @@ ul {
   height: 45px;
   border-radius: 20px;
 }
-
 .email-form .submit {
   display: inline-block;
   position: absolute;
@@ -363,7 +325,6 @@ ul {
   cursor: pointer;
   border-radius: 0 20px 20px 0;
 }
-
 .btn {
   display: inline-block;
   background: var(--primary-color);
@@ -374,11 +335,9 @@ ul {
   font-size: 1.1rem;
   border-radius: 30px;
 }
-
 .btn:hover {
   background: var(--secondary-color);
 }
-
 .overlay {
   height: 100%;
   width: 100%;
@@ -387,26 +346,21 @@ ul {
   left: 0;
   background-color: var(--overlay-color);
 }
-
 @media (max-width: 700px) {
   .section-a .container {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
   .section-a .container div:first-child {
     order: 2;
   }
-
   .section-a .container div:nth-child(2) {
     order: -1;
   }
-
   .section-a img {
     width: 80%;
     margin: auto;
   }
-
   .section-c .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -415,16 +369,13 @@ ul {
     grid-row: 1/1;
     grid-column: 1/1;
   }
-
   .section-c .gallery a:nth-child(2) {
     grid-column: 2/4;
     grid-row: 2/2;
   }
-
   .section-c .gallery a:last-child {
     display: none;
   }
-
   .section-footer {
     padding: 2rem 0;
   }
@@ -432,12 +383,9 @@ ul {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
   .section-footer div:nth-child(2),
   .section-footer div:nth-child(3) {
     display: none;
   }
 }
-
-
 </style>

@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import Contact from '../views/Contact.vue'
-
 import ForgotPassword from '../views/ForgotPassword.vue'
-
+import SignUp from '../views/SignUp.vue'
+import SignIn from '../views/SignIn.vue'
+import Contact from '../views/Contact.vue'
 
 import NewMessage from '@/pages/NewMessage.vue'
 import UserAdmin from '@/pages/UserAdmin.vue'
@@ -22,28 +22,32 @@ const routes = [
     name: 'About',
     component: About
   },
-  // {
-  //   path: '/UsersView',
-  //   name: 'UsersView',
-  //   component: UsersView
-  // },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
   {
     path: '/users',
     name: 'Users',
     component: function () {
       return import('../views/UsersView.vue')
-    },
+    }
   },
-
+  {
+    path: '/SignIn',
+    name: 'SignIn',
+    component: SignIn
+  },
+  {
+    path: '/SignUp',
+    name: 'SignUp',
+    component: SignUp
+  },
   {
     path: '/ForgotPassword',
     name: 'ForgotPassword',
     component: ForgotPassword
-  },
-  {
-    path: '/Contact',
-    name: 'Contact',
-    component: Contact
   },
   
   {
@@ -66,7 +70,7 @@ const routes = [
     path: '/UserAdmin',
     name: 'UserAdmin',
     component: UserAdmin
-  },
+  }
  
 
 ]
