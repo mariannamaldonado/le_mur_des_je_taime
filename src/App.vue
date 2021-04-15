@@ -58,6 +58,14 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
+            <i class="fas fa-heart"></i>
+            &nbsp;<router-link to="/Wall"
+              >Wall</router-link
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-envelope-open-text"></i>
             &nbsp;<router-link to="/Contact">Contacto</router-link>
           </a>

@@ -5,7 +5,7 @@ import ForgotPassword from '../views/ForgotPassword.vue'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
 import Contact from '../views/Contact.vue'
-
+import Wall from '../views/Wall.vue'
 import NewMessage from '@/pages/NewMessage.vue'
 import UserAdmin from '@/pages/UserAdmin.vue'
 import Profile from "@/pages/Profile.vue";
@@ -65,11 +65,15 @@ const routes = [
     name: 'NewMessage',
     component: NewMessage
   },
-
   {
     path: '/UserAdmin',
     name: 'UserAdmin',
     component: UserAdmin
+  },
+  {
+    path: '/Wall',
+    name: 'Wall',
+    component: Wall
   }
  
 
