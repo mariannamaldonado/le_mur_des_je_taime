@@ -49,11 +49,11 @@ export default {
 <style lang="scss" scoped>
 
 //background 
-/* .container-fluid {
+ .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
 }
- */
+ 
 .container-fluid{
   min-width: 400px;
 }
