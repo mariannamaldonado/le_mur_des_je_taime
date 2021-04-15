@@ -202,6 +202,7 @@
 
 <script>
 import $ from "jquery";
+
 export default {
   name: "Home",
   props: {},
@@ -230,11 +231,13 @@ a {
   text-decoration: none;
   color: #0f1433;
 }
+
 .background {
   background-image: url("../public/muro.jpg");
   background-size: cover;
   height: 80px;
 }
+
 .vertical-nav {
   min-width: 17rem;
   width: 17rem;
@@ -245,24 +248,30 @@ a {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
 }
+
 .page-content {
   width: calc(100% - 17rem);
   margin-left: 17rem;
   transition: all 0.4s;
 }
+
 /* for toggle behavior */
+
 #sidebar.active {
   margin-left: -17rem;
 }
+
 #content.active {
   width: 100%;
   margin: 0;
 }
+
 #sidebarCollapse {
   position: absolute;
   right: -70px;
   top: 10px;
 }
+
 @media (max-width: 768px) {
   
   #sidebar {
@@ -270,6 +279,7 @@ a {
     left: 0;
     margin-left: -17rem;
   }
+
   #sidebarCollapse {
     position: absolute;
     right: -70px;
@@ -287,6 +297,7 @@ a {
     width: calc(100% - 17rem);
   }
 }
+
 /*
 * =========================================
 * FOR DEMO PURPOSE
@@ -303,9 +314,11 @@ body {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;
 }
+
 .text-uppercase {
   letter-spacing: 0.1em;
 }
+
 .text-gray {
   color: #aaa;
 }

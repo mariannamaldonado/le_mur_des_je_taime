@@ -6,6 +6,11 @@ import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
 import Contact from '../views/Contact.vue'
 
+import NewMessage from '@/pages/NewMessage.vue'
+import UserAdmin from '@/pages/UserAdmin.vue'
+import Profile from "@/pages/Profile.vue";
+import ListMessage from '@/pages/ListMessage.vue'
+
 const routes = [ 
   {
     path: '/',
@@ -43,12 +48,40 @@ const routes = [
     path: '/ForgotPassword',
     name: 'ForgotPassword',
     component: ForgotPassword
+<<<<<<< HEAD
   }
+=======
+  },
+  
+  {
+    path: '/Profile',
+    name: 'Profile',
+    component: Profile
+  },
+  {
+    path: '/ListMessage',
+    name: 'ListMessage',
+    component: ListMessage
+  },
+  {
+    path: '/NewMessage',
+    name: 'NewMessage',
+    component: NewMessage
+  },
+
+  {
+    path: '/UserAdmin',
+    name: 'UserAdmin',
+    component: UserAdmin
+  }
+ 
+
+>>>>>>> vistas-usuarios
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
 export default router

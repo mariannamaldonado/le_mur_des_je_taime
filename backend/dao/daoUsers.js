@@ -33,8 +33,9 @@ daoUsers.findByEmail = (email) => {
 }
 
 //función para eliminar usuario
-daoUsers.delete = (id) => {
-    User.findOneAndRemove({ _id: id }, (data) => {
+daoUsers.delete = (id)=>{
+    
+    User.findOneAndRemove({_id:id},(data)=>{
         console.log("registro eliminado")
     })
 }
