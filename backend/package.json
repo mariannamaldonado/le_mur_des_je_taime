@@ -17,6 +17,7 @@
     "express-session": "^1.17.1",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "mongoose": "^5.11.18",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7"
@@ -24,12 +25,17 @@
 =======
     "jest": "^26.6.3",
 >>>>>>> backend-crud
+=======
+>>>>>>> vistas-accesos
     "mongoose": "^5.12.3",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0"
+<<<<<<< HEAD
 >>>>>>> backend-crud
+=======
+>>>>>>> vistas-accesos
   }
 }
