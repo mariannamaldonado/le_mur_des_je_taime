@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <template>
   <!-- Showcase -->
     <section class="section-a">
@@ -391,4 +389,3 @@ ul {
   }
 }
 </style>
->>>>>>> vistas-usuarios

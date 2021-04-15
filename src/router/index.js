@@ -48,9 +48,6 @@ const routes = [
     path: '/ForgotPassword',
     name: 'ForgotPassword',
     component: ForgotPassword
-<<<<<<< HEAD
-  }
-=======
   },
   
   {
@@ -76,7 +73,6 @@ const routes = [
   }
  
 
->>>>>>> vistas-usuarios
 ]
 
 const router = createRouter({
