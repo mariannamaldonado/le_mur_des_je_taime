@@ -1,76 +1,77 @@
 <template>
-  <div class="container-fluid justify-content-center">
-    <div class="col col-6 offset-3">
-      <h2>About Us</h2>
-      <div class="row text-white">
-        <div class="col-lg-10">
-          <div
-            @click="show = !show"
-            class="col-md-12 bg-white p-5 rounded my-5 shadow-sm thing"
-          >
-            <img v-bind:src="image" class="photo" />
-            <h3>NOSOTROS</h3>
-            <transition name="slide-fade">
-              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris."
-              </p>
-            </transition>
-            -->
-          </div>
-          <div
-            @click="show = !show"
-            class="col-md-12 bg-white p-5 rounded my-5 shadow-sm"
-          >
-            <img v-bind:src="image" class="photo" />
-            <h3>NOSOTROS</h3>
-            <transition name="slide-fade">
-              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris."
-              </p>
-            </transition>
-          </div>
-          <div
-            @click="show = !show"
-            class="col-md-12 bg-white p-5 rounded my-5 shadow-sm"
-          >
-            <img v-bind:src="image" class="photo" />
-            <h3>NOSOTROS</h3>
-            <transition name="bounce">
-              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris."
-              </p>
-            </transition>
-          </div>
-          <div
-            @click="show = !show"
-            class="col-md-12 bg-white p-5 rounded my-5 shadow-sm"
-          >
-            <img v-bind:src="image" class="photo" />
-            <h3>NOSOTROS</h3>
-            <transition name="bounce">
-              <p v-if="show" class="nosotros lead font-italic mb-0 text-muted">
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris."
-              </p>
-            </transition>
-          </div>
+  <section class="content-section" id="about">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h2 class="mb-5">Equipo de trabajo</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="about-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Marianna Maldonado</div>
+                <p class="mb-0">
+                  Soy una persona enérgica, responsable, tenaz en todos los
+                  proyectos que me propongo. Trabajando con profesionalidad y
+                  responsabilidad junto a otras personas o de manera
+                  independiente.
+                </p>
+              </div>
+            </div>
+            <img class="img-fluid" v-bind:src="image4" alt="" />
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="about-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Andreea Cirlan</div>
+                <p class="mb-0">
+                  Soy una persona enérgica, responsable, tenaz en todos los
+                  proyectos que me propongo. Trabajando con profesionalidad y
+                  responsabilidad junto a otras personas o de manera
+                  independiente.
+                </p>
+              </div>
+            </div>
+            <img class="img-fluid" v-bind:src="image4" alt="" />
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="about-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Jeampierre Nuñez</div>
+                <p class="mb-0">
+                  Soy una persona enérgica, responsable, tenaz en todos los
+                  proyectos que me propongo. Trabajando con profesionalidad y
+                  responsabilidad junto a otras personas o de manera
+                  independiente.
+                </p>
+              </div>
+            </div>
+            <img class="img-fluid" v-bind:src="image4" alt="" />
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="about-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Anny Sánchez</div>
+                <p class="mb-0">
+                 <b> Soy una persona enérgica, tenaz en todos los
+                  proyectos que me propongo. Trabajando con profesionalidad y
+                  responsabilidad junto a otras personas o de manera
+                  independiente.</b>
+                </p>
+              </div>
+            </div>
+            <img class="img-fluid" v-bind:src="image4" />
+          </a>
         </div>
       </div>
-
-      <mdb-modal-footer class="mx-5 pt-3 mb-1"> </mdb-modal-footer>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -81,48 +82,75 @@ export default {
   components: {},
 
   setup() {
-    let show = ref("");
+    let show = true
 
     return {
       show,
-      image: "/avatar1.jpg",
-    }
-  } 
-}
-
+      image4: "/anny.jpg",
+    };
+  },
+};
 </script>
 
 <style lang="scss">
-h3 {
-  color: blue;
-}
-.nosotros {
-  background: rgb(194, 194, 247);
-  color: rgb(226, 226, 226);
+.about-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 530px;
+  margin: auto auto 1rem;
+  .caption {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    //background-color: fade-out(gray-900, 0.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    .caption-content {
+      color: rgb(0, 0, 0);
+      margin: auto 2rem 2rem;
+      h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+      p {
+        height: 60px;
+        font-weight: 300;
+        font-size: .9rem;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    max-width: none;
+    margin: 0;
+    .caption {
+      transition: clip-path 0.25s ease-out, background-color 0.7s;
+      clip-path: inset(0px);
+      .caption-content {
+        transition: opacity 0.25s;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-bottom: 5rem;
+      }
+    }
+    img {
+      transition: clip-path 0.25s ease-out;
+      clip-path: inset(-1px);
+    }
+    &:hover {
+      img {
+        clip-path: inset(2rem);
+      }
+      .caption {
+        //background-color: fade-out($primary, 0.1);
+        clip-path: inset(2rem);
+      }
+    }
+  }
 }
 
-.photo {
-  width: 70px;
-  height: 70px;
-}
-
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.9s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 //slide-fade dos primeras
 .slide-fade-enter-active {
   transition: all 0.5s ease;
