@@ -1,17 +1,17 @@
 <template>
-  <div class="lienzo"></div>
+  <div class="line"></div>
   
 </template>
 
 
 <script>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 export default {
   name: "Lines",
   props: {},
   setup() {
     onMounted(() => {
-      var canvas = document.getElementById("lienzo");
+      var canvas = document.getElementById("line");
       if (canvas && canvas.getContext) {
         var ctx = canvas.getContext("2d");
         if (ctx) {
