@@ -156,10 +156,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* .container-fluid {
+ .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
-} */
+} 
 .container-fluid{
   min-width: 400px;
 }
