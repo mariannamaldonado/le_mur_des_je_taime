@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid justify-content-center" id="frame">
-      <div class="col col-12 col-lg-6 offset-lg-3 p-5 bg-white rounded shadow-sm">
-        <h2>Recupera tú contraseña</h2>
+  <div class="container justify-content-center" id="frame">
+      <div class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded shadow-sm">
+        <h4>Recupera tú contraseña</h4>
         <br>
 
         <div class="form-floating mb-3">
@@ -49,11 +49,11 @@ export default {
 <style lang="scss" scoped>
 
 //background 
- .container-fluid {
+/*  .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
 }
- 
+  */
 .container-fluid{
   min-width: 400px;
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid justify-content-center" id="frame">
-      <div class="col col-12 col-lg-6 offset-lg-3 p-5 bg-white rounded shadow-sm" >
+  <div class="container justify-content-center" id="frame">
+      <div class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded shadow-sm" >
         <h2>INICIO DE SESIÓN</h2>
 
         <div class="form-floating mb-3" v-if="!user.email">
@@ -63,7 +63,7 @@
 
 	<!-- google	 -->
 	<div>
-		<a class="btn-google" href="/auth/google">
+		<a class="btn-google" href="/api/users/auth/google">
 			<div class="google-content">
 				<div class="logo">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
@@ -77,7 +77,7 @@
 
 	<!-- facebook	 -->
 	<div>
-		<a class="btn-fb" href="/auth/facebook">
+		<a class="btn-fb" href="/api/users/auth/facebook">
 			<div class="fb-content">
 				<div class="logo">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" version="1">
@@ -156,10 +156,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .container-fluid {
+/*  .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
-} 
+}  */
 .container-fluid{
   min-width: 400px;
 }

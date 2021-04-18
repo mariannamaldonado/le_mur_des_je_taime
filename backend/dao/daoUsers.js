@@ -6,11 +6,14 @@ const daoUsers = {}
 
 //función para guardar un usuario
 daoUsers.signup = (user) => {
-    return new Promise((resolved) => {
+    return new Promise((resolved, reject) => {
         let newUser = new User(user)
         newUser.save().then(user => {
             mailer.send(user.email)
             resolved(user)
+        }).catch(err=>{
+            console.log(err)
+            reject(err)
         })
     })
 }
