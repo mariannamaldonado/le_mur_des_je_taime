@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
       <div class="content-section-heading text-center">
-        <h1 class="mb-5">Equipo de trabajo</h1>
+        <h1 class="mb-5">Sobre Nosotros</h1>
       </div>
       </div>
 
@@ -176,5 +176,10 @@ export default {
 .slide-fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.content-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 </style>

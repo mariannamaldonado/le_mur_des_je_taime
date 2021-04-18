@@ -5,10 +5,12 @@ import ForgotPassword from '../views/ForgotPassword.vue'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
 import Contact from '../views/Contact.vue'
+import NotFound from '../views/NotFound.vue'
 
 import NewMessage from '@/pages/NewMessage.vue'
 import UserAdmin from '@/pages/UserAdmin.vue'
 import Profile from "@/pages/Profile.vue";
+import Profile2 from "@/pages/Profile2.vue";
 import ListMessage from '@/pages/ListMessage.vue'
 
 const routes = [ 
@@ -56,6 +58,11 @@ const routes = [
     component: Profile
   },
   {
+    path: '/Profile2',
+    name: 'Profile2',
+    component: Profile2
+  },
+  {
     path: '/ListMessage',
     name: 'ListMessage',
     component: ListMessage
@@ -70,6 +77,11 @@ const routes = [
     path: '/UserAdmin',
     name: 'UserAdmin',
     component: UserAdmin
+  },
+  {
+    path: '/NotFound',
+    name: 'NotFound',
+    component: NotFound
   }
  
 

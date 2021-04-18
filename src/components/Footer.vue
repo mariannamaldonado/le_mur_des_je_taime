@@ -7,51 +7,31 @@
         <a href="http://localhost:8082/about">Nosotros</a> <br/>
         <a href="http://localhost:8082/contacto">Contacto</a> <br/>
         <a href="#">Políticas de privacidad</a> <br/>
-          <!-- <a href="http://twitter.com">
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-          <a href="http://facebook.com">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="http://youtube.com">
-            <i class="fab fa-youtube fa-2x"></i>
-          </a> -->
+        
         </div>
         <div>
           <h3></h3>
-          
-        <!-- <a href="#">Home</a> <br/>
-        <a href="http://localhost:8082/about">Nosotros</a> <br/>
-        <a href="http://localhost:8082/contacto">Contacto</a> <br/>
-        <a href="#">Políticas de privacidad</a> <br/> -->
         
          <a href="http://twitter.com">
             <i class="fab fa-twitter fa-2x"></i>
           </a>
+         <br>
           <a href="http://facebook.com">
             <i class="fab fa-facebook fa-2x"></i>
           </a>
+          <br>
           <a href="http://youtube.com">
             <i class="fab fa-youtube fa-2x"></i>
           </a>
         </div>
         
         <div>
-          
-          <!-- <h3>Blog Posts</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-          </ul> -->
+        
         </div>
         
         <div>
           <h3>Suscribirse</h3>
-          <!-- <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p> -->
+        
           <form
             class="mt-1"
             name="email-form"
@@ -128,12 +108,11 @@ export default {
   border-radius: 20px;
   line-height: 0;
   margin-top: 1rem;
-}
-/* // .form-control-wrap {
-// 	position: relative;
-// 	display: inline-block;
-// 	width: 100%;
-// } */
+} .form-control-wrap {
+ 	position: relative;
+ 	display: inline-block;
+ 	width: 100%;
+ }
 .email-form .form-control {
   display: inline-block;
   border: 0;
@@ -215,7 +194,9 @@ a {
     text-decoration: auto;
 }
 
+
+
 .justify-content-between {
-    justify-content: flex!important;
+    justify-content: center!important;
 }
 </style>

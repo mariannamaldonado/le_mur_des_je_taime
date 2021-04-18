@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-        <a href="#search">
+        <a href="@/Profile">
           <p class="text-monospace">Profile</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@
 
           <!-- Perfil -->
         </a>
-        <a href="#about">
+        <a href="@/NewMessage">
           <p class="text-monospace">Enviar mensaje</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
           </svg>
           <!-- Enviar mensaje -->
         </a>
-        <a href="#about">
+        <a href="@/ListMessage">
           <p class="text-monospace">Lista de mensajes</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"

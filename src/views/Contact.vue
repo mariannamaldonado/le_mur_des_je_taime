@@ -1,11 +1,11 @@
 <template>
   <!-- Contact Us Section -->
-  <section class="Material-contact-section section-padding section-dark">
+  <section class="content-section section-padding section-dark">
     <div class="container">
       <!-- Section Titile -->
       <div class="row">
         <div class="col-md-8 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">¡Me encanta saber de ti!</h1>
+          <h1 class="section-title">¡Nos encantaria saber de ti!</h1>
         </div>
         <div class="col-md-4 wow animated fadeInLeft" data-wow-delay=".2s">
           <img v-bind:src="image" class="mailbox" />
@@ -105,12 +105,16 @@
       </div>
     </div>
   </section>
+     <Footer />
 </template>
 
 <script>
+import Footer from '@/components/Footer'
 export default {
   name: "Contact",
-  components: {},
+  components: {
+    Footer
+  },
 
   setup() {
     return {
@@ -121,6 +125,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+body {
+  font-family: 'Catamaran', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
 .mailbox {
   width: 158px;
   height: 158px;
@@ -200,4 +216,6 @@ textarea{
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
+
+
 </style>
