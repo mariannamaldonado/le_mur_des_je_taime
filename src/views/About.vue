@@ -1,9 +1,12 @@
 <template>
   <section class="content-section" id="about">
     <div class="container">
+      <div class="row">
       <div class="content-section-heading text-center">
-        <h2 class="mb-5">Equipo de trabajo</h2>
+        <h1 class="mb-5">Equipo de trabajo</h1>
       </div>
+      </div>
+
       <div class="row no-gutters">
         <div class="col-lg-6">
           <a class="about-item" href="#!">
@@ -72,14 +75,24 @@
       </div>
     </div>
   </section>
+   <section class="content-section  text-white">
+    <div class="container text-center">
+      <!-- <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2> -->
+      <a href="#!" class="btn btn-xl btn-light mr-4"></a> 
+
+    </div>
+  </section>
+   <Footer />
 </template>
 
 <script>
 import { ref } from "vue";
-
+import Footer from '@/components/Footer'
 export default {
   name: "About",
-  components: {},
+  components: {
+    Footer
+  },
 
   setup() {
     let show = true
@@ -111,9 +124,10 @@ export default {
     .caption-content {
       color: rgb(0, 0, 0);
       margin: auto 2rem 2rem;
-      h2 {
+      h1 {
         font-size: 0.8rem;
         text-transform: uppercase;
+            margin-top: revert;
       }
       p {
         height: 60px;

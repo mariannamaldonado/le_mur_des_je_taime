@@ -15,6 +15,7 @@
       &nbsp;-->
         </div>
       </div>
+      
       <!--   <p
         class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
       ></p> -->
@@ -36,6 +37,13 @@
             &nbsp;<router-link to="/about">Nosotros</router-link>
           </a>
         </li>
+          <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fas fa-envelope-open-text"></i>
+            &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Contacto</router-link>
+          </a>
+        </li>
+        <hr class="border" />
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-user-plus"></i>
@@ -56,12 +64,7 @@
             >
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-envelope-open-text"></i>
-            &nbsp;<router-link to="/Contact">Contacto</router-link>
-          </a>
-        </li>
+      
       </ul>
       <!-- 
   <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>

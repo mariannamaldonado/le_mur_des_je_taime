@@ -3,133 +3,144 @@
     <section class="section-a">
       <div class="container">
         <div>
-          <h1>Le mur des Je T’Aime – 
+           <!-- <div class="medium-tiempos center"> -->
+          <!--  Le mur <br>des<span class="bright-red suisse-50">Je T’Aime</span><br></div>
+          <img src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5e156bcd9ba5cbffdd421c8a_underline-red.png" width="137" alt="" class="underline-right-2"> -->
+          <h1>
+            Le mur des
+          </h1>
+             <div class="medium-tiempos center">
+            <span class="bright-red suisse-50">Je T’Aime</span><br></div>
+          <img src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5e156bcd9ba5cbffdd421c8a_underline-red.png" width="137" alt="" class="underline-right-2">
+            <!-- Le mur des Je T’Aime – 
             <br>
-            El muro de los “Te quiero”.</h1>
+            El muro de los “Te quiero”. -->
+            
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            repudiandae rerum libero ipsum asperiores omnis mollitia, nostrum
-            commodi placeat ea itaque modi corrupti corporis nam voluptas aut
-            reprehenderit eaque culpa.
+            hemos recreado la obra parisina, obra imaginada por Frédéric Baron y Claire Kito, 
+            es un lugar ineludible para los enamorados de todo el mundo que vienen a París, 
+            capital del romanticismo. El muro, construido sobre una superficie de 40 m², 
+            está compuesto por 612 azulejos de lava esmaltada, sobre los cuales florecen 311 
+            « te quiero » en 250 idiomas. Las chispas de color rojo sobre el fresco simbolizan 
+            los trozos de un corazón roto, símbolo de una humanidad que se desgarra y que el muro 
+            trata de reunir.
           </p>
           <a href="#" class="btn">Read More</a>
         </div>
-        <img src="@/assets/img/banner5.jpg" alt="" />
+        <img src="@/assets/img/header.png" alt="" />
       </div>
     </section>
+     <!-- Callout
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">¿En cuántos idiomas puedes decir 'Te quiero'?
+        <em>your</em>
+        next website!</h2>
+      <a class="btn btn-primary btn-xl" href="#">Download Now!</a>
+
+    </div>
+  </section> -->
+
+
 
     <!-- Large Text -->
     <section id="about" class="section-b">
       <div class="overlay">
         <div class="section-b-inner py-5">
-          <h3 class="text-2">Le Mur</h3>
-          <h2 class="text-5 mt-1">¿En cuántos idiomas puedes decir 'te amo'?</h2>
+          <h3 class="text-2"></h3>
+          <h2 class="text-5 mt-1">¿En cuántos idiomas puedes decir 'te amo'?</h2> 
           <!-- <p class="mt-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
             repudiandae laboriosam quia, error tempore porro ducimus voluptate
             laborum nostrum iure.
           </p> -->
-        </div>
+         </div>
       </div>
     </section>
-
+        
     <!-- Gallery -->
     <section class="section-c">
       <div class="gallery">
         <a href="#" class="big">
-          <img src="@/assets/img/banner12.jpg" alt="" />
+          <img src="@/assets/img/4.png" alt="" />
         </a>
         <a href="#" class="big">
-          <img src="@/assets/img/banner21.jpg" alt="" />
+          <img src="@/assets/img/1.gif" alt="" />
         </a>
+        <!-- <a href="#" class="big"
+          ><img src="@/assets/img/banner17.jpg" alt="" /></a> -->
+
         <a href="#" class="big"
           ><img src="@/assets/img/5.png" alt="" /></a>
 
-        <a href="#" class="big"
-          ><img src="@/assets/img/4.png" alt="" /></a>
-
-        <a href="#" class="big">
-          <img src="@/assets/img/5.png" alt=""
+        <!-- <a href="#" class="big">
+          <img src="@/assets/img/banner18.jpg" alt=""
         /></a>
         <a href="#" class="big"
-          ><img src="@/assets/img/banner10.jpg" alt=""
-        /></a>
+          ><img src="@/assets/img/5.png" alt=""
+        /></a> -->
       </div>
-    </section>
+    </section> 
+
+ <!-- Call to Action -->
+  <section class="content-section bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
+      <a href="#!" class="btn btn-xl btn-light mr-4">Envia un te quiero!</a>
+
+    </div>
+  </section>
 
     <!-- Footer -->
-    <footer class="section-footer py-4 bg-dark">
-      <div class="container">
-        <div>  <h2 class="text-2 mb-1"></h2>
-        
-          <a href="http://twitter.com">
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-          <a href="http://facebook.com">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="http://youtube.com">
-            <i class="fab fa-youtube fa-2x"></i>
-          </a>
-        </div>
-        <div>
-          <h3></h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="http://localhost:8082/about">Nosotros</a></li>
-            <li><a href="http://localhost:8082/contacto">Contacto</a></li>
-            <li><a href="#">Políticas de privacidad</a></li>
-          </ul>
-        </div>
-        <div>
-          
-          <!-- <h3>Blog Posts</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-          </ul> -->
-        </div>
-        
-        <div>
-          <h3>Suscribirse</h3>
-          <!-- <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p> -->
-          <form
-            class="mt-1"
-            name="email-form"
-            method="POST"
-            data-netlify="true"
-          >
-            <div class="email-form">
-              <span class="form-control-wrap"
-                ><input
-                  type="email"
-                  name="email"
-                  id="email"
-                  size="40"
-                  class="form-control"
-                  placeholder="E-mail"/></span
-              ><button type="submit" value="Submit" class="form-control submit">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </footer>
+  <Footer />
 </template>
 <script>
+import Footer from '@/components/Footer'
 export default {
   name: 'Home',
   components: {
+    Footer,
   }
 }
 </script>
 
 <style lang="css" scoped>
+
+
+.suisse-50.bright-red {
+    line-height: 50px;
+}
+.bright-red.suisse-50 {
+    font-size: 50px;
+}
+.suisse-50 {
+    font-family: 'Suisseintl webm', sans-serif;
+    font-size: 51px;
+    letter-spacing: -0.7px;
+}
+
+.bright-red {
+    color: #ec3944;
+}
+
+.underline-right-2 {
+    position: relative;
+    left: 62px;
+    top: -7px;
+}
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+img {
+    border: 0;
+}
 :root {
   --primary-color: #333;
   --secondary-color: #444;
@@ -201,15 +212,46 @@ ul {
   justify-content: center;
 }
 .section-a h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--primary-color);
 }
 .section-a p {
   margin: 1rem 0;
 }
+/* .callout */
+.callout {
+    padding: 15rem 0;
+    background: linear-gradient(90deg,
+    rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%);
+    /* url('../assets/img/banner12.jpg'); */
+     background-color: #1f4b8d;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.callout h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: block;
+    max-width: 30rem;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+}
+
+.mr-auto, .mx-auto {
+    margin-right: auto!important;
+}
+
+.mb-5, .my-5 {
+    margin-bottom: 3rem!important;
+}
 .section-b {
   position: relative;
-  background: url('../assets/img/banner9.jpg') no-repeat bottom center/cover;
+  /* background: url('../assets/img/banner12.jpg') no-repeat bottom center/cover; */
+   background-color: #b40e0e;
   height: 600px;
 }
 .section-b-inner {
@@ -233,27 +275,27 @@ ul {
 }
 .section-b-inner p {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
 }
-.section-c .gallery {
+ .section-c .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 .section-c .gallery a:first-child {
-  /* grid-row-start: 1;
-  grid-row-end: 3; */
+   grid-row-start: 1;
+  grid-row-end: 3; 
   grid-row: 1/3;
   grid-column: 1/3;
-}
-.section-c .gallery a:nth-child(2) {
+} 
+ .section-c .gallery a:nth-child(2) {
   grid-column-start: 3;
   grid-column-end: 5;
-}
-.section-c .gallery img,
+} 
+ .section-c .gallery img,
 .section-c .gallery a {
   width: 100%;
   height: 100%;
-}
+} 
 .section-footer {
   background: var(--primary-color);
   color: #fff;
@@ -376,16 +418,36 @@ ul {
   .section-c .gallery a:last-child {
     display: none;
   }
-  .section-footer {
-    padding: 2rem 0;
-  }
-  .section-footer .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .section-footer div:nth-child(2),
-  .section-footer div:nth-child(3) {
-    display: none;
-  }
+}
+
+.bg-dark {
+    background-color: #212529!important;
+}
+
+/* call to action */
+.bg-primary {
+    background-color: #1f4b8d!important;
+}
+.content-section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.text-white {
+    color: #fff!important;
+}
+
+.btn.btn-xl.btn-light {
+    max-width: 310px;
+    margin-top: 45px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    font-family: 'Suisseintl webm', sans-serif;
+    color: #1b212c;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 </style>
