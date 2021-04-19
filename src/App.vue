@@ -53,24 +53,24 @@
         <hr class="border" />
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-user-plus"></i>
+            <i class="bi bi-person-plus"></i>
             &nbsp;<router-link to="/SignUp">Registrarse</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-sign-in-alt"></i>
+            <i class="bi bi-box-arrow-in-right"></i>
             &nbsp;<router-link to="/SignIn">Iniciar Sesión</router-link>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-question"></i>
             &nbsp;<router-link to="/ForgotPassword"
-              >Forgot Password</router-link
+              >Olvidaste tu contraseña</router-link
             >
           </a>
-        </li>
+        </li> -->
       
       </ul>
       <!-- 
