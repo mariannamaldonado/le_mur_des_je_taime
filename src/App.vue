@@ -5,8 +5,7 @@
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
-      >
+        class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
         <i class="fa fa-bars mr-2"></i>
       </button>
       <div class="py-4 px-3 mb-4 bg-light background">
@@ -46,7 +45,7 @@
          <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="bi bi-suit-heart"></i>
-            &nbsp;<router-link class="js-scroll-trigger" to="/Muro">Muro</router-link>
+            &nbsp;<router-link class="js-scroll-trigger" to="/Wall">Muro</router-link>
           </a>
         </li>
         <li class="nav-item">
@@ -69,14 +68,6 @@
             &nbsp;<router-link to="/SignIn">Iniciar Sesión</router-link>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-question"></i>
-            &nbsp;<router-link to="/ForgotPassword"
-              >Olvidaste tu contraseña</router-link
-            >
-          </a>
-        </li> -->
       
       </ul>
 
