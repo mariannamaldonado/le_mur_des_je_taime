@@ -58,8 +58,7 @@
        
        <div class="copyright d-flex flex-wrap justify-content-between">
       &copy; Hecho con &nbsp; 
-      <i class="fa fa-heart heart"></i> &nbsp;  por
-      <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp; Final Project.</a>&nbsp;
+      <i class="fa fa-heart heart"></i> &nbsp;  por final project. <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp;</a>
     </div>
     
     </footer>

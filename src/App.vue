@@ -27,22 +27,29 @@
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-home"></i>
+            <i class="bi bi-house-door"></i>
             &nbsp;<router-link to="/">Inicio</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-address-card"></i>
+            <i class="bi bi-card-heading"></i>
             &nbsp;<router-link to="/about">Nosotros</router-link>
           </a>
         </li>
           <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-envelope-open-text"></i>
+            <i class="bi bi-envelope-open"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Contacto</router-link>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="bi bi-chat-left-dots"></i>
+            &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Enviar Mensajes</router-link>
+          </a>
+        </li>
+
         <hr class="border" />
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
