@@ -13,19 +13,6 @@
           <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label>
         </div> 
 
-        <!-- <div class="form-floating">
-          <select
-            type="text"
-            class="form-control floatingInput"
-            placeholder="Rol"
-          >
-            <option value="" selected hidden>Rol</option>
-            <option value="user">Usuario</option>
-            <option value="admin">Administrador</option>
-          </select>
-          <label for="rol"></label>
-        </div> -->
-
         <div class="form-group d-flex justify-content-center">
           <button type="button" id="loginbutton" class="btn btn-danger btn-lg">  
             ENVIAR EMAIL
@@ -84,8 +71,27 @@ a{
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
+//efecto button  revisar borde rojo
+/* #loginbutton {
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+  border: none;
+  background-image: linear-gradient(to right, #a19dcf, #03002d);
+} */
+
 
 #loginbutton {
+  color: #9c0505;
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+#loginbutton:hover {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;
@@ -93,6 +99,7 @@ a{
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
+
 
 .btn-danger {
   color: #fff;

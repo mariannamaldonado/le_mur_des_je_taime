@@ -7,6 +7,9 @@ const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
 var passport = require('passport')
 
+
+
+
 // conexion bade de datos
 const conexion = require('./mongodb')
 conexion.on('error',console.error.bind(console,"Error de conexion mongo"))

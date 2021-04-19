@@ -19,7 +19,7 @@ const schemaUser = new Schema({
         validate: [{validator: validatePwdLength, "msg":"La contrasena deberia tener por lo menos 6 caracteres."}]    
     },
     active: { type: Boolean, default: false },
-    provider_id: {type: String, unique: false},
+    provider_id: {type: String, unique: true},
     role: { type: Boolean, default: false },
     avatar: { type: String},
     createdAt: { type: Date, default: Date.now }

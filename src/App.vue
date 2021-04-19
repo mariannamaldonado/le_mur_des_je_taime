@@ -94,12 +94,13 @@ export default {
 
 
 <style lang="scss"  scoped>
-// .container-fluid {
-//   background: url("../public/muroblur.png") no-repeat center center fixed;
-//   background-size: cover;
-//   height: 100%;
-//   background-size: 100% 100%;
-// }
+  /*.container-fluid {
+  background: url("../public/muroblur.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  background-size: 100% 100%;  
+  
+ }*/
 a {
   text-decoration: none;
   color: #0f1433;

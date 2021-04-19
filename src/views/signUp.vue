@@ -184,15 +184,6 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-#loginbutton {
-  white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-  border: none;
-  background-image: linear-gradient(to right, #a19dcf, #03002d);
-}
-
 .btn-danger {
   color: #fff;
   background-color: #121ca8;
@@ -209,4 +200,24 @@ a {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+#loginbutton {
+  color: #9c0505;
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+#loginbutton:hover {
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+  border: none;
+  background-image: linear-gradient(to right, #a19dcf, #03002d);
+}
+
+
 </style>

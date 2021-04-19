@@ -53,9 +53,7 @@ daoUsers.signin = (email, password) => {
                         resolved(data) //todo correcto ;)
                     else
                         resolved(null) //el password no coincide
-                } else {
-                    resolved(null) //no encuentro ese usuario
-                }
+                } 
             })
     })
 }
