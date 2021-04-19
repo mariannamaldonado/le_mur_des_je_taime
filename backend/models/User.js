@@ -3,13 +3,23 @@ const { Schema } = mongoose
 const bcrypt = require('bcrypt')
 
 const schemaUser = new Schema({
-    firstname: { type: String, required: true},
-    lastname: { type: String, required: true},
+    firstname: { type: String, required: [true, "El nombre es obligatorio."]},
+    lastname: { type: String, required: [true, "El apellido es obligatorio."]},
     username: { type: String},
-    email: { type: String, required: true, index: true, unique: true },
-    password: { type: String, required: true },
+    email: { 
+        type: String, 
+        required: [true, "El email es obligatorio."], 
+        index: true, 
+        unique: [true,"Existe un usuario registrado con el mismo email."],
+        validate: [{validator: validateEmail, "msg":"El formato del e-mail no es válido"}]
+    },
+    password: { 
+        type: String, 
+        required: [true,"La contrasena es obligatoria."],
+        validate: [{validator: validatePwdLength, "msg":"La contrasena deberia tener por lo menos 6 caracteres."}]    
+    },
     active: { type: Boolean, default: false },
-    provider_id: {type: String, unique: false},
+    provider_id: {type: String, unique: true},
     role: { type: Boolean, default: false },
     avatar: { type: String},
     createdAt: { type: Date, default: Date.now }
@@ -25,16 +35,26 @@ schemaUser.pre('save', function (next) {
         })
 })
 
+function validateEmail(email){
+    let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+        return regEmail.test(email)
+}
+function validatePwdLength(pwd){
+    if(pwd.length >= 6)
+        return true
+    else 
+        return false
+}
 class User {
 
     validar() {
         let errores = []
-        if (this.firstname == "") errores.push({ error: "El nombre no puede estar vacio." })
+       /*  if (this.firstname == "") errores.push({ error: "El nombre no puede estar vacio." })
         if (this.lastname == "") errores.push({ error: "El apellido no puede estar vacío." })
         if (this.username == "") errores.push({ error: "El seudonimo no puede estar vacío." })
         if (this.email == "") errores.push({ error: "El email no puede estar vacío." })
         if (this.password == "") errores.push({ error: "El password no puede estar vacío." })
-
+ */
         //validacion el e-mail:
         let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         if (!regEmail.test(this.email)) errores.push({ error: "El formato del e-mail no es válido" })

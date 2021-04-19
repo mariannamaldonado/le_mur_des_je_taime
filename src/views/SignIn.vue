@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid justify-content-center" id="frame">
-      <div class="col col-12 col-lg-6 offset-lg-3 p-5 bg-white rounded shadow-sm" >
+  <div class="container justify-content-center" id="frame">
+      <div class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded shadow-sm" >
         <h2>INICIO DE SESIÓN</h2>
 
         <div class="form-floating mb-3" v-if="!user.email">
@@ -16,25 +16,13 @@
         <div class="form-floating">
           <input
             v-model="password" required
-            type="text"
+            type="password"
             class="form-control floatingInput"
             placeholder="Contraseña"
           />
           <label for="floatingInput"><i class="fas fa-unlock-alt"></i>&nbsp;Contraseña</label>
         </div>
-
-        <!-- <div class="form-floating">
-          <select
-            type="text"
-            class="form-control floatingInput"
-            placeholder="Rol"
-          >
-            <option value="" selected hidden>Rol</option>
-            <option value="user">Usuario</option>
-            <option value="admin">Administrador</option>
-          </select>
-          <label for="rol"></label>
-        </div> -->
+        
         <br />
         <div class="form-floating">
           <div class="d-flex justify-content-center">
@@ -63,7 +51,7 @@
 
 	<!-- google	 -->
 	<div>
-		<a class="btn-google" href="/auth/google">
+		<a class="btn-google" href="/api/users/auth/google">
 			<div class="google-content">
 				<div class="logo">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
@@ -77,7 +65,7 @@
 
 	<!-- facebook	 -->
 	<div>
-		<a class="btn-fb" href="/auth/facebook">
+		<a class="btn-fb" href="/api/users/auth/facebook">
 			<div class="fb-content">
 				<div class="logo">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" version="1">
@@ -156,10 +144,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .container-fluid {
+/*  .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
-} 
+}  */
 .container-fluid{
   min-width: 400px;
 }
@@ -191,8 +179,16 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-
 #loginbutton {
+  color: #9c0505;
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+#loginbutton:hover {
   white-space: nowrap;
   margin: 50px auto;
   border-radius: 50px;
@@ -200,6 +196,7 @@ a {
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
+
 
 .btn-danger {
   color: #fff;
