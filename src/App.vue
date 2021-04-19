@@ -43,10 +43,16 @@
             &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Contacto</router-link>
           </a>
         </li>
+         <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="bi bi-suit-heart"></i>
+            &nbsp;<router-link class="js-scroll-trigger" to="/Muro">Muro</router-link>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="bi bi-chat-left-dots"></i>
-            &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Enviar Mensajes</router-link>
+            &nbsp;<router-link class="js-scroll-trigger" to="/NewMessage">Enviar Mensajes</router-link>
           </a>
         </li>
 
