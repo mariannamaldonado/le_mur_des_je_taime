@@ -2,12 +2,6 @@
   <div class="col-sm" id="vertical"></div>
   <!-- <h1>{{ msg }}</h1> -->
   <div id="container">
-    <nav class="nav">
-      <a href="#item1" id="1">Tunel</a>
-      <a href="#item4" id="4">Muro</a>
-      <a href="#item2" id="2"></a>
-      <a href="#item3" id="3"></a>
-    </nav>
     <div class="environment" @click="getSelection">
       <div id="item1" class="section">
         <img class="imgTranslate" :src="image">

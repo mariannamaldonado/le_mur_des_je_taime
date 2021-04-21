@@ -57,9 +57,17 @@
 
         <hr class="border" />
         <li class="nav-item">
+<<<<<<< HEAD
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-user-plus"></i>
             &nbsp;<router-link to="/SignUp">Registrarse</router-link>
+=======
+          <a href="#item4" id="4" class="nav-link text-dark font-italic">
+            <i class="fas fa-heart"></i>
+            &nbsp;<router-link to="/Wall"
+              >Muro</router-link
+            >
+>>>>>>> muro-vistas
           </a>
         </li>
         <li class="nav-item">
