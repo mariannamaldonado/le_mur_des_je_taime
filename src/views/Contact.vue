@@ -1,8 +1,6 @@
 <template>
-  <!-- Contact Us Section -->
   <section class="content-section section-padding section-dark">
     <div class="container">
-      <!-- Section Titile -->
       <div class="row">
         <div class="col-md-8 wow animated fadeInLeft" data-wow-delay=".2s">
           <h1 class="section-title">¡Nos encantaria saber de ti!</h1>
@@ -12,7 +10,6 @@
         </div>
       </div>
       <div class="row">
-        <!-- Section Titile -->
         <div
           class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft"
           data-wow-delay=".2s"
@@ -40,7 +37,7 @@
             <p>Horario: L a S: 09:30 AM - 10.30 PM</p>
           </div>
         </div>
-        <!-- contact -->
+        <!-- contacto -->
         <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
           <div class="form-floating mb-3">
             <input
@@ -76,7 +73,6 @@
               ><i class="fas fa-sticky-note"></i>&nbsp;Mensaje</label
             >
           </div>
-          <!-- Form Submit -->
           <div class="form-group d-flex">
             <button
               type="button"
@@ -84,7 +80,6 @@
               class="btn btn-danger btn-lg"
             >
               ENVIAR MENSAJE
-              <!-- <b> ENVIAR MENSAJE</b> -->
             </button>
           </div>
         </div>
@@ -143,24 +138,14 @@ h4 {
   left: 1793px;
   top: 109px;
 }
-// fondo blanco, para el contacto que si queda la imagen detras no pasa nada, porque el
-// fondo transparente chiva el gif...
-// tamaño del div a 350px, en las otras vistas es container-fluid a 400px...
-// hay un pequeño margen de diferencia de un lado a otro no queda centrado completamente...
-// solo esta vista tiene el estilo del boton en el div del (ENVIAR MENSAJE) esta la opcion
-// normal y en negrita, que una me parece muy fina y la otra muy gruesa, mira las dos a ver que tal.
-// textarea no he podido agrandarlo y aunque quite el scrol sube el texto hacia arriba 
 .container {
   padding: 60px;
   background: #fff;
   min-width: 350px;
 }
-
 textarea{
-  overflow:hidden;
-  
+  overflow:hidden;  
 }
-
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -168,24 +153,20 @@ textarea{
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
 }
-
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
   border-bottom: 2px solid #070a2b;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .form-floating {
   border-radius: none !important;
 }
-
 .form-control:focus {
   background: transparent;
   border-bottom: 2px solid #070a2b;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 #loginbutton {
   color: #9c0505;
   background: transparent;
@@ -194,7 +175,6 @@ textarea{
   border-radius: 50px;
   padding: 10px 40px;
 }
-
 #loginbutton:hover {
   white-space: nowrap;
   margin: 50px auto;
@@ -203,7 +183,6 @@ textarea{
   border: none;
   background-image: linear-gradient(to right, #a19dcf, #03002d);
 }
-
 .btn-danger {
   color: #fff;
   background-color: #121ca8;
@@ -216,6 +195,4 @@ textarea{
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
-
-
 </style>
