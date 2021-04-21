@@ -26,31 +26,31 @@
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-house-door"></i>
+            <i class="fas fa-home"></i>
             &nbsp;<router-link to="/">Inicio</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-card-heading"></i>
+             <i class="fas fa-address-card"></i>
             &nbsp;<router-link to="/about">Nosotros</router-link>
           </a>
         </li>
           <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-envelope-open"></i>
+            <i class="fas fa-envelope-open-text"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Contacto</router-link>
           </a>
         </li>
          <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-suit-heart"></i>
+            <i class="bi bi-heart-fill"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/Wall">Muro</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-chat-left-dots"></i>
+            <i class="bi bi-chat-right-dots-fill"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/NewMessage">Enviar Mensajes</router-link>
           </a>
         </li>
@@ -58,13 +58,13 @@
         <hr class="border" />
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-person-plus"></i>
+            <i class="fas fa-user-plus"></i>
             &nbsp;<router-link to="/SignUp">Registrarse</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-box-arrow-in-right"></i>
+           <i class="fas fa-sign-in-alt"></i>
             &nbsp;<router-link to="/SignIn">Iniciar Sesión</router-link>
           </a>
         </li>
