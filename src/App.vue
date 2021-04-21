@@ -57,10 +57,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+          <a href="#item4" id="4" class="nav-link text-dark font-italic">
             <i class="fas fa-heart"></i>
             &nbsp;<router-link to="/Wall"
-              >Wall</router-link
+              >Muro</router-link
             >
           </a>
         </li>
