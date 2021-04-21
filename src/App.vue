@@ -42,32 +42,25 @@
             &nbsp;<router-link class="js-scroll-trigger" to="/Contact">Contacto</router-link>
           </a>
         </li>
-         <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
-            <i class="bi bi-heart-fill"></i>
-            &nbsp;<router-link class="js-scroll-trigger" to="/Wall">Muro</router-link>
-          </a>
-        </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="bi bi-chat-right-dots-fill"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/NewMessage">Enviar Mensajes</router-link>
           </a>
         </li>
-
         <hr class="border" />
         <li class="nav-item">
-<<<<<<< HEAD
-          <a href="#" class="nav-link text-dark font-italic">
-            <i class="fas fa-user-plus"></i>
-            &nbsp;<router-link to="/SignUp">Registrarse</router-link>
-=======
           <a href="#item4" id="4" class="nav-link text-dark font-italic">
-            <i class="fas fa-heart"></i>
+            <i class="bi bi-suit-heart"></i>
             &nbsp;<router-link to="/Wall"
               >Muro</router-link
             >
->>>>>>> muro-vistas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+          <i class="fas fa-user-plus"></i>
+            &nbsp;<router-link to="/SignUp">Registrarse</router-link>
           </a>
         </li>
         <li class="nav-item">
@@ -76,9 +69,7 @@
             &nbsp;<router-link to="/SignIn">Iniciar Sesión</router-link>
           </a>
         </li>
-      
       </ul>
-
     </div>
     <!-- End vertical navbar -->
 
