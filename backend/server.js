@@ -5,6 +5,7 @@ var session = require('express-session')
 const rtMain = require('./routers/rtMain')
 const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
+const verifyToken = require('./routers/validate-token');
 var passport = require('passport')
 
 // conexion bade de datos

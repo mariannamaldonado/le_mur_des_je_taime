@@ -1,35 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import ForgotPassword from '../views/ForgotPassword.vue'
-import SignUp from '../views/SignUp.vue'
-import SignIn from '../views/SignIn.vue'
-import Contact from '../views/Contact.vue'
-import Wall from '../views/Wall.vue'
-import NotFound from '../views/NotFound.vue'
 
-
-import NewMessage from '@/pages/NewMessage.vue'
-import UserAdmin from '@/pages/UserAdmin.vue'
-import Profile from "@/pages/Profile.vue";
-import Profile2 from "@/pages/Profile2.vue";
-import ListMessage from '@/pages/ListMessage.vue'
 
 const routes = [ 
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: ()=> import( '@/views/Home.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: ()=> import( '@/views/About.vue'),
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: ()=> import( '@/views/Contact.vue'),
   },
   {
     path: '/users',
@@ -41,53 +27,55 @@ const routes = [
   {
     path: '/SignIn',
     name: 'SignIn',
-    component: SignIn
+    component: ()=> import( '@/views/SignIn.vue'),
   },
   {
     path: '/SignUp',
     name: 'SignUp',
-    component: SignUp
+    component: ()=> import( '@/views/SignUp.vue'),
   },
   {
     path: '/ForgotPassword',
     name: 'ForgotPassword',
-    component: ForgotPassword
+    component: ()=> import( '@/views/ForgotPassword.vue'),
   },
   
   {
     path: '/Profile',
     name: 'Profile',
-    component: Profile
+    component: ()=> import( '@/pages/Profile.vue'),
   },
   {
     path: '/Profile2',
     name: 'Profile2',
-    component: Profile2
+    component: ()=> import( '@/pages/Profile2.vue'),
   },
   {
     path: '/ListMessage',
     name: 'ListMessage',
-    component: ListMessage
+    component: ()=> import( '@/pages/ListMessage.vue'),
+      meta :{ requiresAuth: true}
   },
   {
     path: '/NewMessage',
     name: 'NewMessage',
-    component: NewMessage
+    component: ()=> import( '@/pages/NewMessage.vue'),
   },
   {
     path: '/UserAdmin',
     name: 'UserAdmin',
-    component: UserAdmin
+    component: ()=> import( '@/pages/UserAdmin.vue'),
+
   },
   {
     path: '/NotFound',
     name: 'NotFound',
-    component: NotFound
+    component: ()=> import( '@/views/NotFound.vue'),
   },
   {
     path: '/Wall',
     name: 'Wall',
-    component: Wall
+    component: ()=> import( '@/views/Wall.vue'),
   }
  
 
@@ -97,5 +85,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 });
+
+
+
 
 export default router

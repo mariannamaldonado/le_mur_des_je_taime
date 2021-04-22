@@ -6,8 +6,9 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
   useCreateIndex: true,
   useFindAndModify: false
 })
-.then(db => console.log('Conexión mongo OK!!'))
-.catch(err => console.log(err));
+  .then(db => console.log('Conexión mongo OK!!'))
+  .catch(err => console.log(err));
 
-module.exports=mongoose.connection
+module.exports = mongoose.connection
+
  

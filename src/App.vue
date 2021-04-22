@@ -84,8 +84,15 @@
 
 <script>
 import $ from "jquery";
+import { mapActions } from 'vuex'
 
 export default {
+  methods:{
+    ...mapActions(['getToken'])
+  },
+  created(){
+    this.getToken()
+  },
   name: "Home",
   props: {},
   setup() {},
