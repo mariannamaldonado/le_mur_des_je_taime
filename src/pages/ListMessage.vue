@@ -164,10 +164,10 @@
               </div>
 
               <div class="col col-1" data-label="name">
-                {{ Message.user }}
+                {{ Message.user.firstname }}
               </div>
               <div class="col col-2" data-label="email">
-                {{ Message.receiver }}
+                {{ Message.user.email }}
               </div>
               <div class="col col-3" data-label="message">
                 {{ Message.message }}

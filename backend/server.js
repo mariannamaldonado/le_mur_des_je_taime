@@ -7,13 +7,8 @@ const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
 var passport = require('passport')
 
-
-
-
 // conexion bade de datos
 const conexion = require('./mongodb')
-conexion.on('error',console.error.bind(console,"Error de conexion mongo"))
-conexion.once('open',()=>console.log("Conexión mongo OK!!"))
 
 //gestión de sesiones
 app.use(session({ 
@@ -24,12 +19,11 @@ app.use(session({
 
 // cors
 const cors = require('cors');
-var corsOptions = {
+let corsOptions = {
     origin: '*', // Reemplazar con dominio
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions));
-
 
 //middlewares
 app.use(express.json())
