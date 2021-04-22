@@ -3,18 +3,14 @@
     <section class="section-a">
       <div class="container">
         <div>
-           <!-- <div class="medium-tiempos center"> -->
-          <!--  Le mur <br>des<span class="bright-red suisse-50">Je T’Aime</span><br></div>
-          <img src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5e156bcd9ba5cbffdd421c8a_underline-red.png" width="137" alt="" class="underline-right-2"> -->
+         
           <h1>
             Le mur des
           </h1>
              <div class="medium-tiempos center">
             <span class="bright-red suisse-50">Je T’Aime</span><br></div>
           <img src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5e156bcd9ba5cbffdd421c8a_underline-red.png" width="137" alt="" class="underline-right-2">
-            <!-- Le mur des Je T’Aime – 
-            <br>
-            El muro de los “Te quiero”. -->
+           
             
           <p>
             hemos recreado la obra parisina, obra imaginada por Frédéric Baron y Claire Kito, 
@@ -25,35 +21,18 @@
             los trozos de un corazón roto, símbolo de una humanidad que se desgarra y que el muro 
             trata de reunir.
           </p>
-          <a href="#" class="btn">Read More</a>
         </div>
         <img src="@/assets/img/header.png" alt="" />
       </div>
     </section>
-     <!-- Callout
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">¿En cuántos idiomas puedes decir 'Te quiero'?
-        <em>your</em>
-        next website!</h2>
-      <a class="btn btn-primary btn-xl" href="#">Download Now!</a>
-
-    </div>
-  </section> -->
-
-
-
+ 
     <!-- Large Text -->
     <section id="about" class="section-b">
       <div class="overlay">
         <div class="section-b-inner py-5">
           <h3 class="text-2"></h3>
           <h2 class="text-5 mt-1">¿En cuántos idiomas puedes decir 'te amo'?</h2> 
-          <!-- <p class="mt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            repudiandae laboriosam quia, error tempore porro ducimus voluptate
-            laborum nostrum iure.
-          </p> -->
+         
          </div>
       </div>
     </section>

@@ -33,7 +33,7 @@ rtUsers.post('/delete/:id', (req, res) => {
 
 rtUsers.post('/login', (req, res) => {
   daoUsers.signin(req.body.email, req.body.password)
-  
+
     .then(data => res.json(data))
 })
 
