@@ -22,6 +22,14 @@ app.use(session({
     saveUninitialized: true
 }))
 
+// cors
+const cors = require('cors');
+var corsOptions = {
+    origin: '*', // Reemplazar con dominio
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions));
+
 
 //middlewares
 app.use(express.json())

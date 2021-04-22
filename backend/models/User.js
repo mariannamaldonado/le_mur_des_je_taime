@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 const schemaUser = new Schema({
     firstname: { type: String, required: [true, "El nombre es obligatorio."]},
