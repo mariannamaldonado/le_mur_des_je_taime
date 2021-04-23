@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+ <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
          <!-- Perfil -->
-        <a href="/Profile">
+        <a href="@/Profile">
           <p class="text-monospace">Profile</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@
           </svg>
         </a>
           <!-- Enviar mensaje -->
-        <a href="/NewMessage">
+        <a href="@/NewMessage">
           <p class="text-monospace">Enviar mensaje</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
           </svg>
         </a>
         <!-- Lista de mensaje -->
-        <a href="/ListMessage">
+        <a href="@/ListMessage">
           <p class="text-monospace">Lista de mensajes</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,13 +73,9 @@
     <footer class="main-footer">
       <!-- main-footer -->
     </footer>
-  </div>
+
 
   <hr class="border" />
-
-  <!-- <div class="container"> 
-    <h2>Mensaje nuevo <small></small></h2>
-  </div> -->
 
     <div class="card border-left-warning shadow h-100 py-2">
       <div class="card-body">
@@ -114,88 +110,31 @@
             <i class="fas fa-comments fa-2x text-gray-300"></i>
           </div>
         </div>
-         <!-- inicio -->
-         <div class="card-body">
+      </div>
+    </div>
+    <!-- inicio -->
+
+    <div class="card-body">
       <div>
         <form method="post">
           <textarea id="mytextarea">Ciao, Ti amo!</textarea>
-         <div class = "button-wrap">
-         <hr/>
-    <a href="#" class="myButton">Enviar</a>
-    </div>
         </form>
       </div>
     </div>
-    <!-- fin -->
-      </div>
-    </div>
-   
-
-     <hr class="border" />
-     <footer class="footer">
-    <div class="container-fluid d-flex flex-wrap justify-content-between">
-      <nav>
-        <ul>
-            <router-link :to="{path:'/'}">Le mur des je t'aime</router-link>
-        </ul>
-      </nav>
-    <div class="copyright d-flex flex-wrap">
-      &nbsp; Hecho con &nbsp;
-     <a id="heart" href="#">&#9829;</a>&nbsp; por
-      <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp; Final Project.</a>&nbsp;
-    </div>
-    </div>
-  </footer>
- <!-- <ContentFooter /> -->
+  </div>
 </template>
-<!--  import ContentFooter from '@/components/ContentFooter' -->
+
 <script>
-import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "NewMessage",
-  components: {
-    
-  },
+  components: {},
   setup() {
-   
-    
-
-    return {
-     
-  };
+    return {};
   },
 };
 </script>
 
-
 <style lang="scss" scoped>
-// inicio button
-.myButton {
-	box-shadow: 0px 0px 0px 2px #3f71fa;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
-	border-radius:10px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:10px 37px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-// fin booton
-
-//borde tarjeta
 .border-left-warning {
   border-left: 0.25rem solid #b7c8e0 !important;
 }
@@ -204,7 +143,7 @@ export default {
   min-height: 1px;
   padding: 1.25rem;
 }
-// navbar
+/* navbar */
 
 .topnav {
   overflow: hidden;
@@ -217,11 +156,11 @@ export default {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #b7c8e0;
+  background-color: #3f4f66;
   color: black;
 }
 
@@ -229,137 +168,48 @@ export default {
   float: right;
 }
 
-// sidebar
-body {
-  font-family: "lato", sans-serif;
-  background-color: #f1f2f5;
-  font-family: var(--bs-font-sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
+// body {
+//   font-family: "lato", sans-serif;
+//   background-color: #f1f2f5;
+// }
+
+// h2 {
+//   font-size: 26px;
+//   margin: 20px 0;
+//   text-align: center;
+// }
+// h2 small {
+//   font-size: 0.5em;
+// }
+
+// textarea {
+//   overflow: hidden;
+// }
+
+
+
+.floatingInput,
+.floatingPassword {
+  border: 0;
+  border-bottom: 2px solid #e4e6e9;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+  border-radius: 0;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-  color: #797979;
-  background: #f2f2f2;
-  font-family: "Ruda", sans-serif;
-  padding: 0px !important;
-  // margin: 0px !important;
-  font-size: 13px;
-  background-color: #fff;
+.floatingInput:active,
+.floatingInput:focus {
+  border: 0;
+  border-bottom: 2px solid #070a2b;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-.container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+.form-floating {
+  border-radius: none !important;
 }
 
-h2 {
-  font-size: 26px;
-  margin: 20px 0;
-  text-align: center;
-}
-h2 small {
-  font-size: 0.5em;
-}
-
-.responsive-table li {
-  border-radius: 3px;
-  padding: 25px 30px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.responsive-table .table-header {
-  background-color: #b7c8e0;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-.responsive-table .table-row {
-  background-color: #f1f2f5;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-}
-.responsive-table .col-0 {
-  flex-basis: 5%;
-}
-.responsive-table .col-1 {
-  flex-basis: 15%;
-}
-.responsive-table .col-2 {
-  flex-basis: 20%;
-}
-.responsive-table .col-3 {
-  flex-basis: 50%;
-}
-.responsive-table .col-4 {
-  flex-basis: 10%;
-}
-@media all and (max-width: 767px) {
-  .responsive-table .table-header {
-    display: none;
-  }
-  .responsive-table li {
-    display: block;
-  }
-  .responsive-table .col {
-    flex-basis: 100%;
-  }
-  .responsive-table .col {
-    display: flex;
-    padding: 10px 0;
-  }
-  .responsive-table .col:before {
-    color: #b7c8e0;
-    padding-right: 10px;
-    content: attr(data-label);
-    flex-basis: 50%;
-    text-align: right;
-  }
-}
-
-.btn-info {
-  color: #f8f9fa;
-  background-color: #b7c8e0;
-  border-color: #b7c8e0;
-}
-
-.btn {
-  padding: 0.1rem 0.75rem;
-}
-
-#heart {
-    font-size: 40px;
-    color: #F27983;
-    position: relative;
-}
-
-#heart:after {
-    content:"♥";
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: 0s all ease;
-}
-
-#heart:hover:after {
-    transform: scale(2);
-    -webkit-transform: scale(2);
-    opacity:0;
-    transition: .8s all ease;
+.form-control:focus {
+  background: transparent;
+  border-bottom: 2px solid #292a36;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 </style>
