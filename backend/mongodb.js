@@ -1,18 +1,14 @@
 const mongoose = require('mongoose')
 
-let data={
-  host:process.env.DB_HOST,
-  user:process.env.DB_USER,
-  pass:process.env.DB_PASS,
-  name:process.env.DB_NAME
-
-}
-mongoose.connect(`mongodb+srv://${data.user}:${data.pass}@${data.host}/${data.name}`, {
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
 })
+  .then(db => console.log('Conexión mongo OK!!'))
+  .catch(err => console.log(err));
 
-module.exports=mongoose.connection
+module.exports = mongoose.connection
+
  
