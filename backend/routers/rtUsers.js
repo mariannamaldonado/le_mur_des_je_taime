@@ -2,7 +2,7 @@ const express = require('express')
 const rtUsers = express.Router()
 const daoUsers = require('../dao/daoUsers')
 var passport = require('passport');
-
+const jwt = require('jsonwebtoken');
 rtUsers.post('/signup', (req, res) => {
   daoUsers.signup(req.body)
     .then(user => res.json(user))
@@ -33,8 +33,16 @@ rtUsers.post('/delete/:id', (req, res) => {
 
 rtUsers.post('/login', (req, res) => {
   daoUsers.signin(req.body.email, req.body.password)
-
-    .then(data => res.json(data))
+    .then(data =>{
+      const token = jwt.sign({
+        email: data.email,
+        id: data._id
+    }, process.env.TOKEN_SECRET)
+    res.header('auth-token', token).json({
+      data: {token}
+  })
+    })
+    
 })
 
 rtUsers.post("/send-email", (req, res) => {
