@@ -1,21 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import store from '../store'
 
 const routes = [ 
   {
     path: '/',
     name: 'Home',
-    component: ()=> import( '@/views/Home.vue'),
+    component: ()=> import( '../views/Home.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: ()=> import( '@/views/About.vue'),
+    component: ()=> import( '../views/About.vue'),
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: ()=> import( '@/views/Contact.vue'),
+    component: ()=> import( '../views/Contact.vue'),
   },
   {
     path: '/users',
@@ -27,19 +28,18 @@ const routes = [
   {
     path: '/SignIn',
     name: 'SignIn',
-    component: ()=> import( '@/views/SignIn.vue'),
+    component: ()=> import( '../views/SignIn.vue'),
   },
   {
     path: '/SignUp',
     name: 'SignUp',
-    component: ()=> import( '@/views/SignUp.vue'),
+    component: ()=> import( '../views/SignUp.vue'),
   },
   {
     path: '/ForgotPassword',
     name: 'ForgotPassword',
-    component: ()=> import( '@/views/ForgotPassword.vue'),
+    component: ()=> import( '../views/ForgotPassword.vue'),
   },
-  
   {
     path: '/Profile',
     name: 'Profile',
@@ -70,15 +70,14 @@ const routes = [
   {
     path: '/NotFound',
     name: 'NotFound',
-    component: ()=> import( '@/views/NotFound.vue'),
+    component: ()=> import( '../views/NotFound.vue'),
   },
   {
     path: '/Wall',
     name: 'Wall',
-    component: ()=> import( '@/views/Wall.vue'),
+    component: ()=> import( '../views/Wall.vue'),
   }
  
-
 ]
 
 const router = createRouter({
@@ -86,7 +85,21 @@ const router = createRouter({
   routes
 });
 
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
+    if(requiresAuth && store.state.token === null){
+        // ruta protegida es true
+        // token es nulo true, por ende redirigimos al inicio
+        next({name: 'NotFound'})
+    }else{
+        // En caso contrario sigue...
+        next()
+    }
+
+})
 
 
 export default router
+
+
