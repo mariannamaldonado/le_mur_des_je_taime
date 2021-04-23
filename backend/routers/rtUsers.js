@@ -38,7 +38,6 @@ rtUsers.post('/login', (req, res) => {
         email: data.email,
         id: data._id
     }, process.env.TOKEN_SECRET)
-
     res.header('auth-token', token).json({
       data: {token}
   })

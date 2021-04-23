@@ -20,18 +20,24 @@ export default createStore({
           body: JSON.stringify(user)
         })
         const userDB = await res.json()
-          commit('setToken',userDB.data.token)
-          localStorage.setItem('token',userDB.data.token)
+        commit('setToken', userDB.data.token)
+        localStorage.setItem('token', userDB.data.token)
       } catch (error) {
         console.log(error)
       }
     },
-    readToken({commit}){
-      if(localStorage.getItem('token'))
+    getToken({ commit }) {
+      if (localStorage.getItem('token')) {
         commit('setToken', localStorage.getItem('token'))
-    }
+      } else {
+        commit('setToken', null)
+      }
+    },
+    logout({ commit }) {
+      localStorage.removeItem('item')
+      commit('setToken', null)
+    },
 
-    
   },
   modules: {
   }
