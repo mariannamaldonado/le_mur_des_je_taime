@@ -147,10 +147,7 @@ export default {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
 } */
- .bg-white {
-     background-image: url("../../public/double-bubble-outline.png");
-     background-color:rgb(255, 0, 0, 0)
-}
+
 .errors-ul {
   padding: 0;
   list-style-type: none;
@@ -170,7 +167,6 @@ a {
   border-bottom: 2px solid #e4e6e9;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
-  background-color: transparent;   //nuevo
 }
 
 .floatingInput:active,
@@ -196,7 +192,6 @@ a {
 }
 .btn-danger:active {
   color: #fff;
-  
   background-color: #4b51ad;
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
