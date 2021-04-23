@@ -4,42 +4,44 @@
   <div id="container">
     <div class="environment" @click="getSelection">
       <div id="item1" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate translate" :src="image">
-        <img class="gap imgTranslate translate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate translate" :src="image" />
+        <img class="gap imgTranslate translate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item2" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="gap imgTranslate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="gap imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item3" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="gap imgTranslate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="gap imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item4" class="section">
-          <canvas class="lienzo" id="lienzo" @mousemove="oMousePos"></canvas>
-          <div class="boxCoordinates">
-            <div id="coordinates">
-              <h3>{{ x }} - {{ y }}</h3>
-            </div>
-          </div>
+        <canvas class="lienzo" id="lienzo" @mousemove="oMousePos"></canvas>
+      </div>
+      <div class="boxCoordinates">
+        <button id="btnEnlarge" @onclick="enlarge">ampliar</button>
+        <button id="btnReduce" @onclick="reduce">reducir</button>
+        <div id="coordinates">
+          <h3>{{ x }} - {{ y }}</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -59,49 +61,15 @@ export default {
     let current_section = 1;
 
     onMounted(() => {
-      var canvas = document.getElementById("lienzo");
-      if (canvas && canvas.getContext) {
-        var ctx = canvas.getContext("2d");
-        if (ctx) {
-          var coordinates = document.getElementById("coordinates");
-
-          canvas.addEventListener(
-            "mousemove",
-            function (evt) {
-              var mousePos = oMousePos(canvas, evt);
-              markCoords(coordinates, mousePos.x, mousePos.y);
-            },
-            false
-          );
-
-          canvas.addEventListener(
-            "mouseout",
-            function (evt) {
-              cleanCoords(coordinates);
-            },
-            false
-          );
-        }
-      }
+      var c = document.getElementById("lienzo");
+      canvas = c.getContext("2d");
     });
-    function markCoords(coordinates, x, y) {
-      coordinates.innerHTML = + x + " - " + y;
-    }
 
-    function cleanCoords(coordinates) {
-      coordinates.innerHTML = "";
+    function oMousePos(e) {
+      x.value = e.offsetX;
+      y.value = e.offsetY;
     }
-
-    function oMousePos(canvas, evt) {
-      var ClientRect = canvas.getBoundingClientRect();
-      return {
-        //objeto
-        x: Math.round(evt.clientX - ClientRect.left),
-        y: Math.round(evt.clientY - ClientRect.top),
-      };
-    }
-
-    //script transicion
+    //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
       nav.forEach((item) => {
@@ -165,45 +133,67 @@ export default {
         );
       });
     });
+ 
+    var item4 = document.querySelector("item4");
+    var enlargeLienzo = document.querySelectorAll("lienzo");
+    function enlarge() {
+      item4.style.whidth = "100%";
+      item4.style.heigth = "100vh";
+      item4.style.margin = "0";
+
+      enlargeLienzo.style.whidth = "100%";
+      enlargeLienzo.style.heigth = "100vh";
+      enlargeLienzo.style.backgroundSize = "cover";
+      enlargeLienzo.style.backgroundRepeat = "no-repeat";
+    }
+    function reduce() {
+      item4.style.whidth = "1000px";
+      item4.style.heigth = "500px";
+      item4.style.margin = "5vh auto";
+
+      enlargeLienzo.style.whidth = "100%";
+      enlargeLienzo.style.heigth = "100vh";
+    }
+ 
     return {
+      reduce,
+      enlarge,
       canvas,
       x,
       y,
-      markCoords,
       oMousePos,
-      cleanCoords,
-      getSelection,
       current_section,
-      image: "/muro.jpg"
+      image: "/muro.jpg",
     };
   },
 };
 </script>
 
 <style  scoped lang="scss">
-
-.imgTranslate{
-  padding: 7px ;
+#container button {
+  display: block;
+  position: relative;
+  margin: 5px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+.imgTranslate {
+  padding: 7px;
   width: 170px;
   height: 70px;
 }
-
-.src{
- height: 70px;
-
+.src {
+  height: 70px;
 }
-
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
 }
-
 h1 {
   text-align: center;
 }
-
 .lienzo {
   touch-action: none;
   user-select: none;
@@ -214,7 +204,6 @@ h1 {
   position: absolute;
   right: -235px;
 }
-
 #coordinates {
   background-color: rgba(0, 0, 0, 0.75);
   color: rgb(250, 250, 250);
@@ -227,24 +216,20 @@ h1 {
   padding: 0px 1.5em;
   font-size: 16px;
   cursor: default;
-  font-size: .7em;
+  font-size: 0.7em;
 }
-
 .boxCoordinates {
   position: absolute;
   left: 1em;
   bottom: 1em;
 }
-
 #vertical {
   display: none;
 }
-
 @media all and (orientation: portrait) {
   #container {
     display: none;
   }
-
   #vertical {
     border-radius: 7px;
     display: block;
@@ -255,10 +240,9 @@ h1 {
     width: 190px;
     height: 190px;
     background-image: url(/rotatephone.gif),
-    linear-gradient(to right, #a19dcf, #03002d);
+      linear-gradient(to right, #a19dcf, #03002d);
   }
 }
-
 //transicion Tunel
 *,
 *::before,
@@ -269,7 +253,6 @@ body {
   margin: 0;
   overflow: hidden;
 }
-
 .environment {
   width: 100vw;
   height: 100vh;
@@ -282,7 +265,6 @@ body {
   perspective: 1000px;
   perspective-origin: 48% 52%;
 }
-
 .section {
   position: absolute;
   display: grid;
@@ -290,17 +272,16 @@ body {
   grid-template-rows: 60px auto auto;
   transition: transform 1s, opacity 1s;
   padding: 255px;
-  right: 10;}
+  right: 10;
+}
 h1 {
   font-size: 2em;
   width: 80%;
   grid-column: 1/-1;
 }
-
 .gap {
   grid-column: 3/4;
 }
-
 .nav {
   position: absolute;
   bottom: 0;
@@ -308,22 +289,20 @@ h1 {
   padding: 10px;
 }
 .nav a {
-    text-decoration: none;
-    margin: 10px;
-    cursor: pointer;
-    color: #940909;
-    text-align: center;
-  }
-  
-  .nav a+a::before {
-    margin-left: -11px;
-    content:'';
-    height: 15px;
-    width: 1px;
-  }
-
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+  color: #940909;
+  text-align: center;
+}
+.nav a + a::before {
+  margin-left: -11px;
+  content: "";
+  height: 15px;
+  width: 1px;
+}
 #item1 {
-  z-index: 4;
+  z-index: 1;
 }
 #item2 {
   opacity: 0.2;
@@ -340,7 +319,6 @@ h1 {
   z-index: 1;
   transform: translate3d(0, 0, -6000px);
 }
-
 @media only screen and (max-width: 690px) {
   .section {
     display: block;

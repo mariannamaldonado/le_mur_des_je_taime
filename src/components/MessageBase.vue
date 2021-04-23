@@ -7,7 +7,7 @@
 <script>
 import { onMounted } from "vue";
 export default {
-  name: "Lines",
+  name: "MessageBase",
   props: {},
   setup() {
     onMounted(() => {
@@ -15,7 +15,7 @@ export default {
       if (canvas && canvas.getContext) {
         var ctx = canvas.getContext("2d");
         if (ctx) {
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 1.2;
           ctx.strokeStyle = "#fff";
           ctx.translate(0, 0.5);
           ctx.beginPath();
@@ -25,9 +25,8 @@ export default {
         }
       }
     });
-
     return {
-     
+    
     };
   },
 };

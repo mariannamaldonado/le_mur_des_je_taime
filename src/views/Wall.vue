@@ -1,18 +1,18 @@
 <template>
   <div>
     <LeMur msg="Le Mur Des Je T`aime" />
-    <Lines />
+    <MessageBase />
   </div>
 </template>
 
 <script>
 import LeMur from "@/components/LeMur.vue";
-import Lines from "@/components/Lines.vue";
+import MessageBase from "@/components/MessageBase.vue";
 export default {
   name: "Wall",
   components: {
     LeMur,
-    Lines,
+    MessageBase,
   },
 
   setup() {
