@@ -21,9 +21,7 @@ const routes = [
   {
     path: '/users',
     name: 'Users',
-    component: function () {
-      return import('../views/UsersView.vue')
-    }
+    component: ()=> import( '../views/UsersView.vue'),    
   },
   {
     path: '/SignIn',
@@ -44,6 +42,7 @@ const routes = [
     path: '/Profile',
     name: 'Profile',
     component: ()=> import( '@/pages/Profile.vue'),
+    meta :{ requiresAuth: true}
   },
   {
     path: '/Profile2',
@@ -86,17 +85,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-
-    if(requiresAuth && store.state.token === null){
+    if(to.meta.requiresAuth && store.state.token === null) next({name: 'Home'})
         // ruta protegida es true
-        // token es nulo true, por ende redirigimos al inicio
-        next({name: 'NotFound'})
-    }else{
+        // token es nulo true, por ende redirigimos al inicio   
+    else
         // En caso contrario sigue...
         next()
-    }
-
 })
 
 
