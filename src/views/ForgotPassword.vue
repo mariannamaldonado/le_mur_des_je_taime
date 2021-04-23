@@ -39,8 +39,13 @@ export default {
 /*  .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
+} */
+
+  .bg-white {
+     background-image: url("../../public/double-bubble-outline.png");
+     background-color:rgb(255, 0, 0, 0)
 }
-  */
+ 
 .container-fluid{
   min-width: 400px;
 }
@@ -54,6 +59,7 @@ a{
   border-bottom: 2px solid #e4e6e9;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
+  background-color: transparent;   //nuevo
 }
 
 .floatingInput:active,
