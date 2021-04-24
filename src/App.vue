@@ -50,7 +50,7 @@
         </li>
         <hr class="border" />
         <li class="nav-item">
-          <a href="#item4" id="4" class="nav-link text-dark font-italic">
+          <a href="#" id="4" class="nav-link text-dark font-italic">
             <i class="bi bi-suit-heart"></i>
             &nbsp;<router-link to="/Wall"
               >Muro</router-link

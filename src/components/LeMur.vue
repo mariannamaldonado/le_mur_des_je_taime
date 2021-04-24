@@ -60,6 +60,7 @@ export default {
     var canvas = null;
     let x = ref();
     let y = ref();
+    let z = ref();
     let current_section = 1;
     let canvasScale = 1; 
     let SCALE_FACTOR = 1.01;
@@ -75,23 +76,22 @@ export default {
       'mb':false,
       'mtr':false
     };
- onMounted(() => {
+    // onMounted(() => {
+    //   var z = document.querySelectorAll("lienzo");
+      
+    // })
 
-
-let zoomIn =document.getElementById("zoomIn");
-     zoomIn.event( "click")
-
-     
-   
-
+    function zoomIn(event) {
+     event.addEventListener("click")
+    }
+    
+      function zoomOut(event) {
+     event.addEventListener("click")
+    }
+    
 // $('#zoomIn').on('click', function(event) {
 //     zoomIn();
 //  });
-
-// $('#zoomOut').on('click', function(event) {
-//     zoomOut();
-//  });
-
 
 // fabric.loadSVGFromURL(site_url, function(objects) { 
 //           var group = new fabric.PathGroup(objects, { 
@@ -104,11 +104,10 @@ let zoomIn =document.getElementById("zoomIn");
 //         canvas.renderAll(); 
 //           }); 
 
-
  function zoomIn() {
 
       canvasScale = canvasScale * SCALE_FACTOR;
-
+      
       canvas.setHeight(canvas.getHeight() * SCALE_FACTOR);
       canvas.setWidth(canvas.getWidth() * SCALE_FACTOR);
 
@@ -131,9 +130,6 @@ let zoomIn =document.getElementById("zoomIn");
 
       //     objects[i].setCoords();
       // }
-  
-     
-    
   }
 
 function zoomOut(){
@@ -164,9 +160,8 @@ function zoomOut(){
       // }
             
       canvas.renderAll();
-}
-  })
-
+    }
+ 
     onMounted(() => {
       var c = document.getElementById("lienzo");
       canvas = c.getContext("2d");
@@ -176,6 +171,7 @@ function zoomOut(){
       x.value = e.offsetX;
       y.value = e.offsetY;
     }
+    
     //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
@@ -241,34 +237,12 @@ function zoomOut(){
       });
     });
  
-    // var item4 = document.querySelector("item4");
-    // var enlargeLienzo = document.querySelectorAll("lienzo");
-    // function enlarge() {
-    //   item4.style.whidth = "100%";
-    //   item4.style.heigth = "100vh";
-    //   item4.style.margin = "0";
-
-    //   enlargeLienzo.style.whidth = "100%";
-    //   enlargeLienzo.style.heigth = "100vh";
-    //   enlargeLienzo.style.backgroundSize = "cover";
-    //   enlargeLienzo.style.backgroundRepeat = "no-repeat";
-    // }
-    // function reduce() {
-    //   item4.style.whidth = "1000px";
-    //   item4.style.heigth = "500px";
-    //   item4.style.margin = "5vh auto";
-
-    //   enlargeLienzo.style.whidth = "100%";
-    //   enlargeLienzo.style.heigth = "100vh";
-    // }
- 
     return {
+      z,
       HideControls,
       c,
       zoomIn,
-      // fabric,
-      // reduce,
-      // enlarge,
+      zoomOut,
       canvas,
       x,
       y,

@@ -1,18 +1,18 @@
 <template>
-<div class="col-sm" id="vertical"></div>
+  <div class="col-sm" id="vertical"></div>
   <div class="container">
     <canvas
       class="lienzo"
       id="lienzo"
-      width="1500"
-      height="720"
+      width="1200"
+      height="650"
+      @mouseleave="draw"
       @mousemove="oMousePos"
     ></canvas>
+    <!-- <button @Click="zoomIn">grande</button>
+    <button @Click="zoomOut">pequeño</button> -->
   </div>
   <div class="boxCoordinates">
-    <button @onClick="zoomIn">zoom In</button>
-    <button @onClick="zoomOut">zoom Out</button>
-   
     <div id="coordinates">
       <h3>{{ x }} - {{ y }}</h3>
     </div>
@@ -23,42 +23,59 @@
 import { ref, onMounted } from "vue";
 
 export default {
- name: "Mur",
-  props: {
-  },
+  name: "Mur",
+  props: {},
 
   setup() {
-    var canvas = null;
-    let x = ref();
-    let y = ref();
+    var context = null;
+    let x = ref(0);
+    let y = ref(0);
     let current_section = 1;
-    
-     onMounted(() => {
-      var c = document.getElementById("lienzo");
-      canvas = c.getContext("2d");
+
+    onMounted(() => {
+      var canvas = document.getElementById("lienzo");
+      context = canvas.getContext("2d");
     });
 
     function oMousePos(e) {
       x.value = e.offsetX;
       y.value = e.offsetY;
     }
-    
-    
-    return{
-    oMousePos,
-    canvas,
-    x,
-    y,
-    current_section
-  }
-  }
-  
 
+    function draw() {
+      var canvas = document.getElementById("lienzo");
+      if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+
+       context.beginPath();
+    context.moveTo(75,40);
+    context.bezierCurveTo(75,37,70,25,50,25);
+    context.bezierCurveTo(20,25,20,62.5,20,62.5);
+    context.bezierCurveTo(20,80,40,102,75,120);
+    context.bezierCurveTo(110,102,130,80,130,62.5);
+    context.bezierCurveTo(130,62.5,130,25,100,25);
+    context.bezierCurveTo(85,25,75,37,75,40);
+    context.fill();
+
+    
+      }
+
+   
+    }
+
+    return {
+      draw,
+      oMousePos,
+      context,
+      x,
+      y,
+      current_section,
+    };
+  },
 };
 </script>
 
 <style scoped lang="scss">
-
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +88,7 @@ export default {
   cursor: pointer;
   /* width: 950px;
   height: 600px; */
-  background: #01011a;
+  background: #ecec0f;
   position: absolute;
   right: -235px;
 }
