@@ -91,8 +91,6 @@ export default {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  /* width: 950px;
-  height: 600px; */
   background: #ecec0f;
   position: absolute;
   right: -235px;

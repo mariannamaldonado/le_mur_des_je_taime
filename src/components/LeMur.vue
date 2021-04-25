@@ -1,6 +1,6 @@
 <template>
   <div class="col-sm" id="vertical"></div>
-  <h1>{{ msg }}</h1>
+  <!-- <h1>{{ msg }}</h1> -->
   <div id="container">
     <div class="environment" @click="getSelection">
       <div id="item1" class="section">
@@ -37,15 +37,14 @@
         <canvas
           class="lienzo"
           id="lienzo"
-          width="1000"
+          width="1490"
           height="750"
-           @mouseleave="draw"
+          @mouseleave="draw"
           @mousemove="oMousePos"
         ></canvas>
+        <div id="sms"><MessageBase /></div>
       </div>
       <div class="boxCoordinates">
-         <!-- <button @Click="zoomIn">grande</button>
-    <button @Click="zoomOut">pequeño</button> -->
         <div id="coordinates">
           <h3>{{ x }} - {{ y }}</h3>
         </div>
@@ -55,13 +54,16 @@
 </template>
 
 <script>
+import MessageBase from "@/components/MessageBase.vue";
 import { ref, onMounted } from "vue";
 export default {
   name: "LeMur",
   props: {
     msg: String,
   },
-  
+  components: {
+    MessageBase,
+  },
   setup() {
     var canvas = null;
     let x = ref(0);
@@ -173,6 +175,11 @@ export default {
 </script>
 
 <style  scoped lang="scss">
+#sms {
+  color: brown;
+  text-align: center;
+  z-index: 999;
+}
 #container button {
   display: block;
   position: relative;
@@ -201,12 +208,10 @@ h1 {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  // width: 950px;
-  // height: 600px;
   background: #01011a;
   position: absolute;
   right: -235px;
-  
+  z-index: -1;
 }
 #coordinates {
   background-color: rgba(0, 0, 0, 0.75);
@@ -226,7 +231,7 @@ h1 {
   position: absolute;
   left: 1em;
   bottom: 1em;
-  z-index: 1;
+  z-index: 999;
 }
 #vertical {
   display: none;
