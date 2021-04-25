@@ -1,36 +1,52 @@
 <template>
-  <div class="line"></div>
-  
+  <div class="table-row" v-for="(Message, ind) in filtredMessages" :key="ind">
+    <div class="col col-3" data-label="message">
+      {{ Message.message }}
+    </div>
+  </div>
 </template>
 
 
 <script>
-import { onMounted } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "MessageBase",
-  props: {},
+  components: {},
   setup() {
+    var canvas = null;
+    let Menssages = reactive([]);
+    let search = ref("");
+
     onMounted(() => {
-      var canvas = document.getElementById("line");
-      if (canvas && canvas.getContext) {
-        var ctx = canvas.getContext("2d");
-        if (ctx) {
-          ctx.lineWidth = 1.2;
-          ctx.strokeStyle = "#fff";
-          ctx.translate(0, 0.5);
-          ctx.beginPath();
-          ctx.moveTo(-1500, 50);
-          ctx.lineTo(230, 50);
-          ctx.stroke();
-        }
-      }
+      var c = document.getElementById("lienzo");
+      canvas = c.getContext("2d");
+      getMessageList();
     });
+
+    let filtredMessages = computed(() => {
+      return Menssages.filter((item) => {
+        return item.message.toLowerCase().includes(search.value.toLowerCase());
+      });
+    });
+
+    function getMessageList() {
+      fetch("http://localhost:8081/api/message/list")
+        .then((resp) => resp.json())
+        .then((datos) => {
+          datos.forEach((element) => {
+            Menssages.push(element);
+          });
+        });
+    }
+
     return {
-    
+      canvas,
+      Menssages,
+      search,
+      filtredMessages,
     };
   },
 };
 </script>
-
 <style>
 </style>

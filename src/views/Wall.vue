@@ -1,21 +1,22 @@
 <template>
   <div>
+    <!-- <MessageBase /> -->
     <!-- <LeMur msg="Le Mur Des Je T`aime" /> -->
     <Mur />
-    <MessageBase />
+    
   </div>
 </template>
 
 <script>
+// import MessageBase from "@/components/MessageBase.vue";
 // import LeMur from "@/components/LeMur.vue";
 import Mur from "@/components/Mur.vue";
-import MessageBase from "@/components/MessageBase.vue";
 export default {
   name: "Wall",
   components: {
     // LeMur,
-    Mur,
-    MessageBase,
+   Mur,
+  //  MessageBase
   },
 
   setup() {

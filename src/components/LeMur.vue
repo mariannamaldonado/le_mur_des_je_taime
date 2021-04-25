@@ -1,6 +1,6 @@
 <template>
   <div class="col-sm" id="vertical"></div>
-  <!-- <h1>{{ msg }}</h1> -->
+  <h1>{{ msg }}</h1>
   <div id="container">
     <div class="environment" @click="getSelection">
       <div id="item1" class="section">
@@ -34,13 +34,18 @@
         <img class="imgTranslate" :src="image" />
       </div>
       <div id="item4" class="section">
-        <canvas class="lienzo" id="lienzo"  width="900" height="600" @mousemove="oMousePos"></canvas>
+        <canvas
+          class="lienzo"
+          id="lienzo"
+          width="1000"
+          height="750"
+           @mouseleave="draw"
+          @mousemove="oMousePos"
+        ></canvas>
       </div>
       <div class="boxCoordinates">
-           <button @onClick="zoomIn">zoom In</button>
-        <button @onClick="zoomOut">zoom Out</button>
-        <!-- <button id="btnEnlarge" @onclick="enlarge">ampliar</button>
-        <button id="btnReduce" @onclick="reduce">reducir</button> -->
+         <!-- <button @Click="zoomIn">grande</button>
+    <button @Click="zoomOut">pequeño</button> -->
         <div id="coordinates">
           <h3>{{ x }} - {{ y }}</h3>
         </div>
@@ -56,112 +61,13 @@ export default {
   props: {
     msg: String,
   },
+  
   setup() {
     var canvas = null;
-    let x = ref();
-    let y = ref();
-    let z = ref();
+    let x = ref(0);
+    let y = ref(0);
     let current_section = 1;
-    let canvasScale = 1; 
-    let SCALE_FACTOR = 1.01;
-    var c = document.getElementById("lienzo");
-    var HideControls = {
-      'tl':true,
-      'tr':false,
-      'bl':false,
-      'br':false,
-      'ml':false,
-      'mt':false,
-      'mr':false,
-      'mb':false,
-      'mtr':false
-    };
-    // onMounted(() => {
-    //   var z = document.querySelectorAll("lienzo");
-      
-    // })
 
-    function zoomIn(event) {
-     event.addEventListener("click")
-    }
-    
-      function zoomOut(event) {
-     event.addEventListener("click")
-    }
-    
-// $('#zoomIn').on('click', function(event) {
-//     zoomIn();
-//  });
-
-// fabric.loadSVGFromURL(site_url, function(objects) { 
-//           var group = new fabric.PathGroup(objects, { 
-//           left: 165, 
-//           top: 100, 
-//           width: 295, 
-//           height: 211 
-//         }); 
-//         canvas.add(group); 
-//         canvas.renderAll(); 
-//           }); 
-
- function zoomIn() {
-
-      canvasScale = canvasScale * SCALE_FACTOR;
-      
-      canvas.setHeight(canvas.getHeight() * SCALE_FACTOR);
-      canvas.setWidth(canvas.getWidth() * SCALE_FACTOR);
-
-      // var objects = canvas.getObjects();
-      // for (var i in objects) {
-      //     var scaleX = objects[i].scaleX;
-      //     var scaleY = objects[i].scaleY;
-      //     var left = objects[i].left;
-      //     var top = objects[i].top;
-
-      //     var tempScaleX = scaleX * SCALE_FACTOR;
-      //     var tempScaleY = scaleY * SCALE_FACTOR;
-      //     var tempLeft = left * SCALE_FACTOR;
-      //     var tempTop = top * SCALE_FACTOR;
-
-      //     objects[i].scaleX = tempScaleX;
-      //     objects[i].scaleY = tempScaleY;
-      //     objects[i].left = tempLeft;
-      //     objects[i].top = tempTop;
-
-      //     objects[i].setCoords();
-      // }
-  }
-
-function zoomOut(){
-  
-      canvasScale = canvasScale / SCALE_FACTOR;
-
-      canvas.setHeight(canvas.getHeight() * (1 / SCALE_FACTOR));
-      canvas.setWidth(canvas.getWidth() * (1 / SCALE_FACTOR));
-
-      // var objects = canvas.getObjects();
-      // for (var i in objects) {
-      //     var scaleX = objects[i].scaleX;
-      //     var scaleY = objects[i].scaleY;
-      //     var left = objects[i].left;
-      //     var top = objects[i].top;
-
-      //     var tempScaleX = scaleX * (1 / SCALE_FACTOR);
-      //     var tempScaleY = scaleY * (1 / SCALE_FACTOR);
-      //     var tempLeft = left * (1 / SCALE_FACTOR);
-      //     var tempTop = top * (1 / SCALE_FACTOR);
-
-      //     objects[i].scaleX = tempScaleX;
-      //     objects[i].scaleY = tempScaleY;
-      //     objects[i].left = tempLeft;
-      //     objects[i].top = tempTop;
-
-      //     objects[i].setCoords();
-      // }
-            
-      canvas.renderAll();
-    }
- 
     onMounted(() => {
       var c = document.getElementById("lienzo");
       canvas = c.getContext("2d");
@@ -171,7 +77,23 @@ function zoomOut(){
       x.value = e.offsetX;
       y.value = e.offsetY;
     }
-    
+
+    function draw() {
+      var canvas = document.getElementById("lienzo");
+      if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(75, 40);
+        context.bezierCurveTo(75, 37, 70, 25, 50, 25);
+        context.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+        context.bezierCurveTo(20, 80, 40, 102, 75, 120);
+        context.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+        context.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+        context.bezierCurveTo(85, 25, 75, 37, 75, 40);
+        context.fill();
+      }
+    }
     //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
@@ -236,13 +158,9 @@ function zoomOut(){
         );
       });
     });
- 
+
     return {
-      z,
-      HideControls,
-      c,
-      zoomIn,
-      zoomOut,
+      draw,
       canvas,
       x,
       y,
@@ -288,6 +206,7 @@ h1 {
   background: #01011a;
   position: absolute;
   right: -235px;
+  
 }
 #coordinates {
   background-color: rgba(0, 0, 0, 0.75);
@@ -307,6 +226,7 @@ h1 {
   position: absolute;
   left: 1em;
   bottom: 1em;
+  z-index: 1;
 }
 #vertical {
   display: none;
