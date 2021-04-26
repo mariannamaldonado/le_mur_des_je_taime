@@ -10,16 +10,18 @@
   "dependencies": {
     "@vitalets/google-translate-api": "^5.0.0",
     "bootstrap": "^4.0.0",
+    "cors": "^2.8.5",
     "es6-promise": "^4.2.4",
     "i18next": "^19.9.1",
     "i18next-fs-backend": "^1.1.0",
     "jquery": "^3.6.0",
     "jsonld": "^4.0.1",
+    "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.7.1",
     "material-icons": "^0.5.4",
+    "nav": "0.0.2",
     "node": "^15.12.0",
     "nodemailer": "^6.5.0",
-    "nav": "0.0.2",
     "vue": "^3.0.0",
     "vue-clickaway": "^2.1.0",
     "vue-notifyjs": "^0.3.0",
@@ -37,7 +39,7 @@
     "@vue/test-utils": "^2.0.0-0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3",
+    "typescript": "^3.9.9",
     "vue-jest": "^5.0.0-0"
   }
 }
