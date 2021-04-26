@@ -11,13 +11,9 @@
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Marianna Maldonado</div>
-                <p class="mb-0">
-                  Soy una persona enérgica, responsable, tenaz en todos los
-                  proyectos que me propongo. Trabajando con profesionalidad y
-                  responsabilidad junto a otras personas o de manera
-                  independiente.
-                </p>
+                <div class="h2">Marianna Maldonado Perez</div>
+                <a href="https://www.linkedin.com/in/programador-mariana-maldonado/"><i class="fab fa-linkedin fa-2x"></i></a> 
+                  <a href="https://github.com/mariannamaldonado"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -28,12 +24,8 @@
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Andreea Cirlan</div>
-                <p class="mb-0">
-                  Soy una persona enérgica, responsable, tenaz en todos los
-                  proyectos que me propongo. Trabajando con profesionalidad y
-                  responsabilidad junto a otras personas o de manera
-                  independiente.
-                </p>
+                <a href="https://www.linkedin.com/in/andreeacirlan/"><i class="fab fa-linkedin fa-2x"></i></a> 
+                  <a href="https://github.com/AndreeaCCA"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -43,13 +35,9 @@
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Jeampierre Nuñez</div>
-                <p class="mb-0">
-                  Soy una persona enérgica, responsable, tenaz en todos los
-                  proyectos que me propongo. Trabajando con profesionalidad y
-                  responsabilidad junto a otras personas o de manera
-                  independiente.
-                </p>
+                <div class="h2">Jeampierre Nuñez Sánchez</div>
+                <a href="https://www.linkedin.com/in/jeanpierrer-nu%C3%B1ez-sanchez-34853b129/"><i class="fab fa-linkedin fa-2x"></i></a> 
+                  <a href="https://github.com/JeanpierPol"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -59,15 +47,9 @@
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Anny Sánchez</div>
-                <p class="mb-0">
-                  <b>
-                    Soy una persona enérgica, tenaz en todos los proyectos que
-                    me propongo. Trabajando con profesionalidad y
-                    responsabilidad junto a otras personas o de manera
-                    independiente.</b
-                  >
-                </p>
+                <div class="h2 name">Anny Sánchez Rodríguez</div>
+                  <a href="www.linkedin.com/in/anny-karolina-sánchez-rdríguez"><i class="fab fa-linkedin fa-2x"></i></a> 
+                  <a href="https://github.com/Annysanz"> &nbsp; <i class="fab fa-github fa-2x"></i></a> 
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" />
@@ -102,8 +84,9 @@ export default {
 </script>
 
 <style lang="scss">
-h2 {
+.name{
   color: black;
+  text-align: center;
 }
 .about-item {
   display: block;
@@ -157,7 +140,7 @@ h2 {
         clip-path: inset(2rem);
       }
       .caption {
-        background-color: fade-out(rgb(117, 116, 119), 0.1);
+        background-color: fade-out(#949496, 0.1);
         clip-path: inset(2rem);
       }
     }

@@ -1,79 +1,70 @@
 <template>
-  <!-- Footer -->
-    <footer class="section-footer py-4 bg-dark">
-      <div class="container">
-        <div>  <h2 class="text-2 mb-1"></h2>
-         <a href="#">Home</a> <br/>
-        <a href="http://localhost:8082/about">Nosotros</a> <br/>
-        <a href="http://localhost:8082/contacto">Contacto</a> <br/>
-        <a href="#">Políticas de privacidad</a> <br/>
-        
-        </div>
-        <div>
-          <h3></h3>
-        
-         <a href="http://twitter.com">
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-         <br>
-          <a href="http://facebook.com">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <br>
-          <a href="http://youtube.com">
-            <i class="fab fa-youtube fa-2x"></i>
-          </a>
-        </div>
-        
-        <div>
-        
-        </div>
-        
-        <div>
-          <h3>Suscribirse</h3>
-        
-          <form
-            class="mt-1"
-            name="email-form"
-            method="POST"
-            data-netlify="true"
-          >
-            <div class="email-form">
-              <span class="form-control-wrap"
-                ><input
-                  type="email"
-                  name="email"
-                  id="email"
-                  size="40"
-                  class="form-control"
-                  placeholder="E-mail"/></span
-              ><button type="submit" value="Submit" class="form-control submit">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-        
+  <footer class="section-footer py-4 bg-dark">
+    <div class="container">
+      <div>
+        <h2 class="text-2 mb-1"></h2>
+        <a href="/">Home</a> <br />
+        <a href="/about">Nosotros</a> <br />
+        <a href="/contact">Contacto</a> <br />
+        <a href="#">Políticas de privacidad</a> <br />
       </div>
-       
-       <div class="copyright d-flex flex-wrap justify-content-between">
-      &copy; Hecho con &nbsp; 
-      <i class="fa fa-heart heart"></i> &nbsp;  por final project. <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp;</a>
+      <div>
+        <a href="http://twitter.com">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        <br />
+        <a href="http://facebook.com">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <br />
+        <a href="http://youtube.com">
+          <i class="fab fa-youtube fa-2x"></i>
+        </a>
+      </div>
+      <div></div>
+      <div>
+        <h3>Suscribirse</h3>
+        <form class="mt-1" name="email-form" method="POST" data-netlify="true">
+          <div class="email-form">
+            <span class="form-control-wrap"
+              ><input
+                type="email"
+                name="email"
+                id="email"
+                size="40"
+                class="form-control"
+                placeholder="E-mail" /></span
+            ><button type="submit" value="Submit" class="form-control submit">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    
-    </footer>
+    <div class="copyright d-flex flex-wrap justify-content-between">
+      &copy; Hecho con &nbsp;
+       <i class="fa fa-heart heart"></i>&nbsp; por final project.
+      <a
+        href="https://github.com/mariannamaldonado/le_mur_des_je_taime"
+        target="_blank"
+      >&nbsp; <i class="fab fa-github fa-2x"></i>
+       </a
+      >
+    </div>
+  </footer>
 </template>
 
 <script>
 export default {
-   name: 'Footer',
-
-   props:{}
+  name: "Footer",
+  props: {},
 };
 </script>
 
-
 <style>
+.heart{
+  color: #1f4b8d;
+}
 .section-footer {
   background: var(--primary-color);
   color: #fff;
@@ -107,11 +98,12 @@ export default {
   border-radius: 20px;
   line-height: 0;
   margin-top: 1rem;
-} .form-control-wrap {
- 	position: relative;
- 	display: inline-block;
- 	width: 100%;
- }
+}
+.form-control-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
 .email-form .form-control {
   display: inline-block;
   border: 0;
@@ -166,36 +158,30 @@ export default {
   background-color: var(--overlay-color);
 }
 .bg-dark[data-v-fae5bece] {
-    background-color: #212529!important;
+  background-color: #212529 !important;
 }
-
-
 .section-footer[data-v-fae5bece] {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 4rem 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 4rem 0;
 }
-
 *[data-v-fae5bece] {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .bg-dark {
-    background-color: #212529!important;
+  background-color: #212529 !important;
 }
 .py-4 {
-    padding-top: 1.5rem!important;
-    padding-bottom: 1.5rem!important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 a {
-    color: #0d6efd;
-    text-decoration: auto;
+  color: #0d6efd;
+  text-decoration: auto;
 }
-
-
-
 .justify-content-between {
-    justify-content: center!important;
+  justify-content: center !important;
 }
 </style>
