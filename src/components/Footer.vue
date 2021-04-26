@@ -8,7 +8,7 @@
         <a href="/contact">Contacto</a> <br />
         <a href="#">Políticas de privacidad</a> <br />
       </div>
-      <div>
+      <!-- <div>
         <a href="http://twitter.com">
           <i class="fab fa-twitter fa-2x"></i>
         </a>
@@ -20,9 +20,9 @@
         <a href="http://youtube.com">
           <i class="fab fa-youtube fa-2x"></i>
         </a>
-      </div>
+      </div> -->
       <div></div>
-      <div>
+      <!-- <div>
         <h3>Suscribirse</h3>
         <form class="mt-1" name="email-form" method="POST" data-netlify="true">
           <div class="email-form">
@@ -39,7 +39,7 @@
             </button>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
     <div class="copyright d-flex flex-wrap justify-content-between">
       &copy; Hecho con &nbsp;

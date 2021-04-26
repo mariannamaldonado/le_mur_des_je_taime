@@ -47,93 +47,108 @@
     <!-- FIN TOP-NAV    -->
 
     <!-- INICIO DE LA TARJETA DE PERFIL -->
-    <div class="row">
-      <div class="col-xl-4 col-lg-5 col-md-6">
-        <div class="container">
-          <div class="cover-photo">
-            <img class="profile" src="@/assets/img/faces/avatar1.jpg" alt="...">
-          </div>
-          <div class="profile-name">Pepito Perez</div>
-            <p class="about">"is simply dummy text of the printing and typesetting industry."</p>
-            <button class="msg-btn">Message</button>
-          </div>
+     <div class="row"  v-for="(usuario, ind) in usuarios" :key="ind">
+    <div class="col-xl-4 col-lg-5 col-md-6">
+      <div class="container">
+        <div class="cover-photo">
+          <img class="profile" src="@/assets/img/faces/avatar1.jpg" alt="...">
         </div>
-
+        <div class="profile-name">{{ usuario.firstname }} {{ usuario.lastname }}</div>
+          <p class="about">{{ usuario.email }}</p>
+          <button class="msg-btn">Enviar mensaje</button>
+        </div>
+      </div>
+   <!-- FIN DE LA TARJETA DE PERFIL -->
       <div class="col-xl-8 col-lg-7 col-md-6">
         <section id="main-content">
           <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> Editar perfil</h3>
-          	
-        <!-- formulario del perfil -->
-          <div class="row mt">
-            <div class="col-lg-12">
-              <div class="form-panel">
-                <h6 class="mb"><i class="fa fa-angle-right"></i> Datos del perfil</h6>
-                <form class="form-horizontal style-form" method="get">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="col-sm-2 col-sm-2 control-label">Rol</label>
-                        <div class="col-sm-10">
-                          <input  class="form-control" 
+    <!-- formulario del perfil -->
+            <div class="row mt">
+              <div class="col-lg-12">
+                <div class="form-panel">
+                  <h6 class="mb"><i class="fa fa-angle-right"></i> Datos del perfil</h6>
+                    <form class="form-horizontal style-form" method="get">
+                      <div class="row">
+                        <!-- <div class="col-md-6">
+                          <label class="col-sm-2 col-sm-2 control-label">Rol</label>
+                          <div class="col-sm-10">
+                            <input  class="form-control" 
                                   type="text" 
                                   label="Rol" 
                                   :disabled="true" 
                                   v-model="user.rol">
-                        </div>  
-                    </div>          
-                          
-                    <div class="col-md-6">
-                      <label class="col-sm-6 col-sm-6 control-label">Nombre de usuario</label>
-                        <div class="col-sm-10">
+                          </div>  
+                        </div>           -->
+                        <!-- <div class="col-md-6">
+                          <label class="col-sm-6 col-sm-6 control-label">Nombre de usuario</label>
+                          <div class="col-sm-10">
                           <input  class="form-control" 
                                   type="text"
                                   label="Nombre de Usuario"
                                   placeholder="Username"
                                   v-model="user.username">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Nombre:</label>
-                      <div class="col-sm-10">
-                        <input  class="form-control"
-                                type="text"
-                                label="Name"
-                                placeholder="First Name"
-                                v-model="user.firstName">
+                          </div>
+                        </div> -->
                       </div>
-                  </div>
 
-                  <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Apellido</label>
-                      <div class="col-sm-10">
-                        <input  type="text" 
-                                class="form-control"
-                                label="Apellido"
-                                placeholder="Last Name"
-                                v-model="user.lastName">
-                      </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Email</label>
-                      <div class="col-sm-10">
-                        <input  class="form-control round-form" 
-                                type="email"
-                                label="Email"
-                                placeholder="Email"
-                                v-model="user.email">
+                      <div class="form-floating mb-3">
+                        <input
+                            v-model="username"
+                            type="text"
+                            class="form-control floatingInput"
+                            placeholder="Nombre"
+                            />
+                        <label for="floatingInput">
+                          <i class="bi bi-file-earmark-person"></i>&nbsp;Nombre de usuario
+                          </label>
                         </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Acerca de mí</label>
-                      <textarea rows="5" 
-                                class="form-control border-input"
-                                placeholder="Here can be your description"
-                                v-model="user.aboutMe">
-                      </textarea>
-                  </div>
+                      <div class="form-floating mb-3">
+                        <input
+                            v-model="firstname"
+                            type="text"
+                            class="form-control floatingInput"
+                            placeholder="Nombre"
+                            />
+                        <label for="floatingInput">
+                         <i class="bi bi-emoji-heart-eyes"></i>&nbsp;Nombre
+                          </label>
+                        </div>
+
+                 <div class="form-floating mb-3">
+                        <input
+                            v-model="firstname"
+                            type="text"
+                            class="form-control floatingInput"
+                            placeholder="Nombre"
+                            />
+                        <label for="floatingInput">
+                          <i class="bi bi-person"></i>&nbsp;Apellido
+                          </label>
+                        </div>
+
+                  <div class="form-floating mb-3">
+                        <input
+                            v-model="firstname"
+                            type="text"
+                            class="form-control floatingInput"
+                            placeholder="Nombre"
+                            />
+                        <label for="floatingInput">
+                          <i class="bi bi-envelope-open"></i>&nbsp;Email
+                          </label>
+                        </div>
+                 <div class="form-floating mb-3">
+                        <input
+                            v-model="firstname"
+                            type="text"
+                            class="form-control floatingInput"
+                            placeholder="Nombre"
+                            />
+                        <label for="floatingInput">
+                          <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de perfil
+                          </label>
+                        </div>
                   <div class="text-center">
                     <button type="button" class="btn"> Actualizar Perfil</button>
                   </div>
@@ -144,32 +159,80 @@
         </div><!-- /row -->
     </section>
   </section>
-       </div>
-      </div>
+</div>
+</div>
  <ContentFooter/>
 </template>
+
+
+
 <script>
-
-
+import { ref, reactive, onMounted } from "vue";
 export default {
-  data() {
+   name: "ListAdmin",
+  components: {
+   
+  },
+  setup() {
+    let firstname = ref("");
+    let lastname = ref("");
+    let username = ref("");
+    let email = ref("");
+    let password = ref("");
+    let message = ref("");
+    let usuarios = reactive([]);
+    onMounted(() => {
+      listar();
+    });
+    function listar() {
+      fetch("http://localhost:8081/api/users/listar")
+        .then((resp) => resp.json())
+        .then((datos) => {
+          usuarios.splice(0);
+          datos.forEach((usuario) => {
+            usuarios.push(usuario);
+          });
+        });
+    }
+    function enviar() {
+      fetch("http://localhost:8081/api/users/guardar", {
+        method: "POST",
+        body: JSON.stringify({
+          firstname: firstname.value,
+          lastname: lastname.value,
+          username: username.value,
+          email: email.value,
+          password: password.value,
+          message: message.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((resp) => resp.json())
+        .then((datos) => listar())
+        .catch((error) => console.log(error));
+      //alert("Usuario ya esta registrado");
+    }
+    function eliminar(id) {
+      fetch("http://localhost:8081/api/users/delete/" + id, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((resp) => resp.json())
+        .then((datos) => listar());
+    }
     return {
-      user: {
-        rol: "Usuario",
-        username: "Pepe",
-        email: "pepe@gmail.com",
-        firstName: "Pepito",
-        lastName: "Perez",
-        aboutMe: `is simply dummy text of the printing and typesetting industry.`
-      }
+      firstname,
+      lastname,
+      email,
+      username,
+      password,
+      enviar,
+      usuarios,
+      message,
+      eliminar,
     };
   },
-  methods: {
-    updateProfile() {
-      alert("Your data: " + JSON.stringify(this.user));
-    }
-  }
-};
+}
 </script>
 
 <style scoped>
