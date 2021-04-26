@@ -9,7 +9,7 @@
       @mouseleave="draw"
       @mousemove="oMousePos"
     ></canvas>
-    <div id="sms"><MessageBase /></div>
+    <div id="sms"><MessageBaseCopy /></div>
   </div>
   <div class="boxCoordinates">
     <div id="coordinates">
@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import MessageBase from "@/components/MessageBase.vue";
+import MessageBaseCopy from "@/components/MessageBaseCopy.vue";
 import { ref, onMounted } from "vue";
 
 export default {
   name: "Mur",
   props: {},
   components: {
-    MessageBase,
+    MessageBaseCopy,
   },
   setup() {
     var context = null;
