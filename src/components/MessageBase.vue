@@ -1,6 +1,9 @@
 <template>
   <div class="table-row" v-for="(Message, ind) in filtredMessages" :key="ind">
-    <div class="col col-3" data-label="message">
+    <div class="card firstname" data-label="message">
+      {{ Message.user.firstname }}
+    </div>
+    <div class="card message" data-label="message">
       {{ Message.message }}
     </div>
   </div>
@@ -49,4 +52,14 @@ export default {
 };
 </script>
 <style>
+.card{
+  min-width: 150px;
+  max-width: 300px;
+}
+.message{
+  background: transparent;
+}
+.firstname{
+  background: #1f4b8d;
+}
 </style>

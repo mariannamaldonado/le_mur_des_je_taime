@@ -16,8 +16,6 @@
       <h3>{{ x }} - {{ y }}</h3>
     </div>
   </div>
-  <!-- <button @Click="zoomIn">grande</button>
-  <button @Click="zoomOut">pequeño</button> -->
 </template>
 
 <script>
@@ -91,7 +89,6 @@ export default {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  background: #ecec0f;
   position: absolute;
   right: -235px;
   z-index: -1;
