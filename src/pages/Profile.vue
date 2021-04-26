@@ -19,35 +19,27 @@
     </a>
 
     <!-- Lista de mensaje -->
-    <a href="/ListMessage"> 
+    <a href="/Message"> 
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list-stars" viewBox="0 0 16 16">
        <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
         <path d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"/>
       </svg>
     </a>
-       <!-- Cerrar sesión-->
-        <a href="#">
-          <!-- <p class="text-monospace">Cerrar sesión</p> -->
-         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-          </svg>
-        </a>
   </div>
 </div>
   <!-- content-wrapper -->
-  <div class="content-wrapper">
-  </div>
+  <!-- <div class="content-wrapper">
+  </div> -->
    <!-- main-footer -->
-  <footer class="main-footer">
-  </footer>
+  <!-- <footer class="main-footer">
+  </footer> -->
 </div>
     
-    <hr class="border" />
+  <hr class="border" />
     <!-- FIN TOP-NAV    -->
 
     <!-- INICIO DE LA TARJETA DE PERFIL -->
-     <div class="row"  v-for="(usuario, ind) in usuarios" :key="ind">
+  <div class="row"  v-for="(usuario, ind) in usuarios" :key="ind">
     <div class="col-xl-4 col-lg-5 col-md-6">
       <div class="container">
         <div class="cover-photo">
@@ -161,10 +153,9 @@
   </section>
 </div>
 </div>
- <ContentFooter/>
+ <!-- <ContentFooter/> -->
+
 </template>
-
-
 
 <script>
 import { ref, reactive, onMounted } from "vue";
@@ -212,6 +203,7 @@ export default {
         .catch((error) => console.log(error));
       //alert("Usuario ya esta registrado");
     }
+
     function eliminar(id) {
       fetch("http://localhost:8081/api/users/delete/" + id, {
         method: "POST",
@@ -220,6 +212,7 @@ export default {
         .then((resp) => resp.json())
         .then((datos) => listar());
     }
+
     return {
       firstname,
       lastname,
@@ -387,5 +380,30 @@ body {
   cursor: pointer;
   font-size: 1.1rem;
   border-radius: 30px;
+}
+
+/* new style */
+
+.floatingInput,
+.floatingPassword {
+  border: 0;
+  border-bottom: 2px solid #e4e6e9;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+  border-radius: 0;
+}
+
+.floatingInput:active,
+.floatingInput:focus {
+  border: 0;
+  border-bottom: 2px solid #212529;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+}
+
+.form-floating {
+  border-radius: none !important;
+}
+.form-control:focus {
+  border-bottom: 2px solid #212529;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 </style>
