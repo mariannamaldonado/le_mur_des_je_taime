@@ -95,7 +95,7 @@
       </div>
     </form>
     <hr class="border" />
-    <h2>Lista de mensajes enviados <small></small></h2>
+    <h2>Mensajes recibidos<small></small></h2>
     Seleccionar
     <div class="input-group mb-3">
       <div class="input-group-prepend">

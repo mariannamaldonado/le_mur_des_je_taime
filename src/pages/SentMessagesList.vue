@@ -134,7 +134,7 @@
           <ul class="responsive-table">
             <li class="table-header">
               <div class="col col-0"><i class="bi bi-ui-checks"></i></div>
-              <div class="col col-1">Nombre</div>
+              <div class="col col-1">Para</div>
               <div class="col col-2">Email</div>
               <div class="col col-3">Mensaje</div>
               <div class="col col-4">
@@ -170,10 +170,10 @@
               </div>
 
               <div class="col col-1" data-label="name">
-                {{ Message.user.firstname }}
+                {{ Message.addresseName}}
               </div>
               <div class="col col-2" data-label="email">
-                {{ Message.user.email }}
+                {{ Message.addresseEmail}}
               </div>
               <div class="col col-3" data-label="message">
                 {{ Message.message }}
