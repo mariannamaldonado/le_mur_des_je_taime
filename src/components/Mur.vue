@@ -9,7 +9,7 @@
       @mouseleave="draw"
       @mousemove="oMousePos"
     ></canvas>
-    <div id="sms"><MessageBaseCopy /></div>
+    <div id="sms"><MessageBaseCopy/></div>
   </div>
   <div class="boxCoordinates">
     <div id="coordinates">
@@ -74,11 +74,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#sms{
-  color: brown;
-  text-align: center;
-  z-index: 999;
-}
+// #sms{
+//   color: brown;
+//   text-align: center;
+//   z-index: 999;
+// }
 * {
   margin: 0;
   padding: 0;
