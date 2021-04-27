@@ -3,13 +3,13 @@ const { Schema } = mongoose
 
 const schemaMessage = new Schema({
     message: { type: String, required: false },
-    sender: { type: String, required: false },
     encryption: { type: Boolean, default: false },
     encryption_key: { type: Boolean, default: false },
     properties: { type: String, default: "Times New Roman" },
     coordinates: { type: Array },
     size: { type: String },
-    addressee: { type: String, required: false },
+    addresseEmail: { type: String, required: false },
+    addresseName: { type: String, required: false },
     user: { type: Schema.Types.ObjectId, ref: 'User' }
 }) 
 

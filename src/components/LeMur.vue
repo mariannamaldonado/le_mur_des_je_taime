@@ -37,14 +37,16 @@
         <canvas
           class="lienzo"
           id="lienzo"
-          width="1490"
+          width="2500"
           height="750"
-          @mouseleave="draw"
           @mousemove="oMousePos"
         ></canvas>
         <div id="sms"><MessageBase /></div>
       </div>
       <div class="boxCoordinates">
+        <!-- <button @click="addWidth">-</button> -->
+        <button @click="ampliar">+</button>
+        <!-- <button @click="drawRect">Add Rect</button> -->
         <div id="coordinates">
           <h3>{{ x }} - {{ y }}</h3>
         </div>
@@ -69,10 +71,14 @@ export default {
     let x = ref(0);
     let y = ref(0);
     let current_section = 1;
+    // var rectWidth = 200;
+    var container = null;
 
     onMounted(() => {
       var c = document.getElementById("lienzo");
       canvas = c.getContext("2d");
+      canvas.width = Window.innerWidth;
+      canvas.height = Window.innerWidth;
     });
 
     function oMousePos(e) {
@@ -80,22 +86,41 @@ export default {
       y.value = e.offsetY;
     }
 
-    function draw() {
-      var canvas = document.getElementById("lienzo");
-      if (canvas.getContext) {
-        var context = canvas.getContext("2d");
+   // var container= document.querySelectorAll("container")
+   // var context= document.querySelector("lienzo")
 
-        context.beginPath();
-        context.moveTo(75, 40);
-        context.bezierCurveTo(75, 37, 70, 25, 50, 25);
-        context.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
-        context.bezierCurveTo(20, 80, 40, 102, 75, 120);
-        context.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
-        context.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
-        context.bezierCurveTo(85, 25, 75, 37, 75, 40);
-        context.fill();
-      }
-    }
+function ampliar(){
+  canvas.style.width="100%";
+  canvas.style.heidht="100vh";
+  canvas.style.margin="0";
+
+  context.style.width="100%";
+  context.style.heidht="100vh";
+  context.style.backgroundSize="cover";
+  context.style.backgroundRepeat="no-repeat";
+}
+
+    // methods(() => {
+      // function drawRect() {
+      //   // clear canvas
+      //   canvas.clearRect(0, 0, 800, 400);
+      //   // draw rect
+      //   canvas.beginPath();
+      //   canvas.rect(20, 20, rectWidth, 100);
+      //   canvas.stroke();
+      // }
+     
+      // function addWidth() {
+      //   this.canvas.rectWidth += 10;
+      //   drawRect();
+      // }
+
+      // function subWidth() {
+      //   this.canvas.rectWidth -= 10;
+      //   drawRect();
+      // }
+
+    // });
     //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
@@ -162,7 +187,12 @@ export default {
     });
 
     return {
-      draw,
+      container,
+      ampliar,
+      // rectWidth,
+      // drawRect,
+      // addWidth,
+      // subWidth,
       canvas,
       x,
       y,
@@ -208,9 +238,9 @@ h1 {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  background: #01011a;
+  background: #6e6ebb;
   position: absolute;
-  right: -235px;
+  right: -935px;
   z-index: -1;
 }
 #coordinates {
@@ -317,17 +347,19 @@ h1 {
 #item2 {
   opacity: 0.2;
   z-index: 3;
-  transform: translate3d(0, 0, -2000px);
+  transform: translate3d(0, 0, -900px);
 }
 #item3 {
   opacity: 0.2;
   z-index: 2;
-  transform: translate3d(0, 0, -4000px);
+  transform: translate3d(0, 0, -2900px);
 }
 #item4 {
+  left: 0;
+  top: 0;
   opacity: 0.2;
   z-index: 1;
-  transform: translate3d(0, 0, -6000px);
+  transform: translate3d(0, 0, -4900px);
 }
 @media only screen and (max-width: 690px) {
   .section {
