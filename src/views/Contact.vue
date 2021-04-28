@@ -27,9 +27,6 @@
               France
             </p>
           </div>
-          <!-- <div class="find-widget">
-            <p>Teléfono: +34 123-456-789</p>
-          </div> -->
           <div class="find-widget">
             <p>Sitio Web: www.lemur.com</p>
           </div>
@@ -37,7 +34,6 @@
             <p>Horario: L a S: 09:30 AM - 10.30 PM</p>
           </div>
         </div>
-        <!-- contacto -->
         <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
           <div class="form-floating mb-3">
             <input
@@ -64,7 +60,7 @@
           <div class="form-floating mb-3">
             <textarea
               type="text"
-              class="form-control floatingInput"
+              class="form-control control floatingInput"
               data-error="Por favor ingrese su mensaje"
               placeholder="Mensaje"
               rows="5"
@@ -150,11 +146,10 @@ h4 {
   background: #fff;
   min-width: 350px;
 }
-textarea{
-  overflow:hidden;  
+.control{
+  overflow:hidden;
+  height: 235px;
 }
-
-
 .floatingInput,
 .floatingPassword {
   border: 0;
