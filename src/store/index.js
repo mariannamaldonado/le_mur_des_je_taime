@@ -34,7 +34,7 @@ export default createStore({
       }
     },
     logout({ commit }) {
-      localStorage.removeItem('item')
+      localStorage.removeItem('token')
       commit('setToken', null)
     },
 

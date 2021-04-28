@@ -27,9 +27,9 @@
               France
             </p>
           </div>
-          <div class="find-widget">
+          <!-- <div class="find-widget">
             <p>Teléfono: +34 123-456-789</p>
-          </div>
+          </div> -->
           <div class="find-widget">
             <p>Sitio Web: www.lemur.com</p>
           </div>
@@ -120,6 +120,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mt-3 {
+    margin-top: 1rem!important;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 500;
+}
 body {
   font-family: 'Catamaran', sans-serif;
   line-height: 1.6;
@@ -131,6 +136,8 @@ h2,
 h3,
 h4 {
   line-height: 1.3;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 700;
 }
 .mailbox {
   width: 158px;
@@ -146,6 +153,8 @@ h4 {
 textarea{
   overflow:hidden;  
 }
+
+
 .floatingInput,
 .floatingPassword {
   border: 0;

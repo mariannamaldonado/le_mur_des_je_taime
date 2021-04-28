@@ -19,11 +19,11 @@ daoMessage.delete = (id) => {
 }
 
 //listado de mensajes
-daoMessage.list = () => {
-    return new Promise((resolved) => {
-        message.find({}, User.populate(message, { path: "user" })
-            .then(message => resolved(message))
-        )
+daoMessage.listUser = (id) => {
+    return new Promise((resolved, reject) => {
+        Message.find({user:id})
+             .then(message => resolved(message))
+            .catch(err => reject(err))
     })
 }
 

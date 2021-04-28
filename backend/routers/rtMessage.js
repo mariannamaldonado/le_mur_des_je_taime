@@ -24,6 +24,11 @@ rtMessage.get('/list',function(req,res){
     })
 })
 
+rtMessage.get('/listUser/:id', (req, res) => {
+    daoMessage.listUser(req.params.id)
+    .then(message => res.json(message))
+  })
+
 rtMessage.post('/delete/:id',(req,res)=>{
     daoMessage.delete(req.params.id)
 })

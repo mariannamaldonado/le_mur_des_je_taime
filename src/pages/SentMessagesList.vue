@@ -2,7 +2,8 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-        <a href="#search">
+         <!-- Perfil -->
+        <a href="/Profile">
           <p class="text-monospace">Profile</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -10,16 +11,14 @@
             height="26"
             fill="currentColor"
             class="bi bi-person"
-            viewBox="0 0 16 16"
-          >
+            viewBox="0 0 16 16">
             <path
               d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
             ></path>
           </svg>
-
-          <!-- Perfil -->
         </a>
-        <a href="#about">
+          <!-- Enviar mensaje -->
+        <a href="/NewMessage">
           <p class="text-monospace">Enviar mensaje</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +26,7 @@
             height="26"
             fill="currentColor"
             class="bi bi-chat-left-dots"
-            viewBox="0 0 16 16"
-          >
+            viewBox="0 0 16 16">
             <path
               d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
             />
@@ -36,9 +34,9 @@
               d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
             />
           </svg>
-          <!-- Enviar mensaje -->
         </a>
-        <a href="#about">
+        <!-- Lista de mensaje -->
+        <a href="/ListMessage">
           <p class="text-monospace">Lista de mensajes</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,9 +54,9 @@
               d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"
             />
           </svg>
-          <!-- Lista de mensaje -->
+          
         </a>
-           <!-- Cerrar sesión-->
+         <!-- Cerrar sesión-->
         <a href="#">
           <p class="text-monospace">Cerrar sesión</p>
          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -83,6 +81,7 @@
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
         <input
+          v-model="search"
           type="text"
           class="form-control"
           placeholder="Search"
@@ -96,7 +95,7 @@
       </div>
     </form>
     <hr class="border" />
-    <h2>Lista de Usuarios <small></small></h2>
+    <h2>Lista de mensajes enviados <small></small></h2>
     Seleccionar
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -135,9 +134,9 @@
           <ul class="responsive-table">
             <li class="table-header">
               <div class="col col-0"><i class="bi bi-ui-checks"></i></div>
-              <div class="col col-1">Username</div>
-              <div class="col col-2">Nombre completo</div>
-              <div class="col col-3">Email</div>
+              <div class="col col-1">Para</div>
+              <div class="col col-2">Email</div>
+              <div class="col col-3">Mensaje</div>
               <div class="col col-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +157,11 @@
               </div>
             </li>
 
-            <li class="table-row" v-for="(usuario, ind) in usuarios" :key="ind">
+            <li
+              class="table-row"
+              v-for="(Message, ind) in Menssages"
+              :key="ind"
+            >
               <div class="col col-0" data-label="select">
                 <input
                   type="checkbox"
@@ -167,19 +170,19 @@
               </div>
 
               <div class="col col-1" data-label="name">
-                {{ usuario.username }} 
+                {{ Message.addresseName}}
               </div>
               <div class="col col-2" data-label="email">
-               {{ usuario.firstname }} {{ usuario.username }}
+                {{ Message.addresseEmail}}
               </div>
               <div class="col col-3" data-label="message">
-                {{ usuario.email }}
+                {{ Message.message }}
               </div>
 
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
-                  @click="eliminar(usuario._id)"
+                  @click="deleteMessage(Message._id)"
                 >
                   <i class="fa fa-trash-o"></i>
                 </button>
@@ -193,76 +196,54 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "SignUp",
   components: {},
   setup() {
-    let firstname = ref("");
-    let lastname = ref("");
-    let username = ref("");
-    let email = ref("");
-    let password = ref("");
-    let message = ref("");
-    let usuarios = reactive([]);
+    let Menssages = reactive([]);
+    let search = ref("");
+
     onMounted(() => {
-      listar();
+      getMessageList();
     });
-    function listar() {
-      fetch("http://localhost:8081/api/users/listar")
+
+    let filtredMessages = computed(() => {
+      return Menssages.filter((item) => {
+        return item.message.toLowerCase().includes(search.value.toLowerCase());
+      });
+    });
+
+    function getMessageList() {
+      fetch("http://localhost:8081/api/message/list")
         .then((resp) => resp.json())
         .then((datos) => {
-          usuarios.splice(0);
-          datos.forEach((usuario) => {
-            usuarios.push(usuario);
+          datos.forEach((element) => {
+            Menssages.push(element);
           });
         });
     }
-    function enviar() {
-      fetch("http://localhost:8081/api/users/guardar", {
-        method: "POST",
-        body: JSON.stringify({
-          firstname: firstname.value,
-          lastname: lastname.value,
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          message: message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar())
-        .catch((error) => console.log(error));
-      //alert("Usuario ya esta registrado");
-    }
-
-    function eliminar(id) {
-      fetch("http://localhost:8081/api/users/delete/" + id, {
+    function deleteMessage(id) {
+      fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
         .then((resp) => resp.json())
-        .then((datos) => listar());
+        .then((data) => {
+          filtredMessages()
+        });
     }
 
     return {
-      firstname,
-      lastname,
-      email,
-      username,
-      password,
-      enviar,
-      usuarios,
-      message,
-      eliminar,
+      Menssages,
+      search,
+      filtredMessages,
+      deleteMessage,
     };
   },
 };
 </script>
 <style lang="scss" scoped>
-
-
 // navbar
 
 .topnav {
@@ -292,29 +273,29 @@ export default {
 body {
   font-family: "lato", sans-serif;
   background-color: #f1f2f5;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    color: #797979;
-    background: #f2f2f2;
-    font-family: 'Ruda', sans-serif;
-    padding: 0px !important;
-    // margin: 0px !important;
-    font-size: 13px;
-        background-color: #fff;
+  color: #797979;
+  background: #f2f2f2;
+  font-family: "Ruda", sans-serif;
+  padding: 0px !important;
+  // margin: 0px !important;
+  font-size: 13px;
+  background-color: #fff;
 }
 
 .container {
@@ -391,12 +372,12 @@ h2 small {
 }
 
 .btn-info {
-    color: #f8f9fa;
-    background-color: #b7c8e0;
-    border-color: #b7c8e0;
+  color: #f8f9fa;
+  background-color: #b7c8e0;
+  border-color: #b7c8e0;
 }
 
 .btn {
- padding: .100rem .75rem; 
+  padding: 0.1rem 0.75rem;
 }
 </style>

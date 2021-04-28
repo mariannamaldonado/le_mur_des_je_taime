@@ -11,7 +11,7 @@
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Marianna Maldonado Perez</div>
+                <div class="h2">Marianna Maldonado Pérez</div>
                 <a href="https://www.linkedin.com/in/programador-mariana-maldonado/"><i class="fab fa-linkedin fa-2x"></i></a> 
                   <a href="https://github.com/mariannamaldonado"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
               </div>
@@ -84,6 +84,19 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Unna:ital,wght@1,400;1,700&display=swap');
+.h1 {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+}
+
+.mb-5 {
+    margin-bottom: 3rem!important;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    padding-top: 1em;
+}
 .name{
   color: black;
   text-align: center;
@@ -145,5 +158,15 @@ export default {
       }
     }
   }
+}
+
+a:hover {
+    color: #1f4b8d;
+}
+
+a {
+    color: #1f4b8d;
+    -webkit-text-decoration: auto;
+    text-decoration: auto;
 }
 </style>

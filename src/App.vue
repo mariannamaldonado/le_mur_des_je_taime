@@ -23,7 +23,7 @@
         <p class="font-weight-light text-muted mb-0"></p>
       </div>
       <br />
-      <ul class="nav flex-column bg-white mb-0">
+      <ul id="menu" class="nav flex-column bg-white mb-0">
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-home"></i>
@@ -51,7 +51,7 @@
         <hr class="border" />
         <li class="nav-item">
           <a href="#item4" id="4" class="nav-link text-dark font-italic">
-            <i class="bi bi-suit-heart"></i>
+            <span>❤</span>
             &nbsp;<router-link to="/Wall"
               >Muro</router-link
             >
@@ -107,6 +107,43 @@ export default {
 
 
 <style lang="scss"  scoped>
+//boton sidebar
+.fa-bars:before {
+    color: #11489a;
+}
+//corazon rojo
+.page-footer span {
+  color: rgb(185, 14, 14);
+}
+// hover del menu
+  ul#menu li a{
+        position: relative;
+        font-weight:500;
+        color:rgb(49, 46, 46);
+        margin: 0px 15px;
+        text-decoration: none;
+    }
+    ul#menu li a:after{
+        position: absolute;
+        text-decoration: none;
+        bottom: 7px;
+        left: 0px;
+        width: 100%;
+        height: 4px;
+        background-color: rgb(165 165 211 / 50%);
+        content: "";
+        opacity: 0;
+        transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+        transform: translateY(20px);        
+    }
+    ul#menu li a:hover:after{
+      text-decoration: none;
+        opacity:4;
+        transform: translateY(15px)
+        
+    }
+
+// fin hover menu
   /*.container-fluid {
   background: url("../public/muroblur.png") no-repeat center center fixed;
   background-size: cover;

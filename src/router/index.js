@@ -40,15 +40,17 @@ const routes = [
     component: ()=> import( '@/pages/Profile.vue'),
     meta :{ requiresAuth: true}
   },
+ 
   {
-    path: '/Profile2',
-    name: 'Profile2',
-    component: ()=> import( '@/pages/Profile2.vue'),
+    path: '/ReceivedMessages',
+    name: 'ReceivedMessages',
+    component: ()=> import( '@/pages/ReceivedMessages.vue'),
+      meta :{ requiresAuth: true}
   },
   {
-    path: '/ListMessage',
-    name: 'ListMessage',
-    component: ()=> import( '@/pages/ListMessage.vue'),
+    path: '/SentMessagesList',
+    name: 'SentMessagesList',
+    component: ()=> import( '@/pages/SentMessagesList.vue'),
       meta :{ requiresAuth: true}
   },
   {
@@ -57,11 +59,23 @@ const routes = [
     component: ()=> import( '@/pages/NewMessage.vue'),
   },
   {
-    path: '/UserAdmin',
-    name: 'UserAdmin',
-    component: ()=> import( '@/pages/UserAdmin.vue'),
+    path: '/NewMessageCopy',
+    name: 'NewMessageCopy',
+    component: ()=> import( '@/pages/NewMessageCopy.vue'),
+  },
+  {
+    path: '/UsersList',
+    name: 'UsersList',
+    component: ()=> import( '@/pages/admin/UsersList.vue'),
 
   },
+  {
+    path: '/MessagesList',
+    name: 'MessagesList',
+    component: ()=> import( '@/pages/admin/MessagesList.vue'),
+
+  },
+  
   {
     path: '/NotFound',
     name: 'NotFound',

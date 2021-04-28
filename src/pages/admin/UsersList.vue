@@ -203,7 +203,6 @@ export default {
         .catch((error) => console.log(error));
       //alert("Usuario ya esta registrado");
     }
-
     function eliminar(id) {
       fetch("http://localhost:8081/api/users/delete/" + id, {
         method: "POST",
@@ -212,7 +211,6 @@ export default {
         .then((resp) => resp.json())
         .then((datos) => listar());
     }
-
     return {
       firstname,
       lastname,
@@ -229,14 +227,11 @@ export default {
 </script>
 
 <style scoped>
-
 /* navbar */
-
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
 }
-
 .topnav a {
   float: left;
   color: #0a0a0a;
@@ -245,21 +240,17 @@ export default {
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #3f4f66;
   color: black;
 }
-
 .topnav-right {
   float: right;
 }
-
 body {
   font-family: "lato", sans-serif;
   background-color: #f1f2f5;
 }
-
 h2 {
   font-size: 26px;
   margin: 20px 0;
@@ -336,8 +327,6 @@ button{
 .container i:hover{
   color: #03bfbc;
 }
-
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -352,7 +341,6 @@ body {
     font-size: 13px;
         background-color: #fff;
 }
-
 .form-panel {
     background: #ffffff;
     margin: 10px;
@@ -360,7 +348,6 @@ body {
     box-shadow: 0px 3px 2px #aab2bd;
     text-align: left;
 }
-
 .wrapper {
     display: inline-block;
     margin-top: 60px;
@@ -370,7 +357,6 @@ body {
     padding-top: 0px;
     width: 100%;
 }
-
 .btn {
   display: inline-block;
   background: #1f4b8d;
@@ -381,9 +367,7 @@ body {
   font-size: 1.1rem;
   border-radius: 30px;
 }
-
 /* new style */
-
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -391,14 +375,12 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
 }
-
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .form-floating {
   border-radius: none !important;
 }
