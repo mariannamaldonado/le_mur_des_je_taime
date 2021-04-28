@@ -37,16 +37,14 @@
         <canvas
           class="lienzo"
           id="lienzo"
-          width="2500"
+          width="2300"
           height="750"
+          @mouseup="getCenter"
           @mousemove="oMousePos"
         ></canvas>
         <div id="sms"><MessageBase /></div>
       </div>
       <div class="boxCoordinates">
-        <!-- <button @click="addWidth">-</button> -->
-        <button @click="ampliar">+</button>
-        <!-- <button @click="drawRect">Add Rect</button> -->
         <div id="coordinates">
           <h3>{{ x }} - {{ y }}</h3>
         </div>
@@ -71,8 +69,6 @@ export default {
     let x = ref(0);
     let y = ref(0);
     let current_section = 1;
-    // var rectWidth = 200;
-    var container = null;
 
     onMounted(() => {
       var c = document.getElementById("lienzo");
@@ -86,41 +82,40 @@ export default {
       y.value = e.offsetY;
     }
 
-   // var container= document.querySelectorAll("container")
-   // var context= document.querySelector("lienzo")
+    const MIN_SCALE = 1;
+    const MAX_SCALE = 40;
 
-function ampliar(){
-  canvas.style.width="100%";
-  canvas.style.heidht="100vh";
-  canvas.style.margin="0";
+    const RANDOM_RADIUS = 2000;
+    // function getRandomCenter() {
+    //   return [
+    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
+    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
+    //   ];
+    // }
+    function getCenter() {
+      const url = window.location.href;
+      const cleanUrl = url.split("#")[0].split("?")[0];
+      const path = cleanUrl.split("/").pop();
 
-  context.style.width="100%";
-  context.style.heidht="100vh";
-  context.style.backgroundSize="cover";
-  context.style.backgroundRepeat="no-repeat";
-}
+      if (path.length === 0 || !path.startsWith("@")) 
+      // return getRandomCenter();
 
-    // methods(() => {
-      // function drawRect() {
-      //   // clear canvas
-      //   canvas.clearRect(0, 0, 800, 400);
-      //   // draw rect
-      //   canvas.beginPath();
-      //   canvas.rect(20, 20, rectWidth, 100);
-      //   canvas.stroke();
-      // }
-     
-      // function addWidth() {
-      //   this.canvas.rectWidth += 10;
-      //   drawRect();
-      // }
-
-      // function subWidth() {
-      //   this.canvas.rectWidth -= 10;
-      //   drawRect();
-      // }
-
-    // });
+      try {
+        const almost = path.substring(1);
+        const [x, y] = almost.split(",").map((num) => parseInt(num, 10));
+        return [x, y];
+      } catch (error) {
+        // return getRandomCenter();
+      }
+    }
+    // const initialState: CanvasState = {
+    //   chunks: new Map(),
+    //   view: getCenter(),
+    //   requested: new Set(),
+    //   scale: 4,
+    //   isFetchinBigChunk: false,
+    //   fetchs: 0,
+    // };
     //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
@@ -187,12 +182,12 @@ function ampliar(){
     });
 
     return {
-      container,
-      ampliar,
-      // rectWidth,
-      // drawRect,
-      // addWidth,
-      // subWidth,
+     
+      // getRandomCenter,
+      RANDOM_RADIUS,
+      getCenter,
+      MIN_SCALE,
+      MAX_SCALE,
       canvas,
       x,
       y,
