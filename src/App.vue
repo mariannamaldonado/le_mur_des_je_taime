@@ -154,6 +154,16 @@ a {
 }
 
 #sidebarCollapse {
+  color: #9c0505;
+  position: absolute;
+  right: -70px;
+  top: 10px;
+  border: none;
+}
+#sidebarCollapse:hover {
+  background-image: linear-gradient(to right, #a19dcf, #03002d);
+  
+  cursor: pointer;
   position: absolute;
   right: -70px;
   top: 10px;
