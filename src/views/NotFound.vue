@@ -1,18 +1,16 @@
-<template> 
-<section class="content-section bg-light">
+<template>
+  <section class="content-section bg-light">
     <div class="container text-center">
       <div class="row">
-           <!-- 404 Error Text -->
-                    <div class="text-center">
-                        <div class="error mx-auto" data-text="404">404</div>
-                        <p class="lead text-gray-800 mb-5">Not Found</p>
-                        <p class="text-gray-500 mb-0">OOPS!...</p>
-                        <a href="index.html">&larr; Volver a la página de inicio</a>
-                    </div>
+        <div class="text-center">
+          <div class="error mx-auto" data-text="404">404</div>
+          <p class="lead text-gray-800 mb-5">No encontrada</p>
+          <p class="text-gray-500 mb-0">OOPS!...</p>
+          <a href="/">&larr; Volver a la página de inicio</a>
+        </div>
       </div>
     </div>
   </section>
- 
 </template>
 
 <script>
@@ -21,17 +19,15 @@ export default {
   components: {},
 
   setup() {
-    return {
-        
-    }
+    return {};
   },
-}
+};
 </script>
 
 <style lang="css" scoped>
 .content-section {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
 }
 .error {
   color: #5a5c69;
@@ -40,7 +36,6 @@ export default {
   line-height: 1;
   width: 12.5rem;
 }
-
 @-webkit-keyframes noise-anim {
   0% {
     clip: rect(10px, 9999px, 83px, 0);
@@ -106,7 +101,6 @@ export default {
     clip: rect(19px, 9999px, 71px, 0);
   }
 }
-
 @keyframes noise-anim {
   0% {
     clip: rect(10px, 9999px, 83px, 0);
@@ -172,7 +166,6 @@ export default {
     clip: rect(19px, 9999px, 71px, 0);
   }
 }
-
 .error:after {
   content: attr(data-text);
   position: absolute;
@@ -185,7 +178,6 @@ export default {
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
-
 @-webkit-keyframes noise-anim-2 {
   0% {
     clip: rect(37px, 9999px, 52px, 0);
@@ -251,7 +243,6 @@ export default {
     clip: rect(21px, 9999px, 67px, 0);
   }
 }
-
 @keyframes noise-anim-2 {
   0% {
     clip: rect(37px, 9999px, 52px, 0);
@@ -317,7 +308,6 @@ export default {
     clip: rect(21px, 9999px, 67px, 0);
   }
 }
-
 .error:before {
   content: attr(data-text);
   position: absolute;
@@ -330,6 +320,4 @@ export default {
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
-
-
 </style>

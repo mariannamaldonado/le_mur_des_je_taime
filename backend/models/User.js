@@ -47,20 +47,7 @@ function validatePwdLength(pwd){
         return false
 }
 class User {
-
-    validar() {
-        let errores = []
-       /*  if (this.firstname == "") errores.push({ error: "El nombre no puede estar vacio." })
-        if (this.lastname == "") errores.push({ error: "El apellido no puede estar vacío." })
-        if (this.username == "") errores.push({ error: "El seudonimo no puede estar vacío." })
-        if (this.email == "") errores.push({ error: "El email no puede estar vacío." })
-        if (this.password == "") errores.push({ error: "El password no puede estar vacío." })
- */
-        //validacion el e-mail:
-        let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-        if (!regEmail.test(this.email)) errores.push({ error: "El formato del e-mail no es válido" })
-    }
-    //privados
+    
     checkPassword(password) {
         return bcrypt.compareSync(password, this.password)
     }

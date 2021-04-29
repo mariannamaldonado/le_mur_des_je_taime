@@ -3,15 +3,12 @@
     <section class="section-a">
       <div class="container">
         <div>
-         
           <h1>
             Le mur des
           </h1>
              <div class="medium-tiempos center">
             <span class="bright-red suisse-50">Je T’Aime</span><br></div>
           <img src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5e156bcd9ba5cbffdd421c8a_underline-red.png" width="137" alt="" class="underline-right-2">
-           
-            
           <p>
             hemos recreado la obra parisina, obra imaginada por Frédéric Baron y Claire Kito, 
             es un lugar ineludible para los enamorados de todo el mundo que vienen a París, 
@@ -20,17 +17,11 @@
             « te quiero » en 250 idiomas. Las chispas de color rojo sobre el fresco simbolizan 
             los trozos de un corazón roto, símbolo de una humanidad que se desgarra y que el muro 
             trata de reunir.
-            <div id="box">
-            	<span class="txt">Je t'aime</span>
-              <span class="♥">♥</span>
-              <span class="txt" contenteditable spellcheck="false"></span> 
-            </div>
           </p>
         </div>
         <img src="@/assets/img/header.png" alt="" />
       </div>
     </section>
- 
     <!-- Large Text -->
     <section id="about" class="section-b">
       <div class="overlay">
@@ -41,7 +32,6 @@
          </div>
       </div>
     </section>
-        
     <!-- Gallery -->
     <section class="section-c">
       <div class="gallery">
@@ -53,10 +43,8 @@
         </a>
         <!-- <a href="#" class="big"
           ><img src="@/assets/img/banner17.jpg" alt="" /></a> -->
-
         <a href="#" class="big"
           ><img src="@/assets/img/5.png" alt="" /></a>
-
         <!-- <a href="#" class="big">
           <img src="@/assets/img/banner18.jpg" alt=""
         /></a>
@@ -65,12 +53,11 @@
         /></a> -->
       </div>
     </section> 
-
  <!-- Call to Action -->
   <section class="content-section bg-primary text-white">
     <div class="container text-center">
       <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
-      <a href="/newMessage" class="btn btn-xl btn-light mr-4">Envia un te quiero!</a>
+      <a href="#!" class="btn btn-xl btn-light mr-4">Envia un te quiero!</a>
 
     </div>
   </section>
@@ -89,17 +76,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* Showcase */
+
 
 .suisse-50.bright-red {
     line-height: 50px;
 }
 .bright-red.suisse-50 {
     font-size: 50px;
-    font-weight: 700;
 }
 .suisse-50 {
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Suisseintl webm', sans-serif;
     font-size: 51px;
     letter-spacing: -0.7px;
 }
@@ -187,7 +173,7 @@ ul {
   color: #555;
 }
 .section-a {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 .section-a .container {
   display: grid;
@@ -199,11 +185,9 @@ ul {
 .section-a h1 {
   font-size: 3rem;
   color: var(--primary-color);
-  font-weight: 700;
 }
 .section-a p {
   margin: 1rem 0;
-  font-weight: 500;
 }
 /* .callout */
 .callout {
@@ -438,48 +422,4 @@ ul {
     letter-spacing: 0.2px;
 }
 
-/* animacion */
-html { height: 100%; }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-  /* background-color: hsl(210,50%,20%);
-	 background: url(bg.png), linear-gradient(90deg, hsl(210,40%,12%), hsl(210,40%,20%), hsl(210,40%,12%)); */
-	}
-.txt[contenteditable] {
-  outline: none;
-}
-/* Box ------------------------------------------------------ */
-#box {
-  font-size: 3em;
-}
-/* txt ------------------------------------------------------ */
-.txt {
-  color: hsla(0,0%,0%,0);
-  text-shadow: #fff 0 0 60px;
-  transition: text-shadow 2s cubic-bezier(0, 1, 0, 1);
-	}
-	@-moz-document url-prefix() { .txt { text-shadow: #fff 0 0 20px; } } /* FF fix */
-#box:hover .txt {
-		text-shadow: #000 0 0 5px;
-		transition: text-shadow 1s cubic-bezier(0, 0.75, 0, 1);
-}
-/* ♥ ------------------------------------------------------ */
-.♥ {
-  margin: 0 10px;
-  color: hsla(0,0%,0%,0);
-  text-shadow: red 0 0 5px;
-  transition: text-shadow 1s cubic-bezier(0, 1, 0, 1);
-	}
-#box:hover .♥ {
-		text-shadow: red 0 0 100px;
-		transition: text-shadow 2s cubic-bezier(0, 0.75, 0, 1);
-}
-  @-moz-document url-prefix() { #box:hover .♥ { text-shadow: red 0 0 20px; } } /* FF fix */
 </style>
