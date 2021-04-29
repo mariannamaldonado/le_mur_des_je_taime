@@ -7,9 +7,11 @@
       width="1480"
       height="750"
       @mouseleave="draw"
-      @mousemove="oMousePos"
-    ></canvas>
-    <div id="sms"><MessageBaseCopy/></div>
+      @mousemove="oMousePos">
+    </canvas>
+    <div id="sms">
+      <MessageBase2 />
+    </div>
   </div>
   <div class="boxCoordinates">
     <div id="coordinates">
@@ -19,14 +21,14 @@
 </template>
 
 <script>
-import MessageBaseCopy from "@/components/MessageBaseCopy.vue";
+import MessageBase2 from "@/components/MessageBase2.vue";
 import { ref, onMounted } from "vue";
 
 export default {
   name: "Mur",
   props: {},
   components: {
-    MessageBaseCopy,
+    MessageBase2,
   },
   setup() {
     var context = null;
@@ -86,6 +88,8 @@ export default {
   text-decoration: none;
 }
 .lienzo {
+  background-image: url('../assets/img/subtle_carbon.png');
+  background-repeat: repeat;
   touch-action: none;
   user-select: none;
   cursor: pointer;

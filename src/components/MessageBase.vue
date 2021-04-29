@@ -9,7 +9,7 @@
           {{ Message.message }}
         </blockquote>
       </main>
-      <!-- <footer class="author">{{ Message.user.firstname }}</footer> -->
+      <footer class="author">{{ Message.user.firstname }}</footer>
     </div>
   </div>
 </template>
@@ -61,6 +61,7 @@ html {
 }
 body {
   -webkit-user-select: none;
+  @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Unna:ital,wght@1,400;1,700&display=swap');
   user-select: none; 
   background-color: #222226;
   height: 100%;
