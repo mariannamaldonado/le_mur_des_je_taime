@@ -18,7 +18,7 @@
         class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
       ></p> -->
       <div class="media-body" style="text-align: center">
-        <h4 class="m-0">Le Mur des Je T'aime</h4>
+        <!-- <h4 class="m-0">Le Mur des Je T'aime</h4> -->
         <p class="font-weight-light text-muted mb-0"></p>
       </div>
       <br />
@@ -146,9 +146,9 @@ a {
   color: #0f1433;
 }
 .background {
-  background-image: url("../public/muro.jpg");
+  background-image: url("../public/logo.png");
   background-size: cover;
-  height: 80px;
+  height: 100px;
 }
 .vertical-nav {
   min-width: 17rem;

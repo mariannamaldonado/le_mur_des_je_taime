@@ -109,7 +109,7 @@
 
                  <div class="form-floating mb-3">
                         <input
-                            v-model="firstname"
+                            v-model="lastname"
                             type="text"
                             class="form-control floatingInput"
                             placeholder="Nombre"
