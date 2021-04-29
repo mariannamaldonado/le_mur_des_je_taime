@@ -4,104 +4,119 @@
   <div id="container">
     <div class="environment" @click="getSelection">
       <div id="item1" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate translate" :src="image">
-        <img class="gap imgTranslate translate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate translate" :src="image" />
+        <img class="gap imgTranslate translate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item2" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="gap imgTranslate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="gap imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item3" class="section">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="gap imgTranslate"  :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
-        <img class="imgTranslate" :src="image">
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="gap imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
+        <img class="imgTranslate" :src="image" />
       </div>
       <div id="item4" class="section">
-          <canvas class="lienzo" id="lienzo" @mousemove="oMousePos"></canvas>
-          <div class="boxCoordinates">
-            <div id="coordinates">
-              <h3>{{ x }} - {{ y }}</h3>
-            </div>
-          </div>
+        <canvas
+          class="lienzo"
+          id="lienzo"
+          width="2300"
+          height="750"
+          @mouseup="getCenter"
+          @mousemove="oMousePos"
+        ></canvas>
+        <div id="sms"><MessageBase /></div>
+      </div>
+      <div class="boxCoordinates">
+        <div id="coordinates">
+          <h3>{{ x }} - {{ y }}</h3>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import MessageBase from "@/components/MessageBase.vue";
 import { ref, onMounted } from "vue";
 export default {
   name: "LeMur",
   props: {
     msg: String,
   },
+  components: {
+    MessageBase,
+  },
   setup() {
     var canvas = null;
-    let x = ref();
-    let y = ref();
+    let x = ref(0);
+    let y = ref(0);
     let current_section = 1;
 
     onMounted(() => {
-      var canvas = document.getElementById("lienzo");
-      if (canvas && canvas.getContext) {
-        var ctx = canvas.getContext("2d");
-        if (ctx) {
-          var coordinates = document.getElementById("coordinates");
-
-          canvas.addEventListener(
-            "mousemove",
-            function (evt) {
-              var mousePos = oMousePos(canvas, evt);
-              markCoords(coordinates, mousePos.x, mousePos.y);
-            },
-            false
-          );
-
-          canvas.addEventListener(
-            "mouseout",
-            function (evt) {
-              cleanCoords(coordinates);
-            },
-            false
-          );
-        }
-      }
+      var c = document.getElementById("lienzo");
+      canvas = c.getContext("2d");
+      canvas.width = Window.innerWidth;
+      canvas.height = Window.innerWidth;
     });
-    function markCoords(coordinates, x, y) {
-      coordinates.innerHTML = + x + " - " + y;
+
+    function oMousePos(e) {
+      x.value = e.offsetX;
+      y.value = e.offsetY;
     }
 
-    function cleanCoords(coordinates) {
-      coordinates.innerHTML = "";
-    }
+    const MIN_SCALE = 1;
+    const MAX_SCALE = 40;
 
-    function oMousePos(canvas, evt) {
-      var ClientRect = canvas.getBoundingClientRect();
-      return {
-        //objeto
-        x: Math.round(evt.clientX - ClientRect.left),
-        y: Math.round(evt.clientY - ClientRect.top),
-      };
-    }
+    const RANDOM_RADIUS = 2000;
+    // function getRandomCenter() {
+    //   return [
+    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
+    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
+    //   ];
+    // }
+    function getCenter() {
+      const url = window.location.href;
+      const cleanUrl = url.split("#")[0].split("?")[0];
+      const path = cleanUrl.split("/").pop();
 
-    //script transicion
+      if (path.length === 0 || !path.startsWith("@")) 
+      // return getRandomCenter();
+
+      try {
+        const almost = path.substring(1);
+        const [x, y] = almost.split(",").map((num) => parseInt(num, 10));
+        return [x, y];
+      } catch (error) {
+        // return getRandomCenter();
+      }
+    }
+    // const initialState: CanvasState = {
+    //   chunks: new Map(),
+    //   view: getCenter(),
+    //   requested: new Set(),
+    //   scale: 4,
+    //   isFetchinBigChunk: false,
+    //   fetchs: 0,
+    // };
+    //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
       nav.forEach((item) => {
@@ -165,56 +180,64 @@ export default {
         );
       });
     });
+
     return {
+     
+      // getRandomCenter,
+      RANDOM_RADIUS,
+      getCenter,
+      MIN_SCALE,
+      MAX_SCALE,
       canvas,
       x,
       y,
-      markCoords,
       oMousePos,
-      cleanCoords,
-      getSelection,
       current_section,
-      image: "/muro.jpg"
+      image: "/muro.jpg",
     };
   },
 };
 </script>
 
 <style  scoped lang="scss">
-
-.imgTranslate{
-  padding: 7px ;
+#sms {
+  color: brown;
+  text-align: center;
+  z-index: 999;
+}
+#container button {
+  display: block;
+  position: relative;
+  margin: 5px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+.imgTranslate {
+  padding: 7px;
   width: 170px;
   height: 70px;
 }
-
-.src{
- height: 70px;
-
+.src {
+  height: 70px;
 }
-
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
 }
-
 h1 {
   text-align: center;
 }
-
 .lienzo {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  width: 950px;
-  height: 600px;
-  background: #01011a;
+  background: #6e6ebb;
   position: absolute;
-  right: -235px;
+  right: -935px;
+  z-index: -1;
 }
-
 #coordinates {
   background-color: rgba(0, 0, 0, 0.75);
   color: rgb(250, 250, 250);
@@ -227,24 +250,21 @@ h1 {
   padding: 0px 1.5em;
   font-size: 16px;
   cursor: default;
-  font-size: .7em;
+  font-size: 0.7em;
 }
-
 .boxCoordinates {
   position: absolute;
   left: 1em;
   bottom: 1em;
+  z-index: 999;
 }
-
 #vertical {
   display: none;
 }
-
 @media all and (orientation: portrait) {
   #container {
     display: none;
   }
-
   #vertical {
     border-radius: 7px;
     display: block;
@@ -255,10 +275,9 @@ h1 {
     width: 190px;
     height: 190px;
     background-image: url(/rotatephone.gif),
-    linear-gradient(to right, #a19dcf, #03002d);
+      linear-gradient(to right, #a19dcf, #03002d);
   }
 }
-
 //transicion Tunel
 *,
 *::before,
@@ -269,7 +288,6 @@ body {
   margin: 0;
   overflow: hidden;
 }
-
 .environment {
   width: 100vw;
   height: 100vh;
@@ -282,7 +300,6 @@ body {
   perspective: 1000px;
   perspective-origin: 48% 52%;
 }
-
 .section {
   position: absolute;
   display: grid;
@@ -290,17 +307,16 @@ body {
   grid-template-rows: 60px auto auto;
   transition: transform 1s, opacity 1s;
   padding: 255px;
-  right: 10;}
+  right: 10;
+}
 h1 {
   font-size: 2em;
   width: 80%;
   grid-column: 1/-1;
 }
-
 .gap {
   grid-column: 3/4;
 }
-
 .nav {
   position: absolute;
   bottom: 0;
@@ -308,39 +324,38 @@ h1 {
   padding: 10px;
 }
 .nav a {
-    text-decoration: none;
-    margin: 10px;
-    cursor: pointer;
-    color: #940909;
-    text-align: center;
-  }
-  
-  .nav a+a::before {
-    margin-left: -11px;
-    content:'';
-    height: 15px;
-    width: 1px;
-  }
-
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+  color: #940909;
+  text-align: center;
+}
+.nav a + a::before {
+  margin-left: -11px;
+  content: "";
+  height: 15px;
+  width: 1px;
+}
 #item1 {
-  z-index: 4;
+  z-index: 1;
 }
 #item2 {
   opacity: 0.2;
   z-index: 3;
-  transform: translate3d(0, 0, -2000px);
+  transform: translate3d(0, 0, -900px);
 }
 #item3 {
   opacity: 0.2;
   z-index: 2;
-  transform: translate3d(0, 0, -4000px);
+  transform: translate3d(0, 0, -2900px);
 }
 #item4 {
+  left: 0;
+  top: 0;
   opacity: 0.2;
   z-index: 1;
-  transform: translate3d(0, 0, -6000px);
+  transform: translate3d(0, 0, -4900px);
 }
-
 @media only screen and (max-width: 690px) {
   .section {
     display: block;

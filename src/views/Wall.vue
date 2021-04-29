@@ -1,18 +1,18 @@
 <template>
   <div>
-    <LeMur msg="Le Mur Des Je T`aime" />
-    <Lines />
+    <!-- <LeMur msg="Le Mur Des Je T`aime" /> -->
+    <Mur />
   </div>
 </template>
 
 <script>
-import LeMur from "@/components/LeMur.vue";
-import Lines from "@/components/Lines.vue";
+// import LeMur from "@/components/LeMur.vue";
+import Mur from "@/components/Mur.vue";
 export default {
   name: "Wall",
   components: {
-    LeMur,
-    Lines,
+    // LeMur,
+   Mur,
   },
 
   setup() {
