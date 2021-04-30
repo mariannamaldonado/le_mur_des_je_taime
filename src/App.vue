@@ -4,7 +4,7 @@
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+        class="btn btn-light btn-danger rounded-pill sm px-4 mb-4"
       >
         <i class="fa fa-bars mr-2"></i>
       </button>
@@ -100,7 +100,7 @@ export default {
 };
 </script>
 
-<style lang="scss"  scoped>
+<style lang="scss" scoped>
 .fa-bars:before {
   color: #9c0505;
 }
@@ -133,14 +133,6 @@ ul#menu li a:hover:after {
   opacity: 4;
   transform: translateY(15px);
 }
-// fin hover menu
-/*.container-fluid {
-  background: url("../public/muroblur.png") no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  background-size: 100% 100%;  
-  
- }*/
 a {
   text-decoration: none;
   color: #0f1433;
@@ -176,13 +168,18 @@ a {
   position: absolute;
   right: -70px;
   top: 10px;
+  padding: 2.7px;
 }
 #sidebarCollapse:hover {
   background-image: linear-gradient(to right, #a19dcf, #03002d);
-  cursor: pointer;
   position: absolute;
   right: -70px;
   top: 10px;
+  border:rgba(0, 0, 0, 0.5);
+}
+.sm{
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5) !important;
 }
 #sidebar {
   z-index: 100;
