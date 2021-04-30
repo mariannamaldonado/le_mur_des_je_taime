@@ -10,7 +10,7 @@
       @mousemove="oMousePos">
     </canvas>
     <div id="sms">
-      <MessageBase2 />
+      <!-- <MessageBase /> -->
     </div>
   </div>
   <div class="boxCoordinates">
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import MessageBase2 from "@/components/MessageBase2.vue";
+// import MessageBase from "@/components/MessageBase.vue";
 import { ref, onMounted } from "vue";
 
 export default {
   name: "Mur",
   props: {},
   components: {
-    MessageBase2,
+    // MessageBase,
   },
   setup() {
     var context = null;
@@ -60,6 +60,8 @@ export default {
         context.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
         context.bezierCurveTo(85, 25, 75, 37, 75, 40);
         context.fill();
+        context.fillStyle ='rgba(255, 0, 0, 0.5)'
+        context.stroke();
       }
     }
 
@@ -88,8 +90,9 @@ export default {
   text-decoration: none;
 }
 .lienzo {
-  background-image: url('../assets/img/subtle_carbon.png');
-  background-repeat: repeat;
+  // background-image: url('../assets/img/subtle_carbon.png');
+  // background-repeat: repeat;
+  background-color: rgb(184, 164, 139);
   touch-action: none;
   user-select: none;
   cursor: pointer;

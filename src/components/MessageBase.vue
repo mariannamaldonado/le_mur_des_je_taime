@@ -9,7 +9,7 @@
           {{ Message.message }}
         </blockquote>
       </main>
-      <footer class="author">{{ Message.user.firstname }}</footer>
+      <!-- <footer class="author">{{ Message.user.firstname }}</footer> -->
     </div>
   </div>
 </template>
