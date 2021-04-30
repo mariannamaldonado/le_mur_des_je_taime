@@ -2,7 +2,7 @@
   <div class="col-sm" id="vertical"></div>
   <!-- <h1>{{ msg }}</h1> -->
   <div id="container">
-    <div class="environment" @click="getSelection">
+    <div class="environment" >
       <div id="item1" class="section">
         <img class="imgTranslate" :src="image" />
         <img class="imgTranslate" :src="image" />
@@ -39,6 +39,7 @@
           id="lienzo"
           width="2300"
           height="750"
+          @click="getSelection"
           @mouseup="getCenter"
           @mousemove="oMousePos"
         ></canvas>
@@ -82,40 +83,6 @@ export default {
       y.value = e.offsetY;
     }
 
-    const MIN_SCALE = 1;
-    const MAX_SCALE = 40;
-
-    const RANDOM_RADIUS = 2000;
-    // function getRandomCenter() {
-    //   return [
-    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
-    //     getRandomInt(-RANDOM_RADIUS, RANDOM_RADIUS),
-    //   ];
-    // }
-    function getCenter() {
-      const url = window.location.href;
-      const cleanUrl = url.split("#")[0].split("?")[0];
-      const path = cleanUrl.split("/").pop();
-
-      if (path.length === 0 || !path.startsWith("@")) 
-      // return getRandomCenter();
-
-      try {
-        const almost = path.substring(1);
-        const [x, y] = almost.split(",").map((num) => parseInt(num, 10));
-        return [x, y];
-      } catch (error) {
-        // return getRandomCenter();
-      }
-    }
-    // const initialState: CanvasState = {
-    //   chunks: new Map(),
-    //   view: getCenter(),
-    //   requested: new Set(),
-    //   scale: 4,
-    //   isFetchinBigChunk: false,
-    //   fetchs: 0,
-    // };
     //script transition
     onMounted(() => {
       let nav = document.querySelectorAll("a");
@@ -184,10 +151,6 @@ export default {
     return {
      
       // getRandomCenter,
-      RANDOM_RADIUS,
-      getCenter,
-      MIN_SCALE,
-      MAX_SCALE,
       canvas,
       x,
       y,
@@ -233,10 +196,11 @@ h1 {
   touch-action: none;
   user-select: none;
   cursor: pointer;
-  background: #6e6ebb;
   position: absolute;
   right: -935px;
   z-index: -1;
+  background-image: url('../assets/img/subtle_carbon.png');
+
 }
 #coordinates {
   background-color: rgba(0, 0, 0, 0.75);

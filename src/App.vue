@@ -169,6 +169,7 @@ a {
   right: -70px;
   top: 10px;
   padding: 2.7px;
+  background: transparent;
 }
 #sidebarCollapse:hover {
   background-image: linear-gradient(to right, #a19dcf, #03002d);
