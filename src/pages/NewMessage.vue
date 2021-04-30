@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-         <!-- Perfil -->
+        <!-- Perfil -->
         <a href="/Profile">
           <p class="text-monospace">Profile</p>
           <svg
@@ -11,13 +11,14 @@
             height="26"
             fill="currentColor"
             class="bi bi-person"
-            viewBox="0 0 16 16">
+            viewBox="0 0 16 16"
+          >
             <path
               d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
             ></path>
           </svg>
         </a>
-          <!-- Enviar mensaje -->
+        <!-- Enviar mensaje -->
         <a href="/NewMessage">
           <p class="text-monospace">Enviar mensaje</p>
           <svg
@@ -26,7 +27,8 @@
             height="26"
             fill="currentColor"
             class="bi bi-chat-left-dots"
-            viewBox="0 0 16 16">
+            viewBox="0 0 16 16"
+          >
             <path
               d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
             />
@@ -54,115 +56,136 @@
               d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"
             />
           </svg>
-          
         </a>
-         <!-- Cerrar sesión-->
         <a href="#">
           <p class="text-monospace">Cerrar sesión</p>
-         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="bi bi-box-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+            />
           </svg>
         </a>
       </div>
     </div>
-
     <div class="content-wrapper">
-      <!-- content-wrapper -->
     </div>
     <footer class="main-footer">
-      <!-- main-footer -->
     </footer>
   </div>
-
   <hr class="border" />
-
   <!-- <div class="container"> 
     <h2>Mensaje nuevo <small></small></h2>
   </div> -->
-
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
-            <br />
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control floatingInput"
-                  data-error="Por favor ingrese su nombre"
-                  placeholder="Nombre"
-                />
-                <label for="floatingInput">&nbsp;Destinatario:</label>
-              </div>
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control floatingInput"
-                  data-error="Por favor ingrese su email"
-                  placeholder="nombre@ejemplo.com"
-                />
-                <label for="floatingInput">&nbsp;Email:</label>
-              </div>
+  <div class="card border-left-warning shadow h-100 py-2">
+    <div class="card-body">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
+          <br />
+          <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control floatingInput"
+                data-error="Por favor ingrese su nombre"
+                placeholder="Nombre"
+              />
+              <label for="floatingInput">&nbsp;Destinatario:</label>
             </div>
           </div>
-          <div class="col-auto">
-            <i class="fas fa-comments fa-2x text-gray-300"></i>
+          <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control floatingInput"
+                data-error="Por favor ingrese su email"
+                placeholder="nombre@ejemplo.com"
+              />
+              <label for="floatingInput">&nbsp;Email:</label>
+            </div>
           </div>
         </div>
-         <!-- inicio -->
-         <div class="card-body">
-      <div>
-        <form method="post">
-          <textarea id="mytextarea">Ciao, Ti amo!</textarea>
-         <div class = "button-wrap">
-         <hr/>
-    <a href="#" class="myButton">Enviar</a>
-    </div>
-        </form>
+        <div class="col-auto">
+          <i class="fas fa-comments fa-2x text-gray-300"></i>
+        </div>
+      </div>
+      <!-- tiny editor de texto -->
+      <div class="card-body form-control floatingInput">
+        <editor
+          :init="{
+            height: 300,
+            menubar: false,
+            plugins: [
+              'advlist autolink lists link image charmap',
+              'searchreplace visualblocks code fullscreen',
+              'print preview anchor insertdatetime media',
+              'paste code help wordcount table',
+            ],
+            toolbar:
+              'undo redo | styleselect  | bold italic | \
+              alignleft aligncenter alignright | \
+              bullist numlist | outdent indent | help',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            selector: 'textarea',
+           
+          }"
+        >
+        </editor>
+        <div class="button-wrap">
+          <hr />
+          <a href="#" class="myButton">Enviar</a>
+        </div>
       </div>
     </div>
-    <!-- fin -->
-      </div>
-    </div>
-   
-
-     <hr class="border" />
-     <footer class="footer">
+  </div>
+  <hr class="border" />
+  <footer class="footer">
     <div class="container-fluid d-flex flex-wrap justify-content-between">
       <nav>
         <ul>
-            <router-link :to="{path:'/'}">Le mur des je t'aime</router-link>
+          <router-link :to="{ path: '/' }">Le mur des je t'aime</router-link>
         </ul>
       </nav>
-    <div class="copyright d-flex flex-wrap">
-      &nbsp; Hecho con &nbsp;
-     <a id="heart" href="#">&#9829;</a>&nbsp; por
-      <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp; Final Project.</a>&nbsp;
-    </div>
+      <div class="copyright d-flex flex-wrap">
+        &nbsp; Hecho con &nbsp;
+        <a id="heart" href="#">&#9829;</a>&nbsp; por
+        <a
+          href="https://github.com/mariannamaldonado/le_mur_des_je_taime"
+          target="_blank"
+        >
+          &nbsp; Final Project.</a
+        >&nbsp;
+      </div>
     </div>
   </footer>
- <!-- <ContentFooter /> -->
+  <!-- <ContentFooter /> -->
 </template>
 <!--  import ContentFooter from '@/components/ContentFooter' -->
 <script>
+import Editor from "@tinymce/tinymce-vue";
+
 import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "NewMessage",
   components: {
-    
+    Editor,
   },
   setup() {
-   
-    
-
-    return {
-     
-  };
+    return {};
   },
 };
 </script>
@@ -171,27 +194,27 @@ export default {
 <style lang="scss" scoped>
 // inicio button
 .myButton {
-	box-shadow: 0px 0px 0px 2px #3f71fa;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
-	border-radius:10px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:10px 37px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
+  box-shadow: 0px 0px 0px 2px #3f71fa;
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  border-radius: 10px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 10px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
+  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color: #476e9e;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 // fin booton
 
@@ -342,24 +365,24 @@ h2 small {
 }
 
 #heart {
-    font-size: 40px;
-    color: #F27983;
-    position: relative;
+  font-size: 40px;
+  color: #f27983;
+  position: relative;
 }
 
 #heart:after {
-    content:"♥";
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: 0s all ease;
+  content: "♥";
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0s all ease;
 }
 
 #heart:hover:after {
-    transform: scale(2);
-    -webkit-transform: scale(2);
-    opacity:0;
-    transition: .8s all ease;
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  opacity: 0;
+  transition: 0.8s all ease;
 }
 </style>
