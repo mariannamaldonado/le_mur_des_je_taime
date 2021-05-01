@@ -101,6 +101,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container-fluid{
+  padding-left: var(--bs-gutter-x,.0rem);
+}
 .fa-bars:before {
   color: #9c0505;
 }
@@ -135,12 +138,12 @@ ul#menu li a:hover:after {
 }
 a {
   text-decoration: none;
-  color: #0f1433;
+  color: #000000;
 }
 .background {
   background-image: url("../public/logo.png");
   background-size: cover;
-  height: 100px;
+  height: 130px;
 }
 .vertical-nav {
   min-width: 17rem;
@@ -169,6 +172,7 @@ a {
   right: -70px;
   top: 10px;
   padding: 2.7px;
+  background: transparent;
 }
 #sidebarCollapse:hover {
   background-image: linear-gradient(to right, #a19dcf, #03002d);
@@ -203,13 +207,13 @@ a {
     margin: 0;
   }
 }
-body {
-  background: #599fd9;
-  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-  background: linear-gradient(to right, #599fd9, #c2e59c);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+// body {
+//   background: #599fd9;
+//   background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+//   background: linear-gradient(to right, #599fd9, #c2e59c);
+//   min-height: 100vh;
+//   overflow-x: hidden;
+// }
 .separator {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;

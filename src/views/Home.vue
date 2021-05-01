@@ -1,5 +1,5 @@
 <template>
-  <!-- Showcase -->
+  <!-- Escaparate -->
     <section class="section-a">
       <div class="container">
         <div>
@@ -22,7 +22,7 @@
         <img src="@/assets/img/header.png" alt="" />
       </div>
     </section>
-    <!-- Large Text -->
+    <!-- Texto grande -->
     <section id="about" class="section-b">
       <div class="overlay">
         <div class="section-b-inner py-5">
@@ -32,7 +32,7 @@
          </div>
       </div>
     </section>
-    <!-- Gallery -->
+    <!-- Galería -->
     <section class="section-c">
       <div class="gallery">
         <a href="#" class="big">
@@ -53,16 +53,13 @@
         /></a> -->
       </div>
     </section> 
- <!-- Call to Action -->
+ <!-- Llamada a la acción -->
   <section class="content-section bg-primary text-white">
     <div class="container text-center">
       <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
-      <a href="#!" class="btn btn-xl btn-light mr-4">Envia un te quiero!</a>
-
+      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-danger btn-lg">Envia un te quiero!</a>
     </div>
   </section>
-
-    <!-- Footer -->
   <Footer />
 </template>
 <script>
@@ -76,8 +73,32 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-
+.btn-danger {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
+}
+.btn-danger:active {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
+#loginbutton {
+  color: #fff;
+  background: transparent;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+#loginbutton:hover {
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 50px;
+  padding: 10px 40px;
+  border: none;
+  background-image: linear-gradient(to right, #a19dcf, #03002d);
+}
 .suisse-50.bright-red {
     line-height: 50px;
 }
@@ -89,11 +110,9 @@ export default {
     font-size: 51px;
     letter-spacing: -0.7px;
 }
-
 .bright-red {
     color: #ec3944;
 }
-
 .underline-right-2 {
     position: relative;
     left: 62px;
@@ -103,7 +122,6 @@ img {
     display: inline-block;
     max-width: 100%;
 }
-
 img {
     max-width: 100%;
     vertical-align: middle;
@@ -189,33 +207,28 @@ ul {
 .section-a p {
   margin: 1rem 0;
 }
-/* .callout */
 .callout {
     padding: 15rem 0;
     background: linear-gradient(90deg,
     rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%);
     /* url('../assets/img/banner12.jpg'); */
-     background-color: #1f4b8d;
+    background-color: #1f4b8d;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .callout h2 {
     font-size: 3.5rem;
     font-weight: 700;
     display: block;
     max-width: 30rem;
 }
-
 .ml-auto, .mx-auto {
     margin-left: auto!important;
 }
-
 .mr-auto, .mx-auto {
     margin-right: auto!important;
 }
-
 .mb-5, .my-5 {
     margin-bottom: 3rem!important;
 }
@@ -390,12 +403,10 @@ ul {
     display: none;
   }
 }
-
 .bg-dark {
     background-color: #212529!important;
 }
-
-/* call to action */
+/* Llamada a la acción */
 .bg-primary {
     background-color: #1f4b8d!important;
 }
@@ -403,11 +414,9 @@ ul {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
 }
-
 .text-white {
     color: #fff!important;
 }
-
 .btn.btn-xl.btn-light {
     max-width: 310px;
     margin-top: 45px;
@@ -421,5 +430,4 @@ ul {
     font-weight: 500;
     letter-spacing: 0.2px;
 }
-
 </style>

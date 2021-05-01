@@ -12,8 +12,13 @@
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Marianna Maldonado Pérez</div>
-                <a href="https://www.linkedin.com/in/programador-mariana-maldonado/"><i class="fab fa-linkedin fa-2x"></i></a> 
-                  <a href="https://github.com/mariannamaldonado"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
+                <a
+                  href="https://www.linkedin.com/in/programador-mariana-maldonado/"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+                <a href="https://github.com/mariannamaldonado">
+                  &nbsp; <i class="fab fa-github fa-2x"></i
+                ></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -24,8 +29,12 @@
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Andreea Cirlan</div>
-                <a href="https://www.linkedin.com/in/andreeacirlan/"><i class="fab fa-linkedin fa-2x"></i></a> 
-                  <a href="https://github.com/AndreeaCCA"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/andreeacirlan/"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+                <a href="https://github.com/AndreeaCCA">
+                  &nbsp; <i class="fab fa-github fa-2x"></i
+                ></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -36,8 +45,13 @@
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Jeampierre Nuñez Sánchez</div>
-                <a href="https://www.linkedin.com/in/jeanpierrer-nu%C3%B1ez-sanchez-34853b129/"><i class="fab fa-linkedin fa-2x"></i></a> 
-                  <a href="https://github.com/JeanpierPol"> &nbsp; <i class="fab fa-github fa-2x"></i></a>
+                <a
+                  href="https://www.linkedin.com/in/jeanpierrer-nu%C3%B1ez-sanchez-34853b129/"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+                <a href="https://github.com/JeanpierPol">
+                  &nbsp; <i class="fab fa-github fa-2x"></i
+                ></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" alt="" />
@@ -48,8 +62,12 @@
             <div class="caption">
               <div class="caption-content">
                 <div class="h2 name">Anny Sánchez Rodríguez</div>
-                  <a href="www.linkedin.com/in/anny-karolina-sánchez-rdríguez"><i class="fab fa-linkedin fa-2x"></i></a> 
-                  <a href="https://github.com/Annysanz"> &nbsp; <i class="fab fa-github fa-2x"></i></a> 
+                <a href="www.linkedin.com/in/anny-karolina-sánchez-rdríguez"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+                <a href="https://github.com/Annysanz">
+                  &nbsp; <i class="fab fa-github fa-2x"></i
+                ></a>
               </div>
             </div>
             <img class="img-fluid" v-bind:src="image4" />
@@ -84,20 +102,17 @@ export default {
 </script>
 
 <style lang="scss">
-
-@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Unna:ital,wght@1,400;1,700&display=swap');
 .h1 {
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 700;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 700;
 }
-
 .mb-5 {
-    margin-bottom: 3rem!important;
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 700;
-    padding-top: 1em;
+  margin-bottom: 3rem !important;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 700;
+  padding-top: 1em;
 }
-.name{
+.name {
   color: black;
   text-align: center;
 }
@@ -105,7 +120,7 @@ export default {
   display: block;
   position: relative;
   overflow: hidden;
-  max-width: 530px;
+  max-width: 430px;
   margin: auto auto 1rem;
   .caption {
     display: flex;
@@ -159,14 +174,12 @@ export default {
     }
   }
 }
-
 a:hover {
-    color: #1f4b8d;
+  color: #1f4b8d;
 }
-
 a {
-    color: #1f4b8d;
-    -webkit-text-decoration: auto;
-    text-decoration: auto;
+  color: #1f4b8d;
+  -webkit-text-decoration: auto;
+  text-decoration: auto;
 }
 </style>
