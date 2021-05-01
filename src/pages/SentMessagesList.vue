@@ -334,19 +334,19 @@ h2 small {
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 .responsive-table .col-0 {
-  flex-basis: 5%;
+  flex-basis: 3%;
 }
 .responsive-table .col-1 {
-  flex-basis: 15%;
+  flex-basis: 12%;
 }
 .responsive-table .col-2 {
-  flex-basis: 20%;
+  flex-basis: 25%;
 }
 .responsive-table .col-3 {
-  flex-basis: 50%;
+  flex-basis: 55%;
 }
 .responsive-table .col-4 {
-  flex-basis: 10%;
+  flex-basis: 5%;
 }
 @media all and (max-width: 767px) {
   .responsive-table .table-header {
