@@ -11,7 +11,6 @@ const schemaMessage = new Schema({
     addresseEmail: { type: String, required: false },
     addresseName: { type: String, required: false },
     user: { type: Schema.Types.ObjectId, ref: 'User' }
-
 }) 
 
 class Message {

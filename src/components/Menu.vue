@@ -1,11 +1,12 @@
 <template>
- <div class="wrapper">
+  <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
          <!-- Perfil -->
-        <a href="@/Profile">
+        <a href="/Profile">
+        <img src="https://img.icons8.com/color/48/000000/user-location.png"/>
           <p class="text-monospace">Profile</p>
-          <svg
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -15,12 +16,13 @@
             <path
               d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
             ></path>
-          </svg>
+          </svg> -->
         </a>
           <!-- Enviar mensaje -->
-        <a href="@/NewMessage">
+        <a href="/NewMessage">
+       <img src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"/>
           <p class="text-monospace">Enviar mensaje</p>
-          <svg
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -33,12 +35,13 @@
             <path
               d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
             />
-          </svg>
+          </svg> -->
         </a>
         <!-- Lista de mensaje -->
-        <a href="@/ListMessage">
+        <a href="/SentMessagesList">
+        <img src="https://img.icons8.com/color/48/000000/wish-list.png"/>
           <p class="text-monospace">Lista de mensajes</p>
-          <svg
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -53,97 +56,48 @@
             <path
               d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"
             />
-          </svg>
+          </svg> -->
           
         </a>
          <!-- Cerrar sesión-->
         <a href="#">
+          <img src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"/>
           <p class="text-monospace">Cerrar sesión</p>
-         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-          </svg>
+          </svg> -->
         </a>
-      </div>
-    </div>
+        <a href="#">
+            <br>
+            <p>Hola, Pepe</p>
+        </a>
 
-    <div class="content-wrapper">
-      <!-- content-wrapper -->
-    </div>
-    <footer class="main-footer">
-      <!-- main-footer -->
-    </footer>
-
-
-  <hr class="border" />
-
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
-            <br />
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control floatingInput"
-                  data-error="Por favor ingrese su nombre"
-                  placeholder="Nombre"
-                />
-                <label for="floatingInput">&nbsp;Destinatario:</label>
-              </div>
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control floatingInput"
-                  data-error="Por favor ingrese su email"
-                  placeholder="nombre@ejemplo.com"
-                />
-                <label for="floatingInput">&nbsp;Email:</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-comments fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- inicio -->
-
-    <div class="card-body">
-      <div>
-        <form method="post">
-          <textarea id="mytextarea">Ciao, Ti amo!</textarea>
-        </form>
+        
       </div>
     </div>
   </div>
+  <hr class="border" />
+
 </template>
 
 <script>
+
 export default {
-  name: "NewMessage",
+  name: "Menu",
   components: {},
-  setup() {
-    return {};
-  },
-};
+  
+  }
 </script>
 
+
 <style lang="scss" scoped>
-.border-left-warning {
-  border-left: 0.25rem solid #b7c8e0 !important;
+
+img, svg {
+    vertical-align: middle;
+    height: 25px;
 }
-.card-body {
-  flex: 1 1 auto;
-  min-height: 1px;
-  padding: 1.25rem;
-}
-/* navbar */
+// navbar
 
 .topnav {
   overflow: hidden;
@@ -156,11 +110,11 @@ export default {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
 }
 
 .topnav a:hover {
-  background-color: #3f4f66;
+  background-color: #b7c8e0;
   color: black;
 }
 
@@ -168,48 +122,43 @@ export default {
   float: right;
 }
 
-// body {
-//   font-family: "lato", sans-serif;
-//   background-color: #f1f2f5;
-// }
-
-// h2 {
-//   font-size: 26px;
-//   margin: 20px 0;
-//   text-align: center;
-// }
-// h2 small {
-//   font-size: 0.5em;
-// }
-
-// textarea {
-//   overflow: hidden;
-// }
-
-
-
-.floatingInput,
-.floatingPassword {
-  border: 0;
-  border-bottom: 2px solid #e4e6e9;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-  border-radius: 0;
+// sidebar
+body {
+  font-family: "lato", sans-serif;
+  background-color: #f1f2f5;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.floatingInput:active,
-.floatingInput:focus {
-  border: 0;
-  border-bottom: 2px solid #070a2b;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #797979;
+  background: #f2f2f2;
+  font-family: "Ruda", sans-serif;
+  padding: 0px !important;
+  // margin: 0px !important;
+  font-size: 13px;
+  background-color: #fff;
 }
 
-.form-floating {
-  border-radius: none !important;
+
+.btn-info {
+  color: #f8f9fa;
+  background-color: #b7c8e0;
+  border-color: #b7c8e0;
 }
 
-.form-control:focus {
-  background: transparent;
-  border-bottom: 2px solid #292a36;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+.btn {
+  padding: 0.1rem 0.75rem;
 }
 </style>
