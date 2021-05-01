@@ -1,20 +1,15 @@
 <template>
-  <footer class="footer">
-    <div class="container-fluid d-flex flex-wrap justify-content-between">
-      <nav>
-        <ul>
-          <li>
-            <router-link :to="{path:'/'}">Le mur des je t'aime</router-link>
-          </li>
-        </ul>
-      </nav>
-    <div class="copyright d-flex flex-wrap">
-      &copy; Coded  with
-      <i class="fa fa-heart heart"></i> by
-      <a href="https://github.com/mariannamaldonado/le_mur_des_je_taime" target="_blank"> &nbsp; Final Project.</a>&nbsp;>
-    </div>
-    </div>
-  </footer>
+ <footer class="site-footer">
+          <div class="text-center">
+              2021 - Le mur des jes t'aime
+ 
+      <i class="fa fa-heart heart"></i>
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+ 
 </template>
 
 <script>
@@ -26,6 +21,31 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+/*footer*/
+.site-footer {
+    background: #b7c8e0;
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+.go-top {
+    margin-right: 1%;
+    float: right;
+    background: rgba(255,255,255,.5);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.go-top i {
+    color: #2A3542;
+}
+
+.site-min-height {
+    min-height: 900px;
+}
 
 </style>

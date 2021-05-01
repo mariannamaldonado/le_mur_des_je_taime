@@ -59,11 +59,6 @@ const routes = [
     component: ()=> import( '@/pages/NewMessage.vue'),
   },
   {
-    path: '/NewMessageCopy',
-    name: 'NewMessageCopy',
-    component: ()=> import( '@/pages/NewMessageCopy.vue'),
-  },
-  {
     path: '/UsersList',
     name: 'UsersList',
     component: ()=> import( '@/pages/admin/UsersList.vue'),

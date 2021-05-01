@@ -1,6 +1,5 @@
 <template>
   <Menu />
-
   <div class="container">
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
@@ -117,15 +116,20 @@
       </thead>
     </table>
   </div>
+  <hr class="border" />
+  <ContentFooter />
 </template>
 
 <script>
-import Menu from '@/components/Menu'
+import Menu from "@/components/Menu.vue";
+import ContentFooter from "@/components/ContentFooter.vue";
 import { ref, reactive, computed, onMounted } from "vue";
 export default {
   name: "ReceivedMessages",
   components: {
-    Menu
+    Menu,
+    ContentFooter
+
   },
   setup() {
     let Menssages = reactive([]);
@@ -157,7 +161,7 @@ export default {
       })
         .then((resp) => resp.json())
         .then((data) => {
-          filtredMessages()
+          filtredMessages();
         });
     }
 
