@@ -2,6 +2,7 @@
   <div>
     <LeMur msg="Le Mur Des Je T`aime" />
     <!-- <Mur /> -->
+
   </div>
 </template>
 
@@ -22,4 +23,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+body{
+      background-image: url('../assets/img/subtle_carbon.png');
+
+}
 </style>

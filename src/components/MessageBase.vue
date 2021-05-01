@@ -15,23 +15,19 @@
 </template>
 
 <script>
-import { ref, reactive, computed, onMounted } from "vue";
+import { ref, reactive, onMounted, computed } from "vue";
 export default {
   name: "MessageBase",
   components: {},
   setup() {
-    var canvas = null;
-    let Menssages = reactive([]);
+    let Messages = reactive([]);
     let search = ref("");
-
     onMounted(() => {
-      var c = document.getElementById("lienzo");
-      canvas = c.getContext("2d");
       getMessageList();
     });
 
     let filtredMessages = computed(() => {
-      return Menssages.filter((item) => {
+      return Messages.filter((item) => {
         return item.message.toLowerCase().includes(search.value.toLowerCase());
       });
     });
@@ -41,127 +37,111 @@ export default {
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {
-            Menssages.push(element);
+            Messages.push(element);
           });
         });
     }
 
     return {
-      canvas,
-      Menssages,
       search,
+      getMessageList,
+      Messages,
       filtredMessages,
     };
   },
 };
 </script>
 <style scoped>
-html {
-  height: 100%;
-}
-body {
-  -webkit-user-select: none;
-  @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Unna:ital,wght@1,400;1,700&display=swap');
-  user-select: none; 
-  background-color: #222226;
-  height: 100%;
-  font-family: roboto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
 .card-object {
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
   display: grid;
-  /* width: 450px;  */
-  width: 210px;
-  grid-template: "header header"
-                  "aside  main"
-                 "foot  foot";
-  /* font-family: courier; */
-  font-size: 15px;
+  width: 280px;
+  grid-template:
+    "header header"
+    "aside  main"
+    "foot  foot";
+  font-size: 13px;
   line-height: 40px;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8));
 }
 .card-object header {
   grid-column: header;
   height: 40px;
-  background-image: url('../assets/img/dechirure.png');
+  background-image: url("../assets/img/dechirure.png");
   background-repeat: repeat;
 }
 .card-object aside {
   grid-area: aside;
   width: 40px;
-  background-image: url('../assets/img/trou.png');
+  background-image: url("../assets/img/trou.png");
   background-repeat: repeat;
 }
 .card-object main {
   grid-area: main;
   background-color: white;
 }
-.card-object main .message{
-  background-image: url('../assets/img/line.png');
+.card-object main .message {
+  background-image: url("../assets/img/line.png");
   background-repeat: repeat;
   background-position: 0 -10px;
   margin: 20px 20px 0 20px;
 }
 .card-object footer {
   grid-column: foot;
-  text-align: right;
   background-color: white;
   padding: 5px 20px 20px 0;
   border-radius: 0 0 5px 5px;
 }
-.author::before{
+.author::before {
   content: "- ";
 }
-.rotate{
+.rotate {
   animation: rotate 4s infinite ease-in-out;
 }
-.floating{
+.floating {
   animation: float 6s infinite ease-in-out;
 }
-@keyframes rotate{
+@keyframes rotate {
   0% {
-  transform: perspective(1000px) rotateY(4deg);
+    transform: perspective(1000px) rotateY(4deg);
   }
-  50%{
-  transform: perspective(1000px) rotateX(-5deg);
+  50% {
+    transform: perspective(1000px) rotateX(-5deg);
   }
   100% {
-  transform: perspective(1000px) rotateY(4deg);
+    transform: perspective(1000px) rotateY(4deg);
   }
 }
-@keyframes float{
+@keyframes float {
   0% {
-  transform: perspective(1000px) translateY(0px) rotateX(5deg);
+    transform: perspective(1000px) translateY(0px) rotateX(5deg);
   }
-  50%{
-  transform: perspective(1000px) translateY(10px) rotateX(-5deg);
+  50% {
+    transform: perspective(1000px) translateY(10px) rotateX(-5deg);
   }
   100% {
-  transform: perspective(1000px) translateY(0px) rotateX(5deg);
+    transform: perspective(1000px) translateY(0px) rotateX(5deg);
   }
 }
-.forget{
+.forget {
   opacity: 0.2;
   animation: disappear 5s infinite ease-in-out;
 }
-@keyframes disappear{
-  0%{
+@keyframes disappear {
+  0% {
     opacity: 0.6;
   }
-  50%{
+  50% {
     opacity: 0.1;
   }
-  100%{
+  100% {
     opacity: 0.6;
   }
 }
-.forgotten{
-    opacity: 0.1;
-    background-color: black;
+.forgotten {
+  opacity: 0.1;
+  background-color: black;
 }
 .close_btn {
   width: 20px;
@@ -178,6 +158,6 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   right: 20px;
-  top:20px;
+  top: 20px;
 }
 </style>
