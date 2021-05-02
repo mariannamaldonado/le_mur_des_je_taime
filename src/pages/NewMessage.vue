@@ -64,9 +64,7 @@
           placeholder="Mensaje"
         />
         <label for="floatingInput"
-          >Ingresa un número secreto que será la clave para descifrar tu
-          mensaje:</label
-        >
+          >Clave de desencriptación del mensaje</label>
       </div>
       <div class="boton">
         <a class="cta">
@@ -158,6 +156,8 @@ export default {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 12px;
+  
+
 }
 .topnav a:hover {
   background-color: #b7c8e0;

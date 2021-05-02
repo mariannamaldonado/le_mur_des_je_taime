@@ -170,25 +170,25 @@ export default {
 .gap {
   grid-column: 3/4;
 }
-.nav {
-  position: absolute;
-  bottom: 0;
-  z-index: 10;
-  padding: 10px;
-}
-.nav a {
-  text-decoration: none;
-  margin: 10px;
-  cursor: pointer;
-  color: #940909;
-  text-align: center;
-}
-.nav a + a::before {
-  margin-left: -11px;
-  content: "";
-  height: 15px;
-  width: 1px;
-}
+// .nav {
+//   position: absolute;
+//   bottom: 0;
+//   z-index: 10;
+//   padding: 10px;
+// }
+// .nav a {
+//   text-decoration: none;
+//   margin: 10px;
+//   cursor: pointer;
+//   color: #940909;
+//   text-align: center;
+// }
+// .nav a + a::before {
+//   margin-left: -11px;
+//   content: "";
+//   height: 15px;
+//   width: 1px;
+// }
 #item1 {
   z-index: 1;
 }
@@ -198,16 +198,15 @@ export default {
   transform: translate3d(0, 0, -1000px);
 }
 #item3 {
-  opacity: 0.2;
+  opacity: 0.1;
   z-index: 2;
   transform: translate3d(0, 0, -2000px);
 }
 #item4 {
   top: 0;
   width: 100%;
-  opacity: -0.1;
+  opacity: 0;
   transform: translate3d(0, 0, -4000px);
-  // background-image: url('../assets/img/subtle_carbon.png');
 }
 @media only screen and (max-width: 690px) {
   .section {
@@ -220,8 +219,8 @@ export default {
     align-items: flex-start;
     perspective-origin: 48% 0;
   }
-  .nav {
-    bottom: 0;
-  }
+  // .nav {
+  //   bottom: 0;
+  // }
 }
 </style>
