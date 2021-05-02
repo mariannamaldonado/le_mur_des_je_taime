@@ -59,16 +59,18 @@
         <br />
         <nav>
           <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control floatingInput"
-                data-error="Por favor ingrese su nombre"
-                placeholder="Nombre"
-                value="1234"
-              />
-              <label for="floatingInput">Ingresa un número secreto que será la clave para descifrar tu
-            mensaje:</label>
-            </div>
+            <input
+              type="text"
+              class="form-control floatingInput"
+              data-error="Por favor ingrese su nombre"
+              placeholder="Nombre"
+              value="1234"
+            />
+            <label for="floatingInput"
+              >Ingresa un número secreto que será la clave para descifrar tu
+              mensaje:</label
+            >
+          </div>
           <!-- 
     <button id="codeButton">Encriptar</button> 
     <button id="decodeButton">Desencriptar</button> -->
@@ -79,9 +81,7 @@
               <polyline points="8 1 12 5 8 9"></polyline>
             </svg>
           </a>
-
         </nav>
-
         <!-- <div class="button-wrap">
           <hr />
           <a href="#" class="myButton">Enviar</a>
@@ -98,7 +98,6 @@
       </div>
     </div>
   </div>
-
   <hr class="border" />
   <ContentFooter />
 </template>
@@ -122,7 +121,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -130,14 +128,12 @@ export default {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
 }
-
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .form-floating {
   border-radius: none !important;
 }
@@ -145,7 +141,6 @@ export default {
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 //borde tarjeta
 .border-left-warning {
   border-left: 0.25rem solid #b7c8e0 !important;
@@ -156,12 +151,10 @@ export default {
   padding: 1.25rem;
 }
 // navbar
-
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
 }
-
 .topnav a {
   float: left;
   color: #0a0a0a;
@@ -170,16 +163,13 @@ export default {
   text-decoration: none;
   font-size: 12px;
 }
-
 .topnav a:hover {
   background-color: #b7c8e0;
   color: black;
 }
-
 .topnav-right {
   float: right;
 }
-
 // sidebar
 body {
   font-family: "lato", sans-serif;
@@ -193,7 +183,6 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -209,7 +198,6 @@ body {
   font-size: 13px;
   background-color: #fff;
 }
-
 .container {
   max-width: 1000px;
   margin-left: auto;
@@ -217,7 +205,6 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-
 h2 {
   font-size: 26px;
   margin: 20px 0;
@@ -226,7 +213,6 @@ h2 {
 h2 small {
   font-size: 0.5em;
 }
-
 .responsive-table li {
   border-radius: 3px;
   padding: 25px 30px;
@@ -234,7 +220,6 @@ h2 small {
   justify-content: space-between;
   margin-bottom: 25px;
 }
-
 .responsive-table .table-header {
   background-color: #b7c8e0;
   font-size: 14px;
@@ -282,23 +267,19 @@ h2 small {
     text-align: right;
   }
 }
-
 .btn-info {
   color: #f8f9fa;
   background-color: #b7c8e0;
   border-color: #b7c8e0;
 }
-
 .btn {
   padding: 0.1rem 0.75rem;
 }
-
 #heart {
   font-size: 40px;
   color: #f27983;
   position: relative;
 }
-
 #heart:after {
   content: "♥";
   position: absolute;
@@ -307,7 +288,6 @@ h2 small {
   opacity: 1;
   transition: 0s all ease;
 }
-
 #heart:hover:after {
   transform: scale(2);
   -webkit-transform: scale(2);
@@ -319,19 +299,15 @@ h2 small {
 <style lang="sass" scoped>
 $color: #111
 $primary: #b7c8e0
-
 html, body
   height: 100%
-
 body
   display: grid
   font-family: Avenir, sans-serif
   color: $color
-
 a
   text-decoration: none
   color: inherit
-
 .cta
   position: relative
   margin: auto

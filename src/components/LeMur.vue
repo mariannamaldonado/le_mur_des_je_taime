@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="col-sm" id="vertical"></div> -->
   <!-- <h1>{{ msg }}</h1> -->
   <div id="container">
     <div class="environment" >
@@ -35,28 +34,14 @@
       </div>
       <div id="item4" class="section">
         <div id="sms"><MessageBase /></div>
-        <!-- <canvas
-          class="lienzo"
-          id="lienzo"
-          width="2300"
-          height="750"
-          @click="getSelection"
-          @mouseup="getCenter"
-          @mousemove="oMousePos"
-        ></canvas> -->
       </div>
-      <!-- <div class="boxCoordinates">
-        <div id="coordinates">
-          <h3>{{ x }} - {{ y }}</h3>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import MessageBase from "@/components/MessageBase.vue";
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 export default {
   name: "LeMur",
   props: {
@@ -66,24 +51,7 @@ export default {
     MessageBase,
   },
   setup() {
-    // var canvas = null;
-    // let x = ref(0);
-    // let y = ref(0);
-    // let current_section = 1;
-
-    // onMounted(() => {
-    //   var c = document.getElementById("lienzo");
-    //   canvas = c.getContext("2d");
-    //   canvas.width = Window.innerWidth;
-    //   canvas.height = Window.innerWidth;
-    // });
-
-    // function oMousePos(e) {
-    //   x.value = e.offsetX;
-    //   y.value = e.offsetY;
-    // }
-
-    //script transition
+ 
     onMounted(() => {
       let nav = document.querySelectorAll("a");
       nav.forEach((item) => {
@@ -149,12 +117,6 @@ export default {
     });
 
     return {
-      // getRandomCenter,
-      // canvas,
-      // x,
-      // y,
-      // oMousePos,
-      // current_section,
       image: "/muro.jpg",
     };
   },
@@ -164,8 +126,6 @@ export default {
 <style  scoped lang="scss">
 #sms {
   color: brown;
-  text-align: center;
-  z-index: 999;
 }
 #container button {
   display: block;
@@ -181,15 +141,6 @@ export default {
 }
 .src {
   height: 70px;
-}
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-h1 {
-  text-align: center;
 }
 //transicion Tunel
 *,
@@ -256,7 +207,7 @@ h1 {
   width: 100%;
   opacity: -0.1;
   transform: translate3d(0, 0, -4000px);
-  background-image: url('../assets/img/subtle_carbon.png');
+  // background-image: url('../assets/img/subtle_carbon.png');
 }
 @media only screen and (max-width: 690px) {
   .section {
