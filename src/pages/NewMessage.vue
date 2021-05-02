@@ -14,7 +14,7 @@
                 data-error="Por favor ingrese su nombre"
                 placeholder="Nombre"
               />
-              <label for="floatingInput">&nbsp;Destinatario:</label>
+              <label for="floatingInput">&nbsp;Para:</label>
             </div>
           </div>
           <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -53,14 +53,48 @@
             tinycomments_mode: 'embedded',
             tinycomments_author: 'Author name',
             selector: 'textarea',
-           
           }"
         >
         </editor>
-        <div class="button-wrap">
+        <br />
+        <nav>
+          <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control floatingInput"
+                data-error="Por favor ingrese su nombre"
+                placeholder="Nombre"
+                value="1234"
+              />
+              <label for="floatingInput">Ingresa un número secreto que será la clave para descifrar tu
+            mensaje:</label>
+            </div>
+          <!-- 
+    <button id="codeButton">Encriptar</button> 
+    <button id="decodeButton">Desencriptar</button> -->
+          <a href="#" class="cta">
+            <span>Encriptar</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </a>
+
+        </nav>
+
+        <!-- <div class="button-wrap">
           <hr />
           <a href="#" class="myButton">Enviar</a>
-        </div>
+        </div> -->
+        <br />
+        <hr class="border" />
+        <a href="#" class="cta">
+          <span>Enviar mensaje</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -88,31 +122,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// inicio button
-.myButton {
-  box-shadow: 0px 0px 0px 2px #3f71fa;
-  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-  background-color: #7892c2;
-  border-radius: 10px;
-  border: 1px solid #4e6096;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  padding: 10px 37px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #283966;
+//
+.floatingInput,
+.floatingPassword {
+  border: 0;
+  border-bottom: 2px solid #e4e6e9;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+  border-radius: 0;
 }
-.myButton:hover {
-  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-  background-color: #476e9e;
+
+.floatingInput:active,
+.floatingInput:focus {
+  border: 0;
+  border-bottom: 2px solid #212529;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-.myButton:active {
-  position: relative;
-  top: 1px;
+
+.form-floating {
+  border-radius: none !important;
 }
-// fin booton
+.form-control:focus {
+  border-bottom: 2px solid #212529;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+}
 
 //borde tarjeta
 .border-left-warning {
@@ -166,6 +198,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-size: 16px;
 }
 body {
   color: #797979;
@@ -281,4 +314,65 @@ h2 small {
   opacity: 0;
   transition: 0.8s all ease;
 }
+</style>
+
+<style lang="sass" scoped>
+$color: #111
+$primary: #b7c8e0
+
+html, body
+  height: 100%
+
+body
+  display: grid
+  font-family: Avenir, sans-serif
+  color: $color
+
+a
+  text-decoration: none
+  color: inherit
+
+.cta
+  position: relative
+  margin: auto
+  padding: 19px 22px
+  transition: all .2s ease
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    border-radius: 28px
+    background: rgba($primary,.5)
+    width: 40px
+    height: 40px
+    transition: all .3s ease
+  span
+    position: relative
+    font-size: 10px
+    line-height: 18px
+    font-weight: 900
+    letter-spacing: .25em
+    text-transform: uppercase
+    vertical-align: middle
+  svg
+    position: relative
+    top: 0
+    margin-left: 10px
+    fill: none
+    stroke-linecap: round
+    stroke-linejoin: round
+    stroke: $color
+    stroke-width: 2
+    transform: translateX(-5px)
+    transition: all .3s ease
+  &:hover
+    &:before
+      width: 100%
+      background: rgba($primary,1)
+    svg
+      transform: translateX(0)
+  &:active
+    transform: scale(.96)
 </style>
