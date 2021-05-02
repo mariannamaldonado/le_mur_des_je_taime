@@ -1,15 +1,17 @@
 <template>
   <div class="grid-gallery">
-    <div class="floating grid-gallery__item" v-for="(Message, ind) in filtredMessages" :key="ind">
-      <div class="card-object rotate">
+    <div class="floating" v-for="(Message, ind) in filtredMessages" :key="ind">
+      <div class="card-object grid-gallery__item rotate">
         <header></header>
         <aside></aside>
         <main>
           <blockquote class="grid-gallery__image message">
-            <span>❤</span>{{ Message.message }} 
+            <span>❤</span>{{ Message.message }}
           </blockquote>
         </main>
-        <footer class="author">Para: {{ Message.addresseName}}</footer>
+        <footer class="author">
+          <span>❤ Para: </span> {{ Message.addresseName }}
+        </footer>
       </div>
     </div>
   </div>
@@ -57,12 +59,12 @@ export default {
 .card-object {
   grid-auto-flow: row dense;
   display: grid;
-  width: 350px;
+  width: 340px;
   grid-template:
     "header header"
     "aside  main"
     "foot  foot";
-  font-size: .8rem;
+  font-size: 0.9rem;
   line-height: 40px;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8));
 }
@@ -93,16 +95,16 @@ export default {
   background-color: white;
   padding: 5px 15px 15px 0;
   border-radius: 0 0 5px 5px;
-} 
-.author::before {
+}
+/* .author::before {
   content: "❤ ";
-}
-.rotate {
+} */
+/* .rotate {
   animation: rotate 4s infinite ease-in-out;
-}
+} */
 .floating {
   animation: float 6s infinite ease-in-out;
-}
+} 
 @keyframes rotate {
   0% {
     transform: perspective(1000px) rotateY(4deg);
@@ -161,46 +163,46 @@ export default {
 } */
 </style>
 <style lang="sass">
-$image-size: 200px
-$gap-size: 1rem
-$breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default
+$image-size: 430px
+$gap-size: 1.2rem
+$breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) 
 .grid-gallery
-    display: grid
-    background-image: url('../assets/img/subtle_carbon.png')
-    grid-auto-rows: $image-size
-    grid-gap: $gap-size 
-    grid-auto-flow: row dense
-    @media all and (min-width: map-get($breakpoints, 'small'))
-        $num-columns: 1
-        grid-template-columns: 1fr
+  display: grid
+  background-image: url('../assets/img/subtle_carbon.png')
+  grid-auto-rows: $image-size
+  grid-gap: $gap-size
+  grid-auto-flow: row dense
+  @media all and (min-width: map-get($breakpoints, 'small'))
+    $num-columns: 1
+    grid-template-columns: 1fr
     @media all and (min-width: map-get($breakpoints, 'medium'))
-        $num-columns: 3
-        grid-template-columns: repeat($num-columns, 1fr)
+      $num-columns: 3
+      grid-template-columns: repeat($num-columns, 1fr)
     @media all and (min-width: map-get($breakpoints, 'large'))
-        $num-columns: 6
-        grid-template-columns: repeat($num-columns, 1fr)
+      $num-columns: 7
+      grid-template-columns: repeat($num-columns, 1fr)
     &__item
-        &:nth-child(11n+1)
-            grid-column: span 1
+      &:nth-child(11n+1)
+        grid-column: span 1
         &:nth-child(11n+4)
-            grid-column: span 2
-            grid-row: span 1
-            @media all and (min-width: map-get($breakpoints, 'small'))
-                grid-column: span 1
-                grid-row: span 1
-        &:nth-child(11n+6)
-            grid-column: span 3
-            grid-row: span 1
-        &:nth-child(11n+7)
+          grid-column: span 2
+          grid-row: span 1
+          @media all and (min-width: map-get($breakpoints, 'small'))
             grid-column: span 1
-            grid-row: span 2
+            grid-row: span 1
+        &:nth-child(11n+6)
+          grid-column: span 3
+          grid-row: span 1
+        &:nth-child(11n+7)
+          grid-column: span 1
+          grid-row: span 2
         &:nth-child(11n+8)
-            grid-column: span 2
-            grid-row: span 2
+          grid-column: span 2
+          grid-row: span 2
         &:nth-child(11n+9)
-            grid-row: span 3
+          grid-row: span 3
     &__image
-        width: 100%
-        height: 100%
-        object-fit: cover
+      width: 100%
+      height: 100%
+      object-fit: cover
 </style>
