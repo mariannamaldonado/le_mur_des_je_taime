@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import store from '../store'
 
+
 const routes = [ 
   {
     path: '/',
@@ -71,11 +72,11 @@ const routes = [
 
   },
   
-  {
-    path: '/NotFound',
-    name: 'NotFound',
-    component: ()=> import( '../views/NotFound.vue'),
-  },
+  // {
+  //   // catch all 404 - define at the very end
+  //   path: '*',
+  //   component: () => import('./views/NotFound.vue')
+  //   },
   {
     path: '/Wall',
     name: 'Wall',

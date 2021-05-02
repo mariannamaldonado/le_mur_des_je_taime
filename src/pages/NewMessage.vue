@@ -34,7 +34,6 @@
         </div>
       </div>
       <!-- tiny editor de texto -->
-      <div class="card-body form-control floatingInput">
         <editor
           :init="{
             height: 300,
@@ -57,47 +56,45 @@
         >
         </editor>
         <br />
-        <nav>
+     
           <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control floatingInput"
-                data-error="Por favor ingrese su nombre"
-                placeholder="Nombre"
-                value="1234"
-              />
-              <label for="floatingInput">Ingresa un número secreto que será la clave para descifrar tu
-            mensaje:</label>
-            </div>
-          <!-- 
-    <button id="codeButton">Encriptar</button> 
-    <button id="decodeButton">Desencriptar</button> -->
-          <a href="#" class="cta">
+            <input
+              type="text"
+              class="form-control floatingInput"
+              data-error="Por favor ingrese su nombre"
+              placeholder="Nombre"
+           
+            />
+            <label for="floatingInput"
+              >Ingresa un número secreto que será la clave para descifrar tu
+              mensaje:</label
+            >
+          </div>
+          <div class="boton">
+            <a class="cta">
             <span>Encriptar</span>
             <svg width="13px" height="10px" viewBox="0 0 13 10">
               <path d="M1,5 L11,5"></path>
               <polyline points="8 1 12 5 8 9"></polyline>
             </svg>
           </a>
-
-        </nav>
-
-        <!-- <div class="button-wrap">
-          <hr />
-          <a href="#" class="myButton">Enviar</a>
-        </div> -->
+          </div>
+        
         <br />
         <hr class="border" />
-        <a href="#" class="cta">
+        <div class="boton">
+          <a href="#" class="cta">
           <span>Enviar mensaje</span>
           <svg width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
             <polyline points="8 1 12 5 8 9"></polyline>
           </svg>
         </a>
+        </div>
+       
       </div>
     </div>
-  </div>
+
 
   <hr class="border" />
   <ContentFooter />
@@ -122,7 +119,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//
+.boton{
+  padding-top: 2em;
+}
+// input
 .floatingInput,
 .floatingPassword {
   border: 0;
