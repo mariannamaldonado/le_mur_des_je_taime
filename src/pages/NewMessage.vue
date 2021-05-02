@@ -34,60 +34,52 @@
         </div>
       </div>
       <!-- tiny editor de texto -->
-      <div class="card-body form-control floatingInput">
-        <editor
-          :init="{
-            height: 300,
-            menubar: false,
-            plugins: [
-              'advlist autolink lists link image charmap',
-              'searchreplace visualblocks code fullscreen',
-              'print preview anchor insertdatetime media',
-              'paste code help wordcount table',
-            ],
-            toolbar:
-              'undo redo | styleselect  | bold italic | \
+      <editor
+        :init="{
+          height: 300,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap',
+            'searchreplace visualblocks code fullscreen',
+            'print preview anchor insertdatetime media',
+            'paste code help wordcount table',
+          ],
+          toolbar:
+            'undo redo | styleselect  | bold italic | \
               alignleft aligncenter alignright | \
               bullist numlist | outdent indent | help',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            selector: 'textarea',
-          }"
+          toolbar_mode: 'floating',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+          selector: 'textarea',
+        }"
+      >
+      </editor>
+      <br />
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control floatingInput"
+          data-error="Por favor ingrese su mensaje"
+          placeholder="Mensaje"
+        />
+        <label for="floatingInput"
+          >Ingresa un número secreto que será la clave para descifrar tu
+          mensaje:</label
         >
-        </editor>
-        <br />
-        <nav>
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control floatingInput"
-              data-error="Por favor ingrese su nombre"
-              placeholder="Nombre"
-              value="1234"
-            />
-            <label for="floatingInput"
-              >Ingresa un número secreto que será la clave para descifrar tu
-              mensaje:</label
-            >
-          </div>
-          <!-- 
-    <button id="codeButton">Encriptar</button> 
-    <button id="decodeButton">Desencriptar</button> -->
-          <a href="#" class="cta">
-            <span>Encriptar</span>
-            <svg width="13px" height="10px" viewBox="0 0 13 10">
-              <path d="M1,5 L11,5"></path>
-              <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-          </a>
-        </nav>
-        <!-- <div class="button-wrap">
-          <hr />
-          <a href="#" class="myButton">Enviar</a>
-        </div> -->
-        <br />
-        <hr class="border" />
+      </div>
+      <div class="boton">
+        <a class="cta">
+          <span>Encriptar</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+      </div>
+      <br />
+      <hr class="border" />
+      <div class="boton">
         <a href="#" class="cta">
           <span>Enviar mensaje</span>
           <svg width="13px" height="10px" viewBox="0 0 13 10">
@@ -121,6 +113,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.boton {
+  padding-top: 2em;
+}
+// input
 .floatingInput,
 .floatingPassword {
   border: 0;
