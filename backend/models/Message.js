@@ -17,7 +17,8 @@ class Message {
 
     validar() {
         let errores = []
-        if (this.firstname == "") errores.push({ error: "El nombre no puede estar vacio." })
+        if (this.addresseName == "") errores.push({ error: "El nombre no puede estar vacio." })
+        if (this.addresseEmail == "") errores.push({ error: "El email no puede estar vacío." })
         if (this.message == "") errores.push({ error: "El mensaje no puede estar vacío." })
     }
 }

@@ -59,12 +59,12 @@ export default {
 .card-object {
   grid-auto-flow: row dense;
   display: grid;
-  width: 340px;
+  width: 320px;
   grid-template:
     "header header"
     "aside  main"
     "foot  foot";
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 40px;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8));
 }
@@ -105,7 +105,7 @@ export default {
 .floating {
   animation: float 6s infinite ease-in-out;
 } 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: perspective(1000px) rotateY(4deg);
   }
@@ -115,7 +115,7 @@ export default {
   100% {
     transform: perspective(1000px) rotateY(4deg);
   }
-}
+} */
 @keyframes float {
   0% {
     transform: perspective(1000px) translateY(0px) rotateX(5deg);
@@ -127,11 +127,11 @@ export default {
     transform: perspective(1000px) translateY(0px) rotateX(5deg);
   }
 }
-.forget {
+/* .forget {
   opacity: 0.2;
   animation: disappear 5s infinite ease-in-out;
-}
-@keyframes disappear {
+} */
+/* @keyframes disappear {
   0% {
     opacity: 0.6;
   }
@@ -141,11 +141,11 @@ export default {
   100% {
     opacity: 0.6;
   }
-}
-.forgotten {
+} */
+/* .forgotten {
   opacity: 0.1;
   background-color: black;
-}
+} */
 /* .close_btn {
   width: 20px;
   height: 20px;
@@ -163,7 +163,7 @@ export default {
 } */
 </style>
 <style lang="sass">
-$image-size: 430px
+$image-size: 380px
 $gap-size: 1.2rem
 $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) 
 .grid-gallery

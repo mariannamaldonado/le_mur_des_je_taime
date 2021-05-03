@@ -7,15 +7,12 @@
         <button @click="login" class="btn btn-info">Login</button>
       </div>
     </div>
-           
-
     <div v-else>
-      Bienvenid@ {{ user.nombre }} {{user.apellidos}} 
-        <button class="btn btn-warning" @click="logout">Salir</button>
+      Bienvenid@ {{ user.nombre }} {{ user.apellidos }}
+      <button class="btn btn-warning" @click="logout">Salir</button>
     </div>
   </div>
 </template>
-
 
 <script>
 import { ref, computed } from "vue";
@@ -42,19 +39,19 @@ export default {
       })
         .then((resp) => resp.json())
         .then((user) => {
-          if (user) store.commit("setUser", user)
-          else alert("Usuario o password incorrectos")
-        })
+          if (user) store.commit("setUser", user);
+          else alert("Usuario o password incorrectos");
+        });
     }
 
     function logout() {
-        store.commit("setUser", {})
+      store.commit("setUser", {});
     }
 
     return {
       email,
       password,
-      login, 
+      login,
       logout,
       user,
     };

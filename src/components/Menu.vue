@@ -5,7 +5,7 @@
         <!-- Perfil -->
         <a href="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
-          <p class="text-monospace">Profile</p>
+          <p class="text-monospace">Perfil de usuario</p>
           <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -75,7 +75,7 @@
           <img
             src="https://img.icons8.com/color/48/000000/user-location.png"
           />
-          <p>hola, pepe</p>
+          <p>Hola, pepe</p>
           <!-- <p>Hola, {{user.fristname}}</p> -->
         </a>
       </div>

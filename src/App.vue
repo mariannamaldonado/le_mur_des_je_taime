@@ -5,7 +5,7 @@
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-light btn-danger rounded-pill sm px-4 mb-4"
+        class="btn btn-danger btn-md rounded-pill sm px-4 mb-4"
       >
         <i class="fa fa-bars mr-2"></i>
       </button>
@@ -54,7 +54,7 @@
         </li>
         <hr class="border" />
         <li class="nav-item">
-          <a href="#item4" id="4" class="nav-link text-dark font-italic">
+          <a href="#" id="4" class="nav-link text-dark font-italic">
             <span>❤</span>
             &nbsp;<router-link to="/Wall">Muro</router-link>
           </a>
@@ -94,7 +94,6 @@ export default {
   props: {},
   setup() {},
   mounted() {
-
     // despues de hacer login con facebook/google. guarda el token en localstorage
     var url_params = new URL(location.href).searchParams
     var authToken = url_params.get('token')
@@ -107,7 +106,6 @@ export default {
       this.$store.dispatch('getCurrentUser')
       this.$router.push("/Profile")
     }
-
     $("#sidebarCollapse, .nav-item .nav-link").on("click", function () {
       $("#sidebar, #content").toggleClass("active");
     });
@@ -118,9 +116,6 @@ export default {
 <style lang="scss" scoped>
 .container-fluid{
   padding-left: var(--bs-gutter-x,.0rem);
-}
-.fa-bars:before {
-  color: #9c0505;
 }
 .page-footer span {
   color: rgb(185, 14, 14);
@@ -151,7 +146,6 @@ ul#menu li a:hover:after {
   opacity: 4;
   transform: translateY(15px);
 }
-
 </style>
 <style lang="scss"  scoped>
 a {
@@ -185,20 +179,39 @@ a {
   width: 100%;
   margin: 0;
 }
+.btn-danger {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
+}
+.btn-danger:active {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
 #sidebarCollapse {
-  color: black;
   position: absolute;
   right: -70px;
   top: 10px;
   padding: 2.7px;
-  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    #cac7e2 0%,
+    #03002d 70%,
+    #575485 100%
+  );
+  transition: 0.5s;
+  color: #000011;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-size: 200% auto;
+
 }
 #sidebarCollapse:hover {
-  background-image: linear-gradient(to right, #a19dcf, #03002d);
-  position: absolute;
-  right: -70px;
-  top: 10px;
-  border:rgba(0, 0, 0, 0.5);
+  
+  white-space: nowrap;
+  color: white;
+  background-position: right center;
 }
 .sm{
   border-color: transparent;

@@ -57,7 +57,7 @@
   <section class="content-section bg-primary text-white">
     <div class="container text-center">
       <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
-      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-danger btn-lg">Envia un te quiero!</a>
+      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-danger btn-md">Envia un te quiero!</a>
     </div>
   </section>
   <Footer />
@@ -84,20 +84,25 @@ export default {
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #loginbutton {
-  color: #fff;
-  background: transparent;
+  color: #000011;
+  text-transform: uppercase;
   white-space: nowrap;
   margin: 50px auto;
-  border-radius: 50px;
+  border-radius: 30px;
   padding: 10px 40px;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #cac7e2 0%,
+    #03002d 70%,
+    #575485 100%
+  );
+  transition: 0.5s;
 }
 #loginbutton:hover {
   white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-  border: none;
-  background-image: linear-gradient(to right, #a19dcf, #03002d);
+  color: white;
+  background-position: right center;
 }
 .suisse-50.bright-red {
     line-height: 50px;

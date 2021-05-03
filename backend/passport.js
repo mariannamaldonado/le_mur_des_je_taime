@@ -1,27 +1,19 @@
 // Estrategia de autenticación con Facebook y Google
-
 var FacebookStrategy = require('passport-facebook').Strategy
 var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy
 var passport = require('passport')
-
 // Fichero de configuración donde se encuentran las API keys
 var config = require('./config');
 const User = require('./models/User')
-
-
-
 // Serializa al usuario para almacenarlo en la sesión
 passport.serializeUser(function(user, done) {
 	done(null, user);
 });
-
 // Deserializa el objeto usuario almacenado en la sesión para
 // poder utilizarlo
 passport.deserializeUser(function(obj, done) {
 	done(null, obj);
 });
-
-
 // Configuración del autenticado con Facebook
 passport.use(new FacebookStrategy({
 	clientID	  : config.facebook.id,
@@ -55,8 +47,6 @@ function(accessToken, refreshToken, profile, done) {
 		});
 	});
 }));
-
-
 
 passport.use(new GoogleStrategy({
     clientID:     config.google.id,

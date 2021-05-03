@@ -36,7 +36,6 @@ schemaUser.pre('save', function (next) {
         })
 })
 
-
 schemaUser.pre('findOneAndUpdate', async function() {
     console.log("hashing password")
     this._update.password = await bcrypt.hash(this._update.password, 6)

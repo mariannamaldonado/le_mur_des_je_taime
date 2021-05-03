@@ -1,75 +1,80 @@
-
 <template>
   <div class="justify-content-center" id="frame">
-      <div id="box" class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded">
-        <h4 class="text-center">Recupera tú contraseña</h4>
-        <br>
-
-        <div class="form-floating mb-3">
-          <input
-            v-model="email"
-            type="text"
-            class="form-control floatingInput"
-            placeholder="name@ejemplo.com">
-          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label>
-        </div> 
-
-        <div class="form-group d-flex justify-content-center">
-          <button @click="forgotPassword(email)" type="button" id="loginbutton" class="btn btn-danger">  
-            ENVIAR EMAIL
-          </button>
-        </div>
+    <div id="box" class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded">
+      <h4 class="text-center">Recupera tú contraseña</h4>
+      <br />
+      <div class="form-floating mb-3">
+        <input
+          v-model="email"
+          type="text"
+          class="form-control floatingInput"
+          placeholder="name@ejemplo.com"
+        />
+        <label for="floatingInput"
+          ><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label
+        >
       </div>
-    </div>   
+      <div class="form-group d-flex justify-content-center">
+        <button
+          @click="forgotPassword(email)"
+          type="button"
+          id="loginbutton"
+          class="btn btn-danger"
+        >
+          ENVIAR EMAIL
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import { useRouter } from "vue-router";
 import Swal from "sweetalert2";
-
 
 export default {
   name: "ForgotPassword",
   components: {},
-  data(){
-    return{
-      email : ''
-    }
+  data() {
+    return {
+      email: "",
+    };
   },
   setup() {
+    const router = useRouter();
 
-    const router =useRouter()
-
-    async function forgotPassword(email){
-      let {data} = await axios.post(`http://localhost:8081/api/users/forgotpassword`, { email: email });
-      if(data.error)
+    async function forgotPassword(email) {
+      let {
+        data,
+      } = await axios.post(`http://localhost:8081/api/users/forgotpassword`, {
+        email: email,
+      });
+      if (data.error)
         Swal.fire({
           text: data.error,
           icon: "error",
           confirmButtonText: "OK",
-        })
-      else{
+        });
+      else {
         Swal.fire({
           // title: "Enviado!",
           text: data.message,
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
-          router.push("/SignIn")
+          router.push("/SignIn");
         });
       }
     }
     return {
-      forgotPassword
-    }
+      forgotPassword,
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
- 
-//background
 /* .container-fluid {
   background-image: url("../../public/muroblur.png");
   background-size: cover;
@@ -77,49 +82,42 @@ export default {
 #frame {
   padding-top: 60px;
   min-height: 100vh;
-  background: url("../../public/double-bubble-outline.png");  
-  
- }
-
+  background: url("../../public/double-bubble-outline.png");
+}
 #box {
   background: white;
   box-shadow: 0 0 15px #00000033;
 }
-
 .errors-ul {
   padding: 0;
   list-style-type: none;
 }
-
-.container-fluid{
+.container-fluid {
   min-width: 400px;
 }
- .bg-white {
-    background-image:  url("../../public/double-bubble-outline.png");
-    // linear-gradient(rgba(148,15,1, 0.8),rgba(255,0,0,0.8))
-    background-blend-mode: multiply;
+.bg-white {
+  background-image: url("../../public/double-bubble-outline.png");
+  // linear-gradient(rgba(148,15,1, 0.8),rgba(255,0,0,0.8))
+  background-blend-mode: multiply;
 }
 a {
   text-decoration: none;
 }
-
 .floatingInput,
 .floatingPassword {
   border: 0;
   border-bottom: 2px solid #e4e6e9;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
-  background-color: transparent;   //nuevo
+  background-color: transparent; //nuevo
   filter: none;
 }
-
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .form-floating {
   border-radius: none !important;
 }
@@ -127,21 +125,16 @@ a {
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .btn-danger {
   color: #fff;
-  background-color: #121ca8;
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
 }
 .btn-danger:active {
   color: #fff;
-  background-color: #4b51ad;
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
-
-
 #loginbutton {
   color: #000011;
   text-transform: uppercase;
@@ -150,10 +143,14 @@ a {
   border-radius: 30px;
   padding: 10px 40px;
   background-size: 200% auto;
-  background-image: linear-gradient(to right, #cac7e2 0%, #03002d 70%,  #575485 100%,);
-   transition: .5s;
+  background-image: linear-gradient(
+    to right,
+    #cac7e2 0%,
+    #03002d 70%,
+    #575485 100%
+  );
+  transition: 0.5s;
 }
-
 #loginbutton:hover {
   white-space: nowrap;
   color: white;

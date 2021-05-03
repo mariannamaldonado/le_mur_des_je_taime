@@ -10,7 +10,6 @@ export default {
   name: "Wall",
   components: {
     LeMur,
-  //  Mur,
   },
 
   setup() {

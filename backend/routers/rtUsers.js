@@ -27,7 +27,6 @@ rtUsers.get('/search/:email', (req, res) => {
     .then(user => res.json(user))
 })
 
-
 rtUsers.get('/delete/:id', (req, res) => {
   console.log(req.params.id)
   daoUsers.delete(req.params.id)
@@ -40,24 +39,21 @@ rtUsers.post('/delete/:id', (req, res) => {
 })
 
 rtUsers.post('/login', (req, res) => {
- 
-    daoUsers.signin(req.body.email, req.body.password)
-      .then(data =>{
-        if(data){
-          const token = jwt.sign({
-            email: data.email,
-            id: data._id
-          }, process.env.TOKEN_SECRET)
-          res.header('auth-token', token).json({
-            data: {token}
-          })
-        } else {
-          // 401 = HTTP codigo de error "No autorizado"
-          res.status(401).json({error:"üser/password incorrect"})
-        }
+  daoUsers.signin(req.body.email, req.body.password)
+    .then(data => {
+      if (data) {
+        const token = jwt.sign({
+          email: data.email,
+          id: data._id
+        }, process.env.TOKEN_SECRET)
+        res.header('auth-token', token).json({
+          data: { token }
+        })
+      } else {
+        // 401 = HTTP codigo de error "No autorizado"
+        res.status(401).json({ error: "üser/password incorrect" })
+      }
     })
-  
-    
 })
 
 rtUsers.post("/send-email", (req, res) => {
@@ -65,44 +61,42 @@ rtUsers.post("/send-email", (req, res) => {
   res.send('menasaje enviado')
 })
 
-rtUsers.post("/forgotpassword", (req, res)=> {
+rtUsers.post("/forgotpassword", (req, res) => {
   var emailaddress = req.body.email
 
   daoUsers.findByEmail(emailaddress)
     .then(user => {
       // console.log(user)
-        if(user){
-          try{
-            mailer.send({
-              to: user.email,
-              //bcc:"le.mur.des.je.taime.fr@gmail.com",
-              subject: "Reset Password",
-              template: 'resetPassword',
-              locals: {
-                name: user.firstname,
-                token: user._id,
-              }
-            })
-          }
-          catch(err){
-            console.log(err)
-          }
+      if (user) {
+        try {
+          mailer.send({
+            to: user.email,
+            //bcc:"le.mur.des.je.taime.fr@gmail.com",
+            subject: "Reset Password",
+            template: 'resetPassword',
+            locals: {
+              name: user.firstname,
+              token: user._id,
+            }
+          })
         }
-        res.json({error:null, message: '¡Revisa tu correo y sigue las instrucciones para resetear tu contraseña!'})
+        catch (err) {
+          console.log(err)
+        }
+      }
+      res.json({ error: null, message: '¡Revisa tu correo y sigue las instrucciones para resetear tu contraseña!' })
     })
-    .catch(err=>res.json({error:'Este usuario no existe.', message: err}))
+    .catch(err => res.json({ error: 'Este usuario no existe.', message: err }))
 })
 
-rtUsers.post("/resetpassword", (req, res)=> {
-
+rtUsers.post("/resetpassword", (req, res) => {
   var id = req.body.token
   var password = req.body.password
-
   daoUsers.updatePassword(id, password)
     .then(user => {
-      res.json({error:null, message: `${user.firstname}, tu contraseña ha sido reseteada con exito`})
+      res.json({ error: null, message: `${user.firstname}, tu contraseña ha sido reseteada con exito` })
     })
-    .catch(err=>res.json({error:'Este usuario no existe.', message: JSON.stringify(err)}))
+    .catch(err => res.json({ error: 'Este usuario no existe.', message: JSON.stringify(err) }))
 })
 
 
@@ -126,45 +120,47 @@ rtUsers.post('/secure/currentuser', (req, res) => {
 
 
 
-rtUsers.get('/auth/facebook/callback', passport.authenticate('facebook', {scope:['email']}), (req, res) => {
+rtUsers.get('/auth/facebook/callback', passport.authenticate('facebook', { scope: ['email'] }), (req, res) => {
   console.log('logged in, ')
 
   const token = jwt.sign({
-    id:res.req.user.id, 
+    id: res.req.user.id,
     email: req.user.email,
     firstname: res.req.user.firstname
-  }, 
-  process.env.TOKEN_SECRET, 
-  { algorithm: 'HS256' });
+  },
+    process.env.TOKEN_SECRET,
+    { algorithm: 'HS256' });
 
   console.log(token)
   res.header('auth-token', token)
-  res.redirect("/?token="+token);
+  res.redirect("/?token=" + token);
   //res.json({token:token});
 })
 
 
 
 rtUsers.get('/auth/google',
-  passport.authenticate('google', { scope:
-      [ 'email', 'profile' ] }
-));
+  passport.authenticate('google', {
+    scope:
+      ['email', 'profile']
+  }
+  ));
 
-rtUsers.get( '/auth/google/callback', passport.authenticate('google'), (req,res)=>{
+rtUsers.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
   console.log('logged in, ')
 
-  const token = jwt.sign({  
-    id:res.req.user.id, 
+  const token = jwt.sign({
+    id: res.req.user.id,
     email: req.user.email,
     firstname: res.req.user.firstname
-  }, 
-  process.env.TOKEN_SECRET, 
-  { algorithm: 'HS256' });
+  },
+    process.env.TOKEN_SECRET,
+    { algorithm: 'HS256' });
 
   console.log(token)
   res.header('auth-token', token)
   //res.json({token: token})
-  res.redirect("/?token="+token);
+  res.redirect("/?token=" + token);
 });
 
 

@@ -1,6 +1,5 @@
 <template>
   <Menu />
-
   <div class="container">
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
@@ -80,7 +79,6 @@
                 </svg>
               </div>
             </li>
-
             <li
               class="table-row"
               v-for="(Message, ind) in Menssages"
@@ -102,7 +100,6 @@
               <div class="col col-3" data-label="message">
                 {{ Message.message }}
               </div>
-
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
@@ -154,6 +151,7 @@ export default {
           });
         });
     }
+
     function deleteMessage(id) {
       fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
@@ -176,12 +174,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 // navbar
-
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
 }
-
 .topnav a {
   float: left;
   color: #0a0a0a;
@@ -190,16 +186,13 @@ export default {
   text-decoration: none;
   font-size: 12px;
 }
-
 .topnav a:hover {
   background-color: #b7c8e0;
   color: black;
 }
-
 .topnav-right {
   float: right;
 }
-
 // sidebar
 body {
   font-family: "lato", sans-serif;
@@ -213,7 +206,6 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -228,7 +220,6 @@ body {
   font-size: 13px;
   background-color: #fff;
 }
-
 .container {
   max-width: 1000px;
   margin-left: auto;
@@ -236,7 +227,6 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-
 h2 {
   font-size: 26px;
   margin: 20px 0;
@@ -245,7 +235,6 @@ h2 {
 h2 small {
   font-size: 0.5em;
 }
-
 .responsive-table li {
   border-radius: 3px;
   padding: 25px 30px;
@@ -253,7 +242,6 @@ h2 small {
   justify-content: space-between;
   margin-bottom: 25px;
 }
-
 .responsive-table .table-header {
   background-color: #b7c8e0;
   font-size: 14px;
@@ -301,13 +289,11 @@ h2 small {
     text-align: right;
   }
 }
-
 .btn-info {
   color: #f8f9fa;
   background-color: #b7c8e0;
   border-color: #b7c8e0;
 }
-
 .btn {
   padding: 0.1rem 0.75rem;
 }

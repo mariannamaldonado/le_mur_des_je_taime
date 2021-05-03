@@ -1,15 +1,12 @@
 const User = require('../models/User')
 const mailer = require('../modules/mailer')
 
-
 const daoUsers = {}
-
 //función para guardar un usuario
 daoUsers.signup = (user) => {
     return new Promise((resolved, reject) => {
         let newUser = new User(user)
         newUser.save().then(user => {
-
             // usuario registrado, ahora enviar email
             mailer.send({
                 to: user.email,
@@ -30,7 +27,6 @@ daoUsers.signup = (user) => {
         })
     })
 }
-
 //función para listar usurios
 daoUsers.listar = () => {
     return new Promise((resolved, reject) => {
@@ -40,7 +36,6 @@ daoUsers.listar = () => {
     })
 }
 
-
 daoUsers.findById = (user_id) => {
     return new Promise((resolved, reject) => {
         User.findOne({ _id: user_id })
@@ -48,7 +43,6 @@ daoUsers.findById = (user_id) => {
             .catch(err => reject(err))
     })
 }
-
 //buscar usuario por email
 daoUsers.findByEmail = (email) => {
     return new Promise((resolved) => {
@@ -57,11 +51,9 @@ daoUsers.findByEmail = (email) => {
     })
 }
 
-
 daoUsers.updatePassword = (id, password)=>{
     return new Promise((resolve, reject) => {
         const query = { _id: id };
-
         User.findOneAndUpdate(query, {password: password}, {runValidators:true})
         .then(user => {
             if(!user) throw new Error('user does not exist');
@@ -70,13 +62,6 @@ daoUsers.updatePassword = (id, password)=>{
         .catch(err=> reject(err))
     })
 }
-
-
-
-
-
-
-
 //función para eliminar usuario
 daoUsers.delete = (id)=>{
     
@@ -84,7 +69,6 @@ daoUsers.delete = (id)=>{
         console.log("registro eliminado")
     })
 }
-
 //función para loguear usuarios
 daoUsers.signin = (email, password) => {
     return new Promise((resolved, reject) => {
@@ -100,10 +84,5 @@ daoUsers.signin = (email, password) => {
             })
     })
 }
-//función para editar usuario
-
-
-
-
 
 module.exports = daoUsers

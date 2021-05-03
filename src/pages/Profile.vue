@@ -1,7 +1,5 @@
 <template>
   <Menu />
-
-  <!-- INICIO DE LA TARJETA DE PERFIL -->
   <div class="row">
     <div class="col-xl-4 col-lg-5 col-md-6">
       <div class="container">
@@ -21,13 +19,10 @@
     <p class="about">{{ usuario.email }}</p>
     <button class="msg-btn">Enviar mensaje</button>
   </div>
-
-  <!-- FIN DE LA TARJETA DE PERFIL -->
   <div class="col-xl-8 col-lg-7 col-md-6">
     <section id="main-content">
       <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i> Editar perfil</h3>
-        <!-- formulario del perfil -->
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel">
@@ -46,7 +41,6 @@
                                   v-model="user.rol">
                         </div>  
                     </div>           -->
-
                   <!-- <div class="col-md-6">
                       <label class="col-sm-6 col-sm-6 control-label">Nombre de usuario</label>
                         <div class="col-sm-10">
@@ -58,7 +52,6 @@
                         </div>
                     </div> -->
                 </div>
-
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Nombre:</label>
                   <div class="col-sm-10">
@@ -71,7 +64,6 @@
                     />
                   </div>
                 </div>
-
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label"
                     >Apellido</label
@@ -86,7 +78,6 @@
                     />
                   </div>
                 </div>
-
                 <div class="form-floating mb-3">
                   <input
                     v-model="lastname"
@@ -98,7 +89,6 @@
                     <i class="bi bi-person"></i>&nbsp;Apellido
                   </label>
                 </div>
-
                 <div class="form-floating mb-3">
                   <input
                     v-model="firstname"
@@ -129,9 +119,7 @@
               </form>
             </div>
           </div>
-          <!-- col-lg-12-->
         </div>
-        <!-- /row -->
       </section>
     </section>
   </div>
@@ -160,6 +148,7 @@ export default {
     onMounted(() => {
       listar();
     });
+
     function listar() {
       fetch("http://localhost:8081/api/users/listar")
         .then((resp) => resp.json())
@@ -170,6 +159,7 @@ export default {
           });
         });
     }
+
     function enviar() {
       fetch("http://localhost:8081/api/users/guardar", {
         method: "POST",
@@ -215,12 +205,10 @@ export default {
 
 <style scoped>
 /* navbar */
-
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
 }
-
 .topnav a {
   float: left;
   color: #0a0a0a;
@@ -229,21 +217,17 @@ export default {
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #3f4f66;
   color: black;
 }
-
 .topnav-right {
   float: right;
 }
-
 body {
   font-family: "lato", sans-serif;
   background-color: #f1f2f5;
 }
-
 h2 {
   font-size: 26px;
   margin: 20px 0;
@@ -321,7 +305,6 @@ button {
 .container i:hover {
   color: #03bfbc;
 }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -336,7 +319,6 @@ body {
   font-size: 13px;
   background-color: #fff;
 }
-
 .form-panel {
   background: #ffffff;
   margin: 10px;
@@ -344,7 +326,6 @@ body {
   box-shadow: 0px 3px 2px #aab2bd;
   text-align: left;
 }
-
 .wrapper {
   display: inline-block;
   margin-top: 60px;
@@ -354,7 +335,6 @@ body {
   padding-top: 0px;
   width: 100%;
 }
-
 .btn {
   display: inline-block;
   background: #1f4b8d;
@@ -365,9 +345,7 @@ body {
   font-size: 1.1rem;
   border-radius: 30px;
 }
-
 /* new style */
-
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -375,14 +353,12 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
 }
-
 .floatingInput:active,
 .floatingInput:focus {
   border: 0;
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-
 .form-floating {
   border-radius: none !important;
 }
