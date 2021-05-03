@@ -9,8 +9,21 @@ daoUsers.signup = (user) => {
     return new Promise((resolved, reject) => {
         let newUser = new User(user)
         newUser.save().then(user => {
-            mailer.send(user.email)
-            resolved(user)
+
+            // usuario registrado, ahora enviar email
+            mailer.send({
+                to: user.email,
+                //bcc:"le.mur.des.je.taime.fr@gmail.com",
+                subject: "Registro usuario nuevo",
+                template: 'signup',
+                locals: {
+                    name: user.firstname,
+                    email: user.email
+                }
+            }).then(info => {
+                resolved(user)
+            })
+            
         }).catch(err=>{
             console.log(err)
             reject(err)
@@ -27,6 +40,15 @@ daoUsers.listar = () => {
     })
 }
 
+
+daoUsers.findById = (user_id) => {
+    return new Promise((resolved, reject) => {
+        User.findOne({ _id: user_id })
+            .then(user => resolved(user))
+            .catch(err => reject(err))
+    })
+}
+
 //buscar usuario por email
 daoUsers.findByEmail = (email) => {
     return new Promise((resolved) => {
@@ -34,6 +56,26 @@ daoUsers.findByEmail = (email) => {
             .then(user => resolved(user))
     })
 }
+
+
+daoUsers.updatePassword = (id, password)=>{
+    return new Promise((resolve, reject) => {
+        const query = { _id: id };
+
+        User.findOneAndUpdate(query, {password: password}, {runValidators:true})
+        .then(user => {
+            if(!user) throw new Error('user does not exist');
+            resolve(user)
+        })
+        .catch(err=> reject(err))
+    })
+}
+
+
+
+
+
+
 
 //función para eliminar usuario
 daoUsers.delete = (id)=>{
@@ -49,6 +91,7 @@ daoUsers.signin = (email, password) => {
         User.findOne({ email: email })
             .then(data => {
                 if (data) {
+                    console.log(data)
                     if (data.checkPassword(password))
                         resolved(data) //todo correcto ;)
                     else

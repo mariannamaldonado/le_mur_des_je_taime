@@ -1,15 +1,27 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const bodyParser = require("body-parser");
+const path = require('path');
 var session = require('express-session')
 const rtMain = require('./routers/rtMain')
 const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
 const verifyToken = require('./routers/validate-token');
 var passport = require('passport')
+require('./passport.js')
+
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../dist')));
+
+/* var cors = require('cors');
+app.use(cors()); */
 
 // conexion bade de datos
 const conexion = require('./mongodb')
+
+// para servir tambien vue del lado del cliente
+app.use(express.static('../dist'));
 
 //gestión de sesiones
 app.use(session({ 
@@ -41,6 +53,11 @@ app.use((req, res, next) => {
 // y le indicamos que Passport maneje la Sesión
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+//rutas seguras . necesita login
+app.all('*/secure/*', [verifyToken]);
+
 
 
 //enrutadores

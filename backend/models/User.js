@@ -36,6 +36,17 @@ schemaUser.pre('save', function (next) {
         })
 })
 
+
+schemaUser.pre('findOneAndUpdate', async function() {
+    console.log("hashing password")
+    this._update.password = await bcrypt.hash(this._update.password, 6)
+})
+
+
+
+
+
+
 function validateEmail(email){
     let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         return regEmail.test(email)

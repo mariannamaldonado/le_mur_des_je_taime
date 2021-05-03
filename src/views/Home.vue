@@ -1,7 +1,7 @@
 <template>
   <!-- Escaparate -->
     <section class="section-a">
-      <div class="container">
+      <div class="container" >
         <div>
           <h1>
             Le mur des

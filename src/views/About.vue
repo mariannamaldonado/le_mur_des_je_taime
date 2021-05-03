@@ -84,20 +84,13 @@
   </section>
   <Footer />
 </template>
-
 <script>
-import Footer from "@/components/Footer";
 export default {
   name: "About",
   components: {
-    Footer,
   },
 
-  setup() {
-    return {
-      image4: "/anny.jpg",
-    };
-  },
+
 };
 </script>
 
