@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
 import store from '../store'
 
@@ -75,22 +75,28 @@ const routes = [
     path: '/Wall',
     name: 'Wall',
     component: ()=> import( '../views/Wall.vue'),
-  }
+  },
+  {
+    path: '/Resetpassword',
+    name: 'ResetPassword',
+    component: ()=> import( '../views/ResetPassword.vue'),
+  },
  
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 });
 
 router.beforeEach((to, from, next) => {
-    if(to.meta.requiresAuth && store.state.token === null) next({name: 'Home'})
+    if(to.meta.requiresAuth && store.state.token === null) 
+      next({name: 'Home'})
         // ruta protegida es true
         // token es nulo true, por ende redirigimos al inicio   
     else
         // En caso contrario sigue...
-        next()
+      next()
 })
 
 

@@ -43,9 +43,9 @@
       <div class="col-xl-4 col-lg-5 col-md-6">
         <div class="container">
           <div class="cover-photo">
-            <img class="profile" src="@/assets/img/faces/avatar1.jpg" alt="...">
+            <img class="profile" :src="user.avatar" alt="...">
           </div>
-          <div class="profile-name">Pepito Perez</div>
+          <div class="profile-name">{{user.firstname}}</div>
             <p class="about">"is simply dummy text of the printing and typesetting industry."</p>
             <button class="msg-btn">Message</button>
           </div>
@@ -63,7 +63,7 @@
                 <h6 class="mb"><i class="fa fa-angle-right"></i> Datos del perfil</h6>
                 <form class="form-horizontal style-form" method="get">
                   <div class="row">
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                       <label class="col-sm-2 col-sm-2 control-label">Rol</label>
                         <div class="col-sm-10">
                           <input  class="form-control" 
@@ -72,9 +72,9 @@
                                   :disabled="true" 
                                   v-model="user.rol">
                         </div>  
-                    </div>          
+                    </div>           -->
                           
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                       <label class="col-sm-6 col-sm-6 control-label">Nombre de usuario</label>
                         <div class="col-sm-10">
                           <input  class="form-control" 
@@ -83,7 +83,7 @@
                                   placeholder="Username"
                                   v-model="user.username">
                         </div>
-                    </div>
+                    </div> -->
                   </div>
 
                   <div class="form-group">
@@ -93,7 +93,7 @@
                                 type="text"
                                 label="Name"
                                 placeholder="First Name"
-                                v-model="user.firstName">
+                                v-model="user.firstname">
                       </div>
                   </div>
 
@@ -104,7 +104,7 @@
                                 class="form-control"
                                 label="Apellido"
                                 placeholder="Last Name"
-                                v-model="user.lastName">
+                                v-model="user.lastname">
                       </div>
                   </div>
 
@@ -117,15 +117,15 @@
                                 placeholder="Email"
                                 v-model="user.email">
                         </div>
-                  </div>
+                  </div><!--
                   <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">Acerca de mí</label>
-                      <textarea rows="5" 
+                       <textarea rows="5" 
                                 class="form-control border-input"
                                 placeholder="Here can be your description"
                                 v-model="user.aboutMe">
-                      </textarea>
-                  </div>
+                      </textarea> 
+                  </div>-->
                   <div class="text-center">
                     <button type="button" class="btn"> Actualizar Perfil</button>
                   </div>
@@ -141,20 +141,11 @@
  <ContentFooter/>
 </template>
 <script>
-
+import {mapState} from 'vuex'
 
 export default {
-  data() {
-    return {
-      user: {
-        rol: "Usuario",
-        username: "Pepe",
-        email: "pepe@gmail.com",
-        firstName: "Pepito",
-        lastName: "Perez",
-        aboutMe: `is simply dummy text of the printing and typesetting industry.`
-      }
-    };
+  computed : {
+      ...mapState(['user'])
   },
   methods: {
     updateProfile() {

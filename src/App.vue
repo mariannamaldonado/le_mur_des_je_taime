@@ -1,11 +1,11 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+        class="btn btn-light bg-white rounded-pill px-4 mb-4">
         <i class="fa fa-bars mr-2"></i>
       </button>
       <div class="py-4 px-3 mb-4 bg-light background">
@@ -97,6 +97,20 @@ export default {
   props: {},
   setup() {},
   mounted() {
+
+    // despues de hacer login con facebook/google. guarda el token en localstorage
+    var url_params = new URL(location.href).searchParams
+    var authToken = url_params.get('token')
+    if(authToken){
+      localStorage.setItem('token', authToken)      
+      url_params.delete('token');
+      window.history.replaceState({}, document.title, window.location.origin )
+      
+      this.$store.state.token = authToken
+      this.$store.dispatch('getCurrentUser')
+      this.$router.push("/Profile")
+    }
+
     $("#sidebarCollapse, .nav-item .nav-link").on("click", function () {
       $("#sidebar, #content").toggleClass("active");
     });
@@ -107,13 +121,6 @@ export default {
 
 
 <style lang="scss"  scoped>
-  /*.container-fluid {
-  background: url("../public/muroblur.png") no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  background-size: 100% 100%;  
-  
- }*/
 a {
   text-decoration: none;
   color: #0f1433;
@@ -154,9 +161,11 @@ a {
 }
 
 #sidebarCollapse {
+  color: black;
   position: absolute;
   right: -70px;
   top: 10px;
+  box-shadow: 0 0 8px #00000066;
 }
 #sidebar {
   z-index:100;
