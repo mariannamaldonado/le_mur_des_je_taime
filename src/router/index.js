@@ -5,10 +5,21 @@ import store from '../store'
 
 const routes = [ 
   {
+    path: '/MessageBase',
+    name: 'MessageBase',
+    component: ()=> import( '@/components/MessageBase.vue'),
+  },
+  {
+    path: '/Gallery',
+    name: 'Gallery',
+    component: ()=> import( '@/components/Gallery.vue'),
+  },
+  {
     path: '/',
     name: 'Home',
     component: ()=> import( '../views/Home.vue'),
   },
+ 
   {
     path: '/about',
     name: 'About',
