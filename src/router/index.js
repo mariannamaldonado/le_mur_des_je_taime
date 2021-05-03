@@ -63,7 +63,7 @@ const routes = [
     path: '/SentMessagesList',
     name: 'SentMessagesList',
     component: ()=> import( '@/pages/SentMessagesList.vue'),
-      meta :{ requiresAuth: true}
+      // meta :{ requiresAuth: true}
   },
   {
     path: '/NewMessage',
