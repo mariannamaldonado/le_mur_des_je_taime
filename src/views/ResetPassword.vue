@@ -1,22 +1,35 @@
-
 <template>
   <div class="justify-content-center" id="frame">
       <div id="box" class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded">
-        <h4 class="text-center">Recupera tú contraseña</h4>
+        <h4 class="text-center">Restablecer tú contraseña</h4>
         <br>
 
         <div class="form-floating mb-3">
           <input
-            v-model="email"
-            type="text"
+            v-model="password"
+            type="password"
             class="form-control floatingInput"
             placeholder="name@ejemplo.com">
-          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Email</label>
+          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Password</label>
+        </div> 
+
+        <div class="form-floating mb-3">
+          <input
+            v-model="passwordRepeat"
+            type="password"
+            class="form-control floatingInput"
+            placeholder="name@ejemplo.com">
+          <label for="floatingInput"><i class="fas fa-envelope-open-text"></i>&nbsp;Repeat Password</label>
         </div> 
 
         <div class="form-group d-flex justify-content-center">
-          <button @click="forgotPassword(email)" type="button" id="loginbutton" class="btn btn-danger">  
-            ENVIAR EMAIL
+          <button 
+            :disabled="password !== passwordRepeat"
+            @click="updatePassword" 
+            type="button" 
+            id="loginbutton" 
+            class="btn btn-danger btn-lg">  
+            RESETEAR
           </button>
         </div>
       </div>
@@ -26,23 +39,26 @@
 <script>
 import axios from 'axios'
 import { useRouter } from "vue-router";
+import { ref } from 'vue';
 import Swal from "sweetalert2";
 
-
 export default {
-  name: "ForgotPassword",
+  name: "ResetPassword",
   components: {},
-  data(){
-    return{
-      email : ''
-    }
-  },
-  setup() {
+
+  setup(){
 
     const router =useRouter()
 
-    async function forgotPassword(email){
-      let {data} = await axios.post(`http://localhost:8081/api/users/forgotpassword`, { email: email });
+    let password = ref('')
+    let passwordRepeat = ref('')
+   
+    async function updatePassword(){
+      let {data} = await axios.post(`http://localhost:8081/api/users/resetpassword`, { 
+        password: password.value,
+        token: router.currentRoute.value.query['token'] // coger token desde addressbar
+      });
+
       if(data.error)
         Swal.fire({
           text: data.error,
@@ -60,20 +76,17 @@ export default {
         });
       }
     }
+
     return {
-      forgotPassword
+      password,
+      passwordRepeat,
+      updatePassword
     }
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss" scoped>
- 
-//background
-/* .container-fluid {
-  background-image: url("../../public/muroblur.png");
-  background-size: cover;
-} */
 #frame {
   padding-top: 60px;
   min-height: 100vh;

@@ -1,7 +1,8 @@
 <template>
-  <div class="container justify-content-center " id="frame">
-    <div class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded shadow-sm">
-      <h2>INICIO DE SESIÓN</h2>
+  <div class="justify-content-center " id="frame">
+    <div id="box" class="col col-12 col-lg-4 offset-lg-4 p-5 bg-white rounded">
+      <h2 class="text-center">INICIO DE SESIÓN</h2>
+      <br>
     <!--   <div>
           <p
             class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"
@@ -12,7 +13,7 @@
       <div class="block-wrap">
           <!-- google	 -->
           <div class="google">
-            <a class="btn-google" href="/api/users/auth/google">
+            <a class="btn-google" href="http://localhost:8081/api/users/auth/google">
               <div class="google-content">
                 <div class="logo">
                   <svg
@@ -57,7 +58,7 @@
           </div>
           <!-- facebook	 -->
           <div class ="facebook">
-            <a class="btn-fb" href="/api/users/auth/facebook">
+            <a class="btn-fb" href="http://localhost:8081/api/users/auth/facebook/callback">
               <div class="fb-content">
                 <div class="logo">
                   <svg
@@ -82,7 +83,7 @@
             </a>
           </div>
         </div>
-      
+      <br>
       
       
 
@@ -116,19 +117,19 @@
         <br />
         <div class="form-floating">
           <div class="d-flex justify-content-center">
-            <a href="ForgotPassword"><h6>¿Has olvidado tu contraseña?</h6></a>
+            <router-link to="ForgotPassword"><h6>¿Has olvidado tu contraseña?</h6></router-link>
           </div>
         </div>
 
         <div class="form-group d-flex justify-content-center">
           <button
-            @click="login"
             type="submit"
             id="loginbutton"
-            class="btn btn-danger btn-lg"
-          >
+            class="btn btn-danger btn-md">
             INICIAR SESIÓN
           </button>
+          <br><br>
+          
         </div>
         <br />
        
@@ -138,12 +139,10 @@
         <div>
           <mdb-modal-footer class="mx-5 pt-3 mb-1">
             <p class="font-small grey-text d-flex justify-content-center">
-              ¿No tienes una cuenta?&nbsp;<a
-                href=" SignUp"
-                class="blue-text ml-1"
-              >
-                Registrate</a
-              >
+              ¿No tienes una cuenta?&nbsp;
+              <router-link to="SignUp" class="blue-text ml-1">
+                Registrate
+                </router-link>
             </p>
           </mdb-modal-footer>
         </div>
@@ -157,7 +156,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      user: {
+        user: {
         email: "",
         password: "",
       },
@@ -165,24 +164,42 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
+    
   },
 };
 </script>
 
 <style lang="scss" scoped>
 
- 
-.container-fluid {
-  min-width: 400px;
+#frame {
+  padding-top: 60px;
+  min-height: 100vh;
+  background: url("../../public/double-bubble-outline.png");  
+  
+ }
 
+#box {
+  background: white;
+  box-shadow: 0 0 15px #00000033;
 }
-  .bg-white {
-     background-image: url("../../public/double-bubble-outline.png");
-     background-color:rgb(255, 0, 0, 0)
+
+.errors-ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.container-fluid{
+  min-width: 400px;
+}
+ .bg-white {
+    background-image:  url("../../public/double-bubble-outline.png");
+    // linear-gradient(rgba(148,15,1, 0.8),rgba(255,0,0,0.8))
+    background-blend-mode: multiply;
 }
 a {
   text-decoration: none;
 }
+
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -190,6 +207,7 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
   background-color: transparent;   //nuevo
+  filter: none;
 }
 
 .floatingInput:active,
@@ -207,25 +225,6 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 
-
-#loginbutton {
-  color: #9c0505;
-  background: transparent;
-  white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-}
-
-#loginbutton:hover {
-  white-space: nowrap;
-  margin: 50px auto;
-  border-radius: 50px;
-  padding: 10px 40px;
-  border: none;
-  background-image: linear-gradient(to right, #a19dcf, #03002d);
-}
-
 .btn-danger {
   color: #fff;
   background-color: #121ca8;
@@ -239,6 +238,24 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 
+
+#loginbutton {
+  color: #000011;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 30px;
+  padding: 10px 40px;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #cac7e2 0%, #03002d 70%,  #575485 100%,);
+   transition: .5s;
+}
+
+#loginbutton:hover {
+  white-space: nowrap;
+  color: white;
+  background-position: right center;
+}
 //style google y facebook
 
 @import url("//fonts.googleapis.com/css?family=Roboto");
@@ -339,8 +356,5 @@ body {
   color: rgba(255, 255, 255, 0.87);
 }
 
-#frame {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+
 </style>

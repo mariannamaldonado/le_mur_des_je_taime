@@ -1,5 +1,6 @@
 <template>
-  <div class="container-fluid">
+  <div>
+    <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
       <button
         id="sidebarCollapse"
@@ -93,6 +94,20 @@ export default {
   props: {},
   setup() {},
   mounted() {
+
+    // despues de hacer login con facebook/google. guarda el token en localstorage
+    var url_params = new URL(location.href).searchParams
+    var authToken = url_params.get('token')
+    if(authToken){
+      localStorage.setItem('token', authToken)      
+      url_params.delete('token');
+      window.history.replaceState({}, document.title, window.location.origin )
+      
+      this.$store.state.token = authToken
+      this.$store.dispatch('getCurrentUser')
+      this.$router.push("/Profile")
+    }
+
     $("#sidebarCollapse, .nav-item .nav-link").on("click", function () {
       $("#sidebar, #content").toggleClass("active");
     });
@@ -136,6 +151,9 @@ ul#menu li a:hover:after {
   opacity: 4;
   transform: translateY(15px);
 }
+
+</style>
+<style lang="scss"  scoped>
 a {
   text-decoration: none;
   color: #000000;
@@ -168,6 +186,7 @@ a {
   margin: 0;
 }
 #sidebarCollapse {
+  color: black;
   position: absolute;
   right: -70px;
   top: 10px;
