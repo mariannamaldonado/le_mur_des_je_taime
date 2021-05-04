@@ -7,202 +7,127 @@
           <img class="profile" :src="user.avatar" alt="..." />
         </div>
         <div class="profile-name">{{ user.firstname }}</div>
-        <p class="about">
-          "is simply dummy text of the printing and typesetting industry."
-        </p>
-        <button class="msg-btn">Message</button>
       </div>
     </div>
-    <div class="profile-name">
-      {{ usuario.firstname }} {{ usuario.lastname }}
+
+     <div class="row" v-for="(usuario, ind) in usuarios" :key="ind">
+    <div class="col-xl-4 col-lg-5 col-md-6">
+      <div class="container">
+        <div class="cover-photo">
+          <img class="profile" :src="user.avatar" alt="..." />
+        </div>
+        <div class="profile-name">
+          {{ usuario.firstname }} {{ usuario.lastname }}
+        </div>
+        <p class="about">{{ usuario.email }}</p>
+        <button class="msg-btn">Enviar mensaje</button>
+      </div>
     </div>
-    <p class="about">{{ usuario.email }}</p>
-    <button class="msg-btn">Enviar mensaje</button>
-  </div>
-  <div class="col-xl-8 col-lg-7 col-md-6">
-    <section id="main-content">
-      <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Editar perfil</h3>
-        <div class="row mt">
-          <div class="col-lg-12">
-            <div class="form-panel">
-              <h6 class="mb">
-                <i class="fa fa-angle-right"></i> Datos del perfil
-              </h6>
-              <form class="form-horizontal style-form" method="get">
-                <div class="row">
-                  <!-- <div class="col-md-6">
-                      <label class="col-sm-2 col-sm-2 control-label">Rol</label>
-                        <div class="col-sm-10">
-                          <input  class="form-control" 
-                                  type="text" 
-                                  label="Rol" 
-                                  :disabled="true" 
-                                  v-model="user.rol">
-                        </div>  
-                    </div>           -->
-                  <!-- <div class="col-md-6">
-                      <label class="col-sm-6 col-sm-6 control-label">Nombre de usuario</label>
-                        <div class="col-sm-10">
-                          <input  class="form-control" 
-                                  type="text"
-                                  label="Nombre de Usuario"
-                                  placeholder="Username"
-                                  v-model="user.username">
-                        </div>
-                    </div> -->
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Nombre:</label>
-                  <div class="col-sm-10">
+    <div class="col-xl-8 col-lg-7 col-md-6">
+      <section id="main-content">
+        <section class="wrapper">
+          <h3><i class="fa fa-angle-right"></i> Editar perfil</h3>
+          <!-- formulario del perfil -->
+          <div class="row mt">
+            <div class="col-lg-12">
+              <div class="form-panel">
+                <h6 class="mb">
+                  <i class="fa fa-angle-right"></i> Datos del perfil
+                </h6>
+                <form class="form-horizontal style-form" method="get">
+                  <div class="row"></div>
+                  <div class="form-floating mb-3">
                     <input
-                      class="form-control"
+                      v-model="username"
                       type="text"
-                      label="Name"
-                      placeholder="First Name"
-                      v-model="user.firstname"
+                      class="form-control floatingInput"
+                      placeholder="Nombre"
                     />
+                    <label for="floatingInput">
+                      <i class="bi bi-file-earmark-person"></i>&nbsp;Nombre de
+                      usuario
+                    </label>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label"
-                    >Apellido</label
-                  >
-                  <div class="col-sm-10">
+                  <div class="form-floating mb-3">
                     <input
+                      v-model="firstname"
                       type="text"
-                      class="form-control"
-                      label="Apellido"
-                      placeholder="Last Name"
-                      v-model="user.lastname"
+                      class="form-control floatingInput"
+                      placeholder="Nombre"
                     />
+                    <label for="floatingInput">
+                      <i class="bi bi-emoji-heart-eyes"></i>&nbsp;Nombre
+                    </label>
                   </div>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    v-model="lastname"
-                    type="text"
-                    class="form-control floatingInput"
-                    placeholder="Nombre"
-                  />
-                  <label for="floatingInput">
-                    <i class="bi bi-person"></i>&nbsp;Apellido
-                  </label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    v-model="firstname"
-                    type="text"
-                    class="form-control floatingInput"
-                    placeholder="Nombre"
-                  />
-                  <label for="floatingInput">
-                    <i class="bi bi-envelope-open"></i>&nbsp;Email
-                  </label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    v-model="firstname"
-                    type="text"
-                    class="form-control floatingInput"
-                    placeholder="Nombre"
-                  />
-                  <label for="floatingInput">
-                    <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
-                    imagen de perfil
-                  </label>
-                </div>
-                <div class="text-center">
-                  <button type="button" class="btn">Actualizar Perfil</button>
-                </div>
-                <div class="clearfix"></div>
-              </form>
+                  <div class="form-floating mb-3">
+                    <input
+                      v-model="firstname"
+                      type="text"
+                      class="form-control floatingInput"
+                      placeholder="Nombre"
+                    />
+                    <label for="floatingInput">
+                      <i class="bi bi-person"></i>&nbsp;Apellido
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      v-model="firstname"
+                      type="text"
+                      class="form-control floatingInput"
+                      placeholder="Nombre"
+                    />
+                    <label for="floatingInput">
+                      <i class="bi bi-envelope-open"></i>&nbsp;Email
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      v-model="firstname"
+                      type="text"
+                      class="form-control floatingInput"
+                      placeholder="Nombre"
+                    />
+                    <label for="floatingInput">
+                      <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
+                      imagen de perfil
+                    </label>
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="btn">Actualizar Perfil</button>
+                  </div>
+                  <div class="clearfix"></div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
-    </section>
+    </div>
   </div>
-  <hr class="border" />
+  
   <ContentFooter />
 </template>
-
 <script>
 import Menu from "@/components/Menu.vue";
-import ContentFooter from "@/components/ContentFooter";
-import { ref, reactive, onMounted } from "vue";
+import ContentFooter from "@/components/ContentFooter.vue";
+import { mapState } from "vuex";
 export default {
-  name: "ListAdmin",
+  name: "Profile",
   components: {
     Menu,
-    ContentFooter,
+    ContentFooter
   },
-  setup() {
-    let firstname = ref("");
-    let lastname = ref("");
-    let username = ref("");
-    let email = ref("");
-    let password = ref("");
-    let message = ref("");
-    let usuarios = reactive([]);
-    onMounted(() => {
-      listar();
-    });
-
-    function listar() {
-      fetch("http://localhost:8081/api/users/listar")
-        .then((resp) => resp.json())
-        .then((datos) => {
-          usuarios.splice(0);
-          datos.forEach((usuario) => {
-            usuarios.push(usuario);
-          });
-        });
-    }
-
-    function enviar() {
-      fetch("http://localhost:8081/api/users/guardar", {
-        method: "POST",
-        body: JSON.stringify({
-          firstname: firstname.value,
-          lastname: lastname.value,
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          message: message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar())
-        .catch((error) => console.log(error));
-      //alert("Usuario ya esta registrado");
-    }
-
-    function eliminar(id) {
-      fetch("http://localhost:8081/api/users/delete/" + id, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar());
-    }
-
-    return {
-      firstname,
-      lastname,
-      email,
-      username,
-      password,
-      enviar,
-      usuarios,
-      message,
-      eliminar,
-    };
+  computed: {
+    ...mapState(["user"]),
+  },
+  methods: {
+    updateProfile() {
+      alert("Your data: " + JSON.stringify(this.user));
+    },
   },
 };
 </script>
-
 <style scoped>
 /* navbar */
 .topnav {
@@ -344,26 +269,5 @@ body {
   cursor: pointer;
   font-size: 1.1rem;
   border-radius: 30px;
-}
-/* new style */
-.floatingInput,
-.floatingPassword {
-  border: 0;
-  border-bottom: 2px solid #e4e6e9;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-  border-radius: 0;
-}
-.floatingInput:active,
-.floatingInput:focus {
-  border: 0;
-  border-bottom: 2px solid #212529;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-}
-.form-floating {
-  border-radius: none !important;
-}
-.form-control:focus {
-  border-bottom: 2px solid #212529;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
 </style>

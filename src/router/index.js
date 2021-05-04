@@ -38,7 +38,7 @@ const routes = [
     path: '/Profile',
     name: 'Profile',
     component: () => import('@/pages/Profile.vue'),
-    meta: { requiresAuth: true }
+    // meta: { requiresAuth: true }
   },
   {
     path: '/ReceivedMessages',
