@@ -89,7 +89,12 @@ export default {
   name: "About",
   components: {
   },
+setup(){
 
+  return{
+    image4: '/anny.jpg'
+  }
+}
 
 };
 </script>

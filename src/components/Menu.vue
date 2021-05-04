@@ -5,7 +5,7 @@
         <!-- Perfil -->
         <a href="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
-          <p class="text-monospace">Profile</p>
+          <p class="text-monospace">Perfil de usuario</p>
           <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -61,7 +61,7 @@
           </svg> -->
         </a>
         <!-- Cerrar sesión-->
-        <a href="#">
+        <a href="#" @click="logout">
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
@@ -75,7 +75,7 @@
           <img
             src="https://img.icons8.com/color/48/000000/user-location.png"
           />
-          <p>hola, pepe</p>
+          <p>Hola, pepe</p>
           <!-- <p>Hola, {{user.fristname}}</p> -->
         </a>
       </div>
@@ -87,7 +87,24 @@
 <script>
 export default {
   name: "Menu",
-  components: {},
+
+  setup(){
+    function logout() {
+      fetch('http://localhost:8081/api/users/logout', {
+        method: "POST",
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(res => res.json())
+    }
+
+    return{
+      logout,
+    }
+  }
 };
 </script>
 

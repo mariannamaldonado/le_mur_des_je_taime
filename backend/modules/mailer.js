@@ -19,7 +19,6 @@ const transporter = nodemailer.createTransport({
 })
 
 function send(options) {
-  
   // create reusable transporter object using the default SMTP transport
 return transporter.sendMail({
     from: options.from || '"Le mur des je taime " <le.mur.des.je.taime.fr@gmail.com>', // sender address

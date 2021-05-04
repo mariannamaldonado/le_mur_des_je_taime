@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const schemaUser = new Schema({
     firstname: { type: String, required: [true, "El nombre es obligatorio."]},
     lastname: { type: String, required: [true, "El apellido es obligatorio."]},
-    username: { type: String},
     email: { 
         type: String, 
         required: [true, "El email es obligatorio."], 
@@ -35,7 +34,6 @@ schemaUser.pre('save', function (next) {
             next()
         })
 })
-
 
 schemaUser.pre('findOneAndUpdate', async function() {
     console.log("hashing password")

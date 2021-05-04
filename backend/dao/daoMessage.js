@@ -9,7 +9,6 @@ daoMessage.save = (message, id) => {
         MessageNew.save()
     })
 }
-
 //funcion para eliminar
 daoMessage.delete = (id) => {
     Message.findOneAndRemove({ _id: id }, (data) => {
@@ -17,7 +16,6 @@ daoMessage.delete = (id) => {
         console.log(id);
     })
 }
-
 //listado de mensajes
 daoMessage.listUser = (id) => {
     return new Promise((resolved, reject) => {
@@ -26,7 +24,6 @@ daoMessage.listUser = (id) => {
             .catch(err => reject(err))
     })
 }
-
 // buscar mensaje por ID findById(id)
 daoMessage.findById = (id) => {
     return new Promise((resolved) => {

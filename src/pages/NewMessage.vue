@@ -63,8 +63,7 @@
           data-error="Por favor ingrese su mensaje"
           placeholder="Mensaje"
         />
-        <label for="floatingInput"
-          >Clave de desencriptación del mensaje</label>
+        <label for="floatingInput">Clave de desencriptación del mensaje</label>
       </div>
       <div class="boton">
         <a class="cta">
@@ -156,8 +155,6 @@ export default {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 12px;
-  
-
 }
 .topnav a:hover {
   background-color: #b7c8e0;

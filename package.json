@@ -25,7 +25,7 @@
     "nav": "0.0.2",
     "node": "^15.12.0",
     "nodemailer": "^6.5.0",
-    "sweetalert2": "^10.16.6",
+    "sweetalert2": "^10.16.7",
     "vue": "^3.0.0",
     "vue-clickaway": "^2.1.0",
     "vue-notifyjs": "^0.3.0",

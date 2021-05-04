@@ -43,13 +43,12 @@
     </div>
     <div class="copyright d-flex flex-wrap justify-content-between">
       &copy; Hecho con &nbsp;
-       <i class="fa fa-heart heart"></i>&nbsp; por final project.
+      <i class="fa fa-heart heart"></i>&nbsp; por final project.
       <a
         href="https://github.com/mariannamaldonado/le_mur_des_je_taime"
         target="_blank"
-      >&nbsp; <i class="fab fa-github fa-2x"></i>
-       </a
-      >
+        >&nbsp; <i class="fab fa-github fa-2x"></i>
+      </a>
     </div>
   </footer>
 </template>
@@ -62,7 +61,7 @@ export default {
 </script>
 
 <style>
-.heart{
+.heart {
   color: #1f4b8d;
 }
 .section-footer {
