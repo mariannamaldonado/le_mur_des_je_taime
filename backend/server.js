@@ -16,20 +16,16 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 /* var cors = require('cors');
 app.use(cors()); */
-
 // conexion bade de datos
 const conexion = require('./mongodb')
-
 // para servir tambien vue del lado del cliente
 app.use(express.static('../dist'));
-
 //gestión de sesiones
 app.use(session({ 
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true
 }))
-
 // cors
 const cors = require('cors');
 let corsOptions = {
@@ -37,7 +33,6 @@ let corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions));
-
 //middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -48,18 +43,12 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')    
     next()
 })
-
 // Configuración de Passport. Lo inicializamos
 // y le indicamos que Passport maneje la Sesión
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 //rutas seguras . necesita login
 app.all('*/secure/*', [verifyToken]);
-
-
-
 //enrutadores
 app.use('/api',rtMain)
 app.use('/api/users',rtUsers)

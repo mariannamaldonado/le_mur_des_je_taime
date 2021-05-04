@@ -9,9 +9,10 @@
           <div class="h5 mb-0 font-weight-bold text-gray-800">
             <div class="form-floating mb-3">
               <input
+                v-model="addresseName"
                 type="text"
                 class="form-control floatingInput"
-                data-error="Por favor ingrese su nombre"
+                data-error="Por favor ingrese nombre"
                 placeholder="Nombre"
               />
               <label for="floatingInput">&nbsp;Para:</label>
@@ -20,6 +21,7 @@
           <div class="h5 mb-0 font-weight-bold text-gray-800">
             <div class="form-floating mb-3">
               <input
+                v-model="addresseEmail"
                 type="text"
                 class="form-control floatingInput"
                 data-error="Por favor ingrese su email"
@@ -35,6 +37,7 @@
       </div>
       <!-- tiny editor de texto -->
       <editor
+        v-model="message"
         :init="{
           height: 300,
           menubar: false,
@@ -77,7 +80,7 @@
       <br />
       <hr class="border" />
       <div class="boton">
-        <a href="#" class="cta">
+        <a href="#" class="cta" @click="SendMessage">
           <span>Enviar mensaje</span>
           <svg width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
@@ -104,7 +107,58 @@ export default {
     ContentFooter,
   },
   setup() {
-    return {};
+    let Messages = reactive([]);
+    let search = ref("");
+    let message = ref("");
+    let addresseEmail = ref("");
+    let addresseName = ref("");
+
+    onMounted(() => {
+      getMessageList();
+    });
+
+    let filtredMessages = computed(() => {
+      return Messages.filter((item) => {
+        return item.message.toLowerCase().includes(search.value.toLowerCase());
+      });
+    });
+
+    function getMessageList() {
+      fetch("http://localhost:8081/api/message/list")
+        .then((resp) => resp.json())
+        .then((datos) => {
+          Messages.splice(0);
+          datos.forEach((element) => {
+            Messages.push(element);
+          });
+        });
+    }
+
+    function SendMessage() {
+      fetch("http://localhost:8081/api/message/save/" + id,{
+        method: "POST",
+        body: JSON.stringify({
+          message: message.value,
+          addresseEmail: addresseEmail.value,
+          addresseName: addresseName.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((datos) => listar())
+      alert("Mensaje ya esta registrado");
+    }
+
+    return {
+      addresseEmail,
+      addresseName,
+      message,
+      SendMessage,
+      search,
+      getMessageList,
+      Messages,
+      filtredMessages,
+    };
   },
 };
 </script>
