@@ -61,7 +61,7 @@
           </svg> -->
         </a>
         <!-- Cerrar sesión-->
-        <a href="#">
+        <a href="#" @click="logout">
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
@@ -87,7 +87,24 @@
 <script>
 export default {
   name: "Menu",
-  components: {},
+
+  setup(){
+    function logout() {
+      fetch('http://localhost:8081/api/users/logout', {
+        method: "POST",
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(res => res.json())
+    }
+
+    return{
+      logout,
+    }
+  }
 };
 </script>
 

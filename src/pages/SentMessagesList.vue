@@ -81,7 +81,7 @@
             </li>
             <li
               class="table-row"
-              v-for="(Message, ind) in Menssages"
+              v-for="(Message, ind) in Messages"
               :key="ind"
             >
               <div class="col col-0" data-label="select">
@@ -127,7 +127,7 @@ export default {
     ContentFooter,
   },
   setup() {
-    let Menssages = reactive([]);
+    let Messages = reactive([]);
     let search = ref("");
 
     onMounted(() => {
@@ -135,7 +135,7 @@ export default {
     });
 
     let filtredMessages = computed(() => {
-      return Menssages.filter((item) => {
+      return Messages.filter((item) => {
         return item.message.toLowerCase().includes(search.value.toLowerCase());
       });
     });
@@ -145,10 +145,11 @@ export default {
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {
-            Menssages.push(element);
+            Messages.push(element);
           });
         });
     }
+    
     function deleteMessage(id) {
       fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
@@ -161,7 +162,7 @@ export default {
     }
 
     return {
-      Menssages,
+      Messages,
       search,
       filtredMessages,
       deleteMessage,

@@ -95,16 +95,16 @@ export default {
   setup() {},
   mounted() {
     // despues de hacer login con facebook/google. guarda el token en localstorage
-    var url_params = new URL(location.href).searchParams
-    var authToken = url_params.get('token')
-    if(authToken){
-      localStorage.setItem('token', authToken)      
-      url_params.delete('token');
-      window.history.replaceState({}, document.title, window.location.origin )
-      
-      this.$store.state.token = authToken
-      this.$store.dispatch('getCurrentUser')
-      this.$router.push("/Profile")
+    var url_params = new URL(location.href).searchParams;
+    var authToken = url_params.get("token");
+    if (authToken) {
+      localStorage.setItem("token", authToken);
+      url_params.delete("token");
+      window.history.replaceState({}, document.title, window.location.origin);
+
+      this.$store.state.token = authToken;
+      this.$store.dispatch("getCurrentUser");
+      this.$router.push("/Profile");
     }
     $("#sidebarCollapse, .nav-item .nav-link").on("click", function () {
       $("#sidebar, #content").toggleClass("active");
@@ -114,8 +114,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-fluid{
-  padding-left: var(--bs-gutter-x,.0rem);
+.container-fluid {
+  padding-left: var(--bs-gutter-x, 0rem);
 }
 .page-footer span {
   color: rgb(185, 14, 14);
@@ -205,15 +205,13 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   background-size: 200% auto;
-
 }
 #sidebarCollapse:hover {
-  
   white-space: nowrap;
   color: white;
   background-position: right center;
 }
-.sm{
+.sm {
   border-color: transparent;
   box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5) !important;
 }

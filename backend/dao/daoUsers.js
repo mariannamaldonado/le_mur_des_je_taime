@@ -84,5 +84,13 @@ daoUsers.signin = (email, password) => {
             })
     })
 }
-
+//función para desloguear usuarios
+daoUsers.logout = () => {
+    return new Promise((resolved) => {
+      passport.auth().logout()
+        .then(() => resolved('Sesión cerrada correctamente'))
+        .catch((error) => resolved(error))
+    })
+  }
+  
 module.exports = daoUsers

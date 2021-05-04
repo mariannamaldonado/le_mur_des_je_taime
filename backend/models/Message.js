@@ -4,9 +4,8 @@ const { Schema } = mongoose
 const schemaMessage = new Schema({
     message: { type: String, required: false },
     encryption: { type: Boolean, default: false },
-    encryption_key: { type: Boolean, default: false },
+    encryption_key: { type: Array, default: false },
     properties: { type: String, default: "Times New Roman" },
-    coordinates: { type: Array },
     size: { type: String },
     addresseEmail: { type: String, required: false },
     addresseName: { type: String, required: false },

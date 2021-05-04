@@ -39,7 +39,7 @@ export default {
       fetch("http://localhost:8081/api/message/list")
         .then((resp) => resp.json())
         .then((datos) => {
-          Messages.splice(1);
+          Messages.splice(0);
           datos.forEach((element) => {
             Messages.push(element);
           });

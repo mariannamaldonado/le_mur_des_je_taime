@@ -61,6 +61,11 @@ rtUsers.post("/send-email", (req, res) => {
   res.send('menasaje enviado')
 })
 
+rtUsers.post('/logout', (req, res) => {
+    req.logout()
+    res.redirect('/');
+})
+
 rtUsers.post("/forgotpassword", (req, res) => {
   var emailaddress = req.body.email
 
@@ -99,17 +104,10 @@ rtUsers.post("/resetpassword", (req, res) => {
     .catch(err => res.json({ error: 'Este usuario no existe.', message: JSON.stringify(err) }))
 })
 
-
-
-
 rtUsers.get('/auth/facebook', (req, res) => {
   console.log("logging with facebook")
   passport.authenticate('facebook')
 })
-
-
-
-
 
 // ejemplo ruta segura (necesita login)
 rtUsers.post('/secure/currentuser', (req, res) => {
