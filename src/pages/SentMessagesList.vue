@@ -141,7 +141,7 @@ export default {
     });
 
     function getMessageList() {
-      fetch("http://localhost:8081/api/message/list")
+      fetch("http://localhost:8081/api/message/listUser/")
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {

@@ -6,7 +6,6 @@ import { createStore } from 'vuex'
 //   storage: window.localStorage 
 // })
 import router from '@/router'
-
 export default createStore({
   state: {
     token: null,
@@ -29,8 +28,6 @@ export default createStore({
   actions: {
     async login({ commit }, user) {
       try {
-        console.log(user.email)
-        console.log(user.password)
         const res = await fetch('http://localhost:8081/api/users/login', {
           method: 'POST',
           headers: {
@@ -39,6 +36,7 @@ export default createStore({
           body: JSON.stringify({ email: user.email, password: user.password })
         })
         const userDB = await res.json()
+        console.log(userDB)
         commit('setToken', userDB.data.token)
         localStorage.setItem('token', userDB.data.token)
         router.push("/Profile")
@@ -69,8 +67,8 @@ export default createStore({
           }
         })
         var response = await res.json()
-        console.log(response)
-        context.commit("setUser", response)
+        context.commit("setUser", response)        
+
       } catch (error) {
         console.log(error)
       }

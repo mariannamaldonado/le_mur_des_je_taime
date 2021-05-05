@@ -1,10 +1,11 @@
 <template>
   <div>
+    <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-md rounded-pill px-4 mb-4"
+        class="btn btn-danger btn-md rounded-pill sm px-4 mb-4"
       >
         <i class="fa fa-bars mr-2"></i>
       </button>
@@ -51,6 +52,7 @@
             >
           </a>
         </li>
+       
         <hr class="border" />
         <li class="nav-item">
           <a href="#" id="4" class="nav-link text-dark font-italic">
@@ -130,10 +132,10 @@ ul#menu li a {
 ul#menu li a:after {
   position: absolute;
   text-decoration: none;
-  // bottom: 7px;
+  bottom: 7px;
   left: 0px;
-  width: 20%;
-  height: 8px;
+  width: 100%;
+  height: 4px;
   background-color: rgb(165 165 211 / 50%);
   content: "";
   opacity: 0;
@@ -143,7 +145,7 @@ ul#menu li a:after {
 ul#menu li a:hover:after {
   text-decoration: none;
   opacity: 4;
-  transform: translateY(16px);
+  transform: translateY(15px);
 }
 </style>
 <style lang="scss"  scoped>
@@ -178,9 +180,19 @@ a {
   width: 100%;
   margin: 0;
 }
+.btn-danger {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
+}
+.btn-danger:active {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
 #sidebarCollapse {
   position: absolute;
-  right: -73px;
+  right: -70px;
   top: 10px;
   padding: 2.7px;
   background-image: linear-gradient(
@@ -194,13 +206,15 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   background-size: 200% auto;
-  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5) !important;
-
 }
 #sidebarCollapse:hover {
   white-space: nowrap;
   color: white;
   background-position: right center;
+}
+.sm {
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5) !important;
 }
 #sidebar {
   z-index: 100;
@@ -224,6 +238,13 @@ a {
     margin: 0;
   }
 }
+// body {
+//   background: #599fd9;
+//   background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+//   background: linear-gradient(to right, #599fd9, #c2e59c);
+//   min-height: 100vh;
+//   overflow-x: hidden;
+// }
 .separator {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;

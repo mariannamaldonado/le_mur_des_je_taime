@@ -74,7 +74,6 @@ daoUsers.signin = (email, password) => {
         User.findOne({ email: email })
             .then(data => {
                 if (data) {
-                    console.log(data)
                     if (data.checkPassword(password))
                         resolved(data) //todo correcto ;)
                     else

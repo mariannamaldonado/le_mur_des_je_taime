@@ -7,15 +7,14 @@ var session = require('express-session')
 const rtMain = require('./routers/rtMain')
 const rtUsers = require('./routers/rtUsers')
 const rtMessage = require('./routers/rtMessage')
-const verifyToken = require('./routers/validate-token');
+const verifyToken = require('./middleware/validate-token');
 var passport = require('passport')
 require('./passport.js')
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist')));
 
-/* var cors = require('cors');
-app.use(cors()); */
+
 // conexion bade de datos
 const conexion = require('./mongodb')
 // para servir tambien vue del lado del cliente
@@ -52,7 +51,7 @@ app.all('*/secure/*', [verifyToken]);
 //enrutadores
 app.use('/api',rtMain)
 app.use('/api/users',rtUsers)
-app.use('/api/message',rtMessage)
+app.use('/api/message',verifyToken,rtMessage)
 
 app.listen(8081,(err)=>{
     if(err) console.log("Errores: ", err)
