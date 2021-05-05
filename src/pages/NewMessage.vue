@@ -4,8 +4,8 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
-          <br />
+          <!-- <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
+          <br /> -->
           <div class="h5 mb-0 font-weight-bold text-gray-800">
             <div class="form-floating mb-3">
               <input
@@ -35,11 +35,10 @@
           <i class="fas fa-comments fa-2x text-gray-300"></i>
         </div>
       </div>
-      <!-- tiny editor de texto -->
       <editor
         v-model="message"
         :init="{
-          height: 300,
+          height: 260,
           menubar: false,
           plugins: [
             'advlist autolink lists link image charmap',
@@ -61,15 +60,16 @@
       <br />
       <div class="form-floating mb-3">
         <input
-          type="text"
+          v-model="encryption_key"
+          type="number"
           class="form-control floatingInput"
-          data-error="Por favor ingrese su mensaje"
-          placeholder="Mensaje"
+          data-error="Por favor ingrese su clave"
+          placeholder="Clave"
         />
         <label for="floatingInput">Clave de desencriptación del mensaje</label>
       </div>
       <div class="boton">
-        <a class="cta">
+        <a class="cta" @click="encryption">
           <span>Encriptar</span>
           <svg width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
@@ -112,6 +112,7 @@ export default {
     let message = ref("");
     let addresseEmail = ref("");
     let addresseName = ref("");
+    let encryption_key = ref("");
 
     onMounted(() => {
       getMessageList();
@@ -146,10 +147,26 @@ export default {
       })
         .then((res) => res.json())
         .then((datos) => listar())
-      alert("Mensaje ya esta registrado");
+      //alert("Mensaje ya esta registrado");
     }
 
+function encryption() {
+      fetch("http://localhost:8081/api/message/save/608bc8603f37963f34d6ec98",{
+        method: "POST",
+        body: JSON.stringify({
+          message: message.value,
+          addresseEmail: addresseEmail.value,
+          addresseName: addresseName.value,
+          encryption_key: encryption_key.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((datos) => listar())
+    }
     return {
+      encryption,
+      encryption_key,
       addresseEmail,
       addresseName,
       message,
@@ -166,8 +183,8 @@ export default {
 <style lang="scss" scoped>
 .boton {
   padding-top: 2em;
+  cursor: pointer;
 }
-// input
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -188,7 +205,6 @@ export default {
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
 }
-//borde tarjeta
 .border-left-warning {
   border-left: 0.25rem solid #b7c8e0 !important;
 }
@@ -197,7 +213,6 @@ export default {
   min-height: 1px;
   padding: 1.25rem;
 }
-// navbar
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
@@ -217,33 +232,11 @@ export default {
 .topnav-right {
   float: right;
 }
-// sidebar
-body {
-  font-family: "lato", sans-serif;
-  background-color: #f1f2f5;
-  font-family: var(--bs-font-sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 16px;
-}
-body {
-  color: #797979;
-  background: #f2f2f2;
-  font-family: "Ruda", sans-serif;
-  padding: 0px !important;
-  // margin: 0px !important;
-  font-size: 13px;
-  background-color: #fff;
 }
 .container {
   max-width: 1000px;

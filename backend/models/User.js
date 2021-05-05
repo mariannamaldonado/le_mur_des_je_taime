@@ -40,11 +40,6 @@ schemaUser.pre('findOneAndUpdate', async function() {
     this._update.password = await bcrypt.hash(this._update.password, 6)
 })
 
-
-
-
-
-
 function validateEmail(email){
     let regEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         return regEmail.test(email)
@@ -55,8 +50,8 @@ function validatePwdLength(pwd){
     else 
         return false
 }
+
 class User {
-    
     checkPassword(password) {
         return bcrypt.compareSync(password, this.password)
     }

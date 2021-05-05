@@ -57,7 +57,7 @@
   <section class="content-section bg-primary text-white">
     <div class="container text-center">
       <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
-      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-danger btn-md">Envia un te quiero!</a>
+      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-md">Envia un te quiero!</a>
     </div>
   </section>
   <Footer />
@@ -73,16 +73,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.btn-danger {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
-}
-.btn-danger:active {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
-}
 #loginbutton {
   color: #000011;
   text-transform: uppercase;
@@ -98,6 +88,7 @@ export default {
     #575485 100%
   );
   transition: 0.5s;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #loginbutton:hover {
   white-space: nowrap;

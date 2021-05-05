@@ -96,12 +96,6 @@ export default {
   padding: 5px 15px 15px 0;
   border-radius: 0 0 5px 5px;
 }
-/* .author::before {
-  content: "❤ ";
-} */
-/* .rotate {
-  animation: rotate 4s infinite ease-in-out;
-} */
 .floating {
   animation: float 6s infinite ease-in-out;
 } 
