@@ -1,5 +1,4 @@
 <template>
-  <!-- <h1>{{ msg }}</h1> -->
   <div id="container">
     <div class="environment" >
       <div id="item1" class="section">
@@ -137,12 +136,10 @@ export default {
 .imgTranslate {
   padding: 7px;
   width: 170px;
-  height: 70px;
 }
 .src {
   height: 70px;
 }
-//transicion Tunel
 *,
 *::before,
 *::after {
@@ -164,31 +161,11 @@ export default {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100% auto auto;
-  transition: transform 1s, opacity 1s;
+  transition: transform 2s, opacity 2s;
 }
 .gap {
   grid-column: 3/4;
 }
-// .nav {
-//   position: absolute;
-//   bottom: 0;
-//   z-index: 10;
-//   padding: 10px;
-// }
-// .nav a {
-//   text-decoration: none;
-//   margin: 10px;
-//   cursor: pointer;
-//   color: #940909;
-//   text-align: center;
-// }
-// .nav a + a::before {
-//   margin-left: -11px;
-//   content: "";
-//   height: 15px;
-//   width: 1px;
-// }
 #item1 {
   z-index: 1;
 }
@@ -212,15 +189,10 @@ export default {
   .section {
     display: block;
   }
-  body {
-    overflow: scroll;
-  }
+
   .environment {
     align-items: flex-start;
     perspective-origin: 48% 0;
   }
-  // .nav {
-  //   bottom: 0;
-  // }
 }
 </style>

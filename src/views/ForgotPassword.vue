@@ -19,7 +19,7 @@
           @click="forgotPassword(email)"
           type="button"
           id="loginbutton"
-          class="btn btn-danger"
+          class="btn"
         >
           ENVIAR EMAIL
         </button>
@@ -75,10 +75,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* .container-fluid {
-  background-image: url("../../public/muroblur.png");
-  background-size: cover;
-} */
 #frame {
   padding-top: 60px;
   min-height: 100vh;
@@ -109,7 +105,7 @@ a {
   border-bottom: 2px solid #e4e6e9;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
   border-radius: 0;
-  background-color: transparent; //nuevo
+  background-color: transparent;
   filter: none;
 }
 .floatingInput:active,
@@ -124,16 +120,6 @@ a {
 .form-control:focus {
   border-bottom: 2px solid #212529;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-}
-.btn-danger {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
-}
-.btn-danger:active {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #loginbutton {
   color: #000011;
@@ -150,6 +136,7 @@ a {
     #575485 100%
   );
   transition: 0.5s;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #loginbutton:hover {
   white-space: nowrap;

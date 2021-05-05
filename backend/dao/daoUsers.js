@@ -2,6 +2,7 @@ const User = require('../models/User')
 const mailer = require('../modules/mailer')
 
 const daoUsers = {}
+
 //función para guardar un usuario
 daoUsers.signup = (user) => {
     return new Promise((resolved, reject) => {
@@ -20,8 +21,7 @@ daoUsers.signup = (user) => {
             }).then(info => {
                 resolved(user)
             })
-            
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err)
             reject(err)
         })
@@ -35,7 +35,7 @@ daoUsers.listar = () => {
             .catch(err => reject(err))
     })
 }
-
+//buscar usuario por id
 daoUsers.findById = (user_id) => {
     return new Promise((resolved, reject) => {
         User.findOne({ _id: user_id })
@@ -50,23 +50,22 @@ daoUsers.findByEmail = (email) => {
             .then(user => resolved(user))
     })
 }
-
-daoUsers.updatePassword = (id, password)=>{
+//función para validar password
+daoUsers.updatePassword = (id, password) => {
     return new Promise((resolve, reject) => {
         const query = { _id: id };
-        User.findOneAndUpdate(query, {password: password}, {runValidators:true})
-        .then(user => {
-            if(!user) throw new Error('user does not exist');
-            resolve(user)
-        })
-        .catch(err=> reject(err))
+        User.findOneAndUpdate(query, { password: password }, { runValidators: true })
+            .then(user => {
+                if (!user) throw new Error('El usuario no existe');
+                resolve(user)
+            })
+            .catch(err => reject(err))
     })
 }
 //función para eliminar usuario
-daoUsers.delete = (id)=>{
-    
-    User.findOneAndRemove({_id:id},(data)=>{
-        console.log("registro eliminado")
+daoUsers.delete = (id) => {
+    User.findOneAndRemove({ _id: id }, (data) => {
+        console.log("Registro eliminado")
     })
 }
 //función para loguear usuarios
@@ -80,17 +79,17 @@ daoUsers.signin = (email, password) => {
                         resolved(data) //todo correcto ;)
                     else
                         resolved(null) //el password no coincide
-                } 
+                }
             })
     })
 }
 //función para desloguear usuarios
 daoUsers.logout = () => {
     return new Promise((resolved) => {
-      passport.auth().logout()
-        .then(() => resolved('Sesión cerrada correctamente'))
-        .catch((error) => resolved(error))
+        passport.auth().logout()
+            .then(() => resolved('Sesión cerrada correctamente'))
+            .catch((error) => resolved(error))
     })
-  }
-  
+}
+
 module.exports = daoUsers
