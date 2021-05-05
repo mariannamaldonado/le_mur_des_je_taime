@@ -45,7 +45,7 @@ const routes = [
     name: 'ReceivedMessages',
     component: () => import('@/pages/ReceivedMessages.vue'),
     meta: { requiresAuth: true }
-  },
+  }, 
   {
     path: '/SentMessagesList',
     name: 'SentMessagesList',
@@ -56,6 +56,7 @@ const routes = [
     path: '/NewMessage',
     name: 'NewMessage',
     component: () => import('@/pages/NewMessage.vue'),
+     meta: { requiresAuth: true }
   },
   {
     path: '/UsersList',

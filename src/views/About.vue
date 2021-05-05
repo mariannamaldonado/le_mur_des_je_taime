@@ -92,7 +92,8 @@ export default {
 setup(){
 
   return{
-    image4: '/anny.jpg'
+    image4: '/anny.jpg',
+    image1: '/photo1.jpeg'
   }
 }
 

@@ -130,10 +130,10 @@ ul#menu li a {
 ul#menu li a:after {
   position: absolute;
   text-decoration: none;
-  bottom: 7px;
+  // bottom: 7px;
   left: 0px;
-  width: 100%;
-  height: 4px;
+  width: 20%;
+  height: 8px;
   background-color: rgb(165 165 211 / 50%);
   content: "";
   opacity: 0;
@@ -143,7 +143,7 @@ ul#menu li a:after {
 ul#menu li a:hover:after {
   text-decoration: none;
   opacity: 4;
-  transform: translateY(15px);
+  transform: translateY(16px);
 }
 </style>
 <style lang="scss"  scoped>
