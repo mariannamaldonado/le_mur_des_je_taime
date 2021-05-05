@@ -62,6 +62,7 @@ const routes = [
     name: 'UsersList',
     component: () => import('@/pages/admin/UsersList.vue'),
   },
+
   {
     path: '/MessagesList',
     name: 'MessagesList',

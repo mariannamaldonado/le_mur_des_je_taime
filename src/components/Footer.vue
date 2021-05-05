@@ -61,6 +61,10 @@ export default {
 </script>
 
 <style>
+
+.section-footer{
+position: absolute;
+}
 .heart {
   color: #1f4b8d;
 }

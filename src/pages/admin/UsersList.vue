@@ -1,100 +1,46 @@
 <template>
   <Menu />
-  <div class="row" v-for="(usuario, ind) in usuarios" :key="ind">
-    <div class="col-xl-4 col-lg-5 col-md-6">
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+       <i class="bi bi-search"></i>
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox">
+</div>
+
+  <div class="row gx-5" v-for="(usuario, ind) in usuarios" :key="ind">
+    <div class="col-xl-8 col-lg-7 col-md-6">
       <div class="container">
         <div class="cover-photo">
-          <img class="profile" src="@/assets/img/faces/avatar1.jpg" alt="..." />
+          <img class="profile" src="@/assets/img/faces/avatar.jpg" alt="..." />
         </div>
         <div class="profile-name">
           {{ usuario.firstname }} {{ usuario.lastname }}
         </div>
-        <p class="about">{{ usuario.email }}</p>
-        <button class="msg-btn">Enviar mensaje</button>
-      </div>
-    </div>
-    <div class="col-xl-8 col-lg-7 col-md-6">
-      <section id="main-content">
-        <section class="wrapper">
-          <h3><i class="fa fa-angle-right"></i> Editar perfil</h3>
-          <!-- formulario del perfil -->
-          <div class="row mt">
-            <div class="col-lg-12">
-              <div class="form-panel">
-                <h6 class="mb">
-                  <i class="fa fa-angle-right"></i> Datos del perfil
-                </h6>
-                <form class="form-horizontal style-form" method="get">
-                  <div class="row"></div>
-                  <div class="form-floating mb-3">
-                    <input
-                      v-model="username"
-                      type="text"
-                      class="form-control floatingInput"
-                      placeholder="Nombre"
-                    />
-                    <label for="floatingInput">
-                      <i class="bi bi-file-earmark-person"></i>&nbsp;Nombre de
-                      usuario
-                    </label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      v-model="firstname"
-                      type="text"
-                      class="form-control floatingInput"
-                      placeholder="Nombre"
-                    />
-                    <label for="floatingInput">
-                      <i class="bi bi-emoji-heart-eyes"></i>&nbsp;Nombre
-                    </label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      v-model="firstname"
-                      type="text"
-                      class="form-control floatingInput"
-                      placeholder="Nombre"
-                    />
-                    <label for="floatingInput">
-                      <i class="bi bi-person"></i>&nbsp;Apellido
-                    </label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      v-model="firstname"
-                      type="text"
-                      class="form-control floatingInput"
-                      placeholder="Nombre"
-                    />
-                    <label for="floatingInput">
-                      <i class="bi bi-envelope-open"></i>&nbsp;Email
-                    </label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      v-model="firstname"
-                      type="text"
-                      class="form-control floatingInput"
-                      placeholder="Nombre"
-                    />
-                    <label for="floatingInput">
+        <p class="about"> Email: {{ usuario.email }}</p>
+         <label for="floatingInput">
                       <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
                       imagen de perfil
                     </label>
+        <div class="form-floating mb-3 custom-file">
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                    />
                   </div>
-                  <div class="text-center">
-                    <button type="button" class="btn">Actualizar Perfil</button>
-                  </div>
-                  <div class="clearfix"></div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
+        <button
+                  class="btn btn-danger btn-xs"
+                  @click="deleteMessage(Message._id)"
+                >
+                  <i class="fa fa-trash-o"></i>
+                </button>
+                 <hr class="border" />
+      </div>
     </div>
-  </div>
+   </div>
+ 
   <hr class="border" />
   <ContentFooter />
 </template>
@@ -176,25 +122,11 @@ export default {
 </script>
 
 <style scoped>
-/* navbar */
-.topnav {
-  overflow: hidden;
-  background-color: #f1f2f5;
-}
-.topnav a {
-  float: left;
-  color: #0a0a0a;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #3f4f66;
-  color: black;
-}
-.topnav-right {
-  float: right;
+button, input, optgroup, select, textarea {
+    margin: 0;
+  font-family: 'Font Awesome 5 Free';
+    /* font-size: inherit; */
+    /* line-height: inherit; */
 }
 body {
   font-family: "lato", sans-serif;
@@ -211,16 +143,18 @@ h2 small {
 /* lista */
 .container {
   user-select: none;
-  margin: 100px auto;
+  margin: 10px auto;
+  margin-left: 5.5em;
   background: #f4f3ef;
   color: #b3b8cd;
   border-radius: 5px;
-  width: 350px;
+  width: 650px;
   text-align: center;
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.75);
 }
 .cover-photo {
-  background: url(https://coursefinders.com/blog/wp-content/uploads/2018/09/ti-amo-mur-je-taime-560x315.jpg);
+  background: url(https://bestanimations.com/media/i-love-you/925483873iloveyou-languages-gif.gif);
+  background-color: rgb(226, 61, 61);
   height: 160px;
   width: 100%;
   border-radius: 5px 5px 0 0;
@@ -243,99 +177,10 @@ h2 small {
   margin-top: 35px;
   line-height: 21px;
 }
-button {
-  margin: 10px 0 40px 0;
-}
-.msg-btn,
-.follow-btn {
-  background: #1f4b8d;
-  border: 1px solid #1f4b8d;
-  padding: 10px 25px;
-  color: #fff;
-  border-radius: 3px;
-  font-family: Montserrat, sans-serif;
-  cursor: pointer;
-  border-radius: 25px;
-}
-.follow-btn {
-  margin-left: 10px;
-  background: transparent;
-  color: #02899c;
-}
-.follow-btn:hover {
-  color: #231e39;
-  background: #03bfbc;
-  transition: 0.5s;
-}
-.container i {
-  padding-left: 20px;
-  font-size: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.container i:hover {
-  color: #03bfbc;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-  color: #797979;
-  background: #f2f2f2;
-  font-family: "Ruda", sans-serif;
-  padding: 0px !important;
-  margin: 0px !important;
-  font-size: 13px;
-  background-color: #fff;
-}
-.form-panel {
-  background: #ffffff;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0px 3px 2px #aab2bd;
-  text-align: left;
-}
-.wrapper {
-  display: inline-block;
-  margin-top: 60px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-top: 0px;
-  width: 100%;
-}
-.btn {
-  display: inline-block;
-  background: #1f4b8d;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  border-radius: 30px;
-}
-/* new style */
-.floatingInput,
-.floatingPassword {
-  border: 0;
-  border-bottom: 2px solid #e4e6e9;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-  border-radius: 0;
-}
-.floatingInput:active,
-.floatingInput:focus {
-  border: 0;
-  border-bottom: 2px solid #212529;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-}
-.form-floating {
-  border-radius: none !important;
-}
-.form-control:focus {
-  border-bottom: 2px solid #212529;
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
-}
+
+
+
+
+
 </style>
+
