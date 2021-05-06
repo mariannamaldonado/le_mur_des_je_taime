@@ -3,7 +3,7 @@
   <div class="wrapper">
     <div class="profile-card">
       <div class="profile-header">
-        <img src="@/assets/img/love.gif" alt="" />
+        <img src="@/assets/img/banner10.jpg" alt="" />
       </div>
       <div class="profile-body">
         <div class="cover-photo">
@@ -62,7 +62,7 @@ img{
 }
 .wrapper{
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .profile-card{
     width: 200px;

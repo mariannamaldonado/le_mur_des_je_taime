@@ -11,7 +11,7 @@
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Marianna Maldonado Pérez</div>
+                <div class="h2">Marianna Maldonado</div>
                 <a
                   href="https://www.linkedin.com/in/programador-mariana-maldonado/"
                   ><i class="fab fa-linkedin fa-2x"></i
@@ -21,7 +21,7 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image1" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
@@ -37,14 +37,14 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image3" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">Jeampierre Nuñez Sánchez</div>
+                <div class="h2">Jeampierre Nuñez</div>
                 <a
                   href="https://www.linkedin.com/in/jeanpierrer-nu%C3%B1ez-sanchez-34853b129/"
                   ><i class="fab fa-linkedin fa-2x"></i
@@ -54,14 +54,14 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image3" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
           <a class="about-item" href="#!">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2 name">Anny Sánchez Rodríguez</div>
+                <div class="h2 name">Anny Sánchez</div>
                 <a href="www.linkedin.com/in/anny-karolina-sánchez-rdríguez"
                   ><i class="fab fa-linkedin fa-2x"></i
                 ></a>
@@ -94,8 +94,10 @@ export default {
 setup(){
 
   return{
-    image4: '/anny.jpg',
-    image1: '/photo1.jpeg'
+    image4: '/a@2x.png',
+    image1: '/m@2x.png',
+    image3: '/j@2x.png'
+
   }
 }
 
@@ -105,7 +107,7 @@ setup(){
 <style lang="scss">
 .h1 {
   font-family: "Catamaran", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 .mb-5 {
   margin-bottom: 3rem !important;
