@@ -16,17 +16,19 @@
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
         </a>
-        <a href="" @click="logout">
+        <a href="#" @click="logout">
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
-          <p class="text-monospace">Cerrar sesión</p> 
+          <p class="text-monospace">Cerrar sesión</p>
         </a>
         <a href="/Profile">
           <img
-            src="https://img.icons8.com/color/48/000000/user-location.png"/>
-             <p class="text-monospace">Hola, {{user.firstname}} </p>
+            src="https://img.icons8.com/color/48/000000/user-location.png"
+          />
+          <p>Hola, {{user.firstname}}</p>
         </a>
+
       </div>
     </div>
   </div>
@@ -41,6 +43,7 @@ export default {
 methods: {
     ...mapActions(['logout'])
   },
+  
 };
 </script>
 

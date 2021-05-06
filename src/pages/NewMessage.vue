@@ -4,8 +4,8 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <!-- <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
-          <br /> -->
+          <h6 class="m-0 font-weight-bold text-primary">Mensaje nuevo</h6>
+          <br />
           <div class="h5 mb-0 font-weight-bold text-gray-800">
             <div class="form-floating mb-3">
               <input
@@ -57,8 +57,7 @@
         }"
       >
       </editor>
-      <br />
-      <div class="form-floating mb-3">
+      <!-- <div class="form-floating mb-3">
         <input
           v-model="encryption_key"
           type="number"
@@ -76,8 +75,7 @@
             <polyline points="8 1 12 5 8 9"></polyline>
           </svg>
         </a>
-      </div>
-      <br />
+      </div> -->
       <hr class="border" />
       <div class="boton">
         <a href="#" class="cta" @click="SendMessage">
@@ -136,7 +134,7 @@ export default {
     }
 
     function SendMessage() {
-      fetch("http://localhost:8081/api/message/save/" + id,{
+      fetch("http://localhost:8081/api/message/save/608afe3df71c154094fb5725",{
         method: "POST",
         body: JSON.stringify({
           message: message.value,

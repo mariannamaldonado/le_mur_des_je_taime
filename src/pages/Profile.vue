@@ -1,44 +1,39 @@
 <template>
-<Menu />
- <div class="wrapper">
-      <div class="profile-card">
-          <div class="profile-header">
-              <img src="@/assets/img/baner.jpg" alt="">
-          </div>
-          <div class="profile-body">
-                <div class="author-img">
-                    <img src="@/assets/img/faces/avatar1.png" alt="">
-                </div>
-                <div class="name"> {{ user.firstname }} {{ user.lastname }}</div>
-                <div class="intro">
-                   <p>Email: {{ user.email }}
-                   </p>
-                   <label for="floatingInput">
-                      <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
-                      imagen de perfil
-                    </label>
-                     <input
-                      type="file" 
-                      class="custom-file-input"
-                    />
-                </div>
-                <div class="social-icon">
-                    <ul>
-                        <li>
-                            <a  class="btn-danger" href="#">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-          </div>
+  <Menu />
+  <div class="wrapper">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img src="@/assets/img/baner.jpg" alt="" />
       </div>
-  </div>  
- 
+      <div class="profile-body">
+        <div class="cover-photo">
+          <img class="profile" :src="user.avatar" alt="..." />
+        </div>
+        <div class="name">{{ user.firstname }} {{ user.lastname }}</div>
+        <div class="intro">
+          <p>Email: {{ user.email }}</p>
+          <label for="floatingInput">
+            <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de
+            perfil
+          </label>
+          <input type="file" class="custom-file-input" />
+        </div>
+        <div class="social-icon">
+          <ul>
+            <li>
+              <a class="btn-danger" href="#">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <hr class="border" />
   <ContentFooter />
 </template>
+
 <script>
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter.vue";
