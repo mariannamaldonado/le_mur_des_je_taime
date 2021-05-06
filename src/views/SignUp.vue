@@ -7,31 +7,27 @@
         <ul class="errors-ul"></ul>
       </div>
       <div class="row">
-        <div class="col-6">
-          <div class="form-floating mb-3">
-            <input
-              v-model="firstname"
-              type="text"
-              class="form-control floatingInput"
-              placeholder="Nombre"
-            />
-            <label for="floatingInput"
-              ><i class="fas fa-grin"></i>&nbsp;Nombre</label
-            >
-          </div>
+        <div class="form-floating mb-3">
+          <input
+            v-model="firstname"
+            type="text"
+            class="form-control floatingInput"
+            placeholder="Nombre"
+          />
+          <label for="floatingInput"
+            ><i class="fas fa-grin"></i>&nbsp;Nombre</label
+          >
         </div>
-        <div class="col-6">
-          <div class="form-floating mb-3">
-            <input
-              v-model="lastname"
-              type="text"
-              class="form-control floatingInput"
-              placeholder="Apellido"
-            />
-            <label for="floatingInput"
-              ><i class="fas fa-grin"></i>&nbsp;Apellido</label
-            >
-          </div>
+        <div class="form-floating mb-3">
+          <input
+            v-model="lastname"
+            type="text"
+            class="form-control floatingInput"
+            placeholder="Apellido"
+          />
+          <label for="floatingInput"
+            ><i class="fas fa-grin"></i>&nbsp;Apellido</label
+          >
         </div>
       </div>
       <div class="form-floating mb-3">
@@ -181,9 +177,6 @@ export default {
   // linear-gradient(rgba(148,15,1, 0.8),rgba(255,0,0,0.8))
   background-blend-mode: multiply;
 }
-a {
-  text-decoration: none;
-}
 .floatingInput,
 .floatingPassword {
   border: 0;
@@ -222,7 +215,6 @@ a {
   );
   transition: 0.5s;
   box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
-
 }
 #loginbutton:hover {
   white-space: nowrap;

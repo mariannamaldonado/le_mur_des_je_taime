@@ -105,6 +105,9 @@ setup(){
 </script>
 
 <style lang="scss">
+// .img-fluid {
+//   width: 570px;
+//   }
 .h1 {
   font-family: "Catamaran", sans-serif;
   font-weight: 500;
