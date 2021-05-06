@@ -14,7 +14,7 @@ export default createStore({
       email: 'default@email.com',
       firstname: 'John',
       lastname: 'Doe',
-      avatar: 'assets/img/faces/avatar.png'
+      avatar: 'assets/img/faces/avatar1.jpg'
     }
   },
   mutations: {
