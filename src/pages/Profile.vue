@@ -65,7 +65,7 @@ img{
     height: 100vh;
 }
 .profile-card{
-    width: 400px;
+    width: 200px;
     height: auto;
     text-align: center;
     margin: 20px auto;

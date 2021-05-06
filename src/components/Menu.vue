@@ -2,17 +2,17 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-        <a href="/Profile">
+        <a href="/#/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
           <p class="text-monospace">Perfil de usuario</p>
         </a>
-        <a href="/NewMessage">
+        <a href="/#/NewMessage">
           <img
             src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"
           />
           <p class="text-monospace">Enviar mensaje</p>
         </a>
-        <a href="/SentMessagesList">
+        <a href="/#/SentMessagesList">
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
         </a>
@@ -23,7 +23,7 @@
           <p class="text-monospace">Cerrar sesión</p>
          
         </a>
-        <a href="/Profile">
+        <a href="/#/Profile">
           <img
             src="https://img.icons8.com/color/48/000000/user-location.png"
           />

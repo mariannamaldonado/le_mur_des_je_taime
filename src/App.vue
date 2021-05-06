@@ -112,31 +112,31 @@ export default {
   color: rgb(185, 14, 14);
 }
 // hover del menu
-// ul#menu li a {
-//   position: relative;
-//   font-weight: 500;
-//   color: rgb(49, 46, 46);
-//   margin: 0px 15px;
-//   text-decoration: none;
-// }
-// ul#menu li a:after {
-//   position: absolute;
-//   text-decoration: none;
-//   bottom: 2px;
-//   left: 0px;
-//   width: 20%;
-//   height: 4px;
-//   background-color: rgb(165 165 211 / 50%);
-//   content: "";
-//   opacity: 0;
-//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-//   transform: translateY(20px);
-// }
-// ul#menu li a:hover:after {
-//   text-decoration: none;
-//   opacity: 4;
-//   transform: translateY(15px);
-// }
+ul#menu li a {
+  position: relative;
+  font-weight: 500;
+  color: rgb(49, 46, 46);
+  margin: 0px 15px;
+  text-decoration: none;
+}
+ul#menu li a:after {
+  position: absolute;
+  text-decoration: none;
+  bottom: 2px;
+  left: 0px;
+  width: 0%;
+  height: 4px;
+  background-color: rgb(165 165 211 / 50%);
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  transform: translateY(20px);
+}
+ul#menu li a:hover:after {
+  text-decoration: none;
+  opacity: 4;
+  transform: translateY(15px);
+}
 </style>
 <style lang="scss" scoped>
 a {
