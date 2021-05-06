@@ -14,37 +14,37 @@
         <p class="font-weight-light text-muted mb-0"></p>
       </div>
       <br />
-      <ul id="menu" class="nav flex-column bg-white mb-0">
+      <ul id="menu" data-animation="to-right" class=" menu nav flex-column bg-white mb-0">
         <li class="nav-link text-dark font-italic">
-            <i class="fas fa-home"></i>
-            &nbsp;<router-link class="menu" to="/"> Inicio</router-link>
+            <span><i class="fas fa-home"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/"> <span>Inicio</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
-            <i class="fas fa-address-card"></i>
-            &nbsp;<router-link class="menu" to="/about"> Nosotros</router-link>
+            <span><i class="fas fa-address-card"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/about"> <span>Nosotros</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
-            <i class="fas fa-envelope-open-text"></i>
-            &nbsp;<router-link class="menu" to="/Contact"> Contacto</router-link
+            <span><i class="fas fa-envelope-open-text"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/Contact"> <span>Contacto</span></router-link
             >
         </li>
         <li class="nav-link text-dark font-italic">
             <span>❤</span>
-            &nbsp;<router-link class="menu" href="#item4" id="4" to="/LeMur"> Muro</router-link>
+            &nbsp;<router-link aria-hidden="true"  href="#item4" id="4" to="/LeMur"><span> Muro</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
-            <i class="bi bi-chat-right-dots-fill"></i>
-            &nbsp;<router-link class="menu" to="/NewMessage"> Enviar Mensajes</router-link
+            <span><i class="bi bi-chat-right-dots-fill"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/NewMessage"> <span>Enviar Mensajes</span></router-link
             >
         </li>
         <hr class="border" />
         <li class="nav-link text-dark font-italic">
-            <i class="fas fa-user-plus"></i>
-            &nbsp;<router-link class="menu" to="/SignUp"> Registrarse</router-link>
+            <span><i class="fas fa-user"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/SignUp"> <span>Registrarse</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
-            <i class="fas fa-sign-in-alt"></i>
-            &nbsp;<router-link class="menu" to="/SignIn"> Iniciar Sesión</router-link>
+            <span><i class="fas fa-sign-in-alt"></i></span>
+            &nbsp;<router-link aria-hidden="true"  to="/SignIn"><span> Iniciar Sesión</span></router-link>
         </li>
       </ul>
     </div>
@@ -89,15 +89,78 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.menu{
-  text-decoration: none;
-  color: #000000;
-}
-.menu:hover{
-  color: #f71e1e;
-  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-  transform: translateY(20px);
+// .menu{
+//   text-decoration: none;
+//   color: #000000;
+// }
+// .menu:hover{
+//   color: #f71e1e;
+//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+//   transform: translateY(20px);
 
+// }
+// :root {
+//   --body-bg-color: #1a1c1d;
+//   --text-color: #aaaebc;
+//   --hr-color: #26292a;
+//   --red: #e74c3c;
+// }
+ul {
+  list-style: none;
+}
+li {
+  
+  text-decoration: none;
+}
+hr {
+  border-color: #26292a;
+  margin: 20px 0;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu li {
+  margin-right: 70px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.menu li span {
+  color: black;
+  transition: transform 0.9s ease-out;
+}
+.menu li span:first-child {
+  display: inline-block;
+  padding: 10px;
+}
+.menu li span:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+}
+.menu i {
+  font-size: 25px;
+}
+li
+.menu li:hover span:first-child {
+  transform: translateY(90%);
+}
+.menu li:hover span:last-child,
+.menu[data-animation] li:hover span:last-child {
+  transform: none;
+}
+.menu[data-animation="to-right"] li span:last-child {
+  transform: translateX(-100%);
+}
+.menu[data-animation="to-right"] li:hover span:first-child {
+  transform: translateX(20%);
 }
 .container-fluid {
   padding-left: var(--bs-gutter-x, 0rem);
@@ -108,11 +171,11 @@ export default {
 .background {
   background-image: url("../public/logo.png");
   background-size: cover;
-  height: 130px;
+  height: 100px;
 }
 .vertical-nav {
   min-width: 17rem;
-  width: 17rem;
+  width: 15rem;
   height: 100vh;
   position: fixed;
   top: 0;
