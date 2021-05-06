@@ -26,19 +26,21 @@ export default createStore({
     }
   },
   actions: {
-    async login({ commit }, user) {
+    async login({ commit, dispatch }, user) {
       try {
+        console.log(user.email)
+        console.log(user.password)
         const res = await fetch('http://localhost:8081/api/users/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email: user.email, password: user.password })
+          body: JSON.stringify({email:user.email, password:user.password})
         })
         const userDB = await res.json()
-        console.log(userDB)
         commit('setToken', userDB.data.token)
         localStorage.setItem('token', userDB.data.token)
+        dispatch('getCurrentUser')
         router.push("/Profile")
       } catch (error) {
         console.log(error)
@@ -52,7 +54,7 @@ export default createStore({
       }
     },
     logout({ commit }) {
-      localStorage.removeItem('token')
+      localStorage.removeItem('item')
       commit('setToken', null)
     },
     // envia un request al servidor con token. y el servidor devuelve el usuario correspondiente al token

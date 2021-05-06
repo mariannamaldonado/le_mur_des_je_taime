@@ -10,7 +10,7 @@
           </blockquote>
         </main>
         <footer class="author">
-          <span>❤ Para: </span> {{ Message.addresseName }}
+         <em> <b>❤ Para:  {{ Message.addresseName }}</b> </em>
         </footer>
       </div>
     </div>
@@ -56,6 +56,11 @@ export default {
 };
 </script>
 <style scoped>
+footer{
+  color: rgb(247, 7, 7);
+font-size: 18px;
+
+}
 .card-object {
   grid-auto-flow: row dense;
   display: grid;
@@ -99,17 +104,7 @@ export default {
 .floating {
   animation: float 6s infinite ease-in-out;
 } 
-/* @keyframes rotate {
-  0% {
-    transform: perspective(1000px) rotateY(4deg);
-  }
-  50% {
-    transform: perspective(1000px) rotateX(-5deg);
-  }
-  100% {
-    transform: perspective(1000px) rotateY(4deg);
-  }
-} */
+
 @keyframes float {
   0% {
     transform: perspective(1000px) translateY(0px) rotateX(5deg);
@@ -121,40 +116,7 @@ export default {
     transform: perspective(1000px) translateY(0px) rotateX(5deg);
   }
 }
-/* .forget {
-  opacity: 0.2;
-  animation: disappear 5s infinite ease-in-out;
-} */
-/* @keyframes disappear {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0.6;
-  }
-} */
-/* .forgotten {
-  opacity: 0.1;
-  background-color: black;
-} */
-/* .close_btn {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  display: inline-block;
-  padding: 1em;
-  font-size: 1.4rem;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  right: 20px;
-  top: 20px;
-} */
+
 </style>
 <style lang="sass">
 $image-size: 380px
@@ -173,7 +135,7 @@ $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px)
       $num-columns: 3
       grid-template-columns: repeat($num-columns, 1fr)
     @media all and (min-width: map-get($breakpoints, 'large'))
-      $num-columns: 7
+      $num-columns: 5
       grid-template-columns: repeat($num-columns, 1fr)
     &__item
       &:nth-child(11n+1)

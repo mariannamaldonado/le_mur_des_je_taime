@@ -16,7 +16,7 @@
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
         </a>
-        <a href="#" @click="logout">
+        <a href="" @click="logout">
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
@@ -25,9 +25,8 @@
         </a>
         <a href="/Profile">
           <img
-            src="https://img.icons8.com/color/48/000000/user-location.png"
-          />
-          <!-- <p>Hola, {{user.firstname}}</p> -->
+            src="https://img.icons8.com/color/48/000000/user-location.png"/>
+             <p class="text-monospace">Hola, {{user.firstname}} </p>
         </a>
       </div>
     </div>
@@ -36,30 +35,14 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import {ref } from 'vue'
 export default {
   name: "Menu",
-
-  setup(){
-    let email = ref("");
-    let password = ref("");
-
-    function logout() {
-      fetch('http://localhost:8081/api/users/logout', {
-        method: "POST",
-        body: JSON.stringify({
-          email: email.value,
-          password: password.value
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then(res => res.json())
-    }
-
-    return{
-      logout,
-    }
-  }
+methods: {
+    ...mapActions(['logout'])
+  },
+  
 };
 </script>
 

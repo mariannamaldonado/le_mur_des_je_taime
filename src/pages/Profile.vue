@@ -1,7 +1,6 @@
 <template>
 <Menu />
  <div class="wrapper">
-
       <div class="profile-card">
           <div class="profile-header">
               <img src="@/assets/img/baner.jpg" alt="">
@@ -35,8 +34,6 @@
                 </div>
           </div>
       </div>
-
-
   </div>  
  
   <hr class="border" />

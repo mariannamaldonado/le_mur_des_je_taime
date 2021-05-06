@@ -3,43 +3,11 @@
     <div class="container">
       <div>
         <h2 class="text-2 mb-1"></h2>
-        <a href="/">Home</a> <br />
-        <a href="/about">Nosotros</a> <br />
-        <a href="/contact">Contacto</a> <br />
+        <router-link to="/">Inicio</router-link>  <br />
+        <router-link to="/about">Nosotros</router-link> <br />
+        <router-link to="/Contact">Contacto</router-link><br />
         <a href="#">Políticas de privacidad</a> <br />
       </div>
-      <!-- <div>
-        <a href="http://twitter.com">
-          <i class="fab fa-twitter fa-2x"></i>
-        </a>
-        <br />
-        <a href="http://facebook.com">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <br />
-        <a href="http://youtube.com">
-          <i class="fab fa-youtube fa-2x"></i>
-        </a>
-      </div> -->
-      <div></div>
-      <!-- <div>
-        <h3>Suscribirse</h3>
-        <form class="mt-1" name="email-form" method="POST" data-netlify="true">
-          <div class="email-form">
-            <span class="form-control-wrap"
-              ><input
-                type="email"
-                name="email"
-                id="email"
-                size="40"
-                class="form-control"
-                placeholder="E-mail" /></span
-            ><button type="submit" value="Submit" class="form-control submit">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </form>
-      </div> -->
     </div>
     <div class="copyright d-flex flex-wrap justify-content-between">
       &copy; Hecho con &nbsp;

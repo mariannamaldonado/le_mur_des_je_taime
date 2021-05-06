@@ -1,25 +1,16 @@
 <template>
   <div>
-    <!-- Vertical navbar -->
     <div class="vertical-nav bg-white" id="sidebar">
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-danger btn-md rounded-pill sm px-4 mb-4"
-      >
+        class="btn btn-danger btn-md rounded-pill sm px-4 mb-4">
         <i class="fa fa-bars mr-2"></i>
       </button>
       <div class="py-4 px-3 mb-4 bg-light background">
-        <div class="media d-flex align-items-center">
-          <!-- <img src="../public/muro.jpg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-      &nbsp;-->
-        </div>
+        <div class="media d-flex align-items-center"></div>
       </div>
-      <!--   <p
-        class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
-      ></p> -->
       <div class="media-body" style="text-align: center">
-        <!-- <h4 class="m-0">Le Mur des Je T'aime</h4> -->
         <p class="font-weight-light text-muted mb-0"></p>
       </div>
       <br />
@@ -45,6 +36,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="#" id="4" class="nav-link text-dark font-italic">
+            <span>❤</span>
+            &nbsp;<router-link to="/Wall">Muro</router-link>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="bi bi-chat-right-dots-fill"></i>
             &nbsp;<router-link class="js-scroll-trigger" to="/NewMessage"
@@ -52,14 +49,7 @@
             >
           </a>
         </li>
-       
         <hr class="border" />
-        <li class="nav-item">
-          <a href="#" id="4" class="nav-link text-dark font-italic">
-            <span>❤</span>
-            &nbsp;<router-link to="/Wall">Muro</router-link>
-          </a>
-        </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fas fa-user-plus"></i>
@@ -107,7 +97,7 @@ export default {
       this.$store.dispatch("getCurrentUser");
       this.$router.push("/Profile");
     }
-    $("#sidebarCollapse, .nav-item .nav-link").on("click", function () {
+    $("#sidebarCollapse, .nav-item .nav-link").on("click", function() {
       $("#sidebar, #content").toggleClass("active");
     });
   },
@@ -122,33 +112,33 @@ export default {
   color: rgb(185, 14, 14);
 }
 // hover del menu
-ul#menu li a {
-  position: relative;
-  font-weight: 500;
-  color: rgb(49, 46, 46);
-  margin: 0px 15px;
-  text-decoration: none;
-}
-ul#menu li a:after {
-  position: absolute;
-  text-decoration: none;
-  bottom: 7px;
-  left: 0px;
-  width: 100%;
-  height: 4px;
-  background-color: rgb(165 165 211 / 50%);
-  content: "";
-  opacity: 0;
-  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-  transform: translateY(20px);
-}
-ul#menu li a:hover:after {
-  text-decoration: none;
-  opacity: 4;
-  transform: translateY(15px);
-}
+// ul#menu li a {
+//   position: relative;
+//   font-weight: 500;
+//   color: rgb(49, 46, 46);
+//   margin: 0px 15px;
+//   text-decoration: none;
+// }
+// ul#menu li a:after {
+//   position: absolute;
+//   text-decoration: none;
+//   bottom: 2px;
+//   left: 0px;
+//   width: 20%;
+//   height: 4px;
+//   background-color: rgb(165 165 211 / 50%);
+//   content: "";
+//   opacity: 0;
+//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+//   transform: translateY(20px);
+// }
+// ul#menu li a:hover:after {
+//   text-decoration: none;
+//   opacity: 4;
+//   transform: translateY(15px);
+// }
 </style>
-<style lang="scss"  scoped>
+<style lang="scss" scoped>
 a {
   text-decoration: none;
   color: #000000;

@@ -51,7 +51,7 @@ app.all('*/secure/*', [verifyToken]);
 //enrutadores
 app.use('/api',rtMain)
 app.use('/api/users',rtUsers)
-app.use('/api/message',verifyToken,rtMessage)
+app.use('/api/message',rtMessage)
 
 app.listen(8081,(err)=>{
     if(err) console.log("Errores: ", err)

@@ -38,7 +38,7 @@ const routes = [
     path: '/Profile',
     name: 'Profile',
     component: () => import('@/pages/Profile.vue'),
-    // meta: { requiresAuth: true }
+    meta: { requiresAuth: true }
   },
 
   {
@@ -51,7 +51,7 @@ const routes = [
     path: '/SentMessagesList',
     name: 'SentMessagesList',
     component: () => import('@/pages/SentMessagesList.vue'),
-    // meta :{ requiresAuth: true}
+    meta :{ requiresAuth: true}
   },
   {
     path: '/NewMessage',
@@ -63,12 +63,14 @@ const routes = [
     path: '/UsersList',
     name: 'UsersList',
     component: () => import('@/pages/admin/UsersList.vue'),
+    meta: { requiresAuth: true }
   },
 
   {
     path: '/MessagesList',
     name: 'MessagesList',
     component: () => import('@/pages/admin/MessagesList.vue'),
+    meta: { requiresAuth: true }
   },
   // {
   //   // catch all 404 - define at the very end

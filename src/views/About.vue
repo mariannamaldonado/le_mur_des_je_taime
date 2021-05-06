@@ -85,9 +85,11 @@
   <Footer />
 </template>
 <script>
+import Footer from "@/components/Footer";
 export default {
   name: "About",
   components: {
+    Footer
   },
 setup(){
 

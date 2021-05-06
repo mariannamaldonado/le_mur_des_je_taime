@@ -124,7 +124,7 @@ export default {
 
 <style  scoped lang="scss">
 #sms {
-  color: brown;
+  color: rgb(247, 30, 30);
 }
 #container button {
   display: block;
