@@ -3,7 +3,7 @@
   <div class="wrapper">
     <div class="profile-card">
       <div class="profile-header">
-        <img src="@/assets/img/baner.jpg" alt="" />
+        <img src="@/assets/img/love.gif" alt="" />
       </div>
       <div class="profile-body">
         <div class="cover-photo">
@@ -12,13 +12,13 @@
         <div class="name">{{ user.firstname }} {{ user.lastname }}</div>
         <div class="intro">
           <p>Email: {{ user.email }}</p>
-          <label for="floatingInput">
+          <!-- <label for="floatingInput">
             <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de
             perfil
           </label>
-          <input type="file" class="custom-file-input" />
+          <input type="file" class="custom-file-input" /> -->
         </div>
-        <div class="social-icon">
+        <!-- <div class="social-icon">
           <ul>
             <li>
               <a class="btn-danger" href="#">
@@ -26,7 +26,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -99,9 +99,9 @@ img{
 
 }
 .profile-card .profile-body .intro{
-   font-size: 14px;
-   font-weight: 400;
-   line-height: 1.6;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 2.6;
    margin: 20px  0px 30px  0px;
 
 }

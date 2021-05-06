@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" id="4" class="nav-link text-dark font-italic">
+          <a href="#" class="nav-link text-dark font-italic">
             <span>❤</span>
             &nbsp;<router-link to="/Wall">Muro</router-link>
           </a>

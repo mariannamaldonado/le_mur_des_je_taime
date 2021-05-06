@@ -41,7 +41,7 @@ export default createStore({
         commit('setToken', userDB.data.token)
         localStorage.setItem('token', userDB.data.token)
         dispatch('getCurrentUser')
-        router.push("/Profile")
+        router.push("/NewMessage")
       } catch (error) {
         console.log(error)
       }
