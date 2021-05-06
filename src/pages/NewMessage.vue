@@ -145,7 +145,6 @@ export default {
       })
         .then((res) => res.json())
         .then((datos) => listar())
-      //alert("Mensaje ya esta registrado");
     }
 
 function encryption() {
@@ -312,25 +311,6 @@ h2 small {
 }
 .btn {
   padding: 0.1rem 0.75rem;
-}
-#heart {
-  font-size: 40px;
-  color: #f27983;
-  position: relative;
-}
-#heart:after {
-  content: "♥";
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  transition: 0s all ease;
-}
-#heart:hover:after {
-  transform: scale(2);
-  -webkit-transform: scale(2);
-  opacity: 0;
-  transition: 0.8s all ease;
 }
 </style>
 

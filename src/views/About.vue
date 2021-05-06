@@ -21,7 +21,7 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image1" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
@@ -37,7 +37,7 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image2" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
@@ -54,7 +54,7 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image4" alt="" />
+            <img class="img-fluid" v-bind:src="image3" alt="" />
           </a>
         </div>
         <div class="col-lg-6">
@@ -95,7 +95,9 @@ setup(){
 
   return{
     image4: '/anny.jpg',
-    image1: '/photo1.jpeg'
+    image1: '/marianna.jpeg',
+    image2: '/anny.jpg',
+    image3: '/jeam.jpg'
   }
 }
 
@@ -103,6 +105,9 @@ setup(){
 </script>
 
 <style lang="scss">
+// .img-fluid {
+//   width: 570px;
+//   }
 .h1 {
   font-family: "Catamaran", sans-serif;
   font-weight: 700;

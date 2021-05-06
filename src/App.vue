@@ -4,7 +4,7 @@
       <button
         id="sidebarCollapse"
         type="button"
-        class="btn btn-danger btn-md rounded-pill sm px-4 mb-4">
+        class="btn btn-md rounded-pill px-4 mb-4">
         <i class="fa fa-bars mr-2"></i>
       </button>
       <div class="py-4 px-3 mb-4 bg-light background">
@@ -15,52 +15,36 @@
       </div>
       <br />
       <ul id="menu" class="nav flex-column bg-white mb-0">
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="fas fa-home"></i>
-            &nbsp;<router-link to="/">Inicio</router-link>
-          </a>
+            &nbsp;<router-link class="menu" to="/"> Inicio</router-link>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="fas fa-address-card"></i>
-            &nbsp;<router-link to="/about">Nosotros</router-link>
-          </a>
+            &nbsp;<router-link class="menu" to="/about"> Nosotros</router-link>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="fas fa-envelope-open-text"></i>
-            &nbsp;<router-link class="js-scroll-trigger" to="/Contact"
-              >Contacto</router-link
+            &nbsp;<router-link class="menu" to="/Contact"> Contacto</router-link
             >
-          </a>
         </li>
-        <li class="nav-item">
-          <a href="#" id="4" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <span>❤</span>
-            &nbsp;<router-link to="/Wall">Muro</router-link>
-          </a>
+            &nbsp;<router-link class="menu" href="#item4" id="4" to="/LeMur"> Muro</router-link>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="bi bi-chat-right-dots-fill"></i>
-            &nbsp;<router-link class="js-scroll-trigger" to="/NewMessage"
-              >Enviar Mensajes</router-link
+            &nbsp;<router-link class="menu" to="/NewMessage"> Enviar Mensajes</router-link
             >
-          </a>
         </li>
         <hr class="border" />
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="fas fa-user-plus"></i>
-            &nbsp;<router-link to="/SignUp">Registrarse</router-link>
-          </a>
+            &nbsp;<router-link class="menu" to="/SignUp"> Registrarse</router-link>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
+        <li class="nav-link text-dark font-italic">
             <i class="fas fa-sign-in-alt"></i>
-            &nbsp;<router-link to="/SignIn">Iniciar Sesión</router-link>
-          </a>
+            &nbsp;<router-link class="menu" to="/SignIn"> Iniciar Sesión</router-link>
         </li>
       </ul>
     </div>
@@ -105,43 +89,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu{
+  text-decoration: none;
+  color: #000000;
+}
+.menu:hover{
+  color: #f71e1e;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  transform: translateY(20px);
+
+}
 .container-fluid {
   padding-left: var(--bs-gutter-x, 0rem);
 }
 .page-footer span {
   color: rgb(185, 14, 14);
-}
-// hover del menu
-// ul#menu li a {
-//   position: relative;
-//   font-weight: 500;
-//   color: rgb(49, 46, 46);
-//   margin: 0px 15px;
-//   text-decoration: none;
-// }
-// ul#menu li a:after {
-//   position: absolute;
-//   text-decoration: none;
-//   bottom: 2px;
-//   left: 0px;
-//   width: 20%;
-//   height: 4px;
-//   background-color: rgb(165 165 211 / 50%);
-//   content: "";
-//   opacity: 0;
-//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-//   transform: translateY(20px);
-// }
-// ul#menu li a:hover:after {
-//   text-decoration: none;
-//   opacity: 4;
-//   transform: translateY(15px);
-// }
-</style>
-<style lang="scss" scoped>
-a {
-  text-decoration: none;
-  color: #000000;
 }
 .background {
   background-image: url("../public/logo.png");
@@ -196,15 +158,12 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   background-size: 200% auto;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #sidebarCollapse:hover {
   white-space: nowrap;
   color: white;
   background-position: right center;
-}
-.sm {
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5) !important;
 }
 #sidebar {
   z-index: 100;
@@ -228,13 +187,6 @@ a {
     margin: 0;
   }
 }
-// body {
-//   background: #599fd9;
-//   background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-//   background: linear-gradient(to right, #599fd9, #c2e59c);
-//   min-height: 100vh;
-//   overflow-x: hidden;
-// }
 .separator {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;

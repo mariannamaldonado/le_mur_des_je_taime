@@ -2,46 +2,45 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-        <a href="/Profile">
+        <router-link to="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
           <p class="text-monospace">Perfil de usuario</p>
-        </a>
-        <a href="/NewMessage">
+        </router-link>
+        <router-link to="/NewMessage">
           <img
             src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"
           />
           <p class="text-monospace">Enviar mensaje</p>
-        </a>
-        <a href="/SentMessagesList">
+        </router-link>
+        <router-link to="/SentMessagesList">
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
-        </a>
-        <a href="#" @click="logout">
+        </router-link>
+        <router-link to="#" @click="logout">
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
           <p class="text-monospace">Cerrar sesión</p>
-         
-        </a>
-        <a href="/Profile">
-          <img
-            src="https://img.icons8.com/color/48/000000/user-location.png"
-          />
-        </a>
+        </router-link>
+        <router-link>
+          <div class="cover-photo">
+            <img class="profile" :src="user.avatar" alt="..." />
+          </div>
+          <p>{{ user.firstname }}</p>
+        </router-link>
       </div>
     </div>
   </div>
   <hr class="border" />
 </template>
 <script>
-import {mapActions} from 'vuex'
-import {ref } from 'vue'
+import { mapActions } from "vuex";
+import { ref } from "vue";
 export default {
   name: "Menu",
-methods: {
-    ...mapActions(['logout'])
+  methods: {
+    ...mapActions(["logout"]),
   },
-  
 };
 </script>
 
@@ -51,7 +50,15 @@ svg {
   vertical-align: middle;
   height: 25px;
 }
-// navbar
+.profile{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 93px 0 0 -175px;
+  border: 1px solid #F4F3EF;
+  padding: 7px;
+  background: #F4F3EF;
+}
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;

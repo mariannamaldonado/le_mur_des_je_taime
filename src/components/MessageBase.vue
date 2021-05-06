@@ -57,7 +57,7 @@ export default {
 </script>
 <style scoped>
 footer{
-  color: rgb(247, 7, 7);
+color: rgb(247, 7, 7);
 font-size: 18px;
 
 }
