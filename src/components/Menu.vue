@@ -20,8 +20,7 @@
           <img
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
-          <p class="text-monospace">Cerrar sesión</p>
-         
+          <p class="text-monospace">Cerrar sesión</p> 
         </a>
         <a href="/Profile">
           <img
@@ -42,7 +41,6 @@ export default {
 methods: {
     ...mapActions(['logout'])
   },
-  
 };
 </script>
 
