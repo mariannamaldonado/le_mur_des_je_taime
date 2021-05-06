@@ -2,30 +2,17 @@
   <div class="wrapper">
     <div class="topnav">
       <div class="topnav-right">
-<<<<<<< HEAD
-        <a href="/#/Profile">
-          <img src="https://img.icons8.com/color/48/000000/user-location.png" />
-          <p class="text-monospace">Perfil de usuario</p>
-        </a>
-        <a href="/#/NewMessage">
-=======
         <router-link to="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
           <p class="text-monospace">Perfil de usuario</p>
         </router-link>
         <router-link to="/NewMessage">
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
           <img
             src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"
           />
           <p class="text-monospace">Enviar mensaje</p>
-<<<<<<< HEAD
-        </a>
-        <a href="/#/SentMessagesList">
-=======
         </router-link>
         <router-link to="/SentMessagesList">
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
         </router-link>
@@ -34,15 +21,6 @@
             src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
           />
           <p class="text-monospace">Cerrar sesión</p>
-<<<<<<< HEAD
-         
-        </a>
-        <a href="/#/Profile">
-          <img
-            src="https://img.icons8.com/color/48/000000/user-location.png"
-          />
-        </a>
-=======
         </router-link>
         <router-link>
           <div class="cover-photo">
@@ -50,7 +28,6 @@
           </div>
           <p>{{ user.firstname }}</p>
         </router-link>
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
       </div>
     </div>
   </div>

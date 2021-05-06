@@ -9,6 +9,7 @@
         <div class="cover-photo">
           <img class="profile" :src="user.avatar" alt="..." />
         </div>
+        </div>
         <div class="name">{{ user.firstname }} {{ user.lastname }}</div>
         <div class="intro">
           <p>Email: {{ user.email }}</p>
@@ -27,7 +28,7 @@
             </li>
           </ul>
         </div> -->
-      </div>
+     
     </div>
   </div>
   <hr class="border" />
@@ -56,15 +57,6 @@ export default {
 </script>
 
 <style scoped>
-.profile{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  margin: 93px 0 0 -175px;
-  border: 1px solid #F4F3EF;
-  padding: 7px;
-  background: #F4F3EF;
-}
 img{
     width: 100%;
     height: auto;
