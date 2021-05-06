@@ -13,6 +13,7 @@ const verifyToken = (req, res, next) => {
     }
     const payload = jwt.decode(token, process.env.TOKEN_SECRET)
     console.log(payload.id)
+    return payload.id
 
 }
 

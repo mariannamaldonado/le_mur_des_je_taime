@@ -3,6 +3,7 @@ const rtMessage = express.Router()
 const daoMessage = require('../dao/daoMessage')
 const message = require('../models/Message')
 const User = require('../models/User')
+const payload = require('../services')
 
 rtMessage.post('/save/:id', (req, res) => {
     daoMessage.save(req.body, req.params.id)
@@ -26,6 +27,7 @@ rtMessage.get('/list', function (req, res) {
 rtMessage.get('/listUser/:id', (req, res) => {
     daoMessage.listUser(req.params.id)
         .then(message => res.json(message))
+        console.log(payload)
 
 })
 
