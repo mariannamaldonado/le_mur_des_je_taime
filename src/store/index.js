@@ -8,7 +8,7 @@ import { createStore } from 'vuex'
 import router from '@/router'
 export default createStore({
   state: {
-    UserID:null,
+    userID:null,
     token: null,
     user: {
       name: 'default user',
@@ -18,6 +18,13 @@ export default createStore({
       avatar: 'assets/img/faces/avatar1.jpg'
     }
   },
+  getters: {
+    getUserId(state){
+      return state.userID      
+      console.log(state)
+
+    }
+  },
   mutations: {
     setToken(state, payload) {
       state.token = payload
@@ -25,8 +32,9 @@ export default createStore({
     setUser(state, user) {
       state.user = user
     },
-    SetuserID(state,UserID){
-      state.UserID = UserID
+    setUserID(state,userID){
+      state.userID = userID
+        console.log(state)
     }
   },
   actions: {
@@ -39,10 +47,10 @@ export default createStore({
           },
           body: JSON.stringify({ email: user.email, password: user.password })
         })
-        const userDB = await res.json()
+        const userDB = await res.json()        
+        commit('setUserID', userDB.data.id)
         commit('setToken', userDB.data.token)
-        commit('SetuserID', userDB.data.id)
-        localStorage.setItem('token', userDB.data.token)
+        localStorage.setItem('token', userDB.data.token)        
         router.push("/Profile")
       } catch (error) {
         console.log(error)

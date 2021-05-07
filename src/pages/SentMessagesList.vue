@@ -117,6 +117,7 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
@@ -129,7 +130,11 @@ export default {
   setup() {
     let Messages = reactive([]);
     let search = ref("");
-    const x = '608694020b1eaf52640351fe'
+    const store=useStore()
+    const idUser =  store.getters.getUserId
+
+    console.log(idUser)
+    
     onMounted(() => {
       getMessageList();
     });
@@ -141,7 +146,7 @@ export default {
     });
 
     function getMessageList() {
-      fetch(`http://localhost:8081/api/message/listUser/${x}`)
+      fetch(`http://localhost:8081/api/message/listUser/${idUser}`)
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {
@@ -165,7 +170,7 @@ export default {
       Messages,
       search,
       filtredMessages,
-      deleteMessage,
+      deleteMessage,idUser
     };
   },
 };

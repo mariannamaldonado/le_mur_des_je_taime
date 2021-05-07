@@ -136,7 +136,7 @@ export default {
     }
 
     function SendMessage() {
-      fetch("http://localhost:8081/api/message/save/" + id,{
+      fetch("http://localhost:8081/api/message/save/609105121197643aa83c2a02",{
         method: "POST",
         body: JSON.stringify({
           message: message.value,
