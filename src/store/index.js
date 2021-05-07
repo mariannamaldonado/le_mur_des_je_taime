@@ -8,6 +8,7 @@ import { createStore } from 'vuex'
 import router from '@/router'
 export default createStore({
   state: {
+    UserID:null,
     token: null,
     user: {
       name: 'default user',
@@ -23,6 +24,9 @@ export default createStore({
     },
     setUser(state, user) {
       state.user = user
+    },
+    SetuserID(state,UserID){
+      state.UserID = UserID
     }
   },
   actions: {
@@ -36,8 +40,8 @@ export default createStore({
           body: JSON.stringify({ email: user.email, password: user.password })
         })
         const userDB = await res.json()
-        console.log(userDB)
         commit('setToken', userDB.data.token)
+        commit('SetuserID', userDB.data.id)
         localStorage.setItem('token', userDB.data.token)
         router.push("/Profile")
       } catch (error) {

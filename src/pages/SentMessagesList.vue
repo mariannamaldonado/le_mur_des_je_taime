@@ -129,7 +129,7 @@ export default {
   setup() {
     let Messages = reactive([]);
     let search = ref("");
-
+    const x = '608694020b1eaf52640351fe'
     onMounted(() => {
       getMessageList();
     });
@@ -141,7 +141,7 @@ export default {
     });
 
     function getMessageList() {
-      fetch("http://localhost:8081/api/message/listUser/607d6d599a56d7377426cc40")
+      fetch(`http://localhost:8081/api/message/listUser/${x}`)
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {

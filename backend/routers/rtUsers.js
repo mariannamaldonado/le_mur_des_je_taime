@@ -42,12 +42,13 @@ rtUsers.post('/login', (req, res) => {
   daoUsers.signin(req.body.email, req.body.password)
     .then(data => {
       if (data) {
+        const id = data._id
         const token = jwt.sign({
           email: data.email,
           id: data._id
         }, process.env.TOKEN_SECRET)
         res.header('auth-token', token).json({
-          data: { token }
+          data: { token, id}
         })
       } else {
         // 401 = HTTP codigo de error "No autorizado"
