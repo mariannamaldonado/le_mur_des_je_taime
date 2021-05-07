@@ -39,7 +39,7 @@
         </li>
         <hr class="border" />
         <li class="nav-link text-dark font-italic">
-            <span><i class="fas fa-user"></i></span>
+            <span><i class="fas fa-user-plus"></i></span>
             &nbsp;<router-link aria-hidden="true"  to="/SignUp"> <span>Registrarse</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
