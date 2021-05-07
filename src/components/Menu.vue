@@ -6,22 +6,22 @@
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
           <p class="text-monospace">Perfil de usuario</p>
         </router-link>
+
         <router-link to="/NewMessage">
-          <img
-            src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"
-          />
+          <img src="https://img.icons8.com/color/48/000000/speech-bubble-with-dots.png"/>
           <p class="text-monospace">Enviar mensaje</p>
         </router-link>
+
         <router-link to="/SentMessagesList">
           <img src="https://img.icons8.com/color/48/000000/wish-list.png" />
           <p class="text-monospace">Lista de mensajes</p>
         </router-link>
+
         <router-link to="#" @click="logout">
-          <img
-            src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"
-          />
+          <img src="https://img.icons8.com/dotty/80/000000/lock-orientation.png"/>
           <p class="text-monospace">Cerrar sesión</p>
         </router-link>
+        
         <router-link>
           <div class="cover-photo">
             <img class="profile" :src="user.avatar" alt="..." />

@@ -94,10 +94,10 @@ export default {
 setup(){
 
   return{
-    image4: '/a@2x.png',
-    image1: '/m@2x.png',
-    image3: '/j@2x.png'
-
+    image1: '/marianna.png',
+    image2: '/andrea.png',
+    image3: '/jeam.png',
+    image4: '/anny.png',
   }
 }
 
