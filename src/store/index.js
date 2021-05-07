@@ -1,19 +1,23 @@
 import { createStore } from 'vuex'
+import Swal from "sweetalert2";
 // para que los datos en store se mantengan despues de refresh de pagina
-// import createPersistedState from "vuex-persistedstate";
-// const dataState = createPersistedState({
-//   paths: ['token',  'user'],  // only variable which we want to persist even after page refresh
-//   storage: window.localStorage 
-// })
+import createPersistedState from "vuex-persistedstate";
+const dataState = createPersistedState({
+  paths: ['token',  'user'],  // only variable which we want to persist even after page refresh
+  storage: window.sessionStorage
+})
+
+
 import router from '@/router'
 export default createStore({
   state: {
     token: null,
     user: {
-      name: 'default user',
-      email: 'default@email.com',
-      firstname: 'John',
-      lastname: 'Doe',
+      _id:'',
+      name: '',
+      email: '',
+      firstname: '',
+      lastname: '',
       avatar: 'assets/img/faces/avatar1.jpg'
     }
   },
@@ -38,10 +42,23 @@ export default createStore({
           body: JSON.stringify({email:user.email, password:user.password})
         })
         const userDB = await res.json()
-        commit('setToken', userDB.data.token)
-        localStorage.setItem('token', userDB.data.token)
-        dispatch('getCurrentUser')
-        router.push("/NewMessage")
+
+        if(!userDB.error){
+          commit('setToken', userDB.data.token)
+          localStorage.setItem('token', userDB.data.token)
+          dispatch('getCurrentUser')
+          console.log("routing to NewMessage")
+          router.push("/NewMessage")
+        }
+        else{
+          Swal.fire({
+            // title: "Enviado!",
+            text: "El Usuario o la contrasena son incorrectas",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+
       } catch (error) {
         console.log(error)
       }
@@ -54,8 +71,16 @@ export default createStore({
       }
     },
     logout({ commit }) {
-      localStorage.removeItem('item')
+      localStorage.removeItem('token')
       commit('setToken', null)
+      commit('setUser', {
+        _id: '',
+        name: '',
+        email: '',
+        firstname: '',
+        lastname: '',
+        avatar: 'assets/img/faces/avatar1.jpg'
+      })
     },
     // envia un request al servidor con token. y el servidor devuelve el usuario correspondiente al token
     async getCurrentUser(context) {
@@ -78,5 +103,5 @@ export default createStore({
   },
   modules: {
   },
-  // plugins: [dataState],
+  plugins: [dataState],
 })

@@ -28,12 +28,7 @@
             &nbsp;<router-link aria-hidden="true"  to="/Contact"> <span>Contacto</span></router-link
             >
         </li>
-<<<<<<< HEAD
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
-=======
         <li class="nav-link text-dark font-italic">
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
             <span>❤</span>
             &nbsp;<router-link aria-hidden="true"  href="#item4" id="4" to="/LeMur"><span> Muro</span></router-link>
         </li>
@@ -44,7 +39,7 @@
         </li>
         <hr class="border" />
         <li class="nav-link text-dark font-italic">
-            <span><i class="fas fa-user"></i></span>
+            <span><i class="fas fa-user-plus"></i></span>
             &nbsp;<router-link aria-hidden="true"  to="/SignUp"> <span>Registrarse</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
@@ -86,7 +81,7 @@ export default {
       this.$store.dispatch("getCurrentUser");
       this.$router.push("/Profile");
     }
-    $("#sidebarCollapse, .nav-item .nav-link").on("click", function() {
+    $("#sidebarCollapse, .nav .nav-link").on("click", function() {
       $("#sidebar, #content").toggleClass("active");
     });
   },
@@ -94,71 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
-.container-fluid {
-  padding-left: var(--bs-gutter-x, 0rem);
-}
-.page-footer span {
-  color: rgb(185, 14, 14);
-}
-// hover del menu
-ul#menu li a {
-  position: relative;
-  font-weight: 500;
-  color: rgb(49, 46, 46);
-  margin: 0px 15px;
-  text-decoration: none;
-}
-ul#menu li a:after {
-  position: absolute;
-  text-decoration: none;
-  bottom: 2px;
-  left: 0px;
-  width: 0%;
-  height: 4px;
-  background-color: rgb(165 165 211 / 50%);
-  content: "";
-  opacity: 0;
-  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-  transform: translateY(20px);
-}
-ul#menu li a:hover:after {
-  text-decoration: none;
-  opacity: 4;
-  transform: translateY(15px);
-}
-</style>
-<style lang="scss" scoped>
-a {
-=======
-// .menu{
-//   text-decoration: none;
-//   color: #000000;
-// }
-// .menu:hover{
-//   color: #f71e1e;
-//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-//   transform: translateY(20px);
-
-// }
-// :root {
-//   --body-bg-color: #1a1c1d;
-//   --text-color: #aaaebc;
-//   --hr-color: #26292a;
-//   --red: #e74c3c;
-// }
-ul {
-  list-style: none;
-}
-li {
-  
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
-  text-decoration: none;
-}
-hr {
-  border-color: #26292a;
-  margin: 20px 0;
-}
 .menu {
   display: flex;
   justify-content: center;
@@ -191,7 +121,6 @@ hr {
 .menu i {
   font-size: 25px;
 }
-li
 .menu li:hover span:first-child {
   transform: translateY(90%);
 }
@@ -208,13 +137,10 @@ li
 .container-fluid {
   padding-left: var(--bs-gutter-x, 0rem);
 }
-.page-footer span {
-  color: rgb(185, 14, 14);
-}
 .background {
   background-image: url("../public/logo.png");
   background-size: cover;
-  height: 100px;
+  height: 110px;
 }
 .vertical-nav {
   min-width: 17rem;
@@ -237,16 +163,6 @@ li
 #content.active {
   width: 100%;
   margin: 0;
-}
-.btn-danger {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(165, 165, 211, 0.5);
-}
-.btn-danger:active {
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
 }
 #sidebarCollapse {
   position: absolute;

@@ -97,6 +97,9 @@ import Editor from "@tinymce/tinymce-vue";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
+
+import { useRouter } from "vue-router";
+
 export default {
   name: "NewMessage",
   components: {
@@ -105,6 +108,9 @@ export default {
     ContentFooter,
   },
   setup() {
+
+    const router = useRouter();
+
     let Messages = reactive([]);
     let search = ref("");
     let message = ref("");
@@ -134,7 +140,7 @@ export default {
     }
 
     function SendMessage() {
-      fetch("http://localhost:8081/api/message/save/608afe3df71c154094fb5725",{
+      fetch("http://localhost:8081/api/secure/message/save",{
         method: "POST",
         body: JSON.stringify({
           message: message.value,
@@ -144,11 +150,14 @@ export default {
         headers: { "Content-Type": "application/json" },
       })
         .then((res) => res.json())
-        .then((datos) => listar())
+        .then((datos) => {
+          console.log(datos)
+          router.push("/LeMur")
+        })
     }
 
 function encryption() {
-      fetch("http://localhost:8081/api/message/save/608bc8603f37963f34d6ec98",{
+      fetch("http://localhost:8081/api/secure/message/save",{
         method: "POST",
         body: JSON.stringify({
           message: message.value,
@@ -159,7 +168,10 @@ function encryption() {
         headers: { "Content-Type": "application/json" },
       })
         .then((res) => res.json())
-        .then((datos) => listar())
+        .then((datos) => {
+          console.log(datos)
+          router.push("/LeMur")
+        })
     }
     return {
       encryption,
