@@ -107,13 +107,13 @@ font-size: 18px;
 
 @keyframes float {
   0% {
-    transform: perspective(1000px) translateY(0px) rotateX(5deg);
+    transform: perspective(1000px) translateY(0px) rotateX(3deg);
   }
   50% {
-    transform: perspective(1000px) translateY(10px) rotateX(-5deg);
+    transform: perspective(1000px) translateY(10px) rotateX(-3deg);
   }
   100% {
-    transform: perspective(1000px) translateY(0px) rotateX(5deg);
+    transform: perspective(1000px) translateY(0px) rotateX(3deg);
   }
 }
 
