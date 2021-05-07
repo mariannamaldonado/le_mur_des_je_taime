@@ -1,3 +1,4 @@
+import { isElementAccessExpression } from 'typescript';
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
 import store from '../store'
@@ -95,13 +96,20 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && store.state.token === null)
-    next({ name: 'Home' })
-  // ruta protegida es true
-  // token es nulo true, por ende redirigimos al inicio   
-  else
-    // En caso contrario sigue...
+  if(to.matched.some(record => record.meta.requiresAuth)) {
+    console.log("routing to secure route")
+    if (store.state.token == null){
+      console.log("token is null")
+      next({ name: 'SignIn' })
+    }
+    else{
+      console.log("token is not null")
+      next()
+    }
+  }
+  else{
     next()
+  }
 })
 
 export default router

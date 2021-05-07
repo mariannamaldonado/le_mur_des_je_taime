@@ -4,10 +4,28 @@ const daoMessage = require('../dao/daoMessage')
 const message = require('../models/Message')
 const User = require('../models/User')
 
-rtMessage.post('/save/:id', (req, res) => {
-    daoMessage.save(req.body, req.params.id)
-        .then(message => res.json(message))
-    res.send('mensaje guardado')
+rtMessage.post('/secure/save/:id', (req, res) => {
+    daoMessage.save(req.body, req.user.id)
+        .then(message => {
+
+            try {
+                mailer.send({
+                    to: message.addresseEmail,
+                    //bcc:"le.mur.des.je.taime.fr@gmail.com",
+                    subject: "Tienes un mensaje de amor en : Le Mur Des Je T`aime",
+                    template: 'newLoveEmail',
+                    locals: {
+                        link: 'http://localhost:8081/#/LeMur'
+                    }
+                })
+            }
+            catch (err) {
+                console.log(err)
+            }
+
+            res.json(message)
+        })
+        .catch(res.status(401).json({ error: "error" }))
 })
 
 rtMessage.get('/search/:id', (req, res) => {

@@ -28,12 +28,7 @@
             &nbsp;<router-link aria-hidden="true"  to="/Contact"> <span>Contacto</span></router-link
             >
         </li>
-<<<<<<< HEAD
-        <li class="nav-item">
-          <a href="#" class="nav-link text-dark font-italic">
-=======
         <li class="nav-link text-dark font-italic">
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
             <span>❤</span>
             &nbsp;<router-link aria-hidden="true"  href="#item4" id="4" to="/LeMur"><span> Muro</span></router-link>
         </li>
@@ -86,7 +81,7 @@ export default {
       this.$store.dispatch("getCurrentUser");
       this.$router.push("/Profile");
     }
-    $("#sidebarCollapse, .nav-item .nav-link").on("click", function() {
+    $("#sidebarCollapse, .nav .nav-link").on("click", function() {
       $("#sidebar, #content").toggleClass("active");
     });
   },
@@ -94,7 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
 .container-fluid {
   padding-left: var(--bs-gutter-x, 0rem);
 }
@@ -130,29 +124,6 @@ ul#menu li a:hover:after {
 </style>
 <style lang="scss" scoped>
 a {
-=======
-// .menu{
-//   text-decoration: none;
-//   color: #000000;
-// }
-// .menu:hover{
-//   color: #f71e1e;
-//   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-//   transform: translateY(20px);
-
-// }
-// :root {
-//   --body-bg-color: #1a1c1d;
-//   --text-color: #aaaebc;
-//   --hr-color: #26292a;
-//   --red: #e74c3c;
-// }
-ul {
-  list-style: none;
-}
-li {
-  
->>>>>>> fd1cf157da03cebc25aadc6f0f6a09a2ae93cbb9
   text-decoration: none;
 }
 hr {

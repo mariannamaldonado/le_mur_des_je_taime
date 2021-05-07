@@ -3,10 +3,15 @@ const daoMessage = {}
 
 //funcion para guardar mensaje
 daoMessage.save = (message, id) => {
-    return new Promise((resolved) => {
+    return new Promise((resolved, reject) => {
         let MessageNew = new Message(message)
         MessageNew.user = id
-        MessageNew.save()
+        MessageNew.save().then(message => {
+            resolved(message)
+        }).catch(err => {
+            console.log(err)
+            reject(err)
+        })
     })
 }
 //funcion para eliminar

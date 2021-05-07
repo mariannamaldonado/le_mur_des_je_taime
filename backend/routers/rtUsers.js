@@ -111,8 +111,9 @@ rtUsers.get('/auth/facebook', (req, res) => {
 
 // ejemplo ruta segura (necesita login)
 rtUsers.post('/secure/currentuser', (req, res) => {
-  console.log(req.current_user_id)
-  daoUsers.findById(req.current_user_id)
+  console.log("current user : ")
+  console.log(req.user)
+  daoUsers.findById(req.user.id)
     .then(user => res.json(user))
 })
 
@@ -129,7 +130,7 @@ rtUsers.get('/auth/facebook/callback', passport.authenticate('facebook', { scope
     process.env.TOKEN_SECRET,
     { algorithm: 'HS256' });
 
-  console.log(token)
+  console.log("token = "+ token)
   res.header('auth-token', token)
   res.redirect("/?token=" + token);
   //res.json({token:token});
@@ -155,7 +156,7 @@ rtUsers.get('/auth/google/callback', passport.authenticate('google'), (req, res)
     process.env.TOKEN_SECRET,
     { algorithm: 'HS256' });
 
-  console.log(token)
+  console.log("token = "+ token)
   res.header('auth-token', token)
   //res.json({token: token})
   res.redirect("/?token=" + token);

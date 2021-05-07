@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="topnav">
+      <h4 class="title">Hola, {{user.firstname}}!</h4>
       <div class="topnav-right">
         <router-link to="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
@@ -34,13 +35,16 @@
   <hr class="border" />
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { ref } from "vue";
 export default {
   name: "Menu",
   methods: {
     ...mapActions(["logout"]),
   },
+  computed: {
+    ...mapState(["user"]),
+  }
 };
 </script>
 
@@ -113,5 +117,11 @@ body {
 }
 .btn {
   padding: 0.1rem 0.75rem;
+}
+
+h4.title{
+  display: inline-block;
+  padding-top: 25px;
+  padding-left: 20px;
 }
 </style>
