@@ -56,8 +56,10 @@
  <!-- Llamada a la acción -->
   <section class="content-section bg-primary text-white">
     <div class="container text-center">
-      <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. </h2>
-      <a href="/NewMessage" type="button" id="loginbutton" class="btn btn-md">Envia un te quiero!</a>
+      <h2 class="mb-4"> 311 formas de decir "Te amo" en casi 250 idiomas diferentes. <br>
+      Inicia sesiòn para enviar un te quiero 
+       </h2>
+      <a href="/#/NewMessage" type="button" id="loginbutton" class="btn btn-md">Envia un te quiero!</a>
     </div>
   </section>
   <Footer />

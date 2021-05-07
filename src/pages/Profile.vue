@@ -73,7 +73,7 @@ img{
     box-shadow:  0px 0px 18px #ccc;
 }
 .profile-card .profile-header{
-    height: 180px;
+    height: 220px;
 }
 
 .profile-card .profile-body{

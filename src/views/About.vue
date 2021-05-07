@@ -37,7 +37,7 @@
                 ></a>
               </div>
             </div>
-            <img class="img-fluid" v-bind:src="image3" alt="" />
+            <img class="img-fluid" v-bind:src="image2" alt="" />
           </a>
         </div>
         <div class="col-lg-6">

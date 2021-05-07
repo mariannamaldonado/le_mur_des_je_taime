@@ -3,6 +3,10 @@
     <div class="topnav">
       <h4 class="title">Hola, {{user.firstname}}!</h4>
       <div class="topnav-right">
+         <router-link to="/LeMur">
+           <span style="font-size:125%">❤</span>
+          <p class="text-monospace">Muro</p>
+        </router-link>
         <router-link to="/Profile">
           <img src="https://img.icons8.com/color/48/000000/user-location.png" />
           <p class="text-monospace">Perfil de usuario</p>
