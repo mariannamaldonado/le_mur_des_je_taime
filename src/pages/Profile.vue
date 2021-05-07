@@ -14,9 +14,11 @@
          Apellido: {{ user.lastname }}</div>
         <div class="intro">
           <p>Email: {{ user.email }}</p>
-            <hr class="down" />
         </div>
-
+         <!-- <button id="loginbutton" class="btn btn-md">
+          <i class="fa fa-trash-o"></i>
+        </button> -->
+         <hr class="down" />
     </div>
   </div>
   <hr class="border" />
@@ -45,6 +47,33 @@ export default {
 </script>
 
 <style scoped>
+i{
+  font-size: 20px;
+}
+
+#loginbutton {
+  color: #000011;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 30px;
+  padding: 10px 40px;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #cac7e2 0%,
+    #03002d 70%,
+    #575485 100%
+  );
+  transition: 0.5s;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
+#loginbutton:hover {
+  white-space: nowrap;
+  color: white;
+  background-position: right center;
+}
+
 .down{
   padding:em;
   color: #fff;
@@ -74,7 +103,7 @@ img{
 
 .profile-card .profile-body{
     background-color: var(--white);
-    padding: 20px 40px 40px 40px;
+    padding: 20px 60px 60px 60px;
 }
 
 .profile-card .profile-body .author-img{

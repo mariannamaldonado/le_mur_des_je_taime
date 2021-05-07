@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style>
+
 .heart {
   color: #1f4b8d;
 }

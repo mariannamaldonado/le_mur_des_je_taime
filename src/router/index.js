@@ -64,7 +64,7 @@ const routes = [
     path: '/UsersList',
     name: 'UsersList',
     component: () => import('@/pages/admin/UsersList.vue'),
-    meta: { requiresAuth: true }
+    // meta: { requiresAuth: true }
   },
 
   {
