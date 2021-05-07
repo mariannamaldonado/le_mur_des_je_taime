@@ -3,32 +3,20 @@
   <div class="wrapper">
     <div class="profile-card">
       <div class="profile-header">
-        <img src="@/assets/img/banner10.jpg" alt="" />
+        <img src="@/assets/img/baner.jpg" alt="" />
       </div>
       <div class="profile-body">
         <div class="cover-photo">
           <img class="profile" :src="user.avatar" alt="..." />
         </div>
         </div>
-        <div class="name">{{ user.firstname }} {{ user.lastname }}</div>
+        <div class="name">Nombre: {{ user.firstname }} <br>
+         Apellido: {{ user.lastname }}</div>
         <div class="intro">
           <p>Email: {{ user.email }}</p>
-          <!-- <label for="floatingInput">
-            <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de
-            perfil
-          </label>
-          <input type="file" class="custom-file-input" /> -->
+            <hr class="down" />
         </div>
-        <!-- <div class="social-icon">
-          <ul>
-            <li>
-              <a class="btn-danger" href="#">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </li>
-          </ul>
-        </div> -->
-     
+
     </div>
   </div>
   <hr class="border" />
@@ -57,16 +45,24 @@ export default {
 </script>
 
 <style scoped>
+.down{
+  padding:em;
+  color: #fff;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
 img{
     width: 100%;
     height: auto;
 }
 .wrapper{
     width: 100%;
-    /* height: 100vh; */
+    height: 70vh;
 }
 .profile-card{
-    width: 200px;
+    width: 250px;
     height: auto;
     text-align: center;
     margin: 20px auto;

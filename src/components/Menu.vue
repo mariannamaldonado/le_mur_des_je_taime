@@ -53,6 +53,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title{
+    // box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
 img,
 svg {
   vertical-align: middle;
