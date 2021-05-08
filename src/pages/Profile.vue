@@ -26,7 +26,6 @@
           </div>
         </aside>
       </div>
-<<<<<<< HEAD
       <div class="profile-body">
         <div class="cover-photo">
           <img class="profile" :src="user.avatar" alt="..." />
@@ -41,13 +40,6 @@
           <i class="fa fa-trash-o"></i>
         </button> -->
          <hr class="down" />
-=======
-      <div class="col col-md-8">
-        <div class="my-gif">
-          <img src="../assets/img/love.gif" alt="">
-        </div>
-      </div>
->>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
     </div>
   </div>
 
@@ -76,7 +68,6 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
 <style scoped>
 i{
   font-size: 20px;
@@ -108,12 +99,6 @@ i{
 .down{
   padding:em;
   color: #fff;
-=======
-<style lang="scss" scoped>
-.my-gif{
-  height:400px;
-  position:relative;
->>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
 }
 
 .my-gif > img {
@@ -136,37 +121,10 @@ h2 {
 p {
   margin: 0px;
 }
-<<<<<<< HEAD
 
 .profile-card .profile-body{
     background-color: var(--white);
     padding: 20px 60px 60px 60px;
-=======
-.profile-card {
-  width: 56px;
-  height: 56px;
-  // position: relative;
-  // left: 50px;
-  // top: 50px;
-  z-index: 2;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 70px;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
-    0px 3px 6px rgba(0, 0, 0, 0.23);
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
-      forwards,
-    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
->>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
 }
 .profile-card header {
   width: 179px;
@@ -480,11 +438,11 @@ p {
     display: block;
     float: none;
   }
-  // .profile-social-links {
-  //   width: 100%;
-  //   display: block;
-  //   float: none;
-  // }
+   .profile-social-links {
+     width: 100%;
+     display: block;
+     float: none;
+   }
   @-webkit-keyframes materia {
     0% {
       background: #e0e0e0;
