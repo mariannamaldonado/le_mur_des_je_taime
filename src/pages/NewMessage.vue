@@ -36,7 +36,6 @@
         </div>
       </div>
       <editor
-         maxlength="300"
         v-model="message"
         :init="{
           height: 260,
@@ -55,7 +54,7 @@
           tinycomments_mode: 'embedded',
           tinycomments_author: 'Author name',
           selector: 'textarea',
-          maxlength: '300'
+          maxlength: 250
         }"
       >
       </editor>
