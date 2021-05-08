@@ -1,10 +1,32 @@
 <template>
   <Menu />
-  <div class="wrapper">
-    <div class="profile-card">
-      <div class="profile-header">
-        <img src="@/assets/img/baner.jpg" alt="" />
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <aside class="profile-card">
+          <header>
+            <a target="_blank">
+              <img class="hoverZoomLink" :src="user.avatar" alt="..." />
+            </a>
+            <h1>Bienvenid@</h1>
+            <h2>
+              <b> {{ user.firstname }} {{ user.lastname }}</b>
+            </h2>
+            <h2>
+              <b> {{ user.email }}</b>
+            </h2><br>
+          </header>
+          <div class="profile-bio">
+            <p>
+              El muro de los te quiero es un nexo de unión, un lugar de
+              reconciliación, un espejo cuya imagen es el amor y la paz.
+            </p>
+          </div>
+        </aside>
       </div>
+<<<<<<< HEAD
       <div class="profile-body">
         <div class="cover-photo">
           <img class="profile" :src="user.avatar" alt="..." />
@@ -19,21 +41,29 @@
           <i class="fa fa-trash-o"></i>
         </button> -->
          <hr class="down" />
+=======
+      <div class="col col-md-8">
+        <div class="my-gif">
+          <img src="../assets/img/love.gif" alt="">
+        </div>
+      </div>
+>>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
     </div>
   </div>
+
+
+
+
   <hr class="border" />
-  <ContentFooter />
 </template>
 
 <script>
 import Menu from "@/components/Menu.vue";
-import ContentFooter from "@/components/ContentFooter.vue";
 import { mapState } from "vuex";
 export default {
   name: "Profile",
   components: {
     Menu,
-    ContentFooter
   },
   computed: {
     ...mapState(["user"]),
@@ -46,6 +76,7 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
 <style scoped>
 i{
   font-size: 20px;
@@ -77,91 +108,413 @@ i{
 .down{
   padding:em;
   color: #fff;
+=======
+<style lang="scss" scoped>
+.my-gif{
+  height:400px;
+  position:relative;
+>>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
 }
-*, ::after, ::before {
-    box-sizing: border-box;
-    font-family: 'Catamaran', sans-serif;
+
+.my-gif > img {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%)
 }
-img{
-    width: 100%;
-    height: auto;
+
+h1,
+h2 {
+  font-weight: 500;
+  margin: 0px 0px 5px 0px;
 }
-.wrapper{
-    width: 100%;
-    height: 70vh;
+h1 {
+  font-size: 24px;
 }
-.profile-card{
-    width: 250px;
-    height: auto;
-    text-align: center;
-    margin: 20px auto;
-    box-shadow:  0px 0px 18px #ccc;
+h2 {
+  font-size: 16px;
 }
-.profile-card .profile-header{
-    height: 220px;
+p {
+  margin: 0px;
 }
+<<<<<<< HEAD
 
 .profile-card .profile-body{
     background-color: var(--white);
     padding: 20px 60px 60px 60px;
-}
-
-.profile-card .profile-body .author-img{
-    margin-top: -20px;
-    margin-bottom: 20px;
-}
-.profile-card .profile-body .author-img img{
-    width: 170px;
-    height: 170px;
-    border-radius: 50%; 
-    padding: 5px;
-    background-color: var(--white);
-}
-
-.profile-card .profile-body .name{
-   font-size: 20px;
-   font-weight: 600;
-   text-transform: uppercase;
-
-}
-.profile-card .profile-body .intro{
-   font-size: 16px;
-   font-weight: 700;
-   line-height: 2.6;
-   margin: 20px  0px 30px  0px;
-
-}
- .social-icon ul {
-    list-style-type: none;
-}
- .social-icon ul li {
-    display: inline-block;
-}
- .social-icon ul li a {
-  margin-right: 5px;
-  width: 35px;
-  height: 35px;
-  border:1px solid #ddd;
-  display: block;
+=======
+.profile-card {
+  width: 56px;
+  height: 56px;
+  // position: relative;
+  // left: 50px;
+  // top: 50px;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 70px;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
-  transition: all 0.5s ease-out;
- }
- .social-icon ul{
-  margin:0;
-   padding:0;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+>>>>>>> fd3e020f3b9308d06bcec12153ea453f86c57acb
 }
- .social-icon ul li a:hover {
-  background-color: var(--dark);
-  border:1px solid var(--dark);
- }
-  .social-icon ul li a i{
-   line-height: 35px;
-   color:#666;
+.profile-card header {
+  width: 179px;
+  height: 280px;
+  padding: 40px 20px 30px 20px;
+  display: inline-block;
+  border-right: 19px dotted #eeeeee;
+  background-image: url(../assets/img/baner.jpg);
+  color: #ffffff;
+  margin-top: 50px;
+  opacity: 0;
+  text-align: center;
+  -webkit-animation: moveIn 1s 3.1s ease forwards;
+  animation: moveIn 1s 3.1s ease forwards;
+}
+.profile-card header h1 {
+  color: rgb(255, 255, 255);
+}
+.profile-card header a {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin: 25px 30px;
+}
+.profile-card header a:after {
+  position: absolute;
+  content: "";
+  bottom: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  content: "❤";
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-animation: scaleIn 0.3s 3.5s ease forwards;
+  animation: scaleIn 0.3s 3.5s ease forwards;
+}
+.profile-card header a > img {
+  width: 120px;
+  max-width: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
+.profile-card header a:hover > img {
+  -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+.profile-card .profile-bio {
+  width: 175px;
+  height: 180px;
+  display: inline-block;
+  padding: 50px 20px 30px 20px;
+  background: #ffffff;
+  color: #333333;
+  margin-top: 50px;
+  text-align: center;
+  opacity: 0;
+  -webkit-animation: moveIn 1s 3.1s ease forwards;
+  animation: moveIn 1s 3.1s ease forwards;
+}
+@-webkit-keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
   }
-  .social-icon ul li a i:hover,
-    .social-icon ul li a:hover i{
- 
-   color:var(--white);
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
   }
+}
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+@-webkit-keyframes borderRadius {
+  0% {
+    -webkit-border-radius: 50%;
+  }
+  100% {
+    -webkit-border-radius: 0px;
+  }
+}
+@keyframes borderRadius {
+  0% {
+    -webkit-border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+@-webkit-keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes moveUp {
+  0% {
+    background: #0e0157;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #e0e0e0;
+  }
+}
+@keyframes moveUp {
+  0% {
+    background: #0e0157;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #e0e0e0;
+  }
+}
+@-webkit-keyframes materia {
+  0% {
+    background: #e0e0e0;
+  }
+  50% {
+    -webkit-border-radius: 4px;
+  }
+  100% {
+    width: 440px;
+    height: 280px;
+    background: #ffffff;
+    -webkit-border-radius: 4px;
+  }
+}
+@keyframes materia {
+  0% {
+    background: #e0e0e0;
+  }
+  50% {
+    border-radius: 4px;
+  }
+  100% {
+    width: 440px;
+    height: 280px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+}
+@-webkit-keyframes moveIn {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: -20px;
+  }
+}
+@keyframes moveIn {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: -20px;
+  }
+}
+@-webkit-keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes ripple {
+  0% {
+    transform: scale3d(0, 0, 0);
+  }
+  50%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes ripple {
+  0% {
+    transform: scale3d(0, 0, 0);
+  }
+  50%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media screen and (min-aspect-ratio: 4/3) {
+  body {
+    background-size: cover;
+  }
+  body:before {
+    width: 0px;
+  }
+  @-webkit-keyframes puff {
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
+    100% {
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  }
+  @keyframes puff {
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
+    100% {
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  }
+}
+@media screen and (min-height: 480px) {
+  .profile-card header {
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    display: block;
+    float: none;
+    border-right: none;
+  }
+  .profile-card .profile-bio {
+    width: auto;
+    height: auto;
+    padding: 15px 20px 30px 20px;
+    display: block;
+    float: none;
+  }
+  // .profile-social-links {
+  //   width: 100%;
+  //   display: block;
+  //   float: none;
+  // }
+  @-webkit-keyframes materia {
+    0% {
+      background: #e0e0e0;
+    }
+    50% {
+      -webkit-border-radius: 4px;
+    }
+    100% {
+      width: 280px;
+      height: 440px;
+      background: #ffffff;
+      -webkit-border-radius: 4px;
+    }
+  }
+  @keyframes materia {
+    0% {
+      background: #e0e0e0;
+    }
+    50% {
+      border-radius: 4px;
+    }
+    100% {
+      width: 280px;
+      height: 440px;
+      background: #ffffff;
+      border-radius: 4px;
+    }
+  }
+
+
+}
 </style>
 

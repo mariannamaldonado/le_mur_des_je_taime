@@ -8,7 +8,7 @@
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6">
-          <a class="about-item" href="#!">
+          <a class="about-item">
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Marianna Maldonado</div>
@@ -25,7 +25,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="about-item" href="#!">
+          <a class="about-item">
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Andreea Cirlan</div>
@@ -41,7 +41,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="about-item" href="#!">
+          <a class="about-item">
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">Jeampierre Nuñez</div>
@@ -58,11 +58,11 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="about-item" href="#!">
+          <a class="about-item">
             <div class="caption">
               <div class="caption-content">
                 <div class="h2 name">Anny Sánchez</div>
-                <a href="www.linkedin.com/in/anny-karolina-sánchez-rdríguez"
+                <a href="www.linkedin.com/in/Anny-karolina-Sánchez-Rodríguez"
                   ><i class="fab fa-linkedin fa-2x"></i
                 ></a>
                 <a href="https://github.com/Annysanz">
@@ -76,12 +76,10 @@
       </div>
     </div>
   </section>
-  <section class="content-section text-white">
     <div class="container text-center">
       <h2 class="mb-4">Developers del proyecto Lemur Des Je T`aime.</h2>
       <a href="#!" class="btn btn-xl btn-light mr-4"></a>
     </div>
-  </section>
   <Footer />
 </template>
 <script>
@@ -105,9 +103,6 @@ setup(){
 </script>
 
 <style lang="scss">
-// .img-fluid {
-//   width: 570px;
-//   }
 .h1 {
   font-family: "Catamaran", sans-serif;
   font-weight: 500;

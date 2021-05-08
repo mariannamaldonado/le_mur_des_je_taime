@@ -13,13 +13,13 @@ const schemaMessage = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' }
 })
 
-schemaMessage.pre('save', function (next) {
-    bcrypt.hash(this.message, 250)
-        .then(hash => {
-            this.message = hash
-            next()
-        })
-})
+// schemaMessage.pre('save', function (next) {
+//     bcrypt.hash(this.message, 250)
+//         .then(hash => {
+//             this.message = hash
+//             next()
+//         })
+// })
 
 class Message {
     validar() {

@@ -6,7 +6,7 @@
         <aside></aside>
         <main>
           <blockquote class="grid-gallery__image message">
-            <span>❤</span>{{ Message.message }}
+            <span>❤</span><span v-html="Message.message"></span>
           </blockquote>
         </main>
         <footer class="author">
