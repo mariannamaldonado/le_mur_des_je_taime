@@ -16,9 +16,14 @@ daoMessage.save = (message, id) => {
 }
 //funcion para eliminar
 daoMessage.delete = (id) => {
-    Message.findOneAndRemove({ _id: id }, (data) => {
-        console.log("mensaje eliminado")
-        console.log(id);
+    return new Promise((resolved, reject) => {
+        Message.findOneAndRemove({ _id: id })
+        .then(data=>{
+            resolved(data)
+        })
+        .catch(err=>{
+            reject(err)
+        })  
     })
 }
 //listado de mensajes

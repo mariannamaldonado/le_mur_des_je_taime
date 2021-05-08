@@ -96,13 +96,13 @@
               <div class="col col-2" data-label="email">
                 {{ Message.addresseEmail }}
               </div>
-              <div class="col col-3" data-label="message">
-                {{ Message.message }}
+              <div class="col col-3" data-label="message" v-html="Message.message">
+                
               </div>
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
-                  @click="deleteMessage(Message._id)"
+                  @click="deleteMessage(Message._id, ind)"
                 >
                   <i class="fa fa-trash-o"></i>
                 </button>
@@ -120,6 +120,9 @@
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
+
+import Swal from "sweetalert2";
+
 export default {
   name: "SentMessagesList",
   components: {
@@ -141,7 +144,12 @@ export default {
     });
 
     function getMessageList() {
-      fetch("http://localhost:8081/api/message/listUser/")
+      fetch("http://localhost:8081/api/message/secure/listUser/",{
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+          "Content-Type": "application/json"
+        }
+        })
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {
@@ -150,14 +158,30 @@ export default {
         });
     }
     
-    function deleteMessage(id) {
+    function deleteMessage(id, ind) {
       fetch("http://localhost:8081/api/message/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
         .then((resp) => resp.json())
         .then((data) => {
-          filtredMessages();
+          if(data.error){
+            Swal.fire({
+              text: data.error,
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+
+          }
+          else{
+            Swal.fire({
+              text: "¡Mensaje eliminado con exito!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then(_ =>{
+              Messages.splice(ind, 1)
+            });
+          }
         });
     }
 

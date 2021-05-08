@@ -3,11 +3,11 @@ const rtMessage = express.Router()
 const daoMessage = require('../dao/daoMessage')
 const message = require('../models/Message')
 const User = require('../models/User')
+const mailer = require('../modules/mailer');
 
-rtMessage.post('/secure/save/:id', (req, res) => {
+rtMessage.post('/secure/save', (req, res) => {
     daoMessage.save(req.body, req.user.id)
         .then(message => {
-
             try {
                 mailer.send({
                     to: message.addresseEmail,
@@ -15,6 +15,8 @@ rtMessage.post('/secure/save/:id', (req, res) => {
                     subject: "Tienes un mensaje de amor en : Le Mur Des Je T`aime",
                     template: 'newLoveEmail',
                     locals: {
+                        name: message.addresseName, 
+                        sender: req.user.firstname,
                         link: 'http://localhost:8081/#/LeMur'
                     }
                 })
@@ -23,9 +25,12 @@ rtMessage.post('/secure/save/:id', (req, res) => {
                 console.log(err)
             }
 
-            res.json(message)
+            res.json({error:null, message:message})
         })
-        .catch(res.status(401).json({ error: "error" }))
+        .catch(err => {
+            console.log(err)
+            res.json({error:err, message:null})
+        })
 })
 
 rtMessage.get('/search/:id', (req, res) => {
@@ -41,14 +46,17 @@ rtMessage.get('/list', function (req, res) {
     })
 })
 
-rtMessage.get('/listUser/:id', (req, res) => {
-    daoMessage.listUser(req.params.id)
+rtMessage.get('/secure/listUser', (req, res) => {
+    daoMessage.listUser(req.user.id)
         .then(message => res.json(message))
 
 })
 
 rtMessage.post('/delete/:id', (req, res) => {
     daoMessage.delete(req.params.id)
+    .then(res.json({error:null,message:"success"}))
+    .catch(res.json({error:"ërror",message:null}))
+
 })
 
 module.exports = rtMessage

@@ -1,25 +1,42 @@
 <template>
   <Menu />
-  <aside class="profile-card">
-    <header>
-      <a target="_blank">
-        <img class="hoverZoomLink" :src="user.avatar" alt="..." />
-      </a>
-      <h1>Bienvenid@</h1>
-      <h2>
-        <b> {{ user.firstname }} {{ user.lastname }}</b>
-      </h2>
-      <h2>
-        <b> {{ user.email }}</b>
-      </h2><br>
-    </header>
-    <div class="profile-bio">
-      <p>
-        El muro de los te quiero es un nexo de unión, un lugar de
-        reconciliación, un espejo cuya imagen es el amor y la paz.
-      </p>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <aside class="profile-card">
+          <header>
+            <a target="_blank">
+              <img class="hoverZoomLink" :src="user.avatar" alt="..." />
+            </a>
+            <h1>Bienvenid@</h1>
+            <h2>
+              <b> {{ user.firstname }} {{ user.lastname }}</b>
+            </h2>
+            <h2>
+              <b> {{ user.email }}</b>
+            </h2><br>
+          </header>
+          <div class="profile-bio">
+            <p>
+              El muro de los te quiero es un nexo de unión, un lugar de
+              reconciliación, un espejo cuya imagen es el amor y la paz.
+            </p>
+          </div>
+        </aside>
+      </div>
+      <div class="col col-md-8">
+        <div class="my-gif">
+          <img src="../assets/img/love.gif" alt="">
+        </div>
+      </div>
     </div>
-  </aside>
+  </div>
+
+
+
+
   <hr class="border" />
 </template>
 
@@ -43,6 +60,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.my-gif{
+  height:400px;
+  position:relative;
+}
+
+.my-gif > img {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%)
+}
+
 h1,
 h2 {
   font-weight: 500;
@@ -60,8 +88,8 @@ p {
 .profile-card {
   width: 56px;
   height: 56px;
-  position: relative;
-  left: 50px;
+  // position: relative;
+  // left: 50px;
   // top: 50px;
   z-index: 2;
   overflow: hidden;
@@ -427,6 +455,8 @@ p {
       border-radius: 4px;
     }
   }
+
+
 }
 </style>
 

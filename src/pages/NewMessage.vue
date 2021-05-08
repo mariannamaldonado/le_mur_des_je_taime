@@ -54,7 +54,7 @@
           tinycomments_mode: 'embedded',
           tinycomments_author: 'Author name',
           selector: 'textarea',
-          maxlength: 250
+          maxlength: 250,
         }"
       >
       </editor>
@@ -79,7 +79,7 @@
       </div> -->
       <hr class="border" />
       <div class="boton">
-        <a href="#" class="cta" @click="SendMessage">
+        <a class="cta" @click="SendMessage">
           <span>Enviar mensaje</span>
           <svg width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
@@ -100,6 +100,7 @@ import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
 
 import { useRouter } from "vue-router";
+import Swal from "sweetalert2";
 
 export default {
   name: "NewMessage",
@@ -109,7 +110,6 @@ export default {
     ContentFooter,
   },
   setup() {
-
     const router = useRouter();
 
     let Messages = reactive([]);
@@ -141,24 +141,44 @@ export default {
     }
 
     function SendMessage() {
-      fetch("http://localhost:8081/api/secure/message/save",{
+      fetch("http://localhost:8081/api/message/secure/save", {
         method: "POST",
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+          "Content-Type": "application/json"
+        },
+
         body: JSON.stringify({
           message: message.value,
           addresseEmail: addresseEmail.value,
           addresseName: addresseName.value,
         }),
-        headers: { "Content-Type": "application/json" },
       })
         .then((res) => res.json())
         .then((datos) => {
-          console.log(datos)
-          router.push("/LeMur")
-        })
+          if(datos.error){
+            Swal.fire({
+              text: data.error,
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+          }else {
+            Swal.fire({
+              text: "¡Mensaje enviado con exito!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then(_ =>{
+              message = ""
+              addresseEmail =""
+              addresseName =""
+            });
+          }
+
+        });
     }
 
-function encryption() {
-      fetch("http://localhost:8081/api/secure/message/save",{
+    function encryption() {
+      fetch("http://localhost:8081/api/message/secure/save", {
         method: "POST",
         body: JSON.stringify({
           message: message.value,
@@ -170,9 +190,9 @@ function encryption() {
       })
         .then((res) => res.json())
         .then((datos) => {
-          console.log(datos)
-          router.push("/LeMur")
-        })
+          console.log(datos);
+          router.push("/LeMur");
+        });
     }
     return {
       encryption,
