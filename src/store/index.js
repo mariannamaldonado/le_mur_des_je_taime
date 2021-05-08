@@ -21,6 +21,12 @@ export default createStore({
       avatar: 'assets/img/faces/avatar1.jpg'
     }
   },
+getters: {
+  getUser(state){
+    return state.user      
+    console.log(state)
+  }
+},
   mutations: {
     setToken(state, payload) {
       state.token = payload
