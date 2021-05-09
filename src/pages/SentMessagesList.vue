@@ -79,7 +79,7 @@
                 </svg>
               </div>
             </li>
-            <li class="table-row" v-for="(Message, ind) in Messages" :key="ind">
+            <li class="table-row" v-for="(Message, ind) in filtredMessages" :key="ind">
               <div class="col col-0" data-label="select">
                 <input
                   type="checkbox"
@@ -139,7 +139,7 @@ export default {
 
     let filtredMessages = computed(() => {
       return Messages.filter((item) => {
-        return item.message.toLowerCase().includes(search.value.toLowerCase());
+        return item.addresseEmail.toLowerCase().includes(search.value.toLowerCase());
       });
     });
 
@@ -159,7 +159,7 @@ export default {
     }
 
     function deleteMessage(id, ind) {
-      fetch(`http://localhost:8081/api/message/listUser/${idUser}`, {
+      fetch('http://localhost:8081/api/message/delete/' + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
