@@ -170,9 +170,9 @@ export default {
               icon: "success",
               confirmButtonText: "OK",
             }).then(_ =>{
-              message = ""
-              addresseEmail =""
-              addresseName =""
+              message.value = ""
+              addresseEmail.value=""
+              addresseName.value =""
             });
           }
 

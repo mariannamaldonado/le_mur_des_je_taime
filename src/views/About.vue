@@ -2175,7 +2175,8 @@
         <div class="card__inner">
           <h4>Anny Sánchez</h4>
           <p>Product Owner</p>
-         <a href="www.linkedin.com/in/Anny-karolina-Sánchez-Rodríguez"><i class="fab fa-linkedin fa-2x"></i></a>&nbsp;
+             <a href="https://www.linkedin.com/in/anny-karolina-s%C3%A1nchez-rdr%C3%ADguez/"><i class="fab fa-linkedin fa-2x"></i></a>&nbsp;
+      <!--    <a href="www.linkedin.com/in/Anny-karolina-Sánchez-Rodríguez"><i class="fab fa-linkedin fa-2x"></i></a>&nbsp; -->
          <a href="https://github.com/Annysanz"><i class="fab fa-github fa-2x"></i></a>
         </div>
       </div>

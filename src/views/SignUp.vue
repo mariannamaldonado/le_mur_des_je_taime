@@ -135,11 +135,15 @@ export default {
             $("#errors").addClass("d-none");
             Swal.fire({
               title: "Bienvenido!",
-              text: "Has registrado correctamente.",
+              text:
+                "Te has registrado correctamente. Revisa tu correo electronico.",
               icon: "success",
               confirmButtonText: "OK",
             }).then(() => {
-              router.push("/SignIn");
+               firstname.value = "";
+               lastname.value = "";
+               email.value = "";
+               password.value = "";
             });
           }
         });

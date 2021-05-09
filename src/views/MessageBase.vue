@@ -1,6 +1,6 @@
 <template>
   <div class="grid-gallery">
-    <div class="floating" v-for="(Message, ind) in filtredMessages" :key="ind">
+    <div class="floating" v-for="(Message, ind) in Messages" :key="ind">
       <div class="card-object grid-gallery__item rotate">
         <header></header>
         <aside></aside>

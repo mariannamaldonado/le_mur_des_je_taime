@@ -44,7 +44,9 @@ rtUsers.post('/login', (req, res) => {
       if (data) {
         const token = jwt.sign({
           email: data.email,
-          id: data._id
+          id: data._id,
+          firstname: data.firstname,
+          lastname: data.lastname,
         }, process.env.TOKEN_SECRET)
         res.header('auth-token', token).json({
           data: { token }
