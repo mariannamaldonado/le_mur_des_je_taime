@@ -191,4 +191,8 @@ export default {
 .text-gray {
   color: #aaa;
 }
+
+.nav-link a {
+  text-decoration:none;
+}
 </style>
