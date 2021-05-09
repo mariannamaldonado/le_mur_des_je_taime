@@ -38,7 +38,7 @@
           </div>
           <button
             class="btn btn-danger btn-xs"
-            @click="deleteMessage(Message._id)"
+            @click="deleteMessage(usuario._id, ind)"
           >
             <i class="fa fa-trash-o"></i>
           </button>
@@ -67,12 +67,7 @@ export default {
     ...mapState(["user"]),
   },
   setup() {
-    let firstname = ref("");
-    let lastname = ref("");
-    let username = ref("");
-    let email = ref("");
-    let password = ref("");
-    let message = ref("");
+
     let usuarios = reactive([]);
     onMounted(() => {
       listar();
@@ -88,27 +83,8 @@ export default {
           });
         });
     }
-
-    function enviar() {
-      fetch("http://localhost:8081/api/users/guardar", {
-        method: "POST",
-        body: JSON.stringify({
-          firstname: firstname.value,
-          lastname: lastname.value,
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          message: message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar())
-        .catch((error) => console.log(error));
-      //alert("Usuario ya esta registrado");
-    }
-
-    function eliminar(id) {
+    function deleteMessage(id) {
+      console.log(id)
       fetch("http://localhost:8081/api/users/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -118,15 +94,8 @@ export default {
     }
 
     return {
-      firstname,
-      lastname,
-      email,
-      username,
-      password,
-      enviar,
       usuarios,
-      message,
-      eliminar,
+      deleteMessage,
     };
   },
 };
