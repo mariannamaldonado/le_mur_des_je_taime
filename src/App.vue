@@ -108,6 +108,11 @@ export default {
 .menu i {
   font-size: 25px;
 }
+.background {
+  background-image: url("../public/logo.png");
+  background-size: cover;
+  height: 110px;
+}
 .vertical-nav {
   min-width: 17rem;
   width: 15rem;
