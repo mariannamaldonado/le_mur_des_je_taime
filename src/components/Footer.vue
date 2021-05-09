@@ -6,7 +6,7 @@
         <router-link to="/">Inicio</router-link>  <br />
         <router-link to="/about">Nosotros</router-link> <br />
         <router-link to="/Contact">Contacto</router-link><br />
-        <a href="#">Políticas de privacidad</a> <br />
+       <!--  <a href="#">Políticas de privacidad</a> <br /> -->
       </div>
     </div>
     <div class="copyright d-flex flex-wrap justify-content-between">

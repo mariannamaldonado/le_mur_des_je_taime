@@ -3,7 +3,7 @@
     <div class="topnav">
       <h5 class="title">Hola, {{user.firstname}}!</h5>
       <div class="topnav-right">
-         <router-link to="/LeMur">
+         <router-link to="/MessageBase">
            <span style="font-size:125%">❤</span>
           <p class="text-monospace">Muro</p>
         </router-link>

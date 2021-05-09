@@ -68,9 +68,10 @@
       </div>
       <div>
         <hr />
-        <mdb-modal-footer class="mx-5 pt-3 mb-1">
+        <mdb-modal-footer class="mx-5 pt-3 mb-1" id="footerlink">
           <p class="font-small grey-text d-flex justify-content-center">
-            ¿Ya tienes una cuenta?&nbsp;<router-link
+            ¿Ya tienes una cuenta?&nbsp;
+            <router-link
               to="SignIn"
               class="blue-text ml-1"
             >
@@ -135,11 +136,15 @@ export default {
             $("#errors").addClass("d-none");
             Swal.fire({
               title: "Bienvenido!",
-              text: "Has registrado correctamente.",
+              text:
+                "Te has registrado correctamente. Revisa tu correo electronico.",
               icon: "success",
               confirmButtonText: "OK",
             }).then(() => {
-              router.push("/SignIn");
+               firstname.value = "";
+               lastname.value = "";
+               email.value = "";
+               password.value = "";
             });
           }
         });
@@ -156,10 +161,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 #frame {
   padding-top: 60px;
   min-height: 100vh;
-  background: url("../../public/double-bubble-outline.png");
+   background: url("../../public/muroblur.png");
+  background-size: cover;
 }
 #box {
   background: white;
@@ -220,5 +227,9 @@ export default {
   white-space: nowrap;
   color: white;
   background-position: right center;
+}
+
+#footerlink a{
+text-decoration: none;
 }
 </style>

@@ -78,7 +78,8 @@ export default {
 #frame {
   padding-top: 60px;
   min-height: 100vh;
-  background: url("../../public/double-bubble-outline.png");
+  background: url("../../public/muroblur.png");
+  background-size: cover;
 }
 #box {
   background: white;
