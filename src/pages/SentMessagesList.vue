@@ -79,11 +79,7 @@
                 </svg>
               </div>
             </li>
-            <li
-              class="table-row"
-              v-for="(Message, ind) in Messages"
-              :key="ind"
-            >
+            <li class="table-row" v-for="(Message, ind) in Messages" :key="ind">
               <div class="col col-0" data-label="select">
                 <input
                   type="checkbox"
@@ -96,9 +92,11 @@
               <div class="col col-2" data-label="email">
                 {{ Message.addresseEmail }}
               </div>
-              <div class="col col-3" data-label="message" v-html="Message.message">
-                
-              </div>
+              <div
+                class="col col-3"
+                data-label="message"
+                v-html="Message.message"
+              ></div>
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
@@ -117,6 +115,7 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
@@ -132,7 +131,8 @@ export default {
   setup() {
     let Messages = reactive([]);
     let search = ref("");
-
+    const store = useStore();
+    let idUser =computed(()=>{return store.user._id;}) 
     onMounted(() => {
       getMessageList();
     });
@@ -144,12 +144,12 @@ export default {
     });
 
     function getMessageList() {
-      fetch("http://localhost:8081/api/message/secure/listUser/",{
+      fetch("http://localhost:8081/api/message/secure/listUser/", {
         headers: {
           "auth-token": localStorage.getItem("token"),
-          "Content-Type": "application/json"
-        }
-        })
+          "Content-Type": "application/json",
+        },
+      })
         .then((resp) => resp.json())
         .then((datos) => {
           datos.forEach((element) => {
@@ -157,29 +157,27 @@ export default {
           });
         });
     }
-    
+
     function deleteMessage(id, ind) {
-      fetch("http://localhost:8081/api/message/delete/" + id, {
+      fetch(`http://localhost:8081/api/message/listUser/${idUser}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
         .then((resp) => resp.json())
         .then((data) => {
-          if(data.error){
+          if (data.error) {
             Swal.fire({
               text: data.error,
               icon: "error",
               confirmButtonText: "OK",
             });
-
-          }
-          else{
+          } else {
             Swal.fire({
               text: "¡Mensaje eliminado con exito!",
               icon: "success",
               confirmButtonText: "OK",
-            }).then(_ =>{
-              Messages.splice(ind, 1)
+            }).then((_) => {
+              Messages.splice(ind, 1);
             });
           }
         });

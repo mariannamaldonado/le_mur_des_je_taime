@@ -37,6 +37,7 @@
       </div>
       <editor
         v-model="message"
+        v-on:keyDown="handleEvent"
         :init="{
           height: 260,
           menubar: false,
@@ -110,8 +111,9 @@ export default {
     ContentFooter,
   },
   setup() {
-    const router = useRouter();
 
+    const WordLimit = 50
+    const router = useRouter();
     let Messages = reactive([]);
     let search = ref("");
     let message = ref("");
@@ -194,6 +196,18 @@ export default {
           router.push("/LeMur");
         });
     }
+
+    // function para limitar palabras en TinyMCE
+    function handleEvent(e, ed){
+      var text = ed.getContent().replace(/(< ([^>]+)<)/g,"").replace(/\s+/g," ");
+      var wordcount = WordLimit - (text.split(' ').length);
+      if(wordcount == 0 && e.keyCode != 8) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+      }
+    }
+
     return {
       encryption,
       encryption_key,
@@ -205,6 +219,7 @@ export default {
       getMessageList,
       Messages,
       filtredMessages,
+      handleEvent
     };
   },
 };

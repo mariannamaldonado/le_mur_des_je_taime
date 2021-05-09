@@ -1,7 +1,5 @@
 <template>
   <Menu />
-
-
   <div class="container">
     <div class="row">
       <div class="col col-md-4">
@@ -33,9 +31,6 @@
       </div>
     </div>
   </div>
-
-
-
 
   <hr class="border" />
 </template>

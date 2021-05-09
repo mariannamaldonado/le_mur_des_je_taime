@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="topnav">
-      <h4 class="title">Hola, {{user.firstname}}!</h4>
+      <h5 class="title">Hola, {{user.firstname}}!</h5>
       <div class="topnav-right">
          <router-link to="/LeMur">
            <span style="font-size:125%">❤</span>
@@ -49,10 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title{
-    // box-sizing: border-box;
-    font-family: 'Catamaran', sans-serif;
-}
+
 img,
 svg {
   vertical-align: middle;
@@ -95,9 +92,9 @@ svg {
 .btn {
   padding: 0.1rem 0.75rem;
 }
-h4.title{
+h5.title{
   display: inline-block;
-  padding-top: 25px;
+  padding-top: 28px;
   padding-left: 20px;
 }
 </style>
