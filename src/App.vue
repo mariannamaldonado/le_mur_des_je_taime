@@ -30,7 +30,7 @@
         </li>
         <li class="nav-link text-dark font-italic">
             <span>❤</span>
-            &nbsp;<router-link aria-hidden="true"  href="#item4" id="4" to="/LeMur"><span> Muro</span></router-link>
+            &nbsp;<router-link aria-hidden="true" to="/MessageBase"><span> Muro</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
             <span><i class="bi bi-chat-right-dots-fill"></i></span>

@@ -79,9 +79,9 @@ const routes = [
   //   component: () => import('./views/NotFound.vue')
   //   },
   {
-    path: '/LeMur',
-    name: 'LeMur',
-    component: () => import('../views/LeMur.vue'),
+    path: '/MessageBase',
+    name: 'MessageBase',
+    component: () => import('../views/MessageBase.vue'),
   },
   {
     path: '/Resetpassword',
