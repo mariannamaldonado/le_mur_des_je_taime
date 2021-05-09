@@ -30,7 +30,7 @@
         </li>
         <li class="nav-link text-dark font-italic">
             <span>❤</span>
-            &nbsp;<router-link aria-hidden="true" to="/MessageBase"><span> Muro</span></router-link>
+            &nbsp;<router-link aria-hidden="true" to="/MessageBase"> <span>Muro</span></router-link>
         </li>
         <li class="nav-link text-dark font-italic">
             <span><i class="bi bi-chat-right-dots-fill"></i></span>
@@ -92,6 +92,7 @@ export default {
 .menu {
   display: flex;
   justify-content: center;
+  color: black;
 }
 .menu li {
   margin-right: 70px;
@@ -102,45 +103,10 @@ export default {
 .menu li span {
   color: black;
   transition: transform 0.9s ease-out;
-}
-.menu li span:first-child {
-  display: inline-block;
-  padding: 10px;
-}
-.menu li span:last-child {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-100%);
+  text-decoration: none;
 }
 .menu i {
   font-size: 25px;
-}
-.menu li:hover span:first-child {
-  transform: translateY(90%);
-}
-.menu li:hover span:last-child,
-.menu[data-animation] li:hover span:last-child {
-  transform: none;
-}
-.menu[data-animation="to-right"] li span:last-child {
-  transform: translateX(-100%);
-}
-.menu[data-animation="to-right"] li:hover span:first-child {
-  transform: translateX(20%);
-}
-.container-fluid {
-  padding-left: var(--bs-gutter-x, 0rem);
-}
-.background {
-  background-image: url("../public/logo.png");
-  background-size: cover;
-  height: 110px;
 }
 .vertical-nav {
   min-width: 17rem;
@@ -151,6 +117,7 @@ export default {
   left: 0;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
+  text-decoration: none;
 }
 .page-content {
   width: calc(100% - 17rem);
