@@ -1,51 +1,59 @@
 <template>
-  <Menu />
+  <div v-if="user.role == true">
+    <Menu />
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-       <i class="bi bi-search"></i>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="bi bi-search"></i>
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Text input with checkbox"
+      />
     </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
 
-  <div class="row gx-5" v-for="(usuario, ind) in usuarios" :key="ind">
-    <div class="col-xl-8 col-lg-7 col-md-6">
-      <div class="container">
-        <div class="cover-photo">
-          <img class="profile" src="@/assets/img/faces/avatar.jpg" alt="..." />
+    <div class="row gx-5" v-for="(usuario, ind) in usuarios" :key="ind">
+      <div class="col-xl-8 col-lg-7 col-md-6">
+        <div class="container">
+          <div class="cover-photo">
+            <img
+              class="profile"
+              src="@/assets/img/faces/avatar.jpg"
+              alt="..."
+            />
+          </div>
+          <div class="profile-name">
+            {{ usuario.firstname }} {{ usuario.lastname }}
+          </div>
+          <p class="about">Email: {{ usuario.email }}</p>
+          <label for="floatingInput">
+            <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de
+            perfil
+          </label>
+          <div class="form-floating mb-3 custom-file">
+            <input type="file" class="custom-file-input" />
+          </div>
+          <button
+            class="btn btn-danger btn-xs"
+            @click="deleteMessage(Message._id)"
+          >
+            <i class="fa fa-trash-o"></i>
+          </button>
+          <hr class="border" />
         </div>
-        <div class="profile-name">
-          {{ usuario.firstname }} {{ usuario.lastname }}
-        </div>
-        <p class="about"> Email: {{ usuario.email }}</p>
-         <label for="floatingInput">
-                      <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
-                      imagen de perfil
-                    </label>
-        <div class="form-floating mb-3 custom-file">
-                    <input
-                      type="file"
-                      class="custom-file-input"
-                    />
-                  </div>
-        <button
-                  class="btn btn-danger btn-xs"
-                  @click="deleteMessage(Message._id)"
-                >
-                  <i class="fa fa-trash-o"></i>
-                </button>
-                 <hr class="border" />
       </div>
     </div>
-   </div>
- 
-  <hr class="border" />
-  <ContentFooter />
+
+    <hr class="border" />
+    <ContentFooter />
+  </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, onMounted } from "vue";
@@ -54,6 +62,9 @@ export default {
   components: {
     Menu,
     ContentFooter,
+  },
+  computed: {
+    ...mapState(["user"]),
   },
   setup() {
     let firstname = ref("");
@@ -122,11 +133,15 @@ export default {
 </script>
 
 <style scoped>
-button, input, optgroup, select, textarea {
-    margin: 0;
-  font-family: 'Font Awesome 5 Free';
-    /* font-size: inherit; */
-    /* line-height: inherit; */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: "Font Awesome 5 Free";
+  /* font-size: inherit; */
+  /* line-height: inherit; */
 }
 body {
   font-family: "lato", sans-serif;
@@ -177,10 +192,5 @@ h2 small {
   margin-top: 35px;
   line-height: 21px;
 }
-
-
-
-
-
 </style>
 

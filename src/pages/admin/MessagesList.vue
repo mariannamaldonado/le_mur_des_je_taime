@@ -1,4 +1,5 @@
 <template>
+  <div v-if="user.role == true">
   <Menu />
   <div class="container">
     <form class="navbar-form navbar-left" action="/action_page.php">
@@ -116,9 +117,11 @@
   </div>
      <hr class="border" />
  <ContentFooter />
+  </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from '@/components/ContentFooter';
 import { ref, reactive, computed, onMounted } from "vue";
@@ -127,6 +130,9 @@ export default {
   components: {
     Menu,
     ContentFooter
+  },
+  computed: {
+    ...mapState(["user"]),
   },
   setup() {
     let Messages = reactive([]);
