@@ -99,6 +99,8 @@ export default {
   position: relative;
   display: block;
   overflow: hidden;
+    text-decoration: none;
+
 }
 .menu li span {
   color: black;

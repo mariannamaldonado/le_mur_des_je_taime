@@ -5,7 +5,7 @@
         <header></header>
         <aside></aside>
         <main>
-          <blockquote class="grid-gallery__image message">
+          <blockquote id="sms" class="grid-gallery__image message">
             <span>❤</span><span v-html="Message.message"></span>
           </blockquote>
         </main>
@@ -56,6 +56,12 @@ export default {
 };
 </script>
 <style scoped>
+.floating{
+  background-image: url('../assets/img/subtle_carbon.png')
+}
+#sms {
+  color: rgb(247, 30, 30);
+}
 footer{
 color: rgb(247, 7, 7);
 font-size: 18px;
@@ -64,7 +70,7 @@ font-size: 18px;
 .card-object {
   grid-auto-flow: row dense;
   display: grid;
-  width: 320px;
+  width: 310px;
   grid-template:
     "header header"
     "aside  main"
@@ -124,6 +130,7 @@ $gap-size: 1.2rem
 $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) 
 .grid-gallery
   display: grid
+  width: 100%
   background-image: url('../assets/img/subtle_carbon.png')
   grid-auto-rows: $image-size
   grid-gap: $gap-size
@@ -135,7 +142,7 @@ $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px)
       $num-columns: 3
       grid-template-columns: repeat($num-columns, 1fr)
     @media all and (min-width: map-get($breakpoints, 'large'))
-      $num-columns: 5
+      $num-columns: 3
       grid-template-columns: repeat($num-columns, 1fr)
     &__item
       &:nth-child(11n+1)
