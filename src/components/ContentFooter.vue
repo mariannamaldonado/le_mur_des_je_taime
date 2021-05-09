@@ -23,6 +23,7 @@ export default {
   background: #b7c8e0;
   color: #fff;
   padding: 10px 0;
+  bottom: 0;
 }
 .go-top {
   margin-right: 1%;

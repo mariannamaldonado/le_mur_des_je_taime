@@ -26,11 +26,20 @@
           </div>
         </aside>
       </div>
-      <div class="col col-md-8">
-        <div class="my-gif">
-          <img src="../assets/img/love.gif" alt="">
+      <div class="profile-body">
+        <div class="cover-photo">
+          <img class="profile" :src="user.avatar" alt="..." />
         </div>
-      </div>
+        </div>
+        <div class="name">Nombre: {{ user.firstname }} <br>
+         Apellido: {{ user.lastname }}</div>
+        <div class="intro">
+          <p>Email: {{ user.email }}</p>
+        </div>
+         <!-- <button id="loginbutton" class="btn btn-md">
+          <i class="fa fa-trash-o"></i>
+        </button> -->
+         <hr class="down" />
     </div>
   </div>
 
@@ -59,10 +68,37 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.my-gif{
-  height:400px;
-  position:relative;
+<style scoped>
+i{
+  font-size: 20px;
+}
+
+#loginbutton {
+  color: #000011;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 50px auto;
+  border-radius: 30px;
+  padding: 10px 40px;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #cac7e2 0%,
+    #03002d 70%,
+    #575485 100%
+  );
+  transition: 0.5s;
+  box-shadow: 0 0 0 0.25rem rgba(100, 101, 116, 0.5);
+}
+#loginbutton:hover {
+  white-space: nowrap;
+  color: white;
+  background-position: right center;
+}
+
+.down{
+  padding:em;
+  color: #fff;
 }
 
 .my-gif > img {
@@ -85,30 +121,10 @@ h2 {
 p {
   margin: 0px;
 }
-.profile-card {
-  width: 56px;
-  height: 56px;
-  // position: relative;
-  // left: 50px;
-  // top: 50px;
-  z-index: 2;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 70px;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
-    0px 3px 6px rgba(0, 0, 0, 0.23);
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
-      forwards,
-    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+
+.profile-card .profile-body{
+    background-color: var(--white);
+    padding: 20px 60px 60px 60px;
 }
 .profile-card header {
   width: 179px;
@@ -422,11 +438,11 @@ p {
     display: block;
     float: none;
   }
-  // .profile-social-links {
-  //   width: 100%;
-  //   display: block;
-  //   float: none;
-  // }
+   .profile-social-links {
+     width: 100%;
+     display: block;
+     float: none;
+   }
   @-webkit-keyframes materia {
     0% {
       background: #e0e0e0;
