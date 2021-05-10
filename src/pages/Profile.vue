@@ -106,11 +106,12 @@ p {
     materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 .profile-card header {
+  
   width: 179px;
   height: 280px;
   padding: 40px 20px 30px 20px;
   display: inline-block;
-  border-right: 19px dotted #eeeeee;
+  border-right: 4mm ridge rgba(220, 50, 50, 0.6);
   background-image: url(../assets/img/baner.jpg);
   color: #ffffff;
   margin-top: 50px;
