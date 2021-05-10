@@ -103,7 +103,7 @@ export default {
     font-size: 50px;
 }
 .suisse-50 {
-    font-family: 'Suisseintl webm', sans-serif;
+    font-family: "Catamaran", sans-serif;
     font-size: 51px;
     letter-spacing: -0.7px;
 }

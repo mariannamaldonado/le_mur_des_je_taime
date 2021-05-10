@@ -60,7 +60,7 @@ export default {
   background-image: url('../assets/img/subtle_carbon.png')
 }
 #sms {
-  color: rgb(247, 30, 30);
+  color: rgb(247, 7, 7);
 }
 footer{
 color: rgb(247, 7, 7);
@@ -103,14 +103,19 @@ font-size: 18px;
 }
 .card-object footer {
   grid-column: foot;
+   text-align: right;
   background-color: white;
   padding: 5px 15px 15px 0;
   border-radius: 0 0 5px 5px;
 }
 .floating {
-  animation: float 6s infinite ease-in-out;
+  animation: float 5s infinite ease-in-out;
 } 
 
+
+.author::before{
+  content: "- ";
+}
 @keyframes float {
   0% {
     transform: perspective(1000px) translateY(0px) rotateX(3deg);
@@ -142,7 +147,7 @@ $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px)
       $num-columns: 3
       grid-template-columns: repeat($num-columns, 1fr)
     @media all and (min-width: map-get($breakpoints, 'large'))
-      $num-columns: 3
+      $num-columns: 5
       grid-template-columns: repeat($num-columns, 1fr)
     &__item
       &:nth-child(11n+1)

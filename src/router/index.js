@@ -84,6 +84,11 @@ const routes = [
     component: () => import('../views/MessageBase.vue'),
   },
   {
+    path: '/MessageBase2',
+    name: 'MessageBase2',
+    component: () => import('../views/MessageBase2.vue'),
+  },
+  {
     path: '/Resetpassword',
     name: 'ResetPassword',
     component: () => import('../views/ResetPassword.vue'),
