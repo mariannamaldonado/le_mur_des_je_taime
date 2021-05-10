@@ -763,7 +763,7 @@
         <img v-bind:src="image2" alt="">
         <div class="card__inner">
           <h4>Andreea Cirlan</h4>
-          <p>Programadora</p>
+          <p>FullStack Developer</p>
           <a href="https://www.linkedin.com/in/andreeacirlan/" ><i class="fab fa-linkedin fa-2x"></i></a>&nbsp;
           <a href="https://github.com/AndreeaCCA"><i class="fab fa-github fa-2x"></i></a>
         </div>
@@ -1574,7 +1574,7 @@
         <img :src="image1" alt="">
         <div class="card__inner">
           <h4>Marianna Maldonado</h4>
-          <p>Scrum Master</p>
+          <p>Scrum Master </p>
           <a
                   href="https://www.linkedin.com/in/programador-mariana-maldonado/"
                   ><i class="fab fa-linkedin fa-2x"></i
@@ -2593,7 +2593,7 @@
         <img :src="image3" alt="">
         <div class="card__inner">
           <h4>Jeampierre Nuñez</h4>
-          <p>Programador</p>
+          <p>FullStack Developer</p>
           <a
                   href="https://www.linkedin.com/in/jeanpierrer-nu%C3%B1ez-sanchez-34853b129/"
                   ><i class="fab fa-linkedin fa-2x"></i
