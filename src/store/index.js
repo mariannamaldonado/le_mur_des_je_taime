@@ -54,7 +54,7 @@ getters: {
           localStorage.setItem('token', userDB.data.token)
           dispatch('getCurrentUser')
           console.log("routing to NewMessage")
-          router.push("/NewMessage")
+          router.push("/Profile")
         }
         else{
           Swal.fire({
