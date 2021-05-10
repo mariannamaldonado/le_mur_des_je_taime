@@ -1,51 +1,59 @@
 <template>
-  <Menu />
+  <div v-if="user.role == true">
+    <Menu />
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-       <i class="bi bi-search"></i>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="bi bi-search"></i>
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Text input with checkbox"
+      />
     </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
 
-  <div class="row gx-5" v-for="(usuario, ind) in usuarios" :key="ind">
-    <div class="col-xl-8 col-lg-7 col-md-6">
-      <div class="container">
-        <div class="cover-photo">
-          <img class="profile" src="@/assets/img/faces/avatar.jpg" alt="..." />
+    <div class="row gx-5" v-for="(usuario, ind) in usuarios" :key="ind">
+      <div class="col-xl-8 col-lg-7 col-md-6">
+        <div class="container">
+          <div class="cover-photo">
+            <img
+              class="profile"
+              src="@/assets/img/faces/avatar.jpg"
+              alt="..."
+            />
+          </div>
+          <div class="profile-name">
+            {{ usuario.firstname }} {{ usuario.lastname }}
+          </div>
+          <p class="about">Email: {{ usuario.email }}</p>
+          <label for="floatingInput">
+            <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar imagen de
+            perfil
+          </label>
+          <div class="form-floating mb-3 custom-file">
+            <input type="file" class="custom-file-input" />
+          </div>
+          <button
+            class="btn btn-danger btn-xs"
+            @click="deleteMessage(usuario._id, ind)"
+          >
+            <i class="fa fa-trash-o"></i>
+          </button>
+          <hr class="border" />
         </div>
-        <div class="profile-name">
-          {{ usuario.firstname }} {{ usuario.lastname }}
-        </div>
-        <p class="about"> Email: {{ usuario.email }}</p>
-         <label for="floatingInput">
-                      <i class="bi bi-person-bounding-box"></i>&nbsp;Cambiar
-                      imagen de perfil
-                    </label>
-        <div class="form-floating mb-3 custom-file">
-                    <input
-                      type="file"
-                      class="custom-file-input"
-                    />
-                  </div>
-        <button
-                  class="btn btn-danger btn-xs"
-                  @click="deleteMessage(Message._id)"
-                >
-                  <i class="fa fa-trash-o"></i>
-                </button>
-                 <hr class="border" />
       </div>
     </div>
-   </div>
- 
-  <hr class="border" />
-  <ContentFooter />
+
+    <hr class="border" />
+    <ContentFooter />
+  </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Menu from "@/components/Menu.vue";
 import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, onMounted } from "vue";
@@ -55,13 +63,11 @@ export default {
     Menu,
     ContentFooter,
   },
+  computed: {
+    ...mapState(["user"]),
+  },
   setup() {
-    let firstname = ref("");
-    let lastname = ref("");
-    let username = ref("");
-    let email = ref("");
-    let password = ref("");
-    let message = ref("");
+
     let usuarios = reactive([]);
     onMounted(() => {
       listar();
@@ -77,27 +83,8 @@ export default {
           });
         });
     }
-
-    function enviar() {
-      fetch("http://localhost:8081/api/users/guardar", {
-        method: "POST",
-        body: JSON.stringify({
-          firstname: firstname.value,
-          lastname: lastname.value,
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          message: message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((resp) => resp.json())
-        .then((datos) => listar())
-        .catch((error) => console.log(error));
-      //alert("Usuario ya esta registrado");
-    }
-
-    function eliminar(id) {
+    function deleteMessage(id) {
+      console.log(id)
       fetch("http://localhost:8081/api/users/delete/" + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -107,26 +94,23 @@ export default {
     }
 
     return {
-      firstname,
-      lastname,
-      email,
-      username,
-      password,
-      enviar,
       usuarios,
-      message,
-      eliminar,
+      deleteMessage,
     };
   },
 };
 </script>
 
 <style scoped>
-button, input, optgroup, select, textarea {
-    margin: 0;
-  font-family: 'Font Awesome 5 Free';
-    /* font-size: inherit; */
-    /* line-height: inherit; */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: "Font Awesome 5 Free";
+  /* font-size: inherit; */
+  /* line-height: inherit; */
 }
 body {
   font-family: "lato", sans-serif;
@@ -177,10 +161,5 @@ h2 small {
   margin-top: 35px;
   line-height: 21px;
 }
-
-
-
-
-
 </style>
 

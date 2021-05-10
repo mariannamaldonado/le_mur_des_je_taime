@@ -1,4 +1,6 @@
 <template>
+  <div v-if="user.role == true">
+
   <Menu />
   <div class="container">
     <form class="navbar-form navbar-left" action="/action_page.php">
@@ -79,31 +81,28 @@
                 </svg>
               </div>
             </li>
-            <li
-              class="table-row"
-              v-for="(Message, ind) in Messages"
-              :key="ind"
-            >
+            <li class="table-row" v-for="(Message, ind) in filtredMessages" :key="ind">
               <div class="col col-0" data-label="select">
                 <input
                   type="checkbox"
                   aria-label="Checkbox for following text input"
                 />
               </div>
-
               <div class="col col-1" data-label="name">
-                {{ Message.addresseName}}
+                {{ Message.addresseName }}
               </div>
               <div class="col col-2" data-label="email">
-                {{ Message.addresseEmail}}
+                {{ Message.addresseEmail }}
               </div>
-              <div class="col col-3" data-label="message">
-                {{ Message.message }}
-              </div>
+              <div
+                class="col col-3"
+                data-label="message"
+                v-html="Message.message"
+              ></div>
               <div class="col col-4" data-label="eliminar">
                 <button
                   class="btn btn-danger btn-xs"
-                  @click="deleteMessage(Message._id)"
+                  @click="deleteMessage(Message._id, ind)"
                 >
                   <i class="fa fa-trash-o"></i>
                 </button>
@@ -114,31 +113,39 @@
       </thead>
     </table>
   </div>
-     <hr class="border" />
- <ContentFooter />
+  <ContentFooter />
+</div>
 </template>
 
 <script>
+
+import { useStore, mapState } from "vuex";
 import Menu from "@/components/Menu.vue";
-import ContentFooter from '@/components/ContentFooter';
+import ContentFooter from "@/components/ContentFooter";
 import { ref, reactive, computed, onMounted } from "vue";
+
+import Swal from "sweetalert2";
+
 export default {
-  name: "MessagesList",
+  name: "SentMessagesList",
   components: {
     Menu,
-    ContentFooter
+    ContentFooter,
+  },
+    computed: {
+    ...mapState(["user"]),
   },
   setup() {
     let Messages = reactive([]);
     let search = ref("");
-
+    const store = useStore();
+    let idUser =computed(()=>{return store.user._id;}) 
     onMounted(() => {
       getMessageList();
     });
-
     let filtredMessages = computed(() => {
       return Messages.filter((item) => {
-        return item.message.toLowerCase().includes(search.value.toLowerCase());
+        return item.addresseEmail.toLowerCase().includes(search.value.toLowerCase());
       });
     });
 
@@ -152,14 +159,28 @@ export default {
         });
     }
 
-    function deleteMessage(id) {
-      fetch("http://localhost:8081/api/message/delete/" + id, {
+    function deleteMessage(id, ind) {
+      fetch('http://localhost:8081/api/message/delete/' + id, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
         .then((resp) => resp.json())
         .then((data) => {
-          filtredMessages()
+          if (data.error) {
+            Swal.fire({
+              text: data.error,
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+          } else {
+            Swal.fire({
+              text: "¡Mensaje eliminado con exito!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then((_) => {
+              Messages.splice(ind, 1);
+            });
+          }
         });
     }
 
@@ -174,6 +195,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 // navbar
+
 .topnav {
   overflow: hidden;
   background-color: #f1f2f5;
@@ -253,19 +275,19 @@ h2 small {
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 .responsive-table .col-0 {
-  flex-basis: 5%;
+  flex-basis: 3%;
 }
 .responsive-table .col-1 {
-  flex-basis: 15%;
+  flex-basis: 12%;
 }
 .responsive-table .col-2 {
-  flex-basis: 20%;
+  flex-basis: 31%;
 }
 .responsive-table .col-3 {
-  flex-basis: 50%;
+  flex-basis: 55%;
 }
 .responsive-table .col-4 {
-  flex-basis: 10%;
+  flex-basis: 4%;
 }
 @media all and (max-width: 767px) {
   .responsive-table .table-header {

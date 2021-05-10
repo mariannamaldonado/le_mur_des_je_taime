@@ -18,13 +18,13 @@ export default createStore({
       email: '',
       firstname: '',
       lastname: '',
-      avatar: 'assets/img/faces/avatar1.jpg'
+      avatar: 'assets/img/faces/avatar1.jpg',
+      role:''
     }
   },
 getters: {
   getUser(state){
     return state.user      
-    console.log(state)
   }
 },
   mutations: {
